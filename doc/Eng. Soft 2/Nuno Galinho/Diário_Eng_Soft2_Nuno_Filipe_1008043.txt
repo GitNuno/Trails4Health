@@ -1,0 +1,11 @@
+::
+// 18/10/2017 : 11.00 - 12.30 (TOTAL: 1.30h)
+.Li caso de uso Spiral Development e revi relatorio: descrição caso uso.
+
+::
+// 19/10/2017 : 9.30 - 11.00 (TOTAL: 1.30h)
+.Resumo caso de uso (Livro + apontamentos) Spiral Development
+
+::
+// 26/10/2017 :9.30 - 11.00 (TOTAL: 1.30h)
+.Acabei relatório + apresentação: caso de uso (Livro + apontamentos) Spiral Development 
