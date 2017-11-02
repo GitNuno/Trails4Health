@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Trails4Health</title>
 
+    <!-- Ambiente em desenvolvimento -->
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -45,12 +46,19 @@
     </div>
 
     <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- Nota: isto é JQUERY -->
+        @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+
+        @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+
+        <!-- referenciar novo JS -->
+        <script src="~/js/template_bootstrap.js"></script>
+        <script src="~/js/template_bootstrap.bundle.js"></script>
+
     </environment>
     <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
@@ -61,8 +69,14 @@
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </script>*@
+
+        @*<script src="~/js/site.min.js" asp-append-version="true"></script>*@
+
+        <!-- referenciar novo JS -->
+        <script src="~/js/template_bootstrap.min.js"></script>
+        <script src="~/js/template_bootstrap.bundle.min.js"></script>
+
     </environment>
 
     @RenderSection("Scripts", required: false)
