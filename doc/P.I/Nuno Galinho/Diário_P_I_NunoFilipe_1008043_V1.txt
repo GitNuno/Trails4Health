@@ -148,7 +148,47 @@ a partir do projecto do prof. Noel.
 // 27/10/2017: 14.00 - 18.00
 .Revi Aula (sexta) 
 .Fiz uma bateria de testes com GitHub no repositorio ApagarTeste usando
-GitHub_Desktop + GitBash
+ GitHub_Desktop + GitBash
+
+::
+// 28/10/2017: 14.00 - 16.00
+.Procurei layouts para home page de Trails4Health
+.Optei por experimentar (mudar fotos e texto) layouts da pagina: 
+ https://startbootstrap.com/template-categories/full-websites/
+
+::
+// 01/11/2017: 9.30 - 16.00 ( -2 horas almoço)
+.Criei projecto MY_Trails4Health para incluir num repositorio de testes.
+	.Nota: Não fiz commits - o repositório foi criado dia 02/11/2017 com
+	 o nome Prepaparacao_Aulas
+.Integrei layout startbootstrap-business-casual-gh-pages que descarreguei
+ 28/10/2017
+.Dificuldades:
+	.Implementar Caroussel: aprendi que Caroussel implementa JS - é
+	 necessario incluir novo JS a partir do template
+	.CSS/bootstrap: a pagina não está bem formatada (não venci esta dificuldade)
+	 
+::
+// 02/11/2017 -----------------------------------------------------------
+	// 16.00 - 16.30
+	.Tirei duvidas com prof. Noel, entre outras coisas aprendi:
+		 A ter cuidado ao incluir novo bootstrap no 
+		 projecto - é necessário/recomendável renomear novos ficheiros bootstrap
+		 e ter mt cuidado a referenciá-los no projecto (Ver meus comentários no projecto).
+	// 18.30 - 20.00:
+	.Inclui projecto MY_Trails4Health criado dia: 01/11/2017 no repositorio
+	 de testes Prepaparacao_Aulas.
+	.Criei HomePage do projecto Trails4Health no repositorio Trails4Health:
+		.Construi HomePage passo a passo usando o que aprendi nas experiencias
+		 do projecto MY_Trails4Health.
+		.Passos estão documentados nos Commits dia 02/11/2017:
+			 Desde:
+				.Realocalização do projecto para pasta original (local) Programacao_internet
+			 Até:
+				.Adicionar novas imagens
+	.Atualizei deste diário
 
 
+	
+	
 	
