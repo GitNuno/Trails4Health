@@ -144,6 +144,11 @@ LIVRO // STYLING THE WELCOME VIEW (pag.45 - ):
 Revi e completei o que não consegui fazer na aula (quarta - 14.00-15.30)
 a partir do projecto do prof. Noel. 
 
+::
+// 27/10/2017: 14.00 - 18.00
+.Revi Aula (sexta) 
+.Fiz uma bateria de testes com GitHub no repositorio ApagarTeste usando
+GitHub_Desktop + GitBash
 
 
 	

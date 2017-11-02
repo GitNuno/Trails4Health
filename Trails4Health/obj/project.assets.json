@@ -9778,11 +9778,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\programacao_internet\\Trails4Health\\Trails4Health\\Trails4Health\\Trails4Health.csproj",
+      "projectUniqueName": "C:\\programacao_internet\\Trails4Health\\Trails4Health\\Trails4Health.csproj",
       "projectName": "Trails4Health",
-      "projectPath": "C:\\programacao_internet\\Trails4Health\\Trails4Health\\Trails4Health\\Trails4Health.csproj",
+      "projectPath": "C:\\programacao_internet\\Trails4Health\\Trails4Health\\Trails4Health.csproj",
       "packagesPath": "C:\\Users\\Nuno\\.nuget\\packages\\",
-      "outputPath": "C:\\programacao_internet\\Trails4Health\\Trails4Health\\Trails4Health\\obj\\",
+      "outputPath": "C:\\programacao_internet\\Trails4Health\\Trails4Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nuno\\AppData\\Roaming\\NuGet\\NuGet.Config",
