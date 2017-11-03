@@ -4,10 +4,9 @@
         .Nota: os 2 ficheiros ficam um dentro outro.
     Regras:
         .testar 1º com o que há
-        .mudar nome do que já existe
+        .mudar nome dos ficheiros CSS/JS que já existem na pasta lib
         .retirar fallback se estiver a trabalhar apenas com a minha maquina
-        .se houver usar min em "Staging,Production", senão usar o que há
-        .se existir manter asp-append-version="true"
+        .se houver, usar os ficheiros min em "Staging,Production" senão, usar o que há
 -->
 <!--  -->
 
@@ -19,7 +18,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Trails4Health</title>
-
+    <!-- CSS -->
     <!-- Ambiente em desenvolvimento -->
     <environment names="Development">
         <!-- Original -->
@@ -32,7 +31,7 @@
         <link rel="stylesheet" href="~/css/template_bootstrap.css" />
         <link rel="stylesheet" href="~/css/template_business_casual.css" />
 
-
+    <!-- Ambiente para released -->
     </environment>
     <environment names="Staging,Production">
         <!-- Original -->
@@ -41,7 +40,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />*@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 
-        <!-- Referenciar novo CSS -->
+        <!-- Referenciar novo CSS min(é apenas uma versão mais leve - melhor desempenho) -->
         <link rel="stylesheet" href="~/css/template_bootstrap-grid.min.css" />
         <link rel="stylesheet" href="~/css/template_bootstrap-reboot.min.css" />
         <link rel="stylesheet" href="~/css/template_bootstrap.min.css" />
@@ -61,7 +60,7 @@
         </footer>
        
     </div>
-
+    <!-- JAVA SCRIPT -->
     <environment names="Development">
         <!-- Original -->
         <!-- Nota: isto é JQUERY sem esta linha botoes slider nao funcionam!! -->

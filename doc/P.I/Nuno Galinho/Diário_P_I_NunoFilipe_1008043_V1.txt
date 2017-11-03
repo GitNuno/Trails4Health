@@ -170,11 +170,12 @@ a partir do projecto do prof. Noel.
 	 
 ::
 // 02/11/2017 -----------------------------------------------------------
-	// 16.00 - 16.30
+	// 16.00 - 16.30:
 	.Tirei duvidas com prof. Noel, entre outras coisas aprendi:
 		 A ter cuidado ao incluir novo bootstrap no 
-		 projecto - é necessário/recomendável renomear novos ficheiros bootstrap
-		 e ter mt cuidado a referenciá-los no projecto (Ver meus comentários no projecto).
+		 projecto - é necessário/recomendável renomear os novos ficheiros bootstrap
+		 que tenham o mm nome dos que estao na pasta lib e garantir que TODOS 
+		 sao referenciados.
 	// 18.30 - 20.00:
 	.Inclui projecto MY_Trails4Health criado dia: 01/11/2017 no repositorio
 	 de testes Prepaparacao_Aulas.
