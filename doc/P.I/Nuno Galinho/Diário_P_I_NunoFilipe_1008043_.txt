@@ -1,4 +1,4 @@
-	// 27-09-2017 (?) --------------------------------------------------
+	// 27-09-2017
 ::
 IIS:
 	É um servidor web da Microsoft para seus S.O.
@@ -17,7 +17,7 @@ http://localhost:56875/Home/About
 	.A aplicação vai a Home_Controller á procura de About_action
 
 ::
-	//28-09-2017:10.00-11.00 (~1.00) ----------------------------------
+	//28-09-2017:10.00
 ::
 ROUTES:
 	MVC applications use the ASP.NET routing system , which decides
@@ -92,7 +92,7 @@ DESIGNING A DATA MODEL
 	.The views and controllers expose the domain to the clients
 	
 ::
-// 04/10/2017 : 9.00 - 11.00 (2.00) ----------------------------------
+// 04/10/2017 : 9.00 - 11.00
 RECEIVING FORM DATA (pag.31)
 	.To receive and process submitted form data:
 		.A method that responds to HTTP GET requests : A GET request is what a browser
@@ -105,14 +105,14 @@ RECEIVING FORM DATA (pag.31)
 	 with it.
 	 
 ::
-// 09/10/2017 : 14.00 - 17.00 (3.00) ---------------------------------
+// 09/10/2017 : 14.00 - 17.00
 GITHUB:
 	.Fiz tutorial abaixo referenciado
 #ref. blog: 
 https://haylson.wordpress.com/2016/06/14/como-usar-o-git-e-o-github/
 
 ::
-// 10/10/2017 : 11.30 - 14.30 (3.00) ---------------------------------
+// 10/10/2017 : 11.30 - 14.30
 Revi o que foi feito e continuei o projecto do Livro
 
 LIVRO // VALIDAÇÃO (pag.39 - 41):
@@ -124,40 +124,40 @@ LIVRO // VALIDAÇÃO (pag.39 - 41):
 	System.ComponentModel.DataAnnotations namespace.
 
 ::
-// 11/10/2017: 9.30 - 10.30	(1.00) -----------------------------------
+// 11/10/2017: 9.30 - 10.30	
 GITHUB:
 	.iniciei tutorial GitHub Udacity (lição 2):
 		.De 1-introdução até 9-
 	
 ::
-// 12/10/2017: 10.00 - 11.0 (1.00) ------------------------------------
+// 12/10/2017: 10.00 - 11.0
 Revi projecto aula 11/10/2017 + expressoes regulares 
 	
 ::
-// 25/10/2017: 9.30 - 10.30	 (1.00) ----------------------------------
+// 25/10/2017: 9.30 - 10.30	
 Continuei o projecto do Livro
 
 LIVRO // STYLING THE WELCOME VIEW (pag.45 - ):
 
 ::
-// 26/10/2017: 15.30 - 16.00 (0.30) ----------------------------------
+// 26/10/2017: 15.30 - 16.00
 Revi e completei o que não consegui fazer na aula (quarta - 14.00-15.30)
 a partir do projecto do prof. Noel. 
 
 ::
-// 27/10/2017: 14.00 - 18.00 (2.00) ----------------------------------
+// 27/10/2017: 14.00 - 18.00
 .Revi Aula (sexta) 
 .Fiz uma bateria de testes com GitHub no repositorio ApagarTeste usando
  GitHub_Desktop + GitBash
 
 ::
-// 28/10/2017: 14.00 - 16.00 (2.00) ----------------------------------
+// 28/10/2017: 14.00 - 16.00
 .Procurei layouts para home page de Trails4Health
 .Optei por experimentar (mudar fotos e texto) layouts da pagina: 
  https://startbootstrap.com/template-categories/full-websites/
 
 ::
-// 01/11/2017: 9.30 - 16.00 ( -2 horas almoço) : (4.30) ----------------
+// 01/11/2017: 9.30 - 16.00 ( -2 horas almoço)
 .Criei projecto MY_Trails4Health para incluir num repositorio de testes.
 	.Nota: Não fiz commits - o repositório foi criado dia 02/11/2017 com
 	 o nome Prepaparacao_Aulas
@@ -169,14 +169,14 @@ a partir do projecto do prof. Noel.
 	.CSS/bootstrap: a pagina não está bem formatada (não venci esta dificuldade)
 	 
 ::
-// 02/11/2017 -------------------------------------------------------
-	// 16.00 - 16.30 (0.30)
+// 02/11/2017 -----------------------------------------------------------
+	// 16.00 - 16.30:
 	.Tirei duvidas com prof. Noel, entre outras coisas aprendi:
 		 A ter cuidado ao incluir novo bootstrap no 
 		 projecto - é necessário/recomendável renomear os novos ficheiros bootstrap
 		 que tenham o mm nome dos que estao na pasta lib e garantir que TODOS 
 		 sao referenciados.
-	// 18.30 - 20.00 (1.30)
+	// 18.30 - 20.00:
 	.Inclui projecto MY_Trails4Health criado dia: 01/11/2017 no repositorio
 	 de testes Prepaparacao_Aulas.
 	.Criei HomePage do projecto Trails4Health no repositorio Trails4Health:
@@ -189,15 +189,7 @@ a partir do projecto do prof. Noel.
 				.Adicionar novas imagens
 	.Atualizei deste diário
 
-::
-// 05/11/2017  -----------------------------------------------------------
-	// 12.00 - 13.30 (1.30)
-	.Reunir ideias sobre as paginas: 
-		.Trilho
-		.Back-office
-	.Atualizar diario:
-		.assinalar/melhorar leitura do diário
-		.somar horas de cada entrada
+
 	
 	
 	
