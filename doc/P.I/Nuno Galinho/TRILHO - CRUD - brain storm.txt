@@ -1,0 +1,37 @@
+
+// PAGINAS: TRILHO_RESUMO, TRILHO_LER_MAIS
+.TRILHO_RESUMO:
+	.ELEMENTOS:
+		.imagem
+		.nome trilho
+		.tamanho trilho
+		.botao ler_mais
+		.???
+		
+	.PERMISSÕES DE ACESSO:
+		.qualquer utilizador
+		
+.TRILHO_LER_MAIS:
+	.ELEMENTOS:
+		.imagem
+		.nome trilho
+		.descrição
+		.???
+
+	.PERMISSÕES DE ACESSO:
+		.qualquer utilizador		
+
+// PAGINAS BACK-OFFICE
+.REQUISITOS:
+	.CRIAR:
+		.entradas imagens > imagem_trilho_resumo, imagem_trilho_ler_mais
+		.entradas texto > descrição, nome trilho, tamanho trilho
+		.botao insert
+	.UPDATE/DELETE:
+		...
+		.botao selecionar_trilho
+		.botao update
+		.???
+		
+	.PERMISSÕES DE ACESSO:
+		.utilizador autenticado
