@@ -19,3 +19,8 @@
 	.Rever/Assinalar mudanças no relatorio
 	.Atualizar diario:
 		.assinalar/melhorar leitura do diário
+// 08/11/2017
+.Tirei duvidas com professora.
+	.Tempo: 1h.
+.Adicionei Descrição de Caso de Uso – 4 - Criar Trilho	ao relatorio
+	.Tempo: 1h.
