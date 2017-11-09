@@ -30,5 +30,14 @@
 	.Tempo: 1h.30 min.
 .Corrigidos Casos de Uso 4 a 7
 .Tempo: 30 min.
+
+// 09/11/2017
+.Fiz diagramas de sequencia: Criar Trilho, Alterar Trilho, Consultar 
+ e apagar em papel
+	.Tempo:1h.30
+.Fiz diagrama sequencia: Consultar Trilho no Power Designer
+.Tempo: 0.30 min.
+
+
 	
 	
