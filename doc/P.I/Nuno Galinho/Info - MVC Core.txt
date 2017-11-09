@@ -1,0 +1,13 @@
+
+::
+FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
+// Faz migrar dados dos modelos e cria tabelas na B.D.
+// De cada vez que altero modelos, tenho de fazer migração
+	.Tools
+	.Nuget package manage
+	.Package manage console (abre consola)
+	.Na consola:
+		.Add-Migration "nome da migração"
+			.cria pasta migrations
+		.Update-Database
+	
