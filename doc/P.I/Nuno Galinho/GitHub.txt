@@ -96,6 +96,18 @@ Commit
 	.git commit -m "Descever(verbo_infinitivo) commit"
 	
 ::
+GitIgnore no V.S:
+	.Criar projecto vazio no V:S:
+	.Fazer check em create new git Repository
+	.Copiar ficheiro .gitignore
+	
+	.No meu projecto:
+		.Colar ficheiro .gitignore
+		.Editar ficheiro .gitignore (ver projectos Trails4Health)
+		.Apagar pastas .vs, bin, obj
+		.Com o meu projecto fechado fazer commit
+
+::
 
 
 /* ---------------------- TEORIA --------------------------------- */
