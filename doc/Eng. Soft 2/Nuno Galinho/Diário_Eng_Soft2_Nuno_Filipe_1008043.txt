@@ -29,15 +29,24 @@
 .Tirei duvidas com professora (tarde)
 	.Tempo: 1h.30 min.
 .Corrigidos Casos de Uso 4 a 7
-.Tempo: 30 min.
+	.Tempo: 30 min.
 
-// 09/11/2017
+// 09/11/2017 ------------------------------------------------------
 .Fiz diagramas de sequencia: Criar Trilho, Alterar Trilho, Consultar 
- e apagar em papel
+ e apagar (em papel)
 	.Tempo:1h.30
 .Fiz diagrama sequencia: Consultar Trilho no Power Designer
-.Tempo: 0.30 min.
+	.Tempo: 0.30 min.
 
-
+// 10/11/2017 ----------------------------------------------------------
+.Corrigi diagramas de sequencia: Criar Trilho, Alterar Trilho, Consultar 
+ e apagar (em papel)
+	.Tempo:2h.00
+.Fiz diagramas de classes parcial no power design:
+  .Trilho
+  .Estado
+  .Trilho/Estado
+  .Dificuldade 
+	.Tempo:1h
 	
 	
