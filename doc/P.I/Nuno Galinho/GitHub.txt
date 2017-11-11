@@ -14,15 +14,16 @@ MERGE:
 		.seleccionar ramo pretendido
 		.nota: se merge bem sucedido não emite mensagem
 	.IMPORTANTE:
-		.se forem feitas alterações em ficheiros do mm nome em
-		 ramos a "mergir" vou obter erro - posso fechar msg de erro
+		.se forem feitas alterações em ficheiros do mm nome (1ª VEZ!) em
+		 ramos a "mergir" acontece obter erro - posso fechar msg de erro
 		 e fazer commit - o ficheiro "mergido" fica com a parte original
 		 entre <<< HEAD e ==== e a parte "mergida" com >>>Branch_1 no fim
+		.se forem feitas alterações em ficheiros do mm nome (2ª VEZ!) em
+		 ramos a "mergir" os ficheiros mudam para a versão "mergida" a 
+		 original perde-se !!!
+		.nota: posso sempre fazer revert do merge no Histórico.
 	.CONCLUSÃO:
 		.convém trabalhar em ficheiros diferentes
-		 
-
-
 ::
 CLONAR QUALQUER REPOSITORIO:
 	.no site:
