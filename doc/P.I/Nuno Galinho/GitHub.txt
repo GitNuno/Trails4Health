@@ -20,9 +20,7 @@ SOLUÇÃO:
 	.no GitDesktop: faço discard das alterações
 	.mudo para branch pretendida
 	.no link faço: open this repository	
-::
-
-
+	
 ::
 CRIAR + SINCRONIZAR REPOSITORIOS:
 	.no site:
@@ -32,8 +30,7 @@ CRIAR + SINCRONIZAR REPOSITORIOS:
 		.seleccionar repositório
 		.seleccionar pasta para repositorio local
 		.introduzir projecto (pelo menos 1 fich EX. readme) 
-		.publish
-	
+		.publish	
 ::
 APAGAR REPOSITORIO:
 	.no site:
@@ -62,7 +59,7 @@ CRIAR BRANCHS (como funcionam):
 		.se tiver feito alterações e quiser mudar para master, só o posso
 		 fazer se guardar essas alterações.
 		.
-	.IMPORTANTE!!:
+	.NOTA:
 		.quando passo de branch_1 para master (e vice-versa) e faço fetch
 		 o meu repositorio local é atualizado com o respectivo conteudo.
 		 
