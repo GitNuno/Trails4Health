@@ -1,6 +1,29 @@
 ::
 ---------------------         GITDESKTOP        ---------------------------------------------------
 ::
+REVERT COMMIT:
+	.para fazer por Exemplo - revert_commit para dada posição no Historico:
+	- tenho de fazer revert_commit consecutivos até posição pretendida
+	.para voltar para um commit que reverti:
+	- tenho de fazer revert do revert_commit que fiz.
+	
+::
+MERGE:
+	.Exemplo - Merge branch_1 com master:
+		.branch(Barra de menu) > merge into this branch
+		.seleccionar ramo pretendido
+		.nota: se merge bem sucedido não emite mensagem
+	.IMPORTANTE:
+		.se forem feitas alterações em ficheiros do mm nome em
+		 ramos a "mergir" vou obter erro - posso fechar msg de erro
+		 e fazer commit - o ficheiro "mergido" fica com a parte original
+		 entre <<< HEAD e ==== e a parte "mergida" com >>>Branch_1 no fim
+	.CONCLUSÃO:
+		.convém trabalhar em ficheiros diferentes
+		 
+
+
+::
 CLONAR QUALQUER REPOSITORIO:
 	.no site:
 		.seleccionar site
@@ -19,7 +42,7 @@ SOLUÇÃO:
 	.fecho projecto
 	.no GitDesktop: faço discard das alterações
 	.mudo para branch pretendida
-	.no link faço: open this repository	
+	.nota: posso fazer no link: open this repository	
 	
 ::
 CRIAR + SINCRONIZAR REPOSITORIOS:
