@@ -249,8 +249,10 @@ TEMPO_TOTAL: 2.00
 	 que corresponderao as pag.s onde se procederao as
 	 operaçoes CRUD de cada elemento do grupo.
 .Tempo: 1h.00min.
-
-.TEMPO_TOTAL: 3.00 - manha
+//
+Adicionei container á pag. DetalhesTriho
+.Tempo: 0.30min.
+.TEMPO_TOTAL: 3.30 
 
 
 
