@@ -13,12 +13,6 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-        public IActionResult Trilhos()
-        {
-            return View();
-        }
-
-
 
         public IActionResult About()
         {

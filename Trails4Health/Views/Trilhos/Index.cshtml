@@ -1,7 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     ViewData["Title"] = "Trilhos";
 }
 
@@ -11,22 +8,15 @@
 <!-- Nav Bar - Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
     <div class="container">
-        <!-- Retirei botão -->
-        @*<a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>*@
-        @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>*@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active px-lg-4">
-                    <a asp-action="Index" class="nav-link text-uppercase text-expanded">Home</a>
-                    @*<a class="nav-link text-uppercase text-expanded" href="index.html">
-                        Home*@
+                <li class="nav-item px-lg-4">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link text-uppercase text-expanded"> Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="about.html">Trilhos</a>
+                <li class="nav-item active px-lg-4">
+                    <a asp-action="Index" class="nav-link text-uppercase text-expanded">Trilhos</a>
                 </li>
                 <li class="nav-item px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="blog.html">About</a>
@@ -38,7 +28,7 @@
         </div>
     </div>
 </nav>
-
+<!-- Container -->
 <div class="container">
     <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
@@ -47,7 +37,7 @@
                 <h2 class="card-title text-shadow text-white text-uppercase mb-0">Post Title</h2>
                 <h4 class="text-shadow text-white">March 1, 2017</h4>
                 <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-                <a href="detalheTrilho.html" class="btn btn-secondary">Read More</a>
+                <a asp-action="DetalhesTrilho" class="btn btn-secondary">Saber mais</a>
             </div>
         </div>
     </div>
@@ -58,7 +48,7 @@
                 <h2 class="card-title text-shadow text-white text-uppercase mb-0">Post Title</h2>
                 <h4 class="text-shadow text-white">March 1, 2017</h4>
                 <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-                <a href="#" class="btn btn-secondary">Read More</a>
+                <a href="#" class="btn btn-secondary">Saber mais</a>
             </div>
         </div>
     </div>
@@ -69,7 +59,7 @@
                 <h2 class="card-title text-shadow text-white text-uppercase mb-0">Post Title</h2>
                 <h4 class="text-shadow text-white">March 1, 2017</h4>
                 <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-                <a href="#" class="btn btn-secondary">Read More</a>
+                <a href="#" class="btn btn-secondary">Saber mais</a>
             </div>
         </div>
     </div>
