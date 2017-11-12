@@ -231,8 +231,26 @@ TEMPO_TOTAL: 2.00
 :: 
 // 12/11/2017 --------------------------------------------------------------
 .Revi aula 09/11 projecto SportStore (ver repositorio Aulas)
+.Tempo: 1h.00min.
+//
+.Criei view em Views /Trilhos /Index :
+	.Criei pag. Trilhos + hiperligaçoes Home e Trilhos
+	.Criei view em Views /Trilhos /DetalhesTrilho:
+.Criei Nav Bar + hiperligaçoes Home, Trilhos, DetalhesTrilho
+.Corrigi "current page link" na Nav Bar
+. Criei Controlador Trilhos e acçoes para chamar views de /Trilhos.
+.Tempo: 1h.00min.
+//
+.Criei: view /BackOffice/index + prototipo _LayoutBackOffice 
++ BackOfficeController + hiperligações (link back office)
+.notas:
+	.criei hiperligações (link back office) na home page
+	.a pag. BackOffice é apenas prototipo com os links
+	 que corresponderao as pag.s onde se procederao as
+	 operaçoes CRUD de cada elemento do grupo.
+.Tempo: 1h.00min.
 
-.TEMPO_TOTAL: 2.00 - manha
+.TEMPO_TOTAL: 3.00 - manha
 
 
 
