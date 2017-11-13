@@ -252,7 +252,14 @@ TEMPO_TOTAL: 2.00
 //
 Adicionei container á pag. DetalhesTriho
 .Tempo: 0.30min.
-.TEMPO_TOTAL: 3.30 
+//
+.Criei classes /Data + /Models
+.Notas:
+	.falta definir campos das classes ("estao vazias")
+	.classe ApplicationDbContext nao reconhece
+﻿	 using Microsoft.EntityFrameworkCore;
+.Tempo: 1h
+.TEMPO_TOTAL: 4.30 
 
 
 
