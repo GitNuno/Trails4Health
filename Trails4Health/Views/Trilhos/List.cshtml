@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Trilho>
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>Product List</h2>
+
+<!-- Vou ter os produtos de FakeProducts ou EFProduct (ver startup.cs) -->
+<!-- fazer url: //localhost:58677/products/list (neste momento para poder ver) -->
+@foreach (Trilho T in Model)
+{
+    <div>
+        <div class="col-lg-6">
+            <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto_Trilho" alt="">
+        </div>
+        <h3>@T.Nome_Trilho</h3>
+        <p>@T.Inicio_Trilho - @T.Fim_Trilho</p>
+        <p>Distancia: @T.Distancia_Trilho</p>
+    </div>
+
+    <hr /> <!--barra horizontal-->
+}

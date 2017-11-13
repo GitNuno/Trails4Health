@@ -20,3 +20,4 @@ namespace Trails4Health.Models
         public DbSet<Trilho> Trilhos { get; set; }
         // +++ aqui aparecem os DbSet<MyModels>  ???    }
     }
+}
