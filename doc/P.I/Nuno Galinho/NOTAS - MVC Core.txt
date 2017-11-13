@@ -4,10 +4,22 @@ FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
 // Faz migrar dados dos modelos e cria tabelas na B.D.
 // De cada vez que altero modelos, tenho de fazer migração
 	.Tools
-	.Nuget package manage
+	.Nuget package manager
 	.Package manage console (abre consola)
 	.Na consola:
 		.Add-Migration "nome da migração"
 			.cria pasta migrations
 		.Update-Database
-	
+::
+RESOLVER PROBLEMA - using Microsoft.EntityFrameworkCore (não reconhecido):
+	.Tools
+	.Nuget package manager
+	.Manage Nuget packages ...
+	.Em browse filtrar por:
+		.Microsoft.EntityFrameworkCore
+		.Instalar:
+			.Microsoft.EntityFrameworkCore
+			.Microsoft.EntityFrameworkCore.Design
+			.Microsoft.EntityFrameworkCore.SqlServer
+			.Microsoft.EntityFrameworkCore.SqlServer.Design
+			.Microsoft.EntityFrameworkCore.Tools

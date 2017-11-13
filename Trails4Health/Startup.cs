@@ -40,7 +40,6 @@ namespace Trails4Health
             // se fizesse com classe em vez de interface: ITrails4HealthRepository ...
             services.AddTransient<ITrails4HealthRepository, EFTrails4HealthRepository>();
 
-
             // configurar EF
             services.AddDbContext<ApplicationDbContext>(
               options => options.UseSqlServer(
