@@ -7,7 +7,7 @@ namespace Trails4Health.Models
 {
     public class Trilho
     {
-        public int ID_Trilho { get; set; }
+        public int TrilhoID { get; set; } // tem de ter este formato para reconhecer pk: nomeID !!
         public string Nome_Trilho { get; set; }
         public string Foto_Trilho { get; set; } // +++ endereço da foto??
         public string Detalhes_Trilho { get; set; }

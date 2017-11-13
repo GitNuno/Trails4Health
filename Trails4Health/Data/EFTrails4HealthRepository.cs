@@ -20,7 +20,7 @@ namespace Trails4Health.Models
         // implement de ITrails4HealthRepository
         // vai buscar os Trilhos á tabela de Trilhos - tenho de criar um serviço no startup.cs
         // +++ aqui aparecem os implement de IRepository (por cada IEnumerable<Mymodels> em IRepository)???
-        public IEnumerable<Trilho> Trilhos => dbContext.T;
+        public IEnumerable<Trilho> Trilhos => dbContext.Trilhos;
 
     }
 }

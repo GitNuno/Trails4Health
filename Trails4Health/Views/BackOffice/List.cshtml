@@ -3,12 +3,16 @@
     ViewData["Title"] = "List";
 }
 
-<h2>Product List</h2>
+@{
+    Layout = "_LayoutBackOffice";
+}
 
-<!-- Vou ter os produtos de FakeProducts ou EFProduct (ver startup.cs) -->
-<!-- fazer url: //localhost:58677/products/list (neste momento para poder ver) -->
+<h2>Trilhos List</h2>
+
+<!-- fazer url: //localhost:58677/backoffice/list (neste momento para poder ver) -->
 @foreach (Trilho T in Model)
 {
+    @**@
     <div>
         <div class="col-lg-6">
             <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto_Trilho" alt="">
