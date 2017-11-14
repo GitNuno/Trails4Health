@@ -24,3 +24,10 @@ RESOLVER PROBLEMA - using Microsoft.EntityFrameworkCore (não reconhecido):
 			.Microsoft.EntityFrameworkCore.SqlServer.Design
 			.Microsoft.EntityFrameworkCore.Tools
 ::
+CRIAR TABELAS NA B.D. A PARTIR DE MODELS:
+	.implementar as classes em \Models
+	.criar campos na classe interface IRepository
+	.implementar os campos adicionados em IRepository na classe EFRepository
+	.config.B.D. com os modelos criados: na classe ApplicationDbContext
+	.Povoar as B.D. na classe seedData
+	.Fazer migração de dados
