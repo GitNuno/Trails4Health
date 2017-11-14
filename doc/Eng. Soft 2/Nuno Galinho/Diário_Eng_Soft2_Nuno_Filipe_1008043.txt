@@ -49,6 +49,9 @@
   .Dificuldade 
 	.Tempo:1h
 
-//
-	
-	
+// 14/11/2017 ----------------------------------------------------------
+.Tirei duvidas com professora
+	.Tempo: 1h.
+.Corrigi diagrama de classes, fiz diagrama sequencia criar, alterat,
+ desativar trilho
+	.Tempo: 2h.30 min.

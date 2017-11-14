@@ -31,3 +31,11 @@ CRIAR TABELAS NA B.D. A PARTIR DE MODELS:
 	.config.B.D. com os modelos criados: na classe ApplicationDbContext
 	.Povoar as B.D. na classe seedData
 	.Fazer migração de dados
+	
+::
+REGEX - E-MAIL:
+// 
+(\w+\.\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})|(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})
+
+// Aceita qq caracteres atrás e frente de @
+.+@.+	
