@@ -9,12 +9,14 @@ namespace Trails4Health.Models
     {
         public int TrilhoID { get; set; } // tem de ter este formato para reconhecer pk: nomeID !!
         public string Nome { get; set; }
-        public string Foto { get; set; } // +++ endereço da foto??
+        public string Foto { get; set; } // mais tarde vai ser na base dados
         public string Detalhes { get; set; }
         public bool Desativado { get; set; }
         public string Inicio { get; set; }
         public string Fim { get; set; }
         public decimal Distancia { get; set; }
-        public int DificuldadeID { get; set; } // FK /*??*/
+
+        //public int DificuldadeID { get; set; } // FK 
+        //public Dificuldade Dificuldade { get; set; }
     }
 }
