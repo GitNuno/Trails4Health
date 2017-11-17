@@ -25,20 +25,20 @@ namespace Trails4Health.Models
         {
             // nota: Em ApplicationDbContext temos campo: DbSet<Product> Products { get; set; }
             dbContext.Trilhos.AddRange(
-                 new Trilho { Nome_Trilho = "Fojo", Foto_Trilho = "~/images/intro-pic.jpg", Detalhes_Trilho = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado_Trilho = false, Inicio_Trilho = "Tapada", Fim_Trilho = "Fojo",  Distancia_Trilho = "5 km"
+                 new Trilho { Nome = "Fojo", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
+                     Desativado = false, Inicio = "Tapada", Fim = "Fojo",  Distancia = 5000
                  },
-                 new Trilho { Nome_Trilho = "Pateiro", Foto_Trilho = "~/images/intro-pic.jpg", Detalhes_Trilho = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado_Trilho = false, Inicio_Trilho = "Monte alto", Fim_Trilho = "Pateiro", Distancia_Trilho = "20 km"
+                 new Trilho { Nome = "Pateiro", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
+                     Desativado = false, Inicio = "Monte alto", Fim = "Pateiro", Distancia = 20000
                  },
-                 new Trilho { Nome_Trilho = "Vale Lobos", Foto_Trilho = "~/images/intro-pic.jpg", Detalhes_Trilho = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado_Trilho = false, Inicio_Trilho = "Bacia do geres", Fim_Trilho = "Vale Lobos", Distancia_Trilho = "10 km"
+                 new Trilho { Nome = "Vale Lobos", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
+                     Desativado = false, Inicio = "Bacia do geres", Fim = "Vale Lobos", Distancia = 27000
                  },
-                 new Trilho { Nome_Trilho = "Regada", Foto_Trilho = "~/images/intro-pic.jpg", Detalhes_Trilho = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado_Trilho = false, Inicio_Trilho = "Pocinha", Fim_Trilho = "Regada", Distancia_Trilho = "15 km"
+                 new Trilho { Nome = "Regada", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
+                     Desativado = false, Inicio = "Pocinha", Fim = "Regada", Distancia = 15000
                  },
-                 new Trilho { Nome_Trilho = "Coitadas", Foto_Trilho = "~/images/intro-pic.jpg", Detalhes_Trilho = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado_Trilho = false, Inicio_Trilho = "Lameira", Fim_Trilho = "Coitadas", Distancia_Trilho = "27 km"
+                 new Trilho { Nome = "Coitadas", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
+                     Desativado = false, Inicio = "Lameira", Fim = "Coitadas", Distancia = 13000
                  }
             );
         }
