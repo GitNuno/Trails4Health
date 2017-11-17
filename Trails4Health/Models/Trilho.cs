@@ -15,7 +15,6 @@ namespace Trails4Health.Models
         public string Inicio { get; set; }
         public string Fim { get; set; }
         public decimal Distancia { get; set; }
-        //public int ID_Dificuldade { get; set; } // FK /*??*/
-
+        public int DificuldadeID { get; set; } // FK /*??*/
     }
 }
