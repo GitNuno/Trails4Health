@@ -55,3 +55,10 @@
 .Corrigi diagrama de classes, fiz diagrama sequencia criar, alterat,
  desativar trilho
 	.Tempo: 2h.30 min.
+	
+// 18/11/2017 ----------------------------------------------------------
+.Corrigidos Diagramas + criado diagrama sequencia consulta…
+	.Tempo: 1h
+
+
+
