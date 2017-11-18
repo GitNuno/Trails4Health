@@ -1,0 +1,266 @@
+	// 27-09-2017  --------------------------------------------------
+::
+IIS:
+	É um servidor web da Microsoft para seus S.O.
+	A função do IIS no Windows server é oferecer uma plataforma para a 
+	hospedagem de sites, serviços e aplicações, sendo capaz de integrar 
+	tecnologias: ASP.NET, FTP...
+		
+::
+http://localhost:56875/Home/About
+	./Home - refere Controller
+	./About - refere Action
+	.A aplicação vai a Home_Controller á procura de About_action
+	
+TEMPO_TOTAL: ?
+
+::
+	//28-09-2017:10.00-11.00  ---------------------------------------------
+::
+ROUTES:
+	MVC applications use the ASP.NET routing system , which decides
+	how URLs map to controllers and actions. A route is a rule that is used 
+	to decide how a request is handled.
+	
+::
+PARTY_INVITES (HELLOWORLDCONTROLLER)---
+	.RENDERING WEB PAGES:
+		The output from the previous example wasn’t HTML - To produce an
+		HTML response to a browser request, I need a VIEW , which tells MVC
+		how to generate a response for a request from a browser.
+::
+ADICIONAR NOVA VIEW:
+	."Na pasta Views/Home": Add new Item > MVC view page
+	."Na pasta Views/HelloWorld": Add new view > Empty
+	
+
+::
+ADDING DYNAMIC OUTPUT (pag.23):
+	.A ideia em MVC é o controlador passar dados para a View:
+	The whole point of a web application platform is to construct and display 
+	dynamic output. In MVC, it is the controller’s job to construct some data 
+	and pass it to the view, which is responsible for rendering it to HTML.
+	
+::
+C# - PROPERTIES:
+	Properties combine aspects of both fields and methods. A property is 
+	one or two code blocks, representing a GET accessor and/or a 
+	SET accessor. The code block for the get accessor is executed when 
+	the property is read; the code block for the set accessor is executed 
+	when the property is assigned a new value. 
+	
+	EX:
+	class Person {
+		private string myName ="N/A";
+		
+		 public string Name
+		{
+			get 
+			{
+			   return myName; 
+			}
+			set 
+			{
+			   myName = value; 
+			}
+		}
+	}
+	public static void Main()
+    {
+        // Create a new Person object:
+        Person person = new Person();
+
+        // Print out the name and the age associated with the person:
+        Console.WriteLine("Person details - {0}", person);
+		/****** 
+			OUTPUT: Person details -  N/A 
+		*******/
+
+        // Set some values on the person object:
+        person.Name = "Joe";
+		Console.WriteLine("Person details - {0}", person);
+		/****** 
+			OUTPUT: Person details -  Joe 
+		*******/
+	}
+::
+DESIGNING A DATA MODEL
+	.The domain model is the representation of the real-world objects
+	.The model contains the C# objects
+	.The views and controllers expose the domain to the clients
+	
+TEMPO_TOTAL: 1.00
+	
+::
+// 04/10/2017 : 9.00 - 11.00  -------------------------------------------
+RECEIVING FORM DATA (pag.31)
+	.To receive and process submitted form data:
+		.A method that responds to HTTP GET requests : A GET request is what a browser
+		 issues normally each time someone clicks a link. This version of the action will be
+		 responsible for displaying the initial blank form when someone first visits /Home/
+		 RsvpForm .
+	.A method that responds to HTTP POST requests : By default, forms rendered using
+	 Html.BeginForm() are submitted by the browser as a POST request. This version of
+	 the action will be responsible for receiving submitted data and deciding what to do
+	 with it.
+	 
+TEMPO_TOTAL: 2.00	 
+	 
+::
+// 09/10/2017 : 14.00 - 17.00  --------------------------------------
+GITHUB:
+	.Fiz tutorial abaixo referenciado
+#ref. blog: 
+https://haylson.wordpress.com/2016/06/14/como-usar-o-git-e-o-github/
+
+TEMPO_TOTAL: 3.00
+
+::
+// 10/10/2017 : 11.30 - 14.30 (3.00) ---------------------------------
+Revi o que foi feito e continuei o projecto do Livro
+
+LIVRO // VALIDAÇÃO (pag.39 - 41):
+	.In an MVC application, you will typically apply validation to
+	the domain model rather than in the user interface. 
+	This means that you define validation in one place, but it takes effect
+	anywhere in the application that the model class is used. MVC supports 
+	declarative validation rules defined with attributes from 
+	System.ComponentModel.DataAnnotations namespace.
+	
+TEMPO_TOTAL: 3.00
+
+::
+// 11/10/2017: 9.30 - 10.30	(1.00) -----------------------------------
+GITHUB:
+	.iniciei tutorial GitHub Udacity (lição 2):
+		.De 1-introdução até 9-
+		
+TEMPO_TOTAL: 1.00
+	
+::
+// 12/10/2017: 10.00 - 11.0  -------------------------------------------
+Revi projecto aula 11/10/2017 + expressoes regulares 
+
+TEMPO_TOTAL: 1.00
+
+::
+// 25/10/2017: 9.30 - 10.30	  -----------------------------------------
+Continuei o projecto do Livro
+
+LIVRO // STYLING THE WELCOME VIEW (pag.45 - ):
+
+TEMPO_TOTAL: 1.00
+
+::
+// 26/10/2017: 15.30 - 16.00  ----------------------------------------
+Revi e completei o que não consegui fazer na aula (quarta - 14.00-15.30)
+a partir do projecto do prof. Noel. 
+
+TEMPO_TOTAL:0.30
+
+::
+// 27/10/2017: 14.00 - 18.00 ( --------------------------------------
+.Revi Aula (sexta) 
+.Fiz uma bateria de testes com GitHub no repositorio ApagarTeste usando
+ GitHub_Desktop + GitBash
+ 
+TEMPO_TOTAL: 4.00
+
+::
+// 28/10/2017: 14.00 - 16.00  --------------------------------------
+.Procurei layouts para home page de Trails4Health
+.Optei por experimentar (mudar fotos e texto) layouts da pagina: 
+ https://startbootstrap.com/template-categories/full-websites/
+ 
+TEMPO_TOTAL: 2.00
+
+::
+// 01/11/2017: 9.30 - 16.00 ( -2 horas almoço)  -------------------
+.Criei projecto MY_Trails4Health para incluir num repositorio de testes.
+	.Nota: Não fiz commits - o repositório foi criado dia 02/11/2017 com
+	 o nome Prepaparacao_Aulas
+.Integrei layout startbootstrap-business-casual-gh-pages que descarreguei
+ 28/10/2017
+.Dificuldades:
+	.Implementar Caroussel: aprendi que Caroussel implementa JS - é
+	 necessario incluir novo JS a partir do template
+	.CSS/bootstrap: a pagina não está bem formatada (não venci esta dificuldade)
+
+TEMPO_TOTAL: 4.30
+	
+::
+// 02/11/2017 -------------------------------------------------------
+	// 16.00 - 16.30 
+	.Tirei duvidas com prof. Noel, entre outras coisas aprendi:
+		 A ter cuidado ao incluir novo bootstrap no 
+		 projecto - é necessário/recomendável renomear os novos ficheiros bootstrap
+		 que tenham o mm nome dos que estao na pasta lib e garantir que TODOS 
+		 sao referenciados.
+	// 18.30 - 20.00 
+	.Inclui projecto MY_Trails4Health criado dia: 01/11/2017 no repositorio
+	 de testes Prepaparacao_Aulas.
+	.Criei HomePage do projecto Trails4Health no repositorio Trails4Health:
+		.Construi HomePage passo a passo usando o que aprendi nas experiencias
+		 do projecto MY_Trails4Health.
+		.Passos estão documentados nos Commits dia 02/11/2017:
+			 Desde:
+				.Realocalização do projecto para pasta original (local) Programacao_internet
+			 Até:
+				.Adicionar novas imagens
+	.Atualizei deste diário
+	
+TEMPO_TOTAL: 2.00
+
+::
+// 05/11/2017  -----------------------------------------------------------
+	.Reunir ideias sobre as paginas (TRILHO - CRUD - brain storm.txt): 
+		.Trilho
+		.Back-office
+	.Atualizar diario:
+		.assinalar/melhorar leitura do diário
+		.somar horas de cada entrada
+		
+.TEMPO_TOTAL: 1.30
+
+:: 
+// 11/11/2017 --------------------------------------------------------------
+.Fiz bateria de testes com gitHub para testar merge e revert commit
+
+.TEMPO_TOTAL: 2.00
+
+:: 
+// 12/11/2017 --------------------------------------------------------------
+.Revi aula 09/11 projecto SportStore (ver repositorio Aulas)
+.Tempo: 1h.00min.
+//
+.Criei view em Views /Trilhos /Index :
+	.Criei pag. Trilhos + hiperligaçoes Home e Trilhos
+	.Criei view em Views /Trilhos /DetalhesTrilho:
+.Criei Nav Bar + hiperligaçoes Home, Trilhos, DetalhesTrilho
+.Corrigi "current page link" na Nav Bar
+. Criei Controlador Trilhos e acçoes para chamar views de /Trilhos.
+.Tempo: 1h.00min.
+//
+.Criei: view /BackOffice/index + prototipo _LayoutBackOffice 
++ BackOfficeController + hiperligações (link back office)
+.notas:
+	.criei hiperligações (link back office) na home page
+	.a pag. BackOffice é apenas prototipo com os links
+	 que corresponderao as pag.s onde se procederao as
+	 operaçoes CRUD de cada elemento do grupo.
+.Tempo: 1h.00min.
+//
+Adicionei container á pag. DetalhesTriho
+.Tempo: 0.30min.
+//
+.Criei classes /Data + /Models
+.Notas:
+	.falta definir campos das classes ("estao vazias")
+	.classe ApplicationDbContext nao reconhece
+﻿	 using Microsoft.EntityFrameworkCore;
+.Tempo: 1h
+.TEMPO_TOTAL: 4.30 
+
+
+
+	

@@ -1,0 +1,49 @@
+
+// PAGINAS: TRILHO_RESUMO, TRILHO_LER_MAIS
+.TRILHO_RESUMO:
+	.ELEMENTOS:
+		.imagem
+		.nome trilho
+		.tamanho trilho
+		.botao ler_mais
+		.???
+		
+	.PERMISSÕES DE ACESSO:
+		.qualquer utilizador
+		
+.TRILHO_LER_MAIS:
+	.ELEMENTOS:
+		.imagem
+		.nome trilho
+		.descrição
+		.???
+
+	.PERMISSÕES DE ACESSO:
+		.qualquer utilizador		
+
+// PAGINAS BACK-OFFICE
+.REQUISITOS:
+	.CRIAR:
+		.entradas imagens > imagem_trilho_resumo, imagem_trilho_ler_mais
+		.entradas texto > descrição, nome trilho, tamanho trilho
+		.botao insert
+	.UPDATE/DELETE: (** podem ser apenas 1 caso uso? **)
+		...
+		.botao selecionar_trilho
+		.botao update
+		.botao delete
+		.???
+		
+	.PERMISSÕES DE ACESSO:
+		.utilizador autenticado
+		
+// DUVIDAS
+.DUVIDAS:
+	.Para este modulo (Trilhos-CRUD) basta-me criar 1 tabela: Trilhos.
+	 No nosso trabalho grupo3 temos de relacionar as tabelas dos modulos:
+		.Avaliar trilho ?--CRUD?--
+		.Serviço(s) CRUD ?
+		.Como?
+   .Fronteira?
+   .O que falta fazer?
+		

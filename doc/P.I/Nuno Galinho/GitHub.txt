@@ -1,0 +1,141 @@
+::
+---------------------         GITDESKTOP        ---------------------------------------------------
+::
+REVERT COMMIT:
+	.para fazer por Exemplo - revert_commit para dada posição no Historico:
+	- tenho de fazer revert_commit consecutivos até posição pretendida
+	.para voltar para um commit que reverti:
+	- tenho de fazer revert do revert_commit que fiz.
+	
+::
+MERGE:
+	.Exemplo - Merge branch_1 com master:
+		.branch(Barra de menu) > merge into this branch
+		.seleccionar ramo pretendido
+		.nota: se merge bem sucedido não emite mensagem
+	.IMPORTANTE:
+		.se forem feitas alterações em ficheiros do mm nome (1ª VEZ!) em
+		 ramos a "mergir" acontece obter erro - posso fechar msg de erro
+		 e fazer commit - o ficheiro "mergido" fica com a parte original
+		 entre <<< HEAD e ==== e a parte "mergida" com >>>Branch_1 no fim
+		.se forem feitas alterações em ficheiros do mm nome (2ª VEZ!) em
+		 ramos a "mergir" os ficheiros mudam para a versão "mergida" a 
+		 original perde-se !!!
+		.nota: posso sempre fazer revert do merge no Histórico.
+	.CONCLUSÃO:
+		.convém trabalhar em ficheiros diferentes
+::
+CLONAR QUALQUER REPOSITORIO:
+	.no site:
+		.seleccionar site
+		.no botao clone_or_download: copiar url
+	.no GitDesktop:
+		.file > clone repository
+		.URL > colar url
+		.clone		
+::
+PROBLEMA:
+	.abro projecto e estou no branch errado
+	.quero mudar para branch pretendido
+	.V.S. adicionou conteudo
+	.no GitDesktop: fiquei impossibilitado de mudar branch sem fazer commit
+SOLUÇÃO:
+	.fecho projecto
+	.no GitDesktop: faço discard das alterações
+	.mudo para branch pretendida
+	.nota: posso fazer no link: open this repository	
+	
+::
+CRIAR + SINCRONIZAR REPOSITORIOS:
+	.no site:
+		.criar repositorio (remoto_origin) 
+	.no GitDesktop:
+		.clone repository
+		.seleccionar repositório
+		.seleccionar pasta para repositorio local
+		.introduzir projecto (pelo menos 1 fich EX. readme) 
+		.publish	
+::
+APAGAR REPOSITORIO:
+	.no site:
+		.seleccionar repositorio
+		.settings
+		.na danger zone fazer delete
+::
+APAGAR FICHEIRO A PARTIR DO REPOSITORIO REMOTO:
+	1.no site:
+		.seleccionar ficheiro ->  btn_view
+		.btn_caixote_lixo
+		.commit
+	2.no GitDesktop:
+		.fetch origin + pull
+		."os ficheiros desaparecem da dir_repositorio_local"
+::
+CRIAR BRANCHS (como funcionam):
+	.no site:
+		.btn_master
+		.escolher nome branch
+		.quando crio nova branch essa branch é uma copia do que está
+		 atualmente no master!
+	.no GitDesktop:
+		.seleccionar branch
+		.as alteraçoes sao registadas no repositorio local nesta Branch!!
+		.se tiver feito alterações e quiser mudar para master, só o posso
+		 fazer se guardar essas alterações.
+		.
+	.NOTA:
+		.quando passo de branch_1 para master (e vice-versa) e faço fetch
+		 o meu repositorio local é atualizado com o respectivo conteudo.
+		 
+::
+PULL REQUEST 
+	.É um pedido de um branch para fazer merge com o master
+
+::-------------------         COMANDOS            ---------------------------------------------------------
+Criar repositorio:
+	.git init
+::
+Ver commits:
+	.git logs
+::
+Ver ficheiros a serem monotorizados (a vermelho ou verde):
+	.git status
+::
+Adicionar ficheiro a fazer commit:
+(mandar ficheiro para staging area - area de preparação):
+	.git add file.txt
+	
+	.Nota: deve-se fazer por cada ficheiro a alterar e não todos 
+	       (manter commits pequenos)
+::
+Remover ficheiro:
+	.git rm file.txt // devemos fazer commit a seguir
+	.git reset file.txt
+	
+::
+Commit
+	.git commit -m "Descever(verbo_infinitivo) commit"
+	
+::
+GitIgnore no V.S:
+	.Criar projecto vazio no V:S:
+	.Fazer check em create new git Repository
+	.Copiar ficheiro .gitignore
+	
+	.No meu projecto:
+		.Colar ficheiro .gitignore
+		.Editar ficheiro .gitignore (ver projectos Trails4Health)
+		.Apagar pastas .vs, bin, obj
+		.Com o meu projecto fechado fazer commit
+
+::
+
+
+/* ---------------------- TEORIA --------------------------------- */
+
+Mapa conceitual: 
+	git init
+	git add
+	git status
+	área de preparação
+	diretório de trabalho

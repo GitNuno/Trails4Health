@@ -1,0 +1,64 @@
+::
+// 18/10/2017 : 11.00 - 12.30  -----------------------------------
+.Li caso de uso Spiral Development e revi relatorio: descrição caso uso.
+	.Tempo: 1.30h
+::
+// 19/10/2017 : 9.30 - 11.00  -------------------------------------
+.Resumo caso de uso (Livro + apontamentos) Spiral Development
+	.Tempo: 1.30h
+::
+// 26/10/2017 :9.30 - 11.00  --------------------------------------
+.Acabei relatório + apresentação: caso de uso (Livro + apontamentos) Spiral Development 
+	.Tempo: 1.30h
+// 05/11/2017  -----------------------------------------------------------
+	// 12.00 - 13.30  
+	.Reunir ideias sobre as paginas: 
+		.Trilho
+		.Back-office
+	.Apontar duvidas
+	.Rever/Assinalar mudanças no relatorio
+	.Atualizar diario:
+		.assinalar/melhorar leitura do diário
+	.Tempo: 1.30h
+		
+// 08/11/2017 ---------------------------------------------------
+.Tirei duvidas com professora (manhã)
+	.Tempo: 1h.
+.Adicionei Descrição de Caso de Uso – 4 - Criar Trilho, Caso de Uso – 5 - Alterar Trilho ao relatorio
+	.Tempo: 1h.45 min.
+.Tirei duvidas com professora (tarde)
+	.Tempo: 1h.30 min.
+.Corrigidos Casos de Uso 4 a 7
+	.Tempo: 30 min.
+
+// 09/11/2017 ------------------------------------------------------
+.Fiz diagramas de sequencia: Criar Trilho, Alterar Trilho, Consultar 
+ e apagar (em papel)
+	.Tempo:1h.30
+.Fiz diagrama sequencia: Consultar Trilho no Power Designer
+	.Tempo: 0.30 min.
+
+// 10/11/2017 ----------------------------------------------------------
+.Corrigi diagramas de sequencia: Criar Trilho, Alterar Trilho, Consultar 
+ e apagar (em papel)
+	.Tempo:2h.00
+.Fiz diagramas de classes parcial no power design:
+  .Trilho
+  .Estado
+  .Trilho/Estado
+  .Dificuldade 
+	.Tempo:1h
+
+// 14/11/2017 ----------------------------------------------------------
+.Tirei duvidas com professora
+	.Tempo: 1h.
+.Corrigi diagrama de classes, fiz diagrama sequencia criar, alterat,
+ desativar trilho
+	.Tempo: 2h.30 min.
+	
+// 18/11/2017 ----------------------------------------------------------
+.Corrigidos Diagramas + criado diagrama sequencia consulta…
+	.Tempo: 1h
+
+
+

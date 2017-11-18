@@ -1,0 +1,41 @@
+
+::
+FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
+// Faz migrar dados dos modelos e cria tabelas na B.D.
+// De cada vez que altero modelos, tenho de fazer migração
+	.Tools
+	.Nuget package manager
+	.Package manage console (abre consola)
+	.Na consola:
+		.Add-Migration "nome da migração"
+			.cria pasta migrations
+		.Update-Database
+::
+RESOLVER PROBLEMA - using Microsoft.EntityFrameworkCore (não reconhecido):
+	.Tools
+	.Nuget package manager
+	.Manage Nuget packages ...
+	.Em browse filtrar por:
+		.Microsoft.EntityFrameworkCore
+		.Instalar:
+			.Microsoft.EntityFrameworkCore
+			.Microsoft.EntityFrameworkCore.Design
+			.Microsoft.EntityFrameworkCore.SqlServer
+			.Microsoft.EntityFrameworkCore.SqlServer.Design
+			.Microsoft.EntityFrameworkCore.Tools
+::
+CRIAR TABELAS NA B.D. A PARTIR DE MODELS:
+	.implementar as classes em \Models
+	.criar campos na classe interface IRepository
+	.implementar os campos adicionados em IRepository na classe EFRepository
+	.config.B.D. com os modelos criados: na classe ApplicationDbContext
+	.Povoar as B.D. na classe seedData
+	.Fazer migração de dados
+	
+::
+REGEX - E-MAIL:
+// 
+(\w+\.\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})|(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})
+
+// Aceita qq caracteres atrás e frente de @
+.+@.+	
