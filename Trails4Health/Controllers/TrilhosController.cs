@@ -21,7 +21,35 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-       
+        //??? devo criar 2 novos controladores: /AvaliarServico /AvaliarTrilho para as operaçoes CRUD destes modulos
+        //    ou faço tudo neste controlador ???
+        public ViewResult BackOffice()
+        {
+            return View();
+        }
+
+        // LISTAGEM DE DADOS SEEDDATA -------------------
+        private ITrails4HealthRepository repository;
+
+        // Controlador vai ver se existe um serviço para ITrails4HealthRepository
+        // dependency injection
+        public TrilhosController(ITrails4HealthRepository repository) // construtor
+        {
+            this.repository = repository;
+        }
+
+        // CAMINHO DADOS:
+        //   .[serviços]: ITrails4HealthRepository recebeu dados de EFTrails4HealthRepository>() (ver startup.cs)
+        //   .[EFTrails4HealthRepository:ITrails4HealthRepository]: recebeu dados da BD usando ApplicationDbContext (:DbContext)
+        //   .[ApplicationDbContext:DbContext]: mapeou BD com a classe Trilho (DbSet<Trilho> Trilhos { get; set; })
+        //      .Nota: A BD foi populada usando SeedData.cs (ver startup.cs) que usa ApplicationDbContext 
+        //   .[view List]: é do tipo IEnumerable<Trilho> e exibe campos de Trilho com: foreach (Trilho p in Model)
+        public ViewResult List()
+        {
+            return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
+
+        }
+
     }
 }
 
