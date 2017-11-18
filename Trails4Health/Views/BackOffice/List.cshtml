@@ -12,15 +12,11 @@
 <!-- fazer url: //localhost:58677/backoffice/list (neste momento para poder ver) -->
 @foreach (Trilho T in Model)
 {
-    @**@
     <div>
-        <div class="col-lg-6">
-            <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
-        </div>
+        <img class="img-fluid mb-4 mb-lg-0" src="~/images/intro-pic.jpg" alt="">
         <h3>@T.Nome</h3>
         <p>@T.Inicio - @T.Fim</p>
         <p>Distancia: @T.Distancia Km</p>
     </div>
-
     <hr /> <!--barra horizontal-->
 }

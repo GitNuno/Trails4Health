@@ -26,19 +26,19 @@ namespace Trails4Health.Models
             // nota: Em ApplicationDbContext temos campo: DbSet<Product> Products { get; set; }
             dbContext.Trilhos.AddRange(
                  new Trilho { Nome = "Fojo", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado = false, Inicio = "Tapada", Fim = "Fojo",  Distancia = 5000
+                     Desativado = false, Inicio = "Tapada", Fim = "Fojo",  Distancia = 5000m
                  },
                  new Trilho { Nome = "Pateiro", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado = false, Inicio = "Monte alto", Fim = "Pateiro", Distancia = 20000
+                     Desativado = false, Inicio = "Monte alto", Fim = "Pateiro", Distancia = 20000m
                  },
                  new Trilho { Nome = "Vale Lobos", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado = false, Inicio = "Bacia do geres", Fim = "Vale Lobos", Distancia = 27000
+                     Desativado = false, Inicio = "Bacia do geres", Fim = "Vale Lobos", Distancia = 27000m
                  },
                  new Trilho { Nome = "Regada", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado = false, Inicio = "Pocinha", Fim = "Regada", Distancia = 15000
+                     Desativado = false, Inicio = "Pocinha", Fim = "Regada", Distancia = 15000m
                  },
                  new Trilho { Nome = "Coitadas", Foto = "~/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
-                     Desativado = false, Inicio = "Lameira", Fim = "Coitadas", Distancia = 13000
+                     Desativado = false, Inicio = "Lameira", Fim = "Coitadas", Distancia = 13000m
                  }
             );
         }
