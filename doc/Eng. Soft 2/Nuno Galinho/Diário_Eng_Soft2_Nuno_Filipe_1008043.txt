@@ -79,3 +79,11 @@ Tempo: 1h
 
 .Adicionei os meus diagramas classe parcial e de sequencia
 Tempo: 30min.
+
+.Diagrama Estados + Criados Template Visio Diagramas de contexto 
++ Diagrama de Estados (Estado Trilho)
+Nota: Criei imagens .emf do Diagrama Estados + Diagrama Casos Uso
+Tempo: 1h.30min.
+
+.Criado diagrama de contexto + fluxo dados + Revisão relatorio
+Tempo: 1h.30min
