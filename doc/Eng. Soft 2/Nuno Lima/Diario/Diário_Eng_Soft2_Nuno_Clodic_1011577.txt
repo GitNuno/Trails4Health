@@ -1,0 +1,40 @@
+﻿
+	
+.Duas primeiras semanas ainda não estava na Guarda e nem Matriculado.
+---------------------------------------------------------------
+.Conhecimento do tema do trabalho
+.Definição dos casos de uso candidatos
+:Não estive presente, mas estudei e peguei apontamentos dos colegas---tempo:1h30
+
+---------------------------------------------------------------
+.Revisão dos casos de uso
+.Requisitos do domínio
+.Caracterização do trilho
+.Diagrama de casos de uso
+: em aula---tempo: 2h00
+: fora de aula---tempo:0h00
+
+---------------------------------------------------------------
+.Descrição do caso de uso "Avaliar Serviço"
+:em aula------tempo:2h00
+:fora de aula-----tempo:30min
+
+--------------------------------------------------------------
+.Resumo de um padrão de desenvolvimento de software Apresentação em aula
+:em aula------tempo:20 min
+:fora de aula-------tempo:1h30
+--------------------------------------------------------------
+.Descrição de mais dois casos de uso: "Reservar Alojamento" e "Registar Turista"
+.Revisão do diagrama de casos de uso
+:em aula------tempo:20 min
+:fora de aula-------tempo:1h30
+
+--------------------------------------------------------------
+.Diagrama de Classe (geral)
+.Diagrama de Sequência(AutenticarUtilizador,incompleto;
+ AvaliarTrilho, InserirPerguntadeAvaliacaoTrilho;AvaliarServiço; 
+ConsultarReservaDOsServiços; InserirPerguntaAvaliacaoServiço) 
+:fora de aula:4h00
+:fora de aula: 3h30
+
+Total tempo: 7h30
