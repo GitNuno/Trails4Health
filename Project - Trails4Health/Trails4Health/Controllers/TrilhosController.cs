@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Trails4Health.Models;
+using Microsoft.AspNetCore.Builder;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -36,6 +37,11 @@ namespace Trails4Health.Controllers
         // LISTAGEM DE DADOS SEEDDATA -------------------
         private ITrails4HealthRepository repository;
 
+        // +++++++++++ CRIAR TRILHO NA BD A PARTIR DO FORMULARIO?? ++++++++++++
+        //static IApplicationBuilder app;
+        //static IServiceProvider serviceProvider = app.ApplicationServices;
+        //ApplicationDbContext dbContext = (ApplicationDbContext)serviceProvider.GetService(typeof(ApplicationDbContext));
+
         // Controlador vai ver se existe um serviço para ITrails4HealthRepository
         // dependency injection
         public TrilhosController(ITrails4HealthRepository repository) // construtor
@@ -49,21 +55,23 @@ namespace Trails4Health.Controllers
             return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
 
         }
-        // Inserir Trilhos
+        // INSERIR TRILHOS
         [HttpGet]
-        public ViewResult Insert()
+        public ViewResult Criar()
         {
             return View();
         }
 
         [HttpPost]
-        public ViewResult Insert(Trilho trilho)
+        public ViewResult Criar(Trilho trilho)
         {
             // validação
             if (ModelState.IsValid)
             {
-                // Repository.AddResponse(response); // insere formulario numa lista
-                return View("Index");
+                // +++++++++++ CRIAR TRILHO NA BD A PARTIR DO FORMULARIO?? ++++++++++++
+                //dbContext.Trilhos.AddRange(trilho);
+                //dbContext.SaveChanges();
+                return View("List",repository.Trilhos);
             }
             else
             {

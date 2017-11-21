@@ -1,19 +1,18 @@
-﻿<!--MVC faz o render da view em função do modelo: Models/GuestResponse -->
-<!-- Para poder Ligar os elementos HTML ao objecto Model: EX: Models.GuestResponses.Name-->
-<!-- PartyInvites.Models.GuestResponse -> em _viewImports.cshtml incluí: using PartyInvites.Models -->
+﻿<!--MVC faz o render da view em função do modelo: Models/Trilho -->
+<!-- Para poder Ligar os elementos HTML ao objecto Model: EX: Models.Trilhos.Nome-->
 @model Trilho
 
 
 @{
-    ViewData["Title"] = "Repondez S'il Vous Plait";
+    ViewData["Title"] = "Formulario - Inserir";
 }
 
 @{
     Layout = "_LayoutBackOffice";
 }
 
-<!-- asp-action="Rsvp":referencía a acção Rsvp  -->
-<form asp-action="Rsvp" method="post">
+<!-- asp-action="Insert":referencía a acção Insert  -->
+<form asp-action="Criar" method="post">
     <div class="panel panel-primary" style="margin-top:2ex;">
         <div class="panel-heading">
             <h3 class="panel-title">Formulario </h3>
@@ -21,8 +20,7 @@
 
         <div class="panel-body">
             <div class="form-group">
-                <!-- asp-for: atributo tag helper: liga os elementos HTML ao objecto Model: EX: Models.GuestResponses.Name -->
-                <!-- <label asp-for="aModel.Name"> é outra forma de chamar campo Name de GuestResponses -->
+                <!-- asp-for: atributo tag helper: liga os elementos HTML ao objecto Model:  EX: Models.Trilhos.Nome -->
                 <!-- para fazer input tenho usar as classes: "class="form-group" + class="form-control" -->
                 <label asp-for="Nome">Nome:</label>
                 <input asp-for="Nome" class="form-control" />
@@ -34,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="Fim">Inicio:</label>
+                <label asp-for="Fim">Fim:</label>
                 <input asp-for="Fim" class="form-control" />
             </div>
 

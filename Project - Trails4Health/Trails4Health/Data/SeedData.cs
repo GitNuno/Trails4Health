@@ -26,7 +26,7 @@ namespace Trails4Health.Models
 
         private static void EnsureTrilhosPopulated(ApplicationDbContext dbContext)
         {
-            // nota: Em ApplicationDbContext temos campo: DbSet<Product> Products { get; set; }
+            // nota: Em ApplicationDbContext temos campo: DbSet<Trilho> Trilhos { get; set; }
             dbContext.Trilhos.AddRange(
                  new Trilho { Nome = "Fojo", Foto = "/images/intro-pic.jpg", Detalhes = "Lorem ipsum dolor sit amet, consectetur Magnam soluta doloreos excepturi veritatis",
                      Desativado = false, Inicio = "Tapada", Fim = "Fojo",  Distancia = 5m
