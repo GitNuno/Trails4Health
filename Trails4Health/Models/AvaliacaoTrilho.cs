@@ -7,9 +7,9 @@ namespace Trails4Health.Models
 {
     public class AvaliacaoTrilho
     {
-       // public int TrilhoID { get; set; } 
-        //public int RespostaID{ get; set; }
-        //public Date DataAvaliacao { get; set; } 
+        public int TrilhoID { get; set; } 
+        public int RespostaID{ get; set; }
+        public DateTime DataAvaliacao { get; set; } 
         
     }
 }
