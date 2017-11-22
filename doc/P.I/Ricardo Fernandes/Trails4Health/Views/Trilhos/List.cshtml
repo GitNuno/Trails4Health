@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Trilho>
+@{
+    ViewData["Title"] = "List";
+}
+
+@{
+    Layout = "_LayoutBackOffice";
+}
+
+<h2>Trilhos</h2>
+<hr /> 
+
+<!-- fazer url: //localhost:58677/backoffice/list (neste momento para poder ver) -->
+@foreach (Trilho T in Model)
+{
+    <div>
+        <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
+        <h3>@T.Nome</h3>
+        <p>@T.Inicio - @T.Fim</p>
+        <p>Distancia: @T.Distancia Km</p>
+    </div>
+    <hr /> <!--barra horizontal-->
+}
