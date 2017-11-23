@@ -33,10 +33,30 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-        public IActionResult AvaliarTrilho()
+        public IActionResult BackOffice2()
         {
-            ViewData["Message"] = "Avaliação de Trilho";
             return View();
         }
+
+        public IActionResult AvaliarTrilho()
+        {
+            return View();
+        }
+
+        public IActionResult AvaliarGuia()
+        {
+            return View();
+        }
+
+        public IActionResult InserirQuestoesAvaliacaoGuia()
+        {
+            return View();
+        }
+
+        public IActionResult InserirQuestoesAvaliacaoTrilho()
+        {
+            return View();
+        }
+
     }
 }
