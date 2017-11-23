@@ -19,9 +19,22 @@ namespace Trails4Health.Controllers
 {
     public class TrilhosController : Controller
     {
+
+        // LISTAGEM DE DADOS SEEDDATA -------------------
+        // (ver construtor!)
+        private ITrails4HealthRepository repository;
+
+        // Controlador vai ver se existe um serviço para ITrails4HealthRepository
+        // dependency injection
+        public TrilhosController(ITrails4HealthRepository repository) // construtor
+        {
+            this.repository = repository;
+        }
+
+
         public ViewResult Index()
         {
-            return View();
+            return View(repository.Trilhos);
         }
 
         public ViewResult DetalhesTrilho()
@@ -34,20 +47,6 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-        // LISTAGEM DE DADOS SEEDDATA -------------------
-        private ITrails4HealthRepository repository;
-
-        // +++++++++++ CRIAR TRILHO NA BD A PARTIR DO FORMULARIO?? ++++++++++++
-        //static IApplicationBuilder app;
-        //static IServiceProvider serviceProvider = app.ApplicationServices;
-        //ApplicationDbContext dbContext = (ApplicationDbContext)serviceProvider.GetService(typeof(ApplicationDbContext));
-
-        // Controlador vai ver se existe um serviço para ITrails4HealthRepository
-        // dependency injection
-        public TrilhosController(ITrails4HealthRepository repository) // construtor
-        {
-            this.repository = repository;
-        }
       
         // Listar Trilhos
         public ViewResult List()
@@ -55,7 +54,8 @@ namespace Trails4Health.Controllers
             return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
 
         }
-        // INSERIR TRILHOS
+
+        // A IDEIA ERA CRIAR TRILHO A PARTIR FORMULARIO ...
         [HttpGet]
         public ViewResult Criar()
         {
@@ -68,9 +68,6 @@ namespace Trails4Health.Controllers
             // validação
             if (ModelState.IsValid)
             {
-                // +++++++++++ CRIAR TRILHO NA BD A PARTIR DO FORMULARIO?? ++++++++++++
-                //dbContext.Trilhos.AddRange(trilho);
-                //dbContext.SaveChanges();
                 return View("List",repository.Trilhos);
             }
             else

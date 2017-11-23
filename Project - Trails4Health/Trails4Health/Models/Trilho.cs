@@ -13,9 +13,10 @@ namespace Trails4Health.Models
         [Required(ErrorMessage = "Introduza nome do Trilho")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Introduza inicio do Trilho")]
+        [Required(ErrorMessage = "...")]
         public string Foto { get; set; } // mais tarde vai ser na base dados
 
+        [Required(ErrorMessage = "Introduza detalhes do Trilho")]
         public string Detalhes { get; set; }
 
         public bool Desativado { get; set ; }
