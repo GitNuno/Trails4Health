@@ -20,3 +20,13 @@ C:\Users\rf\Desktop\Project - Trails4Health\Trails4Health\obj\Debug\netcoreapp1.
 C:\Users\rf\Desktop\Project - Trails4Health\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.AssemblyInfo.cs
 C:\Users\rf\Desktop\Project - Trails4Health\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.dll
 C:\Users\rf\Desktop\Project - Trails4Health\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.pdb
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\bin\Debug\netcoreapp1.1\Trails4Health.deps.json
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\bin\Debug\netcoreapp1.1\Trails4Health.runtimeconfig.json
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\bin\Debug\netcoreapp1.1\Trails4Health.runtimeconfig.dev.json
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\bin\Debug\netcoreapp1.1\Trails4Health.dll
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\bin\Debug\netcoreapp1.1\Trails4Health.pdb
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.csprojResolveAssemblyReference.cache
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.csproj.CoreCompileInputs.cache
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.AssemblyInfo.cs
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.dll
+C:\programacao_internet\Trails4Health\doc\P.I\Ricardo Fernandes\Trails4Health\obj\Debug\netcoreapp1.1\Trails4Health.pdb

@@ -31,7 +31,6 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
-
         public ViewResult Index()
         {
             return View(repository.Trilhos);
@@ -47,9 +46,30 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-      
-        // Listar Trilhos
-        public ViewResult List()
+        public ViewResult AvaliacaoGuia()
+        {
+            return View();
+        }
+
+        public ViewResult AvaliacaoTrilho()
+        {
+            return View();
+        }
+
+
+        public ViewResult QuestoesAvaliacaoGuia()
+        {
+            return View();
+        }
+
+
+        public ViewResult QuestoesAvaliacaoTrilho()
+        {
+            return View();
+        }
+
+        // Listar Trilhos em Backoffice
+        public ViewResult Lista()
         {
             return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
 
@@ -68,7 +88,7 @@ namespace Trails4Health.Controllers
             // validação
             if (ModelState.IsValid)
             {
-                return View("List",repository.Trilhos);
+                return View("Lista",repository.Trilhos);
             }
             else
             {
