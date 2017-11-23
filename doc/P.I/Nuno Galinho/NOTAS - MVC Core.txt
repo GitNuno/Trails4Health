@@ -33,13 +33,14 @@ CRIAR TABELAS NA B.D. A PARTIR DE MODELS:
 	.Fazer migração de dados
 ::
 ROUTING : "passing parameters between views in MVC"
-	1.MVC uses Routing.  They wouldn't do the same thing.  To do what asked you 
-	 would have a UserController that would contain both Index (listpage) and 
-	 Details code. You would then have two views named the same.  
-	 Inside the grid of the ListVIew you would have an MVC Routing command as such 
-	 for the details:
+	1.MVC uses Routing. 
+	 .You would have a UserController. 
+	 .You would then have two views named: listpage and Details.  
+	 .Inside the grid of the ListVIew you would have an MVC Routing command as such 
+	  for the details:
 
-	@Html.ActionLink("View Details", "Details", new { id=item.ID })  
+	    @Html.ActionLink("View Details", "Details", new { id=item.ID })  
+		
 	That says "LInk text = "View Details", The "Details" is the action of the 
 	controller and the last part says get this ID
 	
