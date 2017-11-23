@@ -1,6 +1,5 @@
 Diários: Ricardo Fernandes - 1011936
 
-
 22/11/2017
 
 Primeira contribuição para o projecto:
@@ -29,6 +28,8 @@ Tempo Utilizado: 1.5 H
 - Alterado controlador "HomeController.cs" para que as Views adicionadas funcionem;
 
 - Estas alterações tiveram o intuito de servir como protótipo para demonstrar algumas funcionalidades e ilustrar casos de uso como "Avaliar Trilho", "Avaliar Serviços (Guia)", "Inserir Questões Avaliação Guia", "Inserir Questões Avaliação Trilho".
+
+Tempo Utilizado: 1.5 H
 
 ---
 
