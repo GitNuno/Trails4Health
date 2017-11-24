@@ -13,25 +13,25 @@ namespace Trails4Health.Models
         [Required(ErrorMessage = "Introduza nome do Trilho")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Escolha uma foto")]
-        public string Foto { get; set; } // mais tarde vai ser na base dados
-
-        [Required(ErrorMessage = "Introduza detalhes do Trilho")]
-        public string Detalhes { get; set; }
-
-        // Nota: Acrescentar em SeedData!! Ainda nao está na BD 
-        // public string Sumario { get; set; }
-
-        public bool Desativado { get; set; } = false;
-
         [Required(ErrorMessage = "Introduza inicio do Trilho")]
         public string Inicio { get; set; }
 
         [Required(ErrorMessage = "Introduza fim do Trilho")]
         public string Fim { get; set; }
 
-        [Required(ErrorMessage = "Introduza distancia do Trilho")]
+        // Nota: Acrescentar em SeedData!! Ainda nao está na BD 
+        // public string Sumario { get; set; }
+
+        [Required(ErrorMessage = "Introduza detalhes do Trilho")]
+        public string Detalhes { get; set; }
+
+        [Required(ErrorMessage = "Introduza Distancia do Trilho")]
         public decimal Distancia { get; set; }
+
+        [Required(ErrorMessage = "Escolha uma foto")]
+        public string Foto { get; set; } // mais tarde vai ser na base dados
+
+        public bool Desativado { get; set; } = false;
 
         //public int DificuldadeID { get; set; } // FK 
         //public Dificuldade Dificuldade { get; set; }
