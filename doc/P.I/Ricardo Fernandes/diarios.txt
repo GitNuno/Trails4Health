@@ -1,4 +1,7 @@
 Diários: Ricardo Fernandes - 1011936
+---
+
+Tempo Total: 3 H
 
 ---
 
@@ -32,8 +35,3 @@ Primeira contribuição para o projecto:
 - Alterado controlador "HomeController.cs" para que as Views adicionadas funcionem;
 
 Tempo Utilizado: 1.5 H
-
----
-
-
-Tempo Total: 3 H
