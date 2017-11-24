@@ -4,31 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Trails4Health.Models;
+using Microsoft.AspNetCore.Builder;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+// CAMINHO DADOS:
+//   .[serviços]: ITrails4HealthRepository recebeu dados de EFTrails4HealthRepository>() (ver startup.cs)
+//   .[EFTrails4HealthRepository:ITrails4HealthRepository]: recebeu dados da BD usando ApplicationDbContext (:DbContext)
+//   .[ApplicationDbContext:DbContext]: mapeou BD com a classe Trilho (DbSet<Trilho> Trilhos { get; set; })
+//      .Nota: A BD foi populada usando SeedData.cs (ver startup.cs) que usa ApplicationDbContext 
+//   .[view List]: é do tipo IEnumerable<Trilho> e exibe campos de Trilho com: foreach (Trilho p in Model)
 
 namespace Trails4Health.Controllers
 {
     public class TrilhosController : Controller
     {
-        public ViewResult Index()
-        {
-            return View();
-        }
-
-        public ViewResult DetalhesTrilho()
-        {
-            return View();
-        }
-
-        //??? devo criar 2 novos controladores: /AvaliarServico /AvaliarTrilho para as operaçoes CRUD destes modulos
-        //    ou faço tudo neste controlador ???
-        public ViewResult BackOffice()
-        {
-            return View();
-        }
 
         // LISTAGEM DE DADOS SEEDDATA -------------------
+        // (ver construtor!)
         private ITrails4HealthRepository repository;
 
         // Controlador vai ver se existe um serviço para ITrails4HealthRepository
@@ -38,17 +31,73 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
-        // CAMINHO DADOS:
-        //   .[serviços]: ITrails4HealthRepository recebeu dados de EFTrails4HealthRepository>() (ver startup.cs)
-        //   .[EFTrails4HealthRepository:ITrails4HealthRepository]: recebeu dados da BD usando ApplicationDbContext (:DbContext)
-        //   .[ApplicationDbContext:DbContext]: mapeou BD com a classe Trilho (DbSet<Trilho> Trilhos { get; set; })
-        //      .Nota: A BD foi populada usando SeedData.cs (ver startup.cs) que usa ApplicationDbContext 
-        //   .[view List]: é do tipo IEnumerable<Trilho> e exibe campos de Trilho com: foreach (Trilho p in Model)
-        public ViewResult List()
+        public ViewResult Index()
+        {
+            return View(repository.Trilhos);
+        }
+
+        public ViewResult DetalhesTrilho()
+        {
+            return View();
+        }
+
+        public ViewResult BackOffice()
+        {
+            return View();
+        }
+
+        public ViewResult AvaliacaoGuia()
+        {
+            return View();
+        }
+
+        public ViewResult AvaliacaoTrilho()
+        {
+            return View();
+        }
+
+
+        public ViewResult QuestoesAvaliacaoGuia()
+        {
+            return View();
+        }
+
+
+        public ViewResult QuestoesAvaliacaoTrilho()
+        {
+            return View();
+        }
+
+        // Listar Trilhos em Backoffice
+        public ViewResult Lista()
         {
             return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
 
         }
+
+        // A IDEIA ERA CRIAR TRILHO A PARTIR FORMULARIO ...
+        [HttpGet]
+        public ViewResult Criar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Criar(Trilho trilho)
+        {
+            // validação
+            if (ModelState.IsValid)
+            {
+                return View("Lista",repository.Trilhos);
+            }
+            else
+            {
+                // There are Validation Errors > devolve a view em que estava 
+                return View();
+            }
+
+        }
+
 
     }
 }

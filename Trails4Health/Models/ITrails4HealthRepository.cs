@@ -11,6 +11,6 @@ namespace Trails4Health.Models
         // +++ por sua vez EF()Repository implementa esta classe e cada destes IEnumerable<MyModel> é preenchido
         //     com BD usando ApplicationDbContext ??????
         // permite-me criar qualquer tipo de "repositorio" (neste caso de Trilhos) a partir desta interface
-        IEnumerable<Trilho> Trilhos { get; } 
+        IEnumerable<Trilho> Trilhos { get; }
     }
 }

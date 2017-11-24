@@ -35,3 +35,22 @@ textarea {
         display: none;
     }
 }
+
+/* validações */
+.field-validation-error {
+    color: red;
+}
+
+.input-validation-error {
+    border: 1px solid red;
+    background-color: #fee;
+}
+
+.validation-summary-erros {
+    font-weight: bold;
+    color: darkred;
+}
+
+.validation-summary-valid {
+    display: none;
+}

@@ -1,4 +1,6 @@
-﻿@{
+﻿<!-- 1. criei stronglyType model para receber Trilhos (a partir do controlador) -->  <!--  -->
+@model IEnumerable<Trilho>
+@{
     ViewData["Title"] = "Trilhos";
 }
 
@@ -28,41 +30,27 @@
         </div>
     </div>
 </nav>
-<!-- Container -->
+
+{ <!-- Container -->
 <div class="container">
-    <div class="bg-faded p-4 my-4">
-        <div class="card card-inverse">
-            <img class="card-img img-fluid w-100" src="~/images/slide-1.jpg" alt="">
-            <div class="card-img-overlay bg-overlay">
-                <h2 class="card-title text-shadow text-white text-uppercase mb-0">Post Title</h2>
-                <h4 class="text-shadow text-white">March 1, 2017</h4>
-                <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-                <a asp-action="DetalhesTrilho" class="btn btn-secondary">Saber mais</a>
+    @foreach (Trilho T in Model)
+    { 
+        <div class="bg-faded p-4 my-4">
+            <div class="card card-inverse">
+                <img class="card-img img-fluid w-100" src="@T.Foto" alt=""> @*@T.Foto*@
+                <div class="card-img-overlay bg-overlay">
+                    <h2 class="card-title text-shadow text-white text-uppercase mb-0">@T.Nome</h2>
+                    <hr />
+                    <p class="text-shadow text-white" style="font-size:larger"><b style="margin-right:1em">Trilho:</b>@T.Distancia km</p>
+                    <p class="text-shadow text-white" style="font-size:larger"><b b style="margin-right:1em">Inicio do Trilho:</b>@T.Inicio</p>
+                    <p class="text-shadow text-white" style="font-size:larger"><b b style="margin-right:1em">Fim do Trilho:</b>@T.Fim</p>
+                    <hr />
+                    <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block" style="margin-bottom:3em">@T.Detalhes</p>
+                    <a asp-action="DetalhesTrilho" class="btn btn-secondary">Saber mais</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="bg-faded p-4 my-4">
-        <div class="card card-inverse">
-            <img class="card-img img-fluid w-100" src="~/images/slide-2.jpg" alt="">
-            <div class="card-img-overlay bg-overlay">
-                <h2 class="card-title text-shadow text-white text-uppercase mb-0">Post Title</h2>
-                <h4 class="text-shadow text-white">March 1, 2017</h4>
-                <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-                <a href="#" class="btn btn-secondary">Saber mais</a>
-            </div>
-        </div>
-    </div>
-    <div class="bg-faded p-4 my-4">
-        <div class="card card-inverse">
-            <img class="card-img img-fluid w-100" src="~/images/slide-3.jpg" alt="">
-            <div class="card-img-overlay bg-overlay">
-                <h2 class="card-title text-shadow text-white text-uppercase mb-0">Post Title</h2>
-                <h4 class="text-shadow text-white">March 1, 2017</h4>
-                <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-                <a href="#" class="btn btn-secondary">Saber mais</a>
-            </div>
-        </div>
-    </div>
+     }
     <!-- Pagination -->
     <div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">
@@ -76,3 +64,5 @@
     </div>
 </div>
 <!-- /.container -->
+      
+

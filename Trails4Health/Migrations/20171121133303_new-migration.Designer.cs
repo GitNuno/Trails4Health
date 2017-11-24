@@ -8,9 +8,10 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171121133303_new-migration")]
+    partial class newmigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.3")
@@ -23,22 +24,17 @@ namespace Trails4Health.Migrations
 
                     b.Property<bool>("Desativado");
 
-                    b.Property<string>("Detalhes")
-                        .IsRequired();
+                    b.Property<string>("Detalhes");
 
                     b.Property<decimal>("Distancia");
 
-                    b.Property<string>("Fim")
-                        .IsRequired();
+                    b.Property<string>("Fim");
 
-                    b.Property<string>("Foto")
-                        .IsRequired();
+                    b.Property<string>("Foto");
 
-                    b.Property<string>("Inicio")
-                        .IsRequired();
+                    b.Property<string>("Inicio");
 
-                    b.Property<string>("Nome")
-                        .IsRequired();
+                    b.Property<string>("Nome");
 
                     b.HasKey("TrilhoID");
 
