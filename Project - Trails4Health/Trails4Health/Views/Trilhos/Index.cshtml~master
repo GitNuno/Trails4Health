@@ -1,0 +1,67 @@
+﻿<!-- 1. criei stronglyType model para receber Trilhos (a partir do controlador) -->  
+<!-- BEFORE ViewModel: amodel IEnumerable<Trilho> -->
+@model ViewModelListaTrilhos
+@{
+    ViewData["Title"] = "Trilhos";
+}
+
+<!-- Informação Introdutória -->
+<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Trails4Health</div>
+<div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Rua Comercio | 6300 Guarda</div>
+<!-- Nav Bar - Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-lg-4">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link text-uppercase text-expanded"> Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active px-lg-4">
+                    <a asp-action="Index" class="nav-link text-uppercase text-expanded">Trilhos</a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="blog.html">About</a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Container -->
+<div class="container">
+    @foreach (Trilho T in Model.Trilho)
+    {
+        @Html.Partial("SumarioTrilhos", T)
+    }
+</div>
+
+<!-- /.container -->
+
+<!--Pagination-->
+<div page-model="@Model.InfoPaginacao"
+     css-classes-enabled="true"
+     css-class-page="btn btn-sm"
+     css-class-page-normal="btn-default"
+     css-class-page-selected="btn-primary"
+     class="pull-right">
+</div>
+
+    @*<div class="bg-faded p-4 my-4">
+        <ul class="pagination justify-content-center mb-0">
+            <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+        </ul>
+    </div>
+</div>*@
+
+
+

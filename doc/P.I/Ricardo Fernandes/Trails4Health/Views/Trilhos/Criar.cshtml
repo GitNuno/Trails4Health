@@ -1,0 +1,86 @@
+﻿<!--MVC faz o render da view em função do modelo: Models/Trilho -->
+<!-- Para poder Ligar os elementos HTML ao objecto Model: EX: Models.Trilhos.Nome-->
+@model Trilho
+
+
+@{
+    ViewData["Title"] = "Formulario - Inserir";
+}
+
+@{
+    Layout = "_LayoutBackOffice";
+}
+
+<!-- asp-action="Insert":referencía a acção Insert  -->
+<form asp-action="Criar" method="post">
+    <div class="panel panel-primary" style="margin-top:2ex;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Formulario - Criar Trilho </h3>
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                <!-- asp-for: atributo tag helper: liga os elementos HTML ao objecto Model:  EX: Models.Trilhos.Nome -->
+                <!-- para fazer input tenho usar as classes: "class="form-group" + class="form-control" -->
+                <label asp-for="Nome">Nome:</label>
+                <input asp-for="Nome" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Inicio">Inicio:</label>
+                <input asp-for="Inicio" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Fim">Fim:</label>
+                <input asp-for="Fim" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Distancia">Distancia em Km:</label>
+                <input asp-for="Distancia" class="form-control" />
+            </div>
+
+            @*@*+++++++ faço asp-for para textarea ???? *@
+            <div class="form-group">
+                <label asp-for="Detalhes">Detalhes</label>
+                <textarea asp-for="Detalhes" class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="Foto">Foto:</label>
+                <select asp-for="Foto" class="form-control">
+                    <option value="">Escolha Foto</option>
+                    <option value="/images/intro-pic.jpg">Foto 1</option>
+                    <option value="/images/slide-1.jpg">Foto 2</option>
+                </select>
+            </div>
+
+            @*+++++++++++ faço asp-for para input type="file ???? *@
+            <div class="form-group">
+                <label for="exampleInputFile">Escolher Foto</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                <small id="fileHelp" class="form-text text-muted">Escolha a foto que pretende para representar Trilho</small>
+            </div>
+
+
+            @*<div class="form-group">
+                <label asp-for="Desativado">Estado Trilho:</label>
+                <select asp-for="Desativado" class="form-control">
+                    <option value="">Escolha opção</option>
+                    <option value="true">Desativado</option>
+                    <option value="false">Ativado</option>
+                </select>
+            </div>*@
+
+            <!-- to display validation errors to the user -->
+            <div asp-validation-summary="All"></div>
+        </div>
+
+        <div class="panel-footer">
+            <!-- botão submete para esta acção (form) -->
+            <button type="submit" class="btn btn-primary">Submit response</button>
+        </div>
+    </div>
+</form>
+

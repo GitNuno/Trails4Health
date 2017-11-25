@@ -52,13 +52,38 @@
 // 14/11/2017 ----------------------------------------------------------
 .Tirei duvidas com professora
 	.Tempo: 1h.
-.Corrigi diagrama de classes, fiz diagrama sequencia criar, alterat,
+.Corrigi diagrama de classes, fiz diagrama sequencia criar, alterar,
  desativar trilho
 	.Tempo: 2h.30 min.
 	
 // 18/11/2017 ----------------------------------------------------------
-.Corrigidos Diagramas + criado diagrama sequencia consulta…
+.Corrigidos Diagramas + criado diagrama sequencia consultar trilho
 	.Tempo: 1h
 
+// 19/11/2017 ----------------------------------------------------------
+.Criei Trails4Health - Revisto.docx com outra formatação
+.Organizei e corrigi conteudos:
+	.Fiz a introdução
+	.Completei e formatei a tabela de tarefas e tempo dispendido
+	.Corrigi tabela de atores e defini os objetivos de cada um
+	.Criei template da tabela Casos Uso para preencher
+.Tempo: 1.30 min.
 
+.Revi e Atualizei a tabela dos casos de uso: Criar Trilho e Alterar Trilho
+.Tempo: 1h
 
+.Revi e Atualizei a tabela dos casos de uso: desativar trilho 
++ consultar trilho. 
+.Copiei casos uso Ricardo para as tabelas do relatorio
+Tempo: 1h
+
+.Adicionei os meus diagramas classe parcial e de sequencia
+Tempo: 30min.
+
+.Diagrama Estados + Criados Template Visio Diagramas de contexto 
++ Diagrama de Estados (Estado Trilho)
+Nota: Criei imagens .emf do Diagrama Estados + Diagrama Casos Uso
+Tempo: 1h.30min.
+
+.Criado diagrama de contexto + fluxo dados + Revisão relatorio
+Tempo: 1h.30min

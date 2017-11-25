@@ -31,7 +31,49 @@ CRIAR TABELAS NA B.D. A PARTIR DE MODELS:
 	.config.B.D. com os modelos criados: na classe ApplicationDbContext
 	.Povoar as B.D. na classe seedData
 	.Fazer migração de dados
+::
+ROUTING : "passing parameters between views in MVC"
+	1.MVC uses Routing. 
+	 .You would have a UserController. 
+	 .You would then have two views named: listpage and Details.  
+	 .Inside the grid of the ListVIew you would have an MVC Routing command as such 
+	  for the details:
+
+	    @Html.ActionLink("View Details", "Details", new { id=item.ID })  
+		
+	That says "LInk text = "View Details", The "Details" is the action of the 
+	controller and the last part says get this ID
 	
+	2.Strongly typed model binding to view: Here, we need to create a strongly typed view which will bind directly the model data to the various fields of the page.
+		For example:
+
+		Create a model with the required member variables.
+		Let's say we have a model named 'Person' with member variable named as 
+		'Name'
+		Now pass the empty model to the view as parameter in the controller 
+		action.
+		For example:
+
+		public ActionResult GetName()
+		{
+			Person person = new Person();
+			return View(person);
+		}
+		Prepare the strongly typed view to display the model property values 
+		through html elements as below:
+		
+		For example:
+		<div><%= Html.Encode(person.Name) %></div>
+		
+		Create the action method that handles the POST request & processes 
+		the data.
+		For example:
+
+		[HttpPost]
+		public ActionResult GetPersonName(Person person)
+		{    
+			return Content(person.Name.ToString());
+		}
 ::
 REGEX - E-MAIL:
 // 
