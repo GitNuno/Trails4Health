@@ -261,6 +261,96 @@ Adicionei container á pag. DetalhesTriho
 .Tempo: 1h
 .TEMPO_TOTAL: 4.30 
 
+:: 
+// 13/11/2017 --------------------------------------------------------------
+.Criadas classes Data + Models
+Notas:
+.falta definir campos das classes ("estao vazias")
+.classe ApplicationDbContext nao reconhece ﻿using Microsoft.EntityFrameworkCore;
+Tempo: 1h
+//
+.Criada connectionString + Classe SeedData + Configuração de Serviços:
+.Notas:
+.Criei o "prototipo" da classe SeedData
+.Persiste o não reconhecimento do import (using
+Microsoft.EntityFrameworkCore;)
+.Tempo: 30min.
+//
+.Resolvido Problema: using Microsoft.EntityFrameworkCore(não reconhecido)
+Resolvi o problema da seguinte forma:
+.Tools
+.Nuget package manager
+.Manage Nuget packages ...
+.Em browse filtrar por:
+.Microsoft.EntityFrameworkCore
+.Instalar:
+.Microsoft.EntityFrameworkCore
+.Microsoft.EntityFrameworkCore.Design
+.Microsoft.EntityFrameworkCore.SqlServer
+.Microsoft.EntityFrameworkCore.SqlServer.Design
+.Microsoft.EntityFrameworkCore.Tools
+Tempo: 1h
+//
+. Completadas classes Trilho + ITrails4HealthRepository
+. Completei classes ApplicationDbContext + EFTrails4HealthRepository
+Tempo: 30 min.
+//
+. Completada class SeedData criado construtor no controlador Trilhos 
++ acção para view List; Criada view List
+Tempo: 1h
+//
+. Feita Migração dados, Listagem Trilhos mudada para BackOffice,
++ corrigido endereço das imgs em SeedData
+nota:
+.na listagem dos trilhos as imgs nao aparecem (provavelmente é necessaria nova migraçao de dados)
+tempo: 1h
+
+// 14/11/2017 --------------------------------------------------------------
+. Adicionada nova nota em NOTAS - MVC Core.txt:
+  Como CRIAR TABELAS NA B.D. A PARTIR DE MODELS
+Tempo: 15 min.
+
+// 15/11/2017 --------------------------------------------------------------
+. Atualizada documentão do projecto a partir da leitura do livro
+Tempo: 30min.
+
+// 18/11/2017 --------------------------------------------------------------
+. Passei Listagem de Trilhos para o controlador Trilho (antes estava no controlador backoffice)
+Tempo: 30 min.
+
+// 21/11/2017 --------------------------------------------------------------
+. Criada nova base dados
+Notas:
+.Existia um registo a mais (repetido) na minha Base Dados, eliminei a Base dados em C:/users/... 
+ e criei nova - é necessario mudar o nome da B.D.
+.Tentei atualizar os conteudos da Base de Dados mudando seedData mas não atualiza com Update-Database
+Tempo: 30min.
+//
+. Falhado inserir trilho na bd a partir do formulario Criar.cshtml
+Nota:
+.Tentei usar as classes: IServiceProvider, ApplicationDbContext + IApplicationBuilder
+ e os metodos: AddRange + SaveChanges tal como na classe seedData - Erro: Null pointer exception - Não consegui resolver.
+Tempo:1h
+
+// 22/11/2017 --------------------------------------------------------------
+. Adicionadas validações + corrigida pagina Criar.cshtml
+Tempo: 1h
+
+//
+. Criados novos registos em seedData + Atualizadas fotos Site
+Tempo: 1h
+//
+. Adicionadas views do Ricardo + corrigir nomes + criar acções e 
+  hiperligações + correçoes
+Tempo: 30 min. 
+
+// 24/11/2017 --------------------------------------------------------------
+. Alterado Interface da View /Trilho/Criar
+Tempo: 1h
+ 
+//
+
+//
 
 
 	
