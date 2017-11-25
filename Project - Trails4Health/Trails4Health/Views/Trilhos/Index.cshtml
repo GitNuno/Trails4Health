@@ -32,39 +32,24 @@
     </div>
 </nav>
 
-{ <!-- Container -->
+<!-- Container -->
 <div class="container">
     @foreach (Trilho T in Model.Trilho)
     {
-        <div class="bg-faded p-4 my-4">
-            <div class="card card-inverse">
-                <img class="card-img img-fluid w-100" src="@T.Foto" alt=""> @*@T.Foto*@
-                <div class="card-img-overlay bg-overlay">
-                    <h2 class="card-title text-shadow text-white text-uppercase mb-0">@T.Nome</h2>
-                    <hr />
-                    <p class="text-shadow text-white" style="font-size:larger"><b style="margin-right:1em">Trilho:</b>@T.Distancia km</p>
-                    <p class="text-shadow text-white" style="font-size:larger"><b b style="margin-right:1em">Inicio do Trilho:</b>@T.Inicio</p>
-                    <p class="text-shadow text-white" style="font-size:larger"><b b style="margin-right:1em">Fim do Trilho:</b>@T.Fim</p>
-                    <hr />
-                    <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block" style="margin-bottom:3em">@T.Detalhes</p>
-                    <a asp-action="DetalhesTrilho" class="btn btn-secondary">Saber mais</a>
-                </div>
-            </div>
-        </div>
+        @Html.Partial("SumarioTrilhos", T)
     }
-
-    <!-- Pagination -->
-    <div page-model="@Model.InfoPaginacao"
-         css-classes-enabled="true"
-         css-class-page="btn btn-sm"
-         css-class-page-normal="btn-default"
-         css-class-page-selected="btn-primary"
-         class="pull-right">
-    </div>
 </div>
 
 <!-- /.container -->
 
+<!--Pagination-->
+<div page-model="@Model.InfoPaginacao"
+     css-classes-enabled="true"
+     css-class-page="btn btn-sm"
+     css-class-page-normal="btn-default"
+     css-class-page-selected="btn-primary"
+     class="pull-right">
+</div>
 
     @*<div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">

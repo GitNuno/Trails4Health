@@ -21,6 +21,8 @@ namespace Trails4Health.Models
 
         // Acrescentar coordenadas GPS
 
+        // Acrescentar data criação
+
         // Nota: Acrescentar em SeedData!! Ainda nao está na BD 
         // public string Sumario { get; set; }
 
