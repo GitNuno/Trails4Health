@@ -259,7 +259,6 @@ Adicionei container á pag. DetalhesTriho
 	.classe ApplicationDbContext nao reconhece
 ﻿	 using Microsoft.EntityFrameworkCore;
 .Tempo: 1h
-.TEMPO_TOTAL: 4.30 
 
 :: 
 // 13/11/2017 --------------------------------------------------------------
@@ -348,6 +347,46 @@ Tempo: 30 min.
 . Alterado Interface da View /Trilho/Criar
 Tempo: 1h
  
+// 25/11/2017 --------------------------------------------------------------
+. Criada paginação (nota: botões nao aparecem)
+Nota:  botões nao aparecem, nao reconhece tag helpers:
+   <div page-model="@Model.InfoPaginacao"
+         css-classes-enabled="true"
+         css-class-page="btn btn-sm"
+         css-class-page-normal="btn-default"
+         css-class-page-selected="btn-primary"
+         class="pull-right">
+    </div>
+Tempo: 1h
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
 //
 
 //

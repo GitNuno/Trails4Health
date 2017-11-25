@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Trails4Health.Models;
 using Microsoft.AspNetCore.Builder;
+using Trails4Health.Models.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,9 +32,30 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
-        public ViewResult Index()
+        public int TamanhoPagina = 4;
+        public ViewResult Index(int pagina = 1)
         {
-            return View(repository.Trilhos);
+            return View(
+                new ViewModelListaTrilhos
+                {
+                    Trilho = repository.Trilhos
+                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Take(TamanhoPagina),
+                    InfoPaginacao = new InfoPaginacao
+                    {
+                        PaginaAtual = pagina,
+                        ItemsPorPagina = TamanhoPagina,
+                        TotalItems = repository.Trilhos.Count()
+                    }
+                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
+        }
+
+
+        // Listar Trilhos em Backoffice
+        public ViewResult Lista()
+        {
+            return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
+
         }
 
         public ViewResult DetalhesTrilho()
@@ -68,14 +90,8 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-        // Listar Trilhos em Backoffice
-        public ViewResult Lista()
-        {
-            return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
 
-        }
-
-        // A IDEIA ERA CRIAR TRILHO A PARTIR FORMULARIO ...
+        //
         [HttpGet]
         public ViewResult Criar()
         {
