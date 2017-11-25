@@ -50,7 +50,6 @@ namespace Trails4Health.Controllers
                 }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
         }
 
-
         // Listar Trilhos em Backoffice
         public ViewResult Lista()
         {
@@ -93,13 +92,13 @@ namespace Trails4Health.Controllers
 
         //
         [HttpGet]
-        public ViewResult Criar()
+        public ViewResult CriarTrilho()
         {
             return View();
         }
 
         [HttpPost]
-        public ViewResult Criar(Trilho trilho)
+        public ViewResult CriarTrilho(Trilho trilho)
         {
             // validação
             if (ModelState.IsValid)

@@ -12,11 +12,12 @@
 }
 
 <form asp-action="Criar" method="post">
-    <div class="bg-faded p-4 my-4 panel panel-primary" style="padding:1em">
+    <div class="panel panel-primary" style="margin-top:2ex">
         <div class="text-center text-lg text-uppercase my-0 panel-heading" style="margin-bottom:1em">
             Criar
             <strong>Trilho</strong>
         </div>
+        <div class="panel-body">
             <div class="row">
                 <div class="form-group col-lg-4">
                     <!-- asp-for: atributo tag helper: liga os elementos HTML ao objecto Model:  EX: Models.Trilhos.Nome -->
@@ -56,8 +57,9 @@
                 <div class="form-group col-lg-12">
                     <button type="submit" class="btn btn-primary">Adicionar</button>
                 </div>
-                <!-- to display validation errors to the user -->
-                <div asp-validation-summary="All"></div>
             </div>
-    </div>
+            <!-- to display validation errors to the user -->
+            <div asp-validation-summary="All"></div>
+            </div>
+        </div>
 </form>
