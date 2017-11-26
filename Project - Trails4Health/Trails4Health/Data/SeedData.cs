@@ -30,7 +30,7 @@ namespace Trails4Health.Models
             dbContext.Trilhos.AddRange(
                  new Trilho { Nome = "Loriga", Foto = "/images/loriga.jpg", Detalhes = "Este trilho é curto, com uma extensão de 5 km e percorre-se numa média de 1h00. Contem poucas subidas começa" +
                  " na alta de Loriga e termina junto á Ribeira de S.Bento.",
-                     Desativado = false, Inicio = "Alta de Loriga", Fim = "Ribeira de S.Bento",  Distancia = 5m
+                     Desativado = false, Inicio = "Loriga", Fim = "Ribeira de S.Bento",  Distancia = 5m
                  },
                  new Trilho { Nome = "Covão da Ametade", Foto = "/images/covao.jpg", Detalhes = "Este trilho é longo normalmente recomendada a turista mais jovens, tem uma extensão de 10 km, percorre-se numa media de 3h00" +
                  " começa com uma subida de 300 metros em Covão da Ametade e termina em Monte alto.",
