@@ -32,7 +32,7 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
-        public int TamanhoPagina = 4;
+        public int TamanhoPagina = 2;
         public ViewResult Index(int pagina = 1)
         {
             return View(
@@ -48,13 +48,24 @@ namespace Trails4Health.Controllers
                         TotalItems = repository.Trilhos.Count()
                     }
                 }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
-        }
+        }           // passa trilhos para view: @model IEnumerable<Trilho>
 
         // Listar Trilhos em Backoffice
-        public ViewResult Lista()
+        public ViewResult Lista(int pagina = 1)
         {
-            return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
-
+            return View(
+                new ViewModelListaTrilhos
+                {
+                    Trilho = repository.Trilhos
+                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Take(TamanhoPagina),
+                    InfoPaginacao = new InfoPaginacao
+                    {
+                        PaginaAtual = pagina,
+                        ItemsPorPagina = TamanhoPagina,
+                        TotalItems = repository.Trilhos.Count()
+                    }
+                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
         }
 
         public ViewResult DetalhesTrilho()

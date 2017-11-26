@@ -359,6 +359,10 @@ Nota:  botões nao aparecem, nao reconhece tag helpers:
     </div>
 Tempo: 1h
 
+// 26/11/2017 --------------------------------------------------------------
+. Adicionada Paginaçao em Lista.cshtml (backoffice)
+Tempo: 15 min. 
+
 //
 
 //
