@@ -1,14 +1,7 @@
 Diários: Ricardo Fernandes - 1011936
+---
 
-22/11/2017
-
-Primeira contribuição para o projecto:
-- Adicionada View "Home/AvaliarTrilho.cshtml" (sem conteúdo);
-- Adicionada View "Home/Sobre";
-- Adicionados ficheiros de layout "Shared/_LayoutSobre.cshtml" e "Shared/_LayoutComum.cshtml";
-- Alterado controlador "HomeController.cs" para que as Views adicionadas funcionem;
-
-Tempo Utilizado: 1.5 H
+Tempo Total: 3 H
 
 ---
 
@@ -33,4 +26,12 @@ Tempo Utilizado: 1.5 H
 
 ---
 
-Tempo Total: 3 H
+22/11/2017
+
+Primeira contribuição para o projecto:
+- Adicionada View "Home/AvaliarTrilho.cshtml" (sem conteúdo);
+- Adicionada View "Home/Sobre";
+- Adicionados ficheiros de layout "Shared/_LayoutSobre.cshtml" e "Shared/_LayoutComum.cshtml";
+- Alterado controlador "HomeController.cs" para que as Views adicionadas funcionem;
+
+Tempo Utilizado: 1.5 H
