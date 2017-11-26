@@ -364,6 +364,11 @@ Tempo: 1h
 Tempo: 15 min. 
 . Criado relacionamento entre as tabelas: Estado, EstadoTrilho, Trilho e Dificuldade 
 Tempo: 1 h
+. Reoganizada as rotas do site:
+	.Separei /Trilhos (CRUD) de /Avaliação (CRUD Questões e avaliação)
+	.Criei os controladores e hiperligações necessarias
+.Tempo: 30min.
+
 //
 
 //

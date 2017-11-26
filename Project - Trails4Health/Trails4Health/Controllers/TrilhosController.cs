@@ -68,38 +68,10 @@ namespace Trails4Health.Controllers
                 }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
         }
 
-        public ViewResult DetalhesTrilho()
+        public ViewResult Detalhes()
         {
             return View();
         }
-
-        public ViewResult BackOffice()
-        {
-            return View();
-        }
-
-        public ViewResult AvaliacaoGuia()
-        {
-            return View();
-        }
-
-        public ViewResult AvaliacaoTrilho()
-        {
-            return View();
-        }
-
-
-        public ViewResult QuestoesAvaliacaoGuia()
-        {
-            return View();
-        }
-
-
-        public ViewResult QuestoesAvaliacaoTrilho()
-        {
-            return View();
-        }
-
 
         //
         [HttpGet]
