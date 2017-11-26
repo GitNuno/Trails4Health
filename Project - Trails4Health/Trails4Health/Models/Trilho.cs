@@ -8,7 +8,8 @@ namespace Trails4Health.Models
 {
     public class Trilho
     {
-        public int TrilhoID { get; set; } // tem de ter este formato para reconhecer pk: nomeID !!
+        // ATRIBUTOS
+        public int TrilhoID { get; set; } // formato para reconhecer pk: nomeID !!
 
         [Required(ErrorMessage = "Introduza nome do Trilho")]
         public string Nome { get; set; }
@@ -37,7 +38,12 @@ namespace Trails4Health.Models
 
         public bool Desativado { get; set; } = false;
 
-        //public int DificuldadeID { get; set; } // FK 
+
+        //// FK Dificuldade
+        //public int DificuldadeID { get; set; }
         //public Dificuldade Dificuldade { get; set; }
+
+        //// Trilho tem varios EstadoTrilhos (classe intermedia)
+        //public ICollection<EstadoTrilho> EstadoTrilhos { get; set; }
     }
 }

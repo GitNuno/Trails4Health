@@ -7,10 +7,13 @@ namespace Trails4Health.Models
 {
     public interface ITrails4HealthRepository
     {
-        // +++ crio apenas 1 class interface para todos modelos(tabelas) e com varios IEnumerable<MyModel> ???
-        // +++ por sua vez EF()Repository implementa esta classe e cada destes IEnumerable<MyModel> é preenchido
-        //     com BD usando ApplicationDbContext ??????
+        // crio 1 class interface para todos modelos(tabelas) com varios IEnumerable<MyModel>
+        // por sua vez EF()Repository implementa esta classe e cada 1 destes IEnumerable<MyModel> toma o
+        // valor presente na BD atraves de um serviço
         // permite-me criar qualquer tipo de "repositorio" (neste caso de Trilhos) a partir desta interface
         IEnumerable<Trilho> Trilhos { get; }
+        //IEnumerable<Dificuldade> Dificuldades { get; }
+        //IEnumerable<EstadoTrilho> EstadoTrilhos { get; }
+        //IEnumerable<Estado> Estado { get; }
     }
 }

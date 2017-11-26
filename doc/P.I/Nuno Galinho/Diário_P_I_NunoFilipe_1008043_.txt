@@ -362,7 +362,8 @@ Tempo: 1h
 // 26/11/2017 --------------------------------------------------------------
 . Adicionada Paginaçao em Lista.cshtml (backoffice)
 Tempo: 15 min. 
-
+. Criado relacionamento entre as tabelas: Estado, EstadoTrilho, Trilho e Dificuldade 
+Tempo: 1 h
 //
 
 //
