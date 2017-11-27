@@ -68,9 +68,27 @@ namespace Trails4Health.Controllers
                 }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
         }
 
-        public ViewResult Detalhes()
+        // devolve o trilho selecionado (de acordo com o id: botão saber_mais - ver taghelper Detalhes.cshtml)
+        public ViewResult Detalhes(int? id)
         {
-            return View();
+            string error_ID = "404-NULL-ID";
+            string error_TRILHO = "404-NULL-TRILHO";
+
+            if (id == null)
+            {
+                ViewBag.Message = error_ID;
+                return View();
+            }
+
+            var trilho = repository.Trilhos.SingleOrDefault(t => t.TrilhoID == id);
+
+            if (trilho == null)
+            {
+                ViewBag.Message = error_TRILHO;
+                return View();
+            }
+
+            return View(trilho);
         }
 
         //
