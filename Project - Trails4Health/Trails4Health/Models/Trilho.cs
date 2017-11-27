@@ -20,14 +20,15 @@ namespace Trails4Health.Models
         [Required(ErrorMessage = "Introduza fim do Trilho")]
         public string Fim { get; set; }
 
-        // Acrescentar coordenadas GPS
+       // Nota: Acrescentar em SeedData!! Ainda nao está na BD
+       // coordenadas GPS
+       //public string Latitude { get; set; }
 
-        // Acrescentar data criação
+       //public string Longitude { get; set; }
 
-        // Nota: Acrescentar em SeedData!! Ainda nao está na BD 
-        // public string Sumario { get; set; }
+       // public string Sumario { get; set; }
 
-        [Required(ErrorMessage = "Introduza detalhes do Trilho")]
+       [Required(ErrorMessage = "Introduza detalhes do Trilho")]
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]

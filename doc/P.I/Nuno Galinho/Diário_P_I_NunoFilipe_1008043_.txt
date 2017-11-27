@@ -368,6 +368,10 @@ Tempo: 1 h
 	.Separei /Trilhos (CRUD) de /Avaliação (CRUD Questões e avaliação)
 	.Criei os controladores e hiperligações necessarias
 .Tempo: 30min.
+. Adicionado texto para detalhes Trilho + imagens
+.Fiz pesquisa de Lugares, fotos e descrições relativo ao parque natural da serra 
+ da estrela para colocar na base dados.
+Tempo: 45min.
 
 // 27/11/2017 --------------------------------------------------------------
 . Scaffolding da tabela Trilho + adiçao dados nas tabelas

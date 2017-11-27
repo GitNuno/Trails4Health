@@ -32,7 +32,7 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
-        public int TamanhoPagina = 2;
+        public int TamanhoPagina = 4;
         public ViewResult Index(int pagina = 1)
         {
             return View(

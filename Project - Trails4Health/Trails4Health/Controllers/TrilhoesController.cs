@@ -47,7 +47,9 @@ namespace Trails4Health.Controllers
         // GET: Trilhoes/Create
         public IActionResult Create()
         {
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "DificuldadeID");
+            // viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime
+            // Nome é o campo de texto referente ao DificuldadeID
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome");
             return View();
         }
 
@@ -56,11 +58,17 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoID,Nome,Inicio,Fim,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho)
+        public async Task<IActionResult> Create([Bind("TrilhoID,Nome,Inicio,Fim,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho, EstadoTrilho estadoTrilho)
         {
+ 
             if (ModelState.IsValid)
             {
+                // ++++ não atualiza TrilhoID na tb EstadoTrilho
+                //estadoTrilho.TrilhoID = trilho.TrilhoID; se fizer Ex: 7 funciona !!
+                //estadoTrilho.DataInicio = DateTime.Now;
+                //estadoTrilho.EstadoID = 2;
                 _context.Add(trilho);
+                //_context.Add(estadoTrilho);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }

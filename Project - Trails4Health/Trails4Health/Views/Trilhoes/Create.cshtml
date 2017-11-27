@@ -1,7 +1,11 @@
-@model Trails4Health.Models.Trilho
+@model Trilho
 
 @{
     ViewData["Title"] = "Create";
+}
+
+@{
+    Layout = "_LayoutBackOffice";
 }
 
 <h2>Create</h2>
@@ -61,10 +65,12 @@
                 </div>
             </div>
         </div>
+        <!-- viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime -->
+        </div>
         <div class="form-group">
-            <label asp-for="DificuldadeID" class="col-md-2 control-label"></label>
+            <label asp-for="Dificuldade" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="DificuldadeID" class ="form-control" asp-items="ViewBag.DificuldadeID"></select>
+                <select asp-for="DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
             </div>
         </div>
         <div class="form-group">

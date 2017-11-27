@@ -1,7 +1,11 @@
-@model IEnumerable<Trails4Health.Models.Trilho>
+@model IEnumerable<Trilho>
 
 @{
     ViewData["Title"] = "Index";
+}
+
+@{
+    Layout = "_LayoutBackOffice";
 }
 
 <h2>Index</h2>
@@ -64,7 +68,7 @@
                 @Html.DisplayFor(modelItem => item.Desativado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Dificuldade.DificuldadeID)
+                @Html.DisplayFor(modelItem => item.Dificuldade.Nome)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TrilhoID">Edit</a> |
