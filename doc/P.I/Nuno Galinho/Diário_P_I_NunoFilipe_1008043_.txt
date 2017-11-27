@@ -369,6 +369,12 @@ Tempo: 1 h
 	.Criei os controladores e hiperligações necessarias
 .Tempo: 30min.
 
+// 27/11/2017 --------------------------------------------------------------
+. Scaffolding da tabela Trilho + adiçao dados nas tabelas
+Nota: Scaffolding falhou, nao reconhecia um FK.
+Resolvi o problema apagando as tabelas de migração e a base de dados,
+fisicamente no disco /users/... e logicamente no V.S.
+Tempo: 1h
 //
 
 //

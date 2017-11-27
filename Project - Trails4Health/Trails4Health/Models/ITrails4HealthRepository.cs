@@ -12,8 +12,8 @@ namespace Trails4Health.Models
         // valor presente na BD atraves de um serviço
         // permite-me criar qualquer tipo de "repositorio" (neste caso de Trilhos) a partir desta interface
         IEnumerable<Trilho> Trilhos { get; }
-        //IEnumerable<Dificuldade> Dificuldades { get; }
-        //IEnumerable<EstadoTrilho> EstadoTrilhos { get; }
-        //IEnumerable<Estado> Estado { get; }
+        IEnumerable<Dificuldade> Dificuldades { get; }
+        IEnumerable<EstadoTrilho> EstadoTrilhos { get; }
+        IEnumerable<Estado> Estados { get; }
     }
 }

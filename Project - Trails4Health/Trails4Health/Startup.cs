@@ -74,7 +74,7 @@ namespace Trails4Health
             });
 
             // popular B:D.
-            SeedData.EnsurePopulated(app.ApplicationServices);
+           // SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }

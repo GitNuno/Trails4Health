@@ -7,12 +7,12 @@ namespace Trails4Health.Models
 {
     public class Dificuldade
     {
-        //// ATRIBUTOS
-        //public int DificuldadeID { get; set; }
-        //public string Nome { get; set; }
-        //public string Observacao { get; set; }
+        // ATRIBUTOS
+        public int DificuldadeID { get; set; }
+        public string Nome { get; set; }
+        public string Observacao { get; set; }
 
-        //// Dificuldade tem varios Trilhos
-        //public ICollection<Trilho> Trilhos { get; set; }
+        // Dificuldade tem varios Trilhos
+        public ICollection<Trilho> Trilhos { get; set; }
     }
 }

@@ -39,11 +39,11 @@ namespace Trails4Health.Models
         public bool Desativado { get; set; } = false;
 
 
-        //// FK Dificuldade
-        //public int DificuldadeID { get; set; }
-        //public Dificuldade Dificuldade { get; set; }
+        // FK Dificuldade
+        public int DificuldadeID { get; set; }
+        public Dificuldade Dificuldade { get; set; }
 
-        //// Trilho tem varios EstadoTrilhos (classe intermedia)
-        //public ICollection<EstadoTrilho> EstadoTrilhos { get; set; }
+        // Trilho tem varios EstadoTrilhos (classe intermedia)
+        public ICollection<EstadoTrilho> EstadoTrilhos { get; set; }
     }
 }
