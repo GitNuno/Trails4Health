@@ -63,10 +63,10 @@ namespace Trails4Health.Controllers
  
             if (ModelState.IsValid)
             {
-                // ++++ não atualiza TrilhoID na tb EstadoTrilho
-                //estadoTrilho.TrilhoID = trilho.TrilhoID; se fizer Ex: 7 funciona !!
+                ////// ++++ não atualiza TrilhoID na tb EstadoTrilho ???
+                //estadoTrilho.TrilhoID = trilho.TrilhoID; //se fizer Ex: 7 funciona !
                 //estadoTrilho.DataInicio = DateTime.Now;
-                //estadoTrilho.EstadoID = 2;
+                //estadoTrilho.EstadoID = 1;
                 _context.Add(trilho);
                 //_context.Add(estadoTrilho);
                 await _context.SaveChangesAsync();
@@ -154,7 +154,9 @@ namespace Trails4Health.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
-            _context.Trilhos.Remove(trilho);
+            trilho.Desativado = true;
+            //_context.Trilhos.Remove(trilho);
+            _context.Trilhos.Update(trilho);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }

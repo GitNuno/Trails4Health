@@ -7,7 +7,6 @@ using Trails4Health.Models;
 using Microsoft.AspNetCore.Builder;
 using Trails4Health.Models.ViewModels;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 // CAMINHO DADOS:
 //   .[serviços]: ITrails4HealthRepository recebeu dados de EFTrails4HealthRepository>() (ver startup.cs)
@@ -71,27 +70,22 @@ namespace Trails4Health.Controllers
         // devolve o trilho selecionado (de acordo com o id: botão saber_mais - ver taghelper Detalhes.cshtml)
         public ViewResult Detalhes(int? id)
         {
-            string error_ID = "404-NULL-ID";
-            string error_TRILHO = "404-NULL-TRILHO";
-
             if (id == null)
             {
-                ViewBag.Message = error_ID;
-                return View();
+                return View("../Shared/Error");
             }
 
             var trilho = repository.Trilhos.SingleOrDefault(t => t.TrilhoID == id);
 
             if (trilho == null)
             {
-                ViewBag.Message = error_TRILHO;
-                return View();
+                return View("../Shared/Error");
             }
 
             return View(trilho);
         }
 
-        //
+        // mudar nome !!
         [HttpGet]
         public ViewResult CriarTrilho()
         {
@@ -111,10 +105,7 @@ namespace Trails4Health.Controllers
                 // There are Validation Errors > devolve a view em que estava 
                 return View();
             }
-
         }
-
-
     }
 }
 

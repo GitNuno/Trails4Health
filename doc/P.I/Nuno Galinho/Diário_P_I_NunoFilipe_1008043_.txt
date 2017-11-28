@@ -387,6 +387,11 @@ Tempo: 1h
 . Criada acção detalhes para mostrar descrição do trilho seleccionado (botao saber mais)
 Nota: Estava a dar null pointer exception (runtime error) - referenciei mal TrilhoID em /shared/sumarioTrilhos.cshtml 
 Tempo:1h
+. Alterada acção delete de apagar registo para desativar=true
+Nota: Falhei nova tentativa de inserir TrilhoID(FK) na tabela EstadoTrilho.
+Erro: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EstadoTrilhos_Trilhos_TrilhoID". The conflict occurred in database "Trails4Health", table "dbo.Trilhos", column 'TrilhoID'.
+usei outros metodos de inserção como addRange mas nao funcionaram.
+Tempo:45 min.
 //
 
 //

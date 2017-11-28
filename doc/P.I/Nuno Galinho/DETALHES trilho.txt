@@ -1,4 +1,33 @@
 
+False
+Este trilho é longo normalmente recomendada a turista mais jovens, tem uma extensão de 10 km, percorre-se numa media de 3h00,  começa com uma subida de 300 metros em Covão da Ametade e termina em Monte alto
+2
+27,00
+Monte Alto
+/images/torre.jpg
+torre
+torre
+//
+False
+Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão, constituido por paisagens majestosas e faz-se numa media de 1h15
+2
+13
+Ribeira
+/images/inferno.jpg
+Inferno
+Alvoco
+//
+False
+Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, onde não passa mais do que um carro
+2
+15
+Poço do Inferno
+/images/inferno.jpg
+Inferno
+Inferno
+
+
+
 // O COVÃO D’AMETADE:
 O Covão d’Ametade, outrora uma pastagem cerval, representa uma depressão de origem 
 glaciar que foi arborizada com vidoeiros ao longo das margens do rio. É um cenário 
