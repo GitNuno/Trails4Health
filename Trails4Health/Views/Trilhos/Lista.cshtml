@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Trilho>
+﻿@model ViewModelListaTrilhos
 @{
     ViewData["Title"] = "List";
 }
@@ -10,7 +10,7 @@
 <h2>Trilhos</h2>
 <hr /> 
 
-@foreach (Trilho T in Model)
+@foreach (Trilho T in Model.Trilho)
 {
     <div>
         <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
@@ -19,4 +19,13 @@
         <p>Distancia: @T.Distancia Km</p>
     </div>
     <hr /> <!--barra horizontal-->
+
+   <!--Pagination-->
+    <div page-model="@Model.InfoPaginacao"
+         css-classes-enabled="true"
+         css-class-page="btn btn-sm"
+         css-class-page-normal="btn-default"
+         css-class-page-selected="btn-primary"
+         class="pull-right">
+    </div>
 }

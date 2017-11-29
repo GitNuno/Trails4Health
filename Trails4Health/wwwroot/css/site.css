@@ -54,3 +54,8 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+/* meus estilos */
+.adjust-margin-left {
+    margin-left:3px;
+}

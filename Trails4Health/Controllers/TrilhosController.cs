@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Trails4Health.Models;
 using Microsoft.AspNetCore.Builder;
+using Trails4Health.Models.ViewModels;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 // CAMINHO DADOS:
 //   .[serviços]: ITrails4HealthRepository recebeu dados de EFTrails4HealthRepository>() (ver startup.cs)
@@ -31,59 +31,69 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
-        public ViewResult Index()
+        public int TamanhoPagina = 4;
+        public ViewResult Index(int pagina = 1)
         {
-            return View(repository.Trilhos);
-        }
-
-        public ViewResult DetalhesTrilho()
-        {
-            return View();
-        }
-
-        public ViewResult BackOffice()
-        {
-            return View();
-        }
-
-        public ViewResult AvaliacaoGuia()
-        {
-            return View();
-        }
-
-        public ViewResult AvaliacaoTrilho()
-        {
-            return View();
-        }
-
-
-        public ViewResult QuestoesAvaliacaoGuia()
-        {
-            return View();
-        }
-
-
-        public ViewResult QuestoesAvaliacaoTrilho()
-        {
-            return View();
-        }
+            return View(
+                new ViewModelListaTrilhos
+                {
+                    Trilho = repository.Trilhos
+                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Take(TamanhoPagina),
+                    InfoPaginacao = new InfoPaginacao
+                    {
+                        PaginaAtual = pagina,
+                        ItemsPorPagina = TamanhoPagina,
+                        TotalItems = repository.Trilhos.Count()
+                    }
+                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
+        }           // passa trilhos para view: @model IEnumerable<Trilho>
 
         // Listar Trilhos em Backoffice
-        public ViewResult Lista()
+        public ViewResult Lista(int pagina = 1)
         {
-            return View(repository.Trilhos); // passa trilhos para view: @model IEnumerable<Trilho>
-
+            return View(
+                new ViewModelListaTrilhos
+                {
+                    Trilho = repository.Trilhos
+                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Take(TamanhoPagina),
+                    InfoPaginacao = new InfoPaginacao
+                    {
+                        PaginaAtual = pagina,
+                        ItemsPorPagina = TamanhoPagina,
+                        TotalItems = repository.Trilhos.Count()
+                    }
+                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
         }
 
-        // A IDEIA ERA CRIAR TRILHO A PARTIR FORMULARIO ...
+        // devolve o trilho selecionado (de acordo com o id: botão saber_mais - ver taghelper Detalhes.cshtml)
+        public ViewResult Detalhes(int? id)
+        {
+            if (id == null)
+            {
+                return View("../Shared/Error");
+            }
+
+            var trilho = repository.Trilhos.SingleOrDefault(t => t.TrilhoID == id);
+
+            if (trilho == null)
+            {
+                return View("../Shared/Error");
+            }
+
+            return View(trilho);
+        }
+
+        // mudar nome !!
         [HttpGet]
-        public ViewResult Criar()
+        public ViewResult CriarTrilho()
         {
             return View();
         }
 
         [HttpPost]
-        public ViewResult Criar(Trilho trilho)
+        public ViewResult CriarTrilho(Trilho trilho)
         {
             // validação
             if (ModelState.IsValid)
@@ -95,10 +105,7 @@ namespace Trails4Health.Controllers
                 // There are Validation Errors > devolve a view em que estava 
                 return View();
             }
-
         }
-
-
     }
 }
 

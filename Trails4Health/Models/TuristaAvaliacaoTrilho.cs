@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Trails4Health.Models
 {
-    public class RespostaAvaliacaoTrilho
+    public class TuristaAvaliacaoTrilho
     {
     }
 }
