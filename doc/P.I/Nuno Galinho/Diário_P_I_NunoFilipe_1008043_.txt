@@ -392,6 +392,13 @@ Nota: Falhei nova tentativa de inserir TrilhoID(FK) na tabela EstadoTrilho.
 Erro: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EstadoTrilhos_Trilhos_TrilhoID". The conflict occurred in database "Trails4Health", table "dbo.Trilhos", column 'TrilhoID'.
 usei outros metodos de inserção como addRange mas nao funcionaram.
 Tempo:45 min.
+
+// 29/11/2017 --------------------------------------------------------------
+. Criada ViewModelTrilho + Falhada inserção de TrilhoID na tabela EstadoTrilho
+Nota:
+ERRO: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EstadoTrilhos_Trilhos_TrilhoID". The conflict occurred in database "Trails4Health", table "dbo.Trilhos", column 'TrilhoID'.
+Tempo: 1h
+
 //
 
 //

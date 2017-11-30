@@ -9,8 +9,6 @@ namespace Trails4Health.Models.ViewModels
     public class ViewModelTrilho
     {
 
-        public int TrilhoID;
-
         [Required(ErrorMessage = "Introduza nome do Trilho")]
         public string TrilhoNome { get; set; }
 
@@ -33,7 +31,7 @@ namespace Trails4Health.Models.ViewModels
 
         public int DificuldadeID { get; set; }
 
-        public int DificuldadeNome { get; set; }
+        // public int DificuldadeNome { get; set; }
 
         //
         public int EstadoID { get; set; }
