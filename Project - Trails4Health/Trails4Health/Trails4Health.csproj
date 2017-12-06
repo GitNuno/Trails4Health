@@ -2,41 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
-    <UserSecretsId>aspnet-Trails4Health-C74E1D5F-4FED-4389-8CAD-D22ED3BEFE00</UserSecretsId>
+    <UserSecretsId>aspnet-Trails4Health-732EA729-C1C2-4E6A-A968-FA3E0552399E</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="1.1.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.6" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.5" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.5" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.4" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.3" />
-    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.1" />
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.3" />
- </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Data\" />
-    <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\js\" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
 </Project>

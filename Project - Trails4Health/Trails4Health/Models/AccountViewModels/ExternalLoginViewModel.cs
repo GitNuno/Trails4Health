@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trails4Health.Models.AccountViewModels
 {
-    public class ExternalLoginConfirmationViewModel
+    public class ExternalLoginViewModel
     {
         [Required]
         [EmailAddress]
