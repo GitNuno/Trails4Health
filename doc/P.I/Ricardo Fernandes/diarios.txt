@@ -1,7 +1,78 @@
-Diários: Ricardo Fernandes - 1011936
+Diários de Programação para a Internet: Ricardo Fernandes - 1011936
+
+Tempo Total: 11.5 H
+
 ---
 
-Tempo Total: 3 H
+06/12/2017
+
+- Leitura das páginas 237 a  do livro "Pro ASP.NET Core MVC 2";
+- Continuação do projecto "SportsStore":
+Criada migração inicial (command prompt: "cd C:\Users\******\source\repos\SportsStore\SportsStore", "dotnet ef migrations add Initial");
+Adicionadas classes:
+	"Models/SeedData.cs";
+	"Models/ViewModels/PageInfo.cs";
+	"Infrastructure/PageLinkTagHelper.cs";
+	"Models/ViewModels/ProductsListViewModel.cs";
+Criação das classes de testes:
+	"ProductControllerTests.cs";
+	"PageLinkTagHelperTests.cs";
+
+	
+Tempo Utilizado:  1 H
+
+---
+
+04/12/2017
+
+- Leitura das páginas 233 a 237 do livro "Pro ASP.NET Core MVC 2";
+- Continuação do projecto "SportsStore":
+Adicionadas classes:
+	"Models/ApplicationDbContext.cs";
+	"Models/EFProductRepository.cs";
+Adicionados ficheiros:
+	"appsettings.json" (connection string);
+
+	
+Tempo Utilizado: 0.5 H
+
+---
+
+03/12/2017
+
+- Leitura das páginas 79 a 106 do livro "Pro ASP.NET Core MVC 2";
+- Construído projecto "LanguageFeatures" (sobre algumas funcionalidades da linguagem c#);
+
+- Leitura das páginas 216 a 233 do livro "Pro ASP.NET Core MVC 2";
+- Criado projecto "SportsStore":
+Adicionadas classes:
+	"Startup.cs";
+	"Models/Product.cs";
+	"Models/IProductRepository.cs";
+	"Models/FakeProductRepository.cs";
+	"Controllers/ProductController.cs";
+Adicionados ficheiros:
+	"Views/_ViewImports.cshtml";
+	"Startup.cs";
+	"Views/Shared/_Layout.cshtml";
+	"Views/_ViewStart.cshtml";
+	"Views/Product/List.cshtml";
+		
+- Criação do projecto de testes unitários (adicionada package "Moq" ao ficheiro "SportsStore.Tests/SportsStore.csproj");
+
+- Instalação da package "Entity Framework Core Tools" (ficheiro "SportsStore/SportsStore.csproj");
+
+
+Tempo Utilizado: 4 H
+
+---
+
+02/12/2017
+
+- Leitura das páginas 3 a 78 do livro "Pro ASP.NET Core MVC 2";
+- Construído projecto "PartyInvites";
+
+Tempo Utilizado: 3 H
 
 ---
 
