@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Trails4Health.Data;
-using Trails4Health.Models;
-using Trails4Health.Services;
+using PartyInvites.Data;
+using PartyInvites.Models;
+using PartyInvites.Services;
 
-namespace Trails4Health
+namespace PartyInvites
 {
     public class Startup
     {
@@ -47,22 +47,6 @@ namespace Trails4Health
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            //  *** se quiser mudar repositorio...
-            //- assim não preciso de mudar mais nada que nao seja FakeProductRepository
-            // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
-
-            /* configurar a app para usar a ConnectionStringTrails4Health e ligar á B.D.*/
-            services.AddDbContext<ApplicationDbContext>( options => options.UseSqlServer
-              (
-                  // vou por nome da string connection do appsettings.jason
-                  Configuration.GetConnectionString("ConnectionStringTrails4Health")
-              )
-          );
-            /* quando são criados os componentes que usam ITrails4HealthRepository (no momento apenas Trilhos(controler)) 
-               recebem um objecto EFTrails4HealthRepository, este objecto providencia aos componentes acesso á B.D. */
-            services.AddTransient<ITrails4HealthRepository, EFTrails4HealthRepository>();
-
-            // Add framework services.
             services.AddMvc();
 
             // Add application services.
@@ -99,9 +83,6 @@ namespace Trails4Health
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            // popular B:D.
-           // SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }
