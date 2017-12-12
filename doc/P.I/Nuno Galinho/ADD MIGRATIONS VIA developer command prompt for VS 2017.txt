@@ -1,0 +1,14 @@
+
+::
+DEVELOPER COMMAND PROMPT FOR VS 2017
+
+::
+COMANDOS:
+	.cd /dir/myProject
+	.dotnet restore
+	.dotnet build
+	.dotnet ef migrations add Initial --context "EX: BooksDbContext"
+	.dotnet ef migrations add Initial --context "EX: BooksUsersDbContext"
+	.dotnet ef database update --context "EX: BooksDbContext"
+	.dotnet ef database update --context "EX: BooksDdUsersDbContext"
+	

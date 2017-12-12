@@ -399,7 +399,9 @@ Nota:
 ERRO: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EstadoTrilhos_Trilhos_TrilhoID". The conflict occurred in database "Trails4Health", table "dbo.Trilhos", column 'TrilhoID'.
 Tempo: 1h
 
-//
+// 12/12/2017
+. Estudei Autenticação do projecto Books Aula 7/12/2017
+Tempo: 1h
 
 //
 

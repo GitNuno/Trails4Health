@@ -10,7 +10,7 @@ namespace Trails4Health.Data
 {
     public class LoginsApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public LoginsApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public LoginsApplicationDbContext(DbContextOptions<LoginsApplicationDbContext> options)
             : base(options)
         {
         }

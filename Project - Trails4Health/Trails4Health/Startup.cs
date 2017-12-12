@@ -13,6 +13,7 @@ using Trails4Health.Data;
 using Trails4Health.Models;
 using Trails4Health.Services;
 
+
 namespace Trails4Health
 {
     public class Startup
@@ -28,6 +29,8 @@ namespace Trails4Health
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            // 2.0 (b.d.AUTENTICAÇÃO) 
+            /* SERVIÇO PARA AUTENTICAÇÃO: configurar ASPNET CORE identity services */
             services.AddDbContext<LoginsApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -35,9 +38,33 @@ namespace Trails4Health
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            //  *** se quiser mudar repositorio...
-            //- assim não preciso de mudar mais nada que nao seja FakeProductRepository
-            // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
+            // 2.1 (b.d.AUTENTICAÇÃO)
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                // Adiciono outras configurações se necessarias (ver ppt 148)
+
+                // Lockout settings
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                // Add other lockout settings if needed ...
+
+                // Add other user settings if needed ...
+                //options.User.RequireUniqueEmail = true;
+            });
+
+            // Add application services.
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            // 4. (b.d.AUTENTICAÇÃO) 
+            // .como tenho 2 base dados não posso fazer migrações como antes...
+            // .busco por: developer command prompt for VS 2017:
+            //    .cd endereço do project Trails4Health .Nota: não é a dir do sln!
+            //    .dotnet restore, dotnet build, ... ver(ppt 150)
+            //    .dotnet ef migrations add Initial 
+            // .criar utilizadores em /Data/UsersSeedData
 
             /* configurar a app para usar a ConnectionStringTrails4Health e ligar á B.D.*/
             services.AddDbContext<ApplicationDbContext>( options => options.UseSqlServer
@@ -46,6 +73,10 @@ namespace Trails4Health
                   Configuration.GetConnectionString("ConnectionStringTrails4Health")
               )
           );
+            //  *** se quiser mudar repositorio...
+            //- assim não preciso de mudar mais nada que nao seja FakeProductRepository
+            // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
+
             /* quando são criados os componentes que usam ITrails4HealthRepository (no momento apenas Trilhos(controler)) 
                recebem um objecto EFTrails4HealthRepository, este objecto providencia aos componentes acesso á B.D. */
             services.AddTransient<ITrails4HealthRepository, EFTrails4HealthRepository>();
@@ -74,6 +105,9 @@ namespace Trails4Health
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            // 3. (b.d.AUTENTICAÇÃO) 
+            //app.UseIdentity();
 
             app.UseMvc(routes =>
             {

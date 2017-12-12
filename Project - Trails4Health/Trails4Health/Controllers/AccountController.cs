@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Trails4Health.Data;
 using Trails4Health.Models;
 using Trails4Health.Models.AccountViewModels;
 using Trails4Health.Services;
@@ -35,6 +36,10 @@ namespace Trails4Health.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+
+            // 6. (b.d.AUTENTICAÇÃO)
+            UsersSeedData.EnsurePopulatedAsync(userManager).Wait();
+            // ver loginViewModel
         }
 
         [TempData]
