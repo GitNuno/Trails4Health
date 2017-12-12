@@ -29,22 +29,37 @@ namespace Trails4Health
         {
             // Add framework services.
             services.AddDbContext<LoginsApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringLogins")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<LoginsApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                // Add other passsword settings if needed ...
+
+                // Lockout settings
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                // Add other lockout settings if needed ...
+
+                // Add other user settings if needed ...
+                //options.User.RequireUniqueEmail = true;
+            });
 
             //  *** se quiser mudar repositorio...
             //- assim não preciso de mudar mais nada que nao seja FakeProductRepository
             // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
 
             /* configurar a app para usar a ConnectionStringTrails4Health e ligar á B.D.*/
-            services.AddDbContext<ApplicationDbContext>( options => options.UseSqlServer
-              (
-                  // vou por nome da string connection do appsettings.jason
-                  Configuration.GetConnectionString("ConnectionStringTrails4Health")
-              )
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
+             (
+                 // vou por nome da string connection do appsettings.jason
+                 Configuration.GetConnectionString("ConnectionStringTrails4Health")
+             )
           );
             /* quando são criados os componentes que usam ITrails4HealthRepository (no momento apenas Trilhos(controler)) 
                recebem um objecto EFTrails4HealthRepository, este objecto providencia aos componentes acesso á B.D. */
@@ -82,8 +97,10 @@ namespace Trails4Health
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+
+
             // popular B:D.
-           // SeedData.EnsurePopulated(app.ApplicationServices);
+            // SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }
