@@ -38,8 +38,8 @@ namespace Trails4Health.Controllers
             _logger = logger;
 
             // 6. (b.d.AUTENTICAÇÃO)
-            UsersSeedData.EnsurePopulatedAsync(userManager).Wait();
-            // ver loginViewModel
+            UsersSeedData.EnsurePopulatedAsync(userManager).Wait(); // correr url: account/login > **ERRO!
+            // ver /Models/AccountViewModels/loginViewModel
         }
 
         [TempData]

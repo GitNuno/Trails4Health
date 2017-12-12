@@ -8,8 +8,9 @@ namespace Trails4Health.Models.AccountViewModels
 {
     public class LoginViewModel
     {
+        // 7. (b.d.AUTENTICAÇÃO)
         [Required]
-        [EmailAddress]
+        // [EmailAddress] Email passa a ser admin: para não estar sujeito ás regras de [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -19,4 +20,5 @@ namespace Trails4Health.Models.AccountViewModels
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
-}
+}// correr aplicação
+ // ver BooksController.cs
