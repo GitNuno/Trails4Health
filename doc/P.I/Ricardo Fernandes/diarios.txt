@@ -1,6 +1,23 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 13.5 H
+Tempo Total: 16.0 H
+
+---
+
+13/12/2017
+
+- Continuação do projecto "Trails4Health":
+Consultado tutorial sobre "entity framework":
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro#add-code-to-initialize-the-database-with-test-data
+Adicionadas classes "Models/TipoResposta.cs", "Models/QuestoesAvaliacaoGuia.cs", "Models/QuestoesAvaliacaoGuia.cs";
+Alterado ficheiro "Data/ApplicationDbContext.cs" para acomodar novas classes criadas;
+Criada classe "Data/DbInitializer.cs", com o objectivo de colocar alguns dados de teste na base de dados;
+Alterado conteúdo da função Main() do ficheiro ("Program.cs"), com o intuito de popular a base de dados a partir da classe "Data/DbInitializer.cs";
+Criado controlador "Controllers/TipoRespostas.cs" com a opção "scaffolding";
+Aceder às view criada: http://localhost:*****/TipoRespostas;
+
+
+Tempo utilizado:  2.5 H
 
 ---
 
