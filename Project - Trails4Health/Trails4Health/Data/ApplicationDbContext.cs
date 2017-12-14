@@ -61,12 +61,13 @@ namespace Trails4Health.Models
                 .HasForeignKey(Trilho => Trilho.DificuldadeID);
 
             // construção das tabelas a partir do respectivos modelos (classes)
-            modelBuilder.Entity<TipoResposta>().HasKey(et => et.TipoRespostaID);
-            modelBuilder.Entity<TipoResposta>().ToTable("TipoResposta");
-            modelBuilder.Entity<QuestaoAvaliacaoTrilho>().HasKey(et => et.TipoRespostaID);
-            modelBuilder.Entity<QuestaoAvaliacaoTrilho>().ToTable("QuestaoAvaliacaoTrilho");
-            modelBuilder.Entity<QuestaoAvalicaoGuia>().HasKey(et => et.TipoRespostaID);
-            modelBuilder.Entity<QuestaoAvalicaoGuia>().ToTable("QuestaoAvaliacaoGuia");
+            modelBuilder.Entity<TipoResposta>().ToTable("TipoResposta")
+            .HasKey(et => et.TipoRespostaID);
+            modelBuilder.Entity<QuestaoAvaliacaoTrilho>().ToTable("QuestaoAvaliacaoTrilho")
+            .HasKey(et => et.TipoRespostaID);
+            modelBuilder.Entity<QuestaoAvalicaoGuia>().ToTable("QuestaoAvaliacaoGuia")
+            .HasKey(et => et.TipoRespostaID);
+
         }
     }
 }

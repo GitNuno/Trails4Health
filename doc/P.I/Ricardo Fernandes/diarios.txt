@@ -1,6 +1,17 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 16.0 H
+Tempo Total: 17.0 H
+
+
+---
+
+14/12/2017
+
+- Continuação do projecto "Trails4Health":
+Alteração da classe "Data/DbInitializer.cs" para permitir inicializar a base de dados (sucesso para a classe/tabela "TipoResposta");
+
+
+Tempo utilizado:  1 H
 
 ---
 
