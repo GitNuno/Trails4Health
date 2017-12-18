@@ -1,12 +1,75 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 11.5 H
+Tempo Total: 17.0 H
+
+
+---
+
+14/12/2017
+
+- Continuação do projecto "Trails4Health":
+Alteração da classe "Data/DbInitializer.cs" para permitir inicializar a base de dados (sucesso para a classe/tabela "TipoResposta");
+
+
+Tempo utilizado:  1 H
+
+---
+
+13/12/2017
+
+- Continuação do projecto "Trails4Health":
+Consultado tutorial sobre "entity framework":
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro#add-code-to-initialize-the-database-with-test-data
+Adicionadas classes "Models/TipoResposta.cs", "Models/QuestoesAvaliacaoGuia.cs", "Models/QuestoesAvaliacaoGuia.cs";
+Alterado ficheiro "Data/ApplicationDbContext.cs" para acomodar novas classes criadas;
+Criada classe "Data/DbInitializer.cs", com o objectivo de colocar alguns dados de teste na base de dados;
+Alterado conteúdo da função Main() do ficheiro ("Program.cs"), com o intuito de popular a base de dados a partir da classe "Data/DbInitializer.cs";
+Criado controlador "Controllers/TipoRespostas.cs" com a opção "scaffolding";
+Aceder às view criada: http://localhost:*****/TipoRespostas;
+
+
+Tempo utilizado:  2.5 H
+
+---
+
+12/12/2017
+
+- Continuação do projecto "Trails4Health":
+Acrescentados serviços relacionados com passwords ("Startup.cs");
+Editada classe "Data/LoginsApplicationDbContext.cs";
+Acrescentada classe "Data/UsersSeedData.cs" para adicionar o utilizador-administrador à base de dados;
+Efectuada migração e actualização da base de dados de utilizadores ("dotnet ef migrations add Initial --context LoginsApplicationDbContext" e "dotnet ef database update --context LoginsApplicationDbContext");
+Adicionado controlador "AdminController.cs";
+
+
+Tempo utilizado: 1 H
+
+---
+
+10/12/2017
+
+- Leitura das páginas 249 a 257 do livro "Pro ASP.NET Core MVC 2";
+- Continuação do projecto "SportsStore":
+Alteração do esquema de URLs ("Startup.cs");
+Adicionado ficheiro "bower.json" (categoria "Web/Bower Configuration File") e instalado bootstrap v3.3.6;
+Aplicado bootstrap no ficheiro "Shared/_Layout.cshtml";
+Aplicado estilo no ficheiro "Views/Product/List.cshtml";
+Adicionadas classes (para estilizar elementos) ao ficheiro "Infrastructure/PageLinkTagHelper.cs";
+
+- Continuação do projecto "Trails4Health":
+Consultado tutorial sobre autenticação:
+https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?tabs=visual-studio%2Caspnetcore2x
+Adicionada segunda "String" de ligação à base de dados, relacionada com autenticação;
+Adicionada view "Home/QuestoesAvaliacaoGuia.cshtml";
+
+
+Tempo utilizado: 2 H
 
 ---
 
 06/12/2017
 
-- Leitura das páginas 237 a  do livro "Pro ASP.NET Core MVC 2";
+- Leitura das páginas 237 a 248 do livro "Pro ASP.NET Core MVC 2";
 - Continuação do projecto "SportsStore":
 Criada migração inicial (command prompt: "cd C:\Users\******\source\repos\SportsStore\SportsStore", "dotnet ef migrations add Initial");
 Adicionadas classes:

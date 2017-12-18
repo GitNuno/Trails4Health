@@ -10,7 +10,11 @@ namespace Trails4Health.Models.AccountViewModels
     {
         // 7. (b.d.AUTENTICAÇÃO)
         [Required]
+<<<<<<< HEAD
         // [EmailAddress] Email passa a ser admin: para não estar sujeito ás regras de [EmailAddress]
+=======
+        //[EmailAddress]
+>>>>>>> f52a3b07c1f4a8c87e1513fda6f9a3e0d6a08516
         public string Email { get; set; }
 
         [Required]

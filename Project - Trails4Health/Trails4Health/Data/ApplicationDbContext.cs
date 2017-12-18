@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore; 
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +26,10 @@ namespace Trails4Health.Models
         public DbSet<Dificuldade> Dificuldades { get; set; }
         public DbSet<EstadoTrilho> EstadoTrilhos { get; set; }
         public DbSet<Estado> Estados { get; set; }
+
+        public DbSet<TipoResposta> TiposRespostas { get; set; }
+        public DbSet<QuestaoAvaliacaoTrilho> QuestoesAvalicaoTrilhos { get; set; }
+        public DbSet<QuestaoAvalicaoGuia> QuestoesAvalicaoGuias { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -55,6 +59,15 @@ namespace Trails4Health.Models
                 .HasOne(Trilho => Trilho.Dificuldade)
                 .WithMany(Dificuldade => Dificuldade.Trilhos)
                 .HasForeignKey(Trilho => Trilho.DificuldadeID);
+
+            // construção das tabelas a partir do respectivos modelos (classes)
+            modelBuilder.Entity<TipoResposta>().ToTable("TipoResposta")
+            .HasKey(et => et.TipoRespostaID);
+            modelBuilder.Entity<QuestaoAvaliacaoTrilho>().ToTable("QuestaoAvaliacaoTrilho")
+            .HasKey(et => et.TipoRespostaID);
+            modelBuilder.Entity<QuestaoAvalicaoGuia>().ToTable("QuestaoAvaliacaoGuia")
+            .HasKey(et => et.TipoRespostaID);
+
         }
     }
 }

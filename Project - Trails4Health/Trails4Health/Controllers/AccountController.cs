@@ -37,9 +37,13 @@ namespace Trails4Health.Controllers
             _emailSender = emailSender;
             _logger = logger;
 
+<<<<<<< HEAD
             // 6. (b.d.AUTENTICAÇÃO)
             UsersSeedData.EnsurePopulatedAsync(userManager).Wait(); // correr url: account/login > **ERRO!
             // ver /Models/AccountViewModels/loginViewModel
+=======
+            UsersSeedData.EnsurePopulatedAsync(userManager).Wait(); // adicionado
+>>>>>>> f52a3b07c1f4a8c87e1513fda6f9a3e0d6a08516
         }
 
         [TempData]
