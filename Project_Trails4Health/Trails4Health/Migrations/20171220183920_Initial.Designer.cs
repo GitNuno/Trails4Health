@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Trails4Health.Data;
 
-namespace Trails4Health.Migrations.LoginsApplicationDb
+namespace Trails4Health.Migrations
 {
     [DbContext(typeof(LoginsApplicationDbContext))]
-    [Migration("20171212193846_mgr")]
-    partial class mgr
+    [Migration("20171220183920_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

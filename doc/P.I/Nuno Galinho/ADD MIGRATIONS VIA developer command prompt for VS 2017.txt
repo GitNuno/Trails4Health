@@ -7,8 +7,8 @@ COMANDOS:
 	.cd /dir/myProject
 	.dotnet restore
 	.dotnet build
-	.dotnet ef migrations add Initial --context "EX: BooksDbContext"
-	.dotnet ef migrations add Initial --context "EX: BooksUsersDbContext"
-	.dotnet ef database update --context "EX: BooksDbContext"
-	.dotnet ef database update --context "EX: BooksDdUsersDbContext"
+	.dotnet ef migrations add Initial --context ApplicationDbContext
+	.dotnet ef migrations add Initial --context LoginsApplicationDbContext
+	.dotnet ef database update --context ApplicationDbContext
+	.dotnet ef database update --context LoginsApplicationDbContext
 	

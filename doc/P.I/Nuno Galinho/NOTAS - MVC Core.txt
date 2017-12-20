@@ -1,5 +1,8 @@
 
 ::
+LOCALIZAÇÃO DAS BASE DADOS:
+	.C:\Users\Nuno
+::
 FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
 // Faz migrar dados dos modelos e cria tabelas na B.D.
 // De cada vez que altero modelos, tenho de fazer migração

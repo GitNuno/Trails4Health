@@ -38,30 +38,20 @@ namespace Trails4Health
                 .AddEntityFrameworkStores<LoginsApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-<<<<<<< HEAD
             // 2.1 (b.d.AUTENTICAÇÃO)
-=======
->>>>>>> f52a3b07c1f4a8c87e1513fda6f9a3e0d6a08516
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings
                 options.Password.RequireDigit = true;
                 options.Password.RequiredLength = 8;
-<<<<<<< HEAD
                 // Adiciono outras configurações se necessarias (ver ppt 148)
-=======
-                // Add other passsword settings if needed ...
->>>>>>> f52a3b07c1f4a8c87e1513fda6f9a3e0d6a08516
-
                 // Lockout settings
                 options.Lockout.MaxFailedAccessAttempts = 10;
                 // Add other lockout settings if needed ...
-
                 // Add other user settings if needed ...
                 //options.User.RequireUniqueEmail = true;
             });
 
-<<<<<<< HEAD
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
@@ -73,11 +63,10 @@ namespace Trails4Health
             //    .dotnet restore, dotnet build, ... ver(ppt 150)
             //    .dotnet ef migrations add Initial 
             // .criar utilizadores em /Data/UsersSeedData
-=======
             //  *** se quiser mudar repositorio...
             //- assim não preciso de mudar mais nada que nao seja FakeProductRepository
             // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
->>>>>>> f52a3b07c1f4a8c87e1513fda6f9a3e0d6a08516
+
 
             /* configurar a app para usar a ConnectionStringTrails4Health e ligar á B.D.*/
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
