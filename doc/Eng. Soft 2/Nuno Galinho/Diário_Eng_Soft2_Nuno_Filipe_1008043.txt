@@ -97,5 +97,13 @@ Tempo: 1.30h
 
 .Criei Diagramas de componentes e Fisico Parcial de CRUD Trilho e inclui no relatório.
 .Foram feitas correcções e anotações no relatório.
-
 Tempo: 2h
+
+.Adicionei atributo Sumario á classe Trilho - atualizadas diagrama classes parciais e globais, 
+ corrigi ainda o tipo de ligação das classes Trilho com EstadoTrilho.
+Tempo: 30min
+
+.Revi os diagramas de sequencia e Atualizei os  diagramas de classe Parcial e global - mudado 
+ nome da operação criar para inserir na classe Trilho, para ficar coerente com os diagramas 
+ de sequencia.
+Tempo: 30 min.
