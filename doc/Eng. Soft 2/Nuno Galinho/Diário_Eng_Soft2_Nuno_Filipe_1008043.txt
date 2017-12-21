@@ -87,3 +87,15 @@ Tempo: 1h.30min.
 
 .Criado diagrama de contexto + fluxo dados + Revisão relatorio
 Tempo: 1h.30min
+
+// 20/12/2017 ---------------------------------------------------------
+.Criei Semantica da Classe Trilho que inclui no relatorio
+Tempo: 1.30h
+
+
+// 21/12/2017 ---------------------------------------------------------
+
+.Criei Diagramas de componentes e Fisico Parcial de CRUD Trilho e inclui no relatório.
+.Foram feitas correcções e anotações no relatório.
+
+Tempo: 2h
