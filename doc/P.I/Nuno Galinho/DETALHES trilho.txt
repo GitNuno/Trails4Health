@@ -1,12 +1,11 @@
 
-False
-Este trilho é longo normalmente recomendada a turista mais jovens, tem uma extensão de 10 km, percorre-se numa media de 3h00,  começa com uma subida de 300 metros em Covão da Ametade e termina em Monte alto
-2
-27,00
-Monte Alto
+Torre
+Alvoco
+Torre
+Este trilho é longo normalmente recomendada a turista mais jovens, tem uma extensão de 10 km, percorre-se numa media de 3h00,  começa com uma subida de 300 metros em Alvoco e termina na Torre
+27
 /images/torre.jpg
-torre
-torre
+
 //
 False
 Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão, constituido por paisagens majestosas e faz-se numa media de 1h15
