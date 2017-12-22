@@ -95,6 +95,9 @@ Tempo: 1.30h
 
 // 21/12/2017 ---------------------------------------------------------
 
+.Tirei duvidas com profª
+Tempo: 2h
+
 .Criei Diagramas de componentes e Fisico Parcial de CRUD Trilho e inclui no relatório.
 .Foram feitas correcções e anotações no relatório.
 Tempo: 2h
@@ -107,3 +110,15 @@ Tempo: 30min
  nome da operação criar para inserir na classe Trilho, para ficar coerente com os diagramas 
  de sequencia.
 Tempo: 30 min.
+
+.Iniciei a alteração do Diagrama de sequencia consultar trilho - Acrescentadas classes Guia e 
+ Guia Trilho (não terminei porque não sei se vou ter tempo de implementar isto em P.I.);
+Nota: Na versão do relatório está coerente com a aplicação.
+Tempo: 15min.
+
+
+// 22/12/2017 ---------------------------------------------------------
+
+.Compilei uma serie de conceitos relacionados com WEB applications: 
+ servidor IIS, plataforma .NET, etc... Para melhor entender Diagramas Fisicos...
+Tempo: 1h

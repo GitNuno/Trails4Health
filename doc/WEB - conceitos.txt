@@ -1,0 +1,188 @@
+::
+SERVIDOR
+	Um servidor é uma maquina, com sistema operativo e pelo menos 
+	uma aplicação servidora.
+	Todo o servidor fica em permanente espera de ser solicitado;
+	daí que para cada aplicação servidora existe uma porta
+	diferente para atender os pedidos
+	Quem interpreta o pedido é o sistema operativo e o envia
+	para a porta que se destina.
+
+	Um servidor que não consiga interpretar .NET FRAMEWORK 4.5. 
+	não pode correr um WebSite ou WebAplication em .NET FRAMEWORK 4.5.
+
+:: 
+PEDIDO AO SERVIDOR WEB
+	Crias uma pagina web em php, asp.net, java... 
+	Publicas num servidor que interprete php, asp.net, java...
+	Quando fazes um pedido ao servidor, ele (S.O.) deteta que é uma 
+	pagina em php, asp.net, java, faz o processamento -> html e
+	envia para o navegador.
+	
+::
+WEB SERVER:
+	Servidor web é um programa de computador responsável por aceitar pedidos HTTP de clientes, 
+	e servi-los com respostas HTTP. 
+	O servidor mais popular, e mais utilizado no mundo, é o servidor Apache (software livre).
+
+    O processo inicia-se com a ligação entre o computador onde está instalado o servidor web e o 
+    computador do cliente; cliente faz o pedido, servidor os dados.
+  
+    EXEMPLOS:
+	  - no pedido:
+         GET /random.html HTTP/1.1
+         --> estamos a pedir usando o protocolo HTTP versão 1.1 o ficheiro random.html 
+		     que está na raiz do servidor
+
+      - na resposta:
+         HTTP/1.1 200 OK
+		 --> o pedido é válido(200 OK) --> conteúdo HTML da página que tínhamos criado
+		 
+	  - A origem_do_conteúdo enviado pelo servidor web numa resposta a um pedido HTTP pode ser:
+
+         estática - se vier directamente de um ficheiro já existente no servidor
+         dinâmica - se for criada dinamicamente por outro programa, script ou API chamado pelo 
+		            servidor.
+         No caso de uma página dinâmica, o pedido, depois de recebido, é processado pelo servidor 
+		 web que vai criar dinamicamente o conteúdo e depois enviado para o cliente.
+
+         Usando uma linguagem de programação (que dependendo do servidor web, ex: php, Java, 
+		 Perl, Visual Basic .NET, C#, ...) 
+         podemos criar programas que correm no servidor web, eventualmente acessando a bases de 
+		 dados e cujo resultado é enviado para o browser.
+		 EX:
+		 Num servidor web (no nosso caso o IIS da Microsoft) capaz de responder a páginas dinâmicas  
+		 temos um ficheiro chamado random.asp.
+		 Browser faz pedido ao ficheiro --> web server processa ficheiro --> envia resposta.
+		 Como podemos ver, o pedido/resposta de um ficheiro estático ou de um ficheiro dinâmico gera 
+		 fluxos de informação praticamente iguais, isto é, na web a informação que circula é 
+		 essencialmente a mesma. a diferença é que um ficheiro dinâmico tem que ser primeiro 
+		 processado pelo servidor web.
+	
+::
+SERVIDOR IIS
+	IIS é um servidor web, aceita pedidos HTTP de clientes e serve-os com respostas HTTP, 
+	também pode executar programas e scripts EX: random.asp
+	EX:
+		NO servidor web IIS temos um ficheiro chamado random.asp.
+		Browser faz pedido ao ficheiro random.asp.--> web server processa ficheiro random.asp
+					 (... é feito pedido ao servidor B.D. --> servidor B.D. devolve resultado)
+		--> IIS envia resposta para o cliente.
+	OU SEJA:
+		No caso de uma página dinâmica, o pedido, depois de recebido, é processado pelo servidor 
+		web que vai criar dinamicamente o conteúdo e depois enviado para o cliente.
+		Podemos criar programas que correm no servidor web, que eventualmente acedem a bases de dados 
+		e cujo resultado é enviado para o browser.
+
+		
+::
+.NET -> ASP.NET
+	 O Dot Net é um Framework da Microsoft que facilita o desenvolvimento de aplicações,
+	 é como se fosse um conjunto de classes implementadas. 
+	 O C# é uma linguagem criada pela microsoft que utiliza esse framework.
+
+ O ASP.NET é a plataforma da Microsoft para o desenvolvimento de aplicações Web, ele utiliza outras 
+ linguagem de programação para o desenvolvimento WEB como o VB.net e o c-Sharp.net.
+ 
+		
+::
+SERVIDOR SQL
+	SQL server é um software gestor de B.D. proprietario da microsoft.
+	MySQL é na mesma um SGBD mas livre e só entendem SQL.
+	O pack de instalação tem para além dos programas de gestão de B.D. 
+	um servidor (SQL server/MySQL) onde correm as B.D.
+	O interface provido pelo pack de instalação é uma APLICAÇÃO CLIENTE.
+
+::
+WEB APLICATION:
+	Aplicaçao que é acedida via browser num servidor	
+	
+::
+WEB SERVICE:
+	É um serviço que establece a ligaçao entre dois softwares.
+	webService é alojado num web server.
+	EX: programa(cliente) faz pedido a programa(servidor).
+
+	FLUXO DADOS:
+		1. software_1 > GET > webService > XML > software_2 
+		2. software_2 > devolve a INFO pretendida (EX: da B.D. preservando-a!) > webService 
+		3. webService > XML > software_1
+		
+	NOTA:
+	    É-me fornecido a ligação do web server e lá posso fazer as alterações q pretendo,
+		assim preservo a INFO da B.D.
+	
+::
+QUEM PROVIDENCIA URL PAG.
+	Crias uma pagina web - html + css + java script ou EX: php, asp.net
+	Publicas a pagina á tua escolha EX: ipg
+	O administrador do webServer é que te providencia o caminho
+
+			 
+:::
+XAMPP
+	O XAMPP é um pacote de aplicações:
+		1. base de dados MySQL, 
+		2. o servidor web Apache e 
+		3. os interpretadores para linguagens de script: PHP e Perl	
+
+Oficialmente, os desenvolvedores do XAMPP só pretendiam usá-lo como uma ferramenta de 
+desenvolvimento, para permitir aos programadores de websites e programadores testar seu trabalho 
+em seus próprios computadores.
+
+::
+
+::
+PLATAFORMAS DE SOFTWARE:
+    Conjunto de ferramentas para desenvolver software. Entre estas ferramentas estão:
+1.  Kits ou pacotes para o desenvolvimento de aplicações – SDK (Software Development Kit);
+2.	Emuladores ou Simuladores, que permitem ao desenvolvedor visualizar e testar a aplicação;
+3.	APIs (Application Program Interfaces) as quais definem padrões e especificam como os diferentes 
+	componentes da plataforma se comunicam;
+4.	Bibliotecas e frameworks, os quais podem ser usados pelos desenvolvedores para agilizar o 
+	desenvolvimento dos aplicativos.
+
+O construtor
+
+No universo dos nerds, ele é conhecido por SDK ou Software Development Kit. Com esta 
+“caixa de ferramentas”, a qual está sempre baseada em alguma linguagem de programação, mais APIs 
+(Application Program Interfaces) e outros “conectores”, pode-se começar a construir um aplicativo, 
+o qual irá funcionar sobre a plataforma. Uma importante observação porém: a maioria das plataformas 
+possui um construtor de alto nível; isto é, não é necessário que você seja um expert em programação 
+para começar a usar o construtor e colocar seu sonho pra funcionar. Mas, se você vai construir 
+aplicativos de software usando uma plataforma como a da Apple, será preciso ter um conhecimento 
+mais avançado. Dentro do construtor ainda existe um simulador, útil para prever o comportamento do 
+aplicativo, conteúdo ou serviço como se estes estivessem no ar, na mão do usuário.
+
+O publicador
+
+Uma vez testado e considerado pronto para uso, um aplicativo ou conteúdo precisa ir para o ar. 
+Plataformas oferecem publicadores. Eles são fáceis de usar e estão conectados à “loja” ou 
+“ambiente de comercialização”. Associados ao publicador e ao ambiente de comercialização, algumas 
+plataformas oferecem relatórios de vendas, visitas e downloads.
+
+:: jQuery: biblioteca ou framework?
+
+“In computer science, a library is a collection of resources used to develop software. 
+These may include pre-written code and subroutines, preses, values or type specifications.”
+
+:: Framework (or that even)
+“A software framework is a universal, reusable software platform used to develop applications, 
+ products and solutions. Software Frameworks include support programs, compilers, code libraries, 
+ an application programming interface (API) and tool sets that bring together all the different 
+ components to enable development of a project or solution.”
+
+“Um framework,é uma plataforma de software, é uma abstração que une códigos comuns entre vários 
+ projetos de software provendo uma funcionalidade genérica. 
+
+:: jQuery
+“jQuery is a new kind of JavaScript Library. jQuery is a fast and concise JavaScript Library that 
+ simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web 
+ development. jQuery is designed to change the way that you write JavaScript.”
+
+Ou seja, o jQuery simplifica diversas coisas para um desenvolvimento mais rápido. 
+jQuery é projetado para mudar a maneira que você escreve JavaScript. Mas ele não dita qual a 
+estrutura nem qual o fluxo em que sua aplicação deve ser montada, consequentemente, por esses e 
+outros motivos, não deve ser considerado um framework.
+
+
