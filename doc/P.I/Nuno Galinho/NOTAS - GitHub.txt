@@ -1,4 +1,10 @@
 ::
+DOWNLOAD DE UM COMMIT ESPECIFICO:
+	.seleccionar commit pretendido
+	.botao "browse files"
+	.botao "Clone or dowload"
+
+::
 ---------------------         GITDESKTOP        ---------------------------------------------------
 ::
 REVERT COMMIT:
