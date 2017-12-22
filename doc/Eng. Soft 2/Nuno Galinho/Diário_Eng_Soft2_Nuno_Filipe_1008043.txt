@@ -122,3 +122,8 @@ Tempo: 15min.
 .Compilei uma serie de conceitos relacionados com WEB applications: 
  servidor IIS, plataforma .NET, etc... Para melhor entender Diagramas Fisicos...
 Tempo: 1h
+
+. Criei semantica das classes Estado, EstadoTrilho, Dificuldade
+Nota: As operações tem de ser revistas com o exemplo do G1.
+Tempo: 1.30h
+
