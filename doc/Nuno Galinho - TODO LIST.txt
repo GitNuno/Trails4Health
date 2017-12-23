@@ -14,9 +14,12 @@ P.I.:
 	.Casos uso criar estado + criar dificuldade ??
 	.SEMANTICA DAS CLASSES: 
 		.classe trilho_dicionario: verificar qts carateres vou permitir para detalhes e sumário
-		.classe trilho_operacoes: 
-			.Inserir() + Atualizar(): (ver se blob ou url)
-			.Desativar():(ver projeto: nome delete ou Desativar)
+		.Operações - classe trilho: - Inserir() + Atualizar(): (ver se blob ou url)
+									 - Desativar():(ver projeto: nome delete ou Desativar)
+		.Operações - classe Estado: (não sei se vou ter tempo de implementar – perg. A profª - signif. fazer novo scaffolding)
+		.Operações - classe EstadoTrilho: (implementar primeiro para perceber)
+		.Operações - classe Dificuldade: (não sei se vou ter tempo de implementar – perg. A profª - signif. fazer novo scaffolding)
+
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
