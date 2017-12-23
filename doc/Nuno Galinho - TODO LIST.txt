@@ -1,0 +1,57 @@
+
+::
+
+P.I.:
+	.String.substr()
+	.validaçoes
+	.snipets
+	.image bitmap
+	.data criação
+	.seedData
+	.autenticação/snipet
+
+.ENG. SOFT.2:
+	.Casos uso criar estado + criar dificuldade ??
+	.SEMANTICA DAS CLASSES: 
+		.classe trilho_dicionario: verificar qts carateres vou permitir para detalhes e sumário
+		.classe trilho_operacoes: 
+			.Inserir() + Atualizar(): (ver se blob ou url)
+			.Desativar():(ver projeto: nome delete ou Desativar)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.VALIDAÇÕES:
+	.grupo 12
+	.leandro
+	.paredes
+.INSERÇÃO + ALTERAÇÃO + HISTORICO:
+	.paredes (ver dificuldade: Trails1/create)
+
+// ---------------------------------------------------------------
+	public static class StringExt
+{
+    public static string Truncate(this string value, int maxLength)
+    {
+        if (string.IsNullOrEmpty(value)) return value;
+        return value.Length <= maxLength ? value : value.Substring(0, maxLength); 
+    }
+}
+// ---------------------------------------------------------------
+public static class StringExt
+{
+    public static string Truncate( this string value, int maxLength )
+    {
+        if (string.IsNullOrEmpty(value)) { return value; }
+
+        return value.Substring(0, Math.Min(value.Length, maxLength));
+    }
+}
+
+// --------------------------------------------------------------
+string result = string.Join("", value.Take(maxLength)); // .NET 4 Join
+
+string.Concat(myString.Take(maxLength));
+
+string Left(string s, int left)
+
+myString.Substring(0, length); // myString >= length

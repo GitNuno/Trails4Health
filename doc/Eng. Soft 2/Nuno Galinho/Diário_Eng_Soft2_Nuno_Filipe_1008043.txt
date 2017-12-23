@@ -127,3 +127,7 @@ Tempo: 1h
 Nota: As operações tem de ser revistas com o exemplo do G1.
 Tempo: 1.30h
 
+// 23/12/2017 ---------------------------------------------------------
+.Criei operações Classe Trilho  + Tabela: Diagramas de Sequência em que a 
+ classe Trilho participa (semantica classes) + TODO LIST.txt
+Tempo: 2h
