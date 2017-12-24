@@ -131,3 +131,8 @@ Tempo: 1.30h
 .Criei operações Classe Trilho  + Tabela: Diagramas de Sequência em que a 
  classe Trilho participa (semantica classes) + TODO LIST.txt
 Tempo: 2h
+
+.Completei semantica das classes Estado, EstadoTrilho, Dificuldade
+ + Tabela: Diagramas de Sequência em que as classes participam
+Nota: Há operações que tem de ser revistas se implementadas.
+Tempo: 1.30h
