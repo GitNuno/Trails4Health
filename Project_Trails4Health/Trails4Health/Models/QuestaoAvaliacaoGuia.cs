@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Trails4Health.Models
 {
-    public class QuestaoAvalicaoGuia
+    public class QuestaoAvaliacaoGuia
     {
         public int QuestaoID { get; set; }
         public string NomeQuestao { get; set; }

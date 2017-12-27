@@ -27,9 +27,9 @@ namespace Trails4Health.Models
         public DbSet<EstadoTrilho> EstadoTrilhos { get; set; }
         public DbSet<Estado> Estados { get; set; }
 
-        public DbSet<TipoResposta> TiposRespostas { get; set; }
-        public DbSet<QuestaoAvaliacaoTrilho> QuestoesAvalicaoTrilhos { get; set; }
-        public DbSet<QuestaoAvalicaoGuia> QuestoesAvalicaoGuias { get; set; }
+        public DbSet<TipoResposta> TipoRespostas { get; set; }
+        public DbSet<QuestaoAvaliacaoTrilho> QuestaoAvalicaoTrilhos { get; set; }
+        public DbSet<QuestaoAvaliacaoGuia> QuestaoAvalicaoGuias { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -62,11 +62,11 @@ namespace Trails4Health.Models
 
             // construção das tabelas a partir do respectivos modelos (classes)
             modelBuilder.Entity<TipoResposta>().ToTable("TipoResposta")
-            .HasKey(et => et.TipoRespostaID);
+            .HasKey(tr => tr.TipoRespostaID);
             modelBuilder.Entity<QuestaoAvaliacaoTrilho>().ToTable("QuestaoAvaliacaoTrilho")
-            .HasKey(et => et.TipoRespostaID);
-            modelBuilder.Entity<QuestaoAvalicaoGuia>().ToTable("QuestaoAvaliacaoGuia")
-            .HasKey(et => et.TipoRespostaID);
+            .HasKey(qat => qat.QuestaoID);
+            modelBuilder.Entity<QuestaoAvaliacaoGuia>().ToTable("QuestaoAvaliacaoGuia")
+            .HasKey(qag => qag.QuestaoID);
 
         }
     }

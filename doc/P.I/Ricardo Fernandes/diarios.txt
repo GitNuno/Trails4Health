@@ -1,7 +1,18 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 17.0 H
+Tempo Total: 18.0 H
 
+---
+
+27/12/2017
+
+Consultado tutorial sobre "Entity Framework":
+http://www.entityframeworktutorial.net/entity-relationships.aspx
+- Continuação do projecto "Trails4Health":
+Criados controladores para as Views QuestoesAvaliacaoGuia e QuestoesAvaliacaoTrilho.
+
+
+Tempo utilizado:  1 H
 
 ---
 
