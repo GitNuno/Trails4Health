@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "_LayoutBackOffice";
+    Layout = "_LayoutBackoffice";
 }
 
 <h2>Delete</h2>
@@ -12,6 +12,12 @@
     <h4>TipoResposta</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoR)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoR)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Descricao)
         </dt>

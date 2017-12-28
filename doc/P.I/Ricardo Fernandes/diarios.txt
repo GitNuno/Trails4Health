@@ -4,12 +4,23 @@ Tempo Total: 18.0 H
 
 ---
 
+28/12/2017
+
+- Continuação do projecto "Trails4Health":
+Apagados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho", e apagadas respectivas Views.
+Apagadas classes "Models/QuestoesAvaliacaoGuia.cs" e "Models/QuestoesAvaliacaoTrilho.cs", e substituídas pela classe "Models/Questao.cs". Criado o respectivo controlador CRUD.
+
+
+Tempo utilizado:   H
+
+---
+
 27/12/2017
 
 Consultado tutorial sobre "Entity Framework":
 http://www.entityframeworktutorial.net/entity-relationships.aspx
 - Continuação do projecto "Trails4Health":
-Criados controladores para as Views QuestoesAvaliacaoGuia e QuestoesAvaliacaoTrilho.
+Criados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho".
 
 
 Tempo utilizado:  1 H

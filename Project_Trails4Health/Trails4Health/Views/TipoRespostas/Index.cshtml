@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "_LayoutBackOffice";
+    Layout = "_LayoutBackoffice";
 }
 
 <h2>Index</h2>
@@ -14,6 +14,9 @@
     <thead>
         <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.TipoR)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Descricao)
                 </th>
             <th></th>
@@ -22,6 +25,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoR)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
             </td>

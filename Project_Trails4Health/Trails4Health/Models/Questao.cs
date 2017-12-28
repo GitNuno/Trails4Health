@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace Trails4Health.Models
 {
-    public class TipoResposta
+    public class Questao
     {
+        public int QuestaoID { get; set; }
+        public string Nome { get; set; }
+
+        public TipoResposta TipoResposta { get; set; }
+
         public int TipoRespostaID { get; set; }
-        public int TipoR { get; set; }
-        public string Descricao { get; set; }
-        
-        public ICollection<Questao> Questoes { get; set; }
     }
 }

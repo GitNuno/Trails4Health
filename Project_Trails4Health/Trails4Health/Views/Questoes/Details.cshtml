@@ -1,26 +1,27 @@
-﻿@model Trails4Health.Models.QuestaoAvaliacaoTrilho
+﻿@model Trails4Health.Models.Questao
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "_LayoutBackoffice";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>QuestaoAvaliacaoTrilho</h4>
+    <h4>Questao</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NomeQuestao)
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.NomeQuestao)
+            @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Desactivada)
+            @Html.DisplayNameFor(model => model.TipoResposta)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Desactivada)
+            @Html.DisplayFor(model => model.TipoResposta.TipoRespostaID)
         </dd>
     </dl>
 </div>

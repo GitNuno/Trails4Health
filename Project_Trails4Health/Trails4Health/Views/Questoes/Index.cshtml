@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Trails4Health.Models.QuestaoAvaliacaoTrilho>
+﻿@model IEnumerable<Trails4Health.Models.Questao>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,11 +14,11 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.NomeQuestao)
+                    @Html.DisplayNameFor(model => model.Nome)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Desactivada)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoResposta)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -26,10 +26,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NomeQuestao)
+                @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Desactivada)
+                @Html.DisplayFor(modelItem => item.TipoResposta.TipoRespostaID)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.QuestaoID">Edit</a> |
