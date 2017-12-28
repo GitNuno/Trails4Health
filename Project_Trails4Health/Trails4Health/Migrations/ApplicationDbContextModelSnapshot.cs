@@ -65,18 +65,29 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.Questao", b =>
                 {
-                    b.Property<int>("QuestaoID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Nome");
+                    b.Property<int>("TipoQuestaoID");
 
                     b.Property<int>("TipoRespostaID");
 
-                    b.HasKey("QuestaoID");
+                    b.Property<string>("Nome");
+
+                    b.HasKey("TipoQuestaoID", "TipoRespostaID");
 
                     b.HasIndex("TipoRespostaID");
 
                     b.ToTable("Questoes");
+                });
+
+            modelBuilder.Entity("Trails4Health.Models.TipoQuestao", b =>
+                {
+                    b.Property<int>("TipoQuestaoID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("TipoQ");
+
+                    b.HasKey("TipoQuestaoID");
+
+                    b.ToTable("TipoQuestoes");
                 });
 
             modelBuilder.Entity("Trails4Health.Models.TipoResposta", b =>
@@ -141,6 +152,11 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.Questao", b =>
                 {
+                    b.HasOne("Trails4Health.Models.TipoQuestao", "TipoQuestao")
+                        .WithMany("Questoes")
+                        .HasForeignKey("TipoQuestaoID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Trails4Health.Models.TipoResposta", "TipoResposta")
                         .WithMany("Questoes")
                         .HasForeignKey("TipoRespostaID")

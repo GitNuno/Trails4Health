@@ -37,6 +37,19 @@ namespace Trails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TipoQuestoes",
+                columns: table => new
+                {
+                    TipoQuestaoID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    TipoQ = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoQuestoes", x => x.TipoQuestaoID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TipoRespostas",
                 columns: table => new
                 {
@@ -80,14 +93,19 @@ namespace Trails4Health.Migrations
                 name: "Questoes",
                 columns: table => new
                 {
-                    QuestaoID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    TipoRespostaID = table.Column<int>(nullable: false)
+                    TipoQuestaoID = table.Column<int>(nullable: false),
+                    TipoRespostaID = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Questoes", x => x.QuestaoID);
+                    table.PrimaryKey("PK_Questoes", x => new { x.TipoQuestaoID, x.TipoRespostaID });
+                    table.ForeignKey(
+                        name: "FK_Questoes_TipoQuestoes_TipoQuestaoID",
+                        column: x => x.TipoQuestaoID,
+                        principalTable: "TipoQuestoes",
+                        principalColumn: "TipoQuestaoID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Questoes_TipoRespostas_TipoRespostaID",
                         column: x => x.TipoRespostaID,
@@ -151,6 +169,9 @@ namespace Trails4Health.Migrations
 
             migrationBuilder.DropTable(
                 name: "Trilhos");
+
+            migrationBuilder.DropTable(
+                name: "TipoQuestoes");
 
             migrationBuilder.DropTable(
                 name: "TipoRespostas");

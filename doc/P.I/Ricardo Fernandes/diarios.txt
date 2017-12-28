@@ -1,6 +1,6 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 18.0 H
+Tempo Total: 20.0 H
 
 ---
 
@@ -9,9 +9,10 @@ Tempo Total: 18.0 H
 - Continuação do projecto "Trails4Health":
 Apagados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho", e apagadas respectivas Views.
 Apagadas classes "Models/QuestoesAvaliacaoGuia.cs" e "Models/QuestoesAvaliacaoTrilho.cs", e substituídas pela classe "Models/Questao.cs". Criado o respectivo controlador CRUD.
+Acrescentada classe "Models/TipoQuestao.cs" e respectivo controlador CRUD e views.
 
 
-Tempo utilizado:   H
+Tempo utilizado:  2 H
 
 ---
 

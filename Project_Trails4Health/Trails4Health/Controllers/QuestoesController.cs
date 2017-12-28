@@ -21,7 +21,7 @@ namespace Trails4Health.Controllers
         // GET: Questoes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Questoes.Include(q => q.TipoResposta);
+            var applicationDbContext = _context.Questoes.Include(q => q.TipoQuestao).Include(q => q.TipoResposta);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -34,8 +34,9 @@ namespace Trails4Health.Controllers
             }
 
             var questao = await _context.Questoes
+                .Include(q => q.TipoQuestao)
                 .Include(q => q.TipoResposta)
-                .SingleOrDefaultAsync(m => m.QuestaoID == id);
+                .SingleOrDefaultAsync(m => m.TipoQuestaoID == id);
             if (questao == null)
             {
                 return NotFound();
@@ -47,6 +48,7 @@ namespace Trails4Health.Controllers
         // GET: Questoes/Create
         public IActionResult Create()
         {
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID");
             ViewData["TipoRespostaID"] = new SelectList(_context.TipoRespostas, "TipoRespostaID", "TipoRespostaID");
             return View();
         }
@@ -56,7 +58,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("QuestaoID,Nome,TipoRespostaID")] Questao questao)
+        public async Task<IActionResult> Create([Bind("Nome,TipoRespostaID,TipoQuestaoID")] Questao questao)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +66,7 @@ namespace Trails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
             ViewData["TipoRespostaID"] = new SelectList(_context.TipoRespostas, "TipoRespostaID", "TipoRespostaID", questao.TipoRespostaID);
             return View(questao);
         }
@@ -76,11 +79,12 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
 
-            var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.QuestaoID == id);
+            var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.TipoQuestaoID == id);
             if (questao == null)
             {
                 return NotFound();
             }
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
             ViewData["TipoRespostaID"] = new SelectList(_context.TipoRespostas, "TipoRespostaID", "TipoRespostaID", questao.TipoRespostaID);
             return View(questao);
         }
@@ -90,9 +94,9 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("QuestaoID,Nome,TipoRespostaID")] Questao questao)
+        public async Task<IActionResult> Edit(int id, [Bind("Nome,TipoRespostaID,TipoQuestaoID")] Questao questao)
         {
-            if (id != questao.QuestaoID)
+            if (id != questao.TipoQuestaoID)
             {
                 return NotFound();
             }
@@ -106,7 +110,7 @@ namespace Trails4Health.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!QuestaoExists(questao.QuestaoID))
+                    if (!QuestaoExists(questao.TipoQuestaoID))
                     {
                         return NotFound();
                     }
@@ -117,6 +121,7 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
             ViewData["TipoRespostaID"] = new SelectList(_context.TipoRespostas, "TipoRespostaID", "TipoRespostaID", questao.TipoRespostaID);
             return View(questao);
         }
@@ -130,8 +135,9 @@ namespace Trails4Health.Controllers
             }
 
             var questao = await _context.Questoes
+                .Include(q => q.TipoQuestao)
                 .Include(q => q.TipoResposta)
-                .SingleOrDefaultAsync(m => m.QuestaoID == id);
+                .SingleOrDefaultAsync(m => m.TipoQuestaoID == id);
             if (questao == null)
             {
                 return NotFound();
@@ -145,7 +151,7 @@ namespace Trails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.QuestaoID == id);
+            var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.TipoQuestaoID == id);
             _context.Questoes.Remove(questao);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -153,7 +159,7 @@ namespace Trails4Health.Controllers
 
         private bool QuestaoExists(int id)
         {
-            return _context.Questoes.Any(e => e.QuestaoID == id);
+            return _context.Questoes.Any(e => e.TipoQuestaoID == id);
         }
     }
 }

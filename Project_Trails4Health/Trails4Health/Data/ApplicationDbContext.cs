@@ -29,6 +29,7 @@ namespace Trails4Health.Models
 
         public DbSet<TipoResposta> TipoRespostas { get; set; }
         public DbSet<Questao> Questoes { get; set; }
+        public DbSet<TipoQuestao> TipoQuestoes { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -59,13 +60,17 @@ namespace Trails4Health.Models
                 .WithMany(Dificuldade => Dificuldade.Trilhos)
                 .HasForeignKey(Trilho => Trilho.DificuldadeID);
 
-            modelBuilder.Entity<TipoResposta>().HasKey(tr => tr.TipoRespostaID);
-            modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID);
+            modelBuilder.Entity<Questao>().HasKey(q => new { q.TipoQuestaoID, q.TipoRespostaID });
 
             modelBuilder.Entity<Questao>()
                 .HasOne(q => q.TipoResposta)
                 .WithMany(tr => tr.Questoes)
                 .HasForeignKey(q => q.TipoRespostaID);
+
+            modelBuilder.Entity<Questao>()
+                .HasOne(q => q.TipoQuestao)
+                .WithMany(tq => tq.Questoes)
+                .HasForeignKey(q => q.TipoQuestaoID);
         }
     }
 }
