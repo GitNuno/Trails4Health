@@ -13,10 +13,28 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.NomeQuestao)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Nome)
+            @Html.DisplayFor(model => model.NomeQuestao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMaximo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorMaximo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMinimo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorMinimo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroOpcoes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroOpcoes)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TipoQuestao)
@@ -24,17 +42,10 @@
         <dd>
             @Html.DisplayFor(model => model.TipoQuestao.TipoQuestaoID)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoResposta)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TipoResposta.TipoRespostaID)
-        </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="TipoRespostaID" />
-        <input type="hidden" asp-for="TipoQuestaoID" />
+        <input type="hidden" asp-for="QuestaoID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>

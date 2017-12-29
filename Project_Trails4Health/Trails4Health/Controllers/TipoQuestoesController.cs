@@ -53,7 +53,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TipoQuestaoID,TipoQ")] TipoQuestao tipoQuestao)
+        public async Task<IActionResult> Create([Bind("TipoQuestaoID,Nome")] TipoQuestao tipoQuestao)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TipoQuestaoID,TipoQ")] TipoQuestao tipoQuestao)
+        public async Task<IActionResult> Edit(int id, [Bind("TipoQuestaoID,Nome")] TipoQuestao tipoQuestao)
         {
             if (id != tipoQuestao.TipoQuestaoID)
             {

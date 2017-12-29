@@ -19,12 +19,12 @@ namespace Trails4Health.Data
             //    return;   // ... a DB já tem pelo menos um registo.
             //}
 
-            context.TipoRespostas.AddRange(
-                new TipoResposta { Descricao = "Sim/Não" },
-                new TipoResposta { Descricao = "1 - Discordo | 3 - Concordo" },
-                new TipoResposta { Descricao = "1 - Discordo em Absoluto | 5 - Concordo Plenamente" }
-            );
-            context.SaveChanges();
+            //context.TipoRespostas.AddRange(
+            //    new TipoResposta { Descricao = "Sim/Não" },
+            //    new TipoResposta { Descricao = "1 - Discordo | 3 - Concordo" },
+            //    new TipoResposta { Descricao = "1 - Discordo em Absoluto | 5 - Concordo Plenamente" }
+            //);
+            //context.SaveChanges();
 
             //if (context.QuestoesAvalicaoTrilhos.Any())
             //{

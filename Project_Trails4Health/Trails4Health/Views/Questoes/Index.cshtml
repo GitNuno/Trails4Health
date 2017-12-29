@@ -14,13 +14,19 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nome)
+                    @Html.DisplayNameFor(model => model.NomeQuestao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorMaximo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorMinimo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroOpcoes)
                 </th>
             <th>
                 @Html.DisplayNameFor(model => model.TipoQuestao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoResposta)
             </th>
             <th></th>
         </tr>
@@ -29,18 +35,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                @Html.DisplayFor(modelItem => item.NomeQuestao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorMaximo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorMinimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroOpcoes)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoQuestao.TipoQuestaoID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoResposta.TipoRespostaID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <a asp-action="Edit" asp-route-id="@item.QuestaoID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.QuestaoID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.QuestaoID">Delete</a>
             </td>
         </tr>
 }

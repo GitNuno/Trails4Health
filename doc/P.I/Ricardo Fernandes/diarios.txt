@@ -4,6 +4,16 @@ Tempo Total: 20.0 H
 
 ---
 
+29/12/2017
+
+- Continuação do projecto "Trails4Health":
+Alterada classe "Models/Questao.cs" e "Models/TipoQuestao.cs";
+
+
+Tempo utilizado:   H
+
+---
+
 28/12/2017
 
 - Continuação do projecto "Trails4Health":

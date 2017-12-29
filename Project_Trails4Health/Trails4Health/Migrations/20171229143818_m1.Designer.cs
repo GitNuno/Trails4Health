@@ -11,7 +11,7 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20171228191425_m1")]
+    [Migration("20171229143818_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,15 +66,22 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.Questao", b =>
                 {
+                    b.Property<int>("QuestaoID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("NomeQuestao");
+
+                    b.Property<int>("NumeroOpcoes");
+
                     b.Property<int>("TipoQuestaoID");
 
-                    b.Property<int>("TipoRespostaID");
+                    b.Property<int>("ValorMaximo");
 
-                    b.Property<string>("Nome");
+                    b.Property<int>("ValorMinimo");
 
-                    b.HasKey("TipoQuestaoID", "TipoRespostaID");
+                    b.HasKey("QuestaoID");
 
-                    b.HasIndex("TipoRespostaID");
+                    b.HasIndex("TipoQuestaoID");
 
                     b.ToTable("Questoes");
                 });
@@ -84,25 +91,11 @@ namespace Trails4Health.Migrations
                     b.Property<int>("TipoQuestaoID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("TipoQ");
+                    b.Property<string>("Nome");
 
                     b.HasKey("TipoQuestaoID");
 
                     b.ToTable("TipoQuestoes");
-                });
-
-            modelBuilder.Entity("Trails4Health.Models.TipoResposta", b =>
-                {
-                    b.Property<int>("TipoRespostaID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Descricao");
-
-                    b.Property<int>("TipoR");
-
-                    b.HasKey("TipoRespostaID");
-
-                    b.ToTable("TipoRespostas");
                 });
 
             modelBuilder.Entity("Trails4Health.Models.Trilho", b =>
@@ -156,11 +149,6 @@ namespace Trails4Health.Migrations
                     b.HasOne("Trails4Health.Models.TipoQuestao", "TipoQuestao")
                         .WithMany("Questoes")
                         .HasForeignKey("TipoQuestaoID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Trails4Health.Models.TipoResposta", "TipoResposta")
-                        .WithMany("Questoes")
-                        .HasForeignKey("TipoRespostaID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
