@@ -36,10 +36,12 @@
             @Html.DisplayFor(model => model.NumeroOpcoes)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TipoQuestao)
+            @*@Html.DisplayNameFor(model => model.TipoQuestao)*@
+            Tipo de Questão
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.TipoQuestao.TipoQuestaoID)
+            @*@Html.DisplayFor(model => model.TipoQuestao.TipoQuestaoID)*@
+            @Html.DisplayFor(model => model.TipoQuestao.Nome)
         </dd>
     </dl>
 </div>

@@ -1,6 +1,6 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 20.0 H
+Tempo Total: 22.0 H
 
 ---
 
@@ -8,9 +8,11 @@ Tempo Total: 20.0 H
 
 - Continuação do projecto "Trails4Health":
 Alterada classe "Models/Questao.cs" e "Models/TipoQuestao.cs";
+Alterado controlador "Controllers/QuestoesController.cs";
+Alterada view "Views/Questoes/Details.cshtml";
 
 
-Tempo utilizado:   H
+Tempo utilizado:  2 H
 
 ---
 

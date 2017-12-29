@@ -47,7 +47,7 @@ namespace Trails4Health.Controllers
         // GET: Questoes/Create
         public IActionResult Create()
         {
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID");
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Trails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome", questao.TipoQuestaoID);
             return View(questao);
         }
 
@@ -81,7 +81,7 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome", questao.TipoQuestaoID);
             return View(questao);
         }
 
@@ -117,7 +117,7 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome", questao.TipoQuestaoID);
             return View(questao);
         }
 
