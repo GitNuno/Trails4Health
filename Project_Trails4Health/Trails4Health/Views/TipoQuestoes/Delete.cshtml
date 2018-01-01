@@ -1,27 +1,27 @@
-﻿@model Trails4Health.Models.TipoResposta
+﻿@model Trails4Health.Models.TipoQuestao
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "_LayoutBackOffice";
+    Layout = "_LayoutBackoffice";
 }
 
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>TipoResposta</h4>
+    <h4>TipoQuestao</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Descricao)
+            @Html.DisplayFor(model => model.Nome)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="TipoRespostaID" />
+        <input type="hidden" asp-for="TipoQuestaoID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>

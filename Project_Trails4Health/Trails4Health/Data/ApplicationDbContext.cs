@@ -27,9 +27,8 @@ namespace Trails4Health.Models
         public DbSet<EstadoTrilho> EstadoTrilhos { get; set; }
         public DbSet<Estado> Estados { get; set; }
 
-        public DbSet<TipoResposta> TiposRespostas { get; set; }
-        public DbSet<QuestaoAvaliacaoTrilho> QuestoesAvalicaoTrilhos { get; set; }
-        public DbSet<QuestaoAvalicaoGuia> QuestoesAvalicaoGuias { get; set; }
+        public DbSet<Questao> Questoes { get; set; }
+        public DbSet<TipoQuestao> TipoQuestoes { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -60,14 +59,18 @@ namespace Trails4Health.Models
                 .WithMany(Dificuldade => Dificuldade.Trilhos)
                 .HasForeignKey(Trilho => Trilho.DificuldadeID);
 
-            // construção das tabelas a partir do respectivos modelos (classes)
-            modelBuilder.Entity<TipoResposta>().ToTable("TipoResposta")
-            .HasKey(et => et.TipoRespostaID);
-            modelBuilder.Entity<QuestaoAvaliacaoTrilho>().ToTable("QuestaoAvaliacaoTrilho")
-            .HasKey(et => et.TipoRespostaID);
-            modelBuilder.Entity<QuestaoAvalicaoGuia>().ToTable("QuestaoAvaliacaoGuia")
-            .HasKey(et => et.TipoRespostaID);
+            //------------------------------------------------------
+            modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID);
+            modelBuilder.Entity<Questao>()
+                .HasOne(q => q.TipoQuestao)
+                .WithMany(tq => tq.Questoes)
+                .HasForeignKey(q => q.TipoQuestaoID);
 
+            modelBuilder.Entity<Turista>().HasKey(t => t.TuristaID);
+
+            modelBuilder.Entity<Guia>().HasKey(g => g.GuiaID);
+
+            modelBuilder.Entity<Resposta>().HasKey(chaveComposta => new { chaveComposta.RespostaQuestionarioID, chaveComposta.QuestaoID, chaveComposta.TuristaID });
         }
     }
 }
