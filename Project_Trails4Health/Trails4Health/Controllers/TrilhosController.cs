@@ -31,6 +31,7 @@ namespace Trails4Health.Controllers
             this.repository = repository;
         }
 
+        // paginação
         public int TamanhoPagina = 4;
         public ViewResult Index(int pagina = 1)
         {

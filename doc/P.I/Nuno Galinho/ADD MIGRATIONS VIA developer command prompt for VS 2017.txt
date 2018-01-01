@@ -4,7 +4,7 @@ DEVELOPER COMMAND PROMPT FOR VS 2017
 
 ::
 COMANDOS:
-	.cd /dir/myProject
+	.cd /dir_myProject (nota: dir_myProject e não do sln! )
 	.dotnet restore
 	.dotnet build
 	.dotnet ef migrations add Initial --context ApplicationDbContext
@@ -12,3 +12,11 @@ COMANDOS:
 	.dotnet ef database update --context ApplicationDbContext
 	.dotnet ef database update --context LoginsApplicationDbContext
 	
+::
+EX: MIGRAÇÃO + UPDATE_DB DEPOIS DE ADICIONADO NOVO CAMPO A MODELO (sumario em Trilho.cs)
+	.cd /dir_myProject (nota: dir_myProject e não do sln! )
+	.dotnet restore
+	.dotnet build
+	.dotnet ef migrations add Initial --context ApplicationDbContext
+	.dotnet ef database update --context ApplicationDbContext
+	(verificar mudanças)

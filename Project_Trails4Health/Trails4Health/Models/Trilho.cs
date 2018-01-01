@@ -11,24 +11,30 @@ namespace Trails4Health.Models
         // ATRIBUTOS
         public int TrilhoID { get; set; } // formato para reconhecer pk: nomeID !!
 
-        [Required(ErrorMessage = "Introduza nome do Trilho")]
+        [Required(ErrorMessage = "Introduza nome do Trilho")] // nao nulo 
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Nome tem entre 2-50 caracteres")] // entre 2-50 caracteres
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Introduza inicio do Trilho")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Inicio tem entre 2-50 caracteres")] // entre 2-50 caracteres
         public string Inicio { get; set; }
 
         [Required(ErrorMessage = "Introduza fim do Trilho")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Fim tem entre 2-50 caracteres")] // entre 2-50 caracteres
         public string Fim { get; set; }
 
-       // Nota: Acrescentar em SeedData!! Ainda nao está na BD
-       // coordenadas GPS
-       //public string Latitude { get; set; }
+        // Nota: Acrescentar em SeedData!! Ainda nao está na BD
+        // coordenadas GPS
+        //public string Latitude { get; set; }
 
-       //public string Longitude { get; set; }
+        //public string Longitude { get; set; }
 
-       // public string Sumario { get; set; }
+        [Required(ErrorMessage = "Introduza Sumario do Trilho")]
+        [StringLength(100, MinimumLength = 5, ErrorMessage = "Fim tem entre 5-100 caracteres")] // entre entre 5-100 caracteres
+        public string Sumario { get; set; }
 
-       [Required(ErrorMessage = "Introduza detalhes do Trilho")]
+        [Required(ErrorMessage = "Introduza detalhes do Trilho")]
+        [StringLength(200, MinimumLength = 5, ErrorMessage = "Fim tem entre 5-200 caracteres")] // entre 5-200 caracteres
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]

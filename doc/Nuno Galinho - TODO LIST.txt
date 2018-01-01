@@ -1,13 +1,15 @@
 ::
 
 P.I.:
-	.String.substr()
-	.validaçoes
+	.validaçoes vs eng. soft.2
+	.mudar decimal para double em /Models/Trilho.cs
+	.trilhoes vs trilhos
 	.snipets
 	.image bitmap
 	.data criação
 	.seedData
 	.autenticação/snipet
+	.por ... em Trilhoes/index (col. Detalhes)
 
 .ENG. SOFT.2:
 	.Casos uso criar estado + criar dificuldade ??
