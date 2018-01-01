@@ -10,6 +10,8 @@ namespace Trails4Health.Models
     {
         public int QuestaoID { get; set; }
         public string NomeQuestao { get; set; }
+        public string Desactivada { get; set; }
+        public string TipoResposta { get; set; }
         public int ValorMaximo { get; set; }
         public int ValorMinimo { get; set; }
 

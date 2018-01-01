@@ -47,7 +47,7 @@ namespace Trails4Health.Controllers
         // GET: Questoes/Create
         public IActionResult Create()
         {
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome");
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("QuestaoID,NomeQuestao,ValorMaximo,ValorMinimo,NumeroOpcoes,TipoQuestaoID")] Questao questao)
+        public async Task<IActionResult> Create([Bind("QuestaoID,NomeQuestao,TipoResposta,ValorMaximo,ValorMinimo,NumeroOpcoes,TipoQuestaoID")] Questao questao)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace Trails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome", questao.TipoQuestaoID);
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
             return View(questao);
         }
 
@@ -81,7 +81,7 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome", questao.TipoQuestaoID);
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
             return View(questao);
         }
 
@@ -90,7 +90,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("QuestaoID,NomeQuestao,ValorMaximo,ValorMinimo,NumeroOpcoes,TipoQuestaoID")] Questao questao)
+        public async Task<IActionResult> Edit(int id, [Bind("QuestaoID,NomeQuestao,TipoResposta,ValorMaximo,ValorMinimo,NumeroOpcoes,TipoQuestaoID")] Questao questao)
         {
             if (id != questao.QuestaoID)
             {
@@ -117,7 +117,7 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "Nome", questao.TipoQuestaoID);
+            ViewData["TipoQuestaoID"] = new SelectList(_context.TipoQuestoes, "TipoQuestaoID", "TipoQuestaoID", questao.TipoQuestaoID);
             return View(questao);
         }
 

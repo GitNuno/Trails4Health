@@ -18,6 +18,12 @@
             @Html.DisplayFor(model => model.NomeQuestao)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.TipoResposta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoResposta)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.ValorMaximo)
         </dt>
         <dd>
@@ -36,12 +42,10 @@
             @Html.DisplayFor(model => model.NumeroOpcoes)
         </dd>
         <dt>
-            @*@Html.DisplayNameFor(model => model.TipoQuestao)*@
-            Tipo de Questão
+            @Html.DisplayNameFor(model => model.TipoQuestao)
         </dt>
         <dd>
-            @*@Html.DisplayFor(model => model.TipoQuestao.TipoQuestaoID)*@
-            @Html.DisplayFor(model => model.TipoQuestao.Nome)
+            @Html.DisplayFor(model => model.TipoQuestao.TipoQuestaoID)
         </dd>
     </dl>
 </div>

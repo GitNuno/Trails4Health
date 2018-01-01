@@ -17,6 +17,9 @@
                     @Html.DisplayNameFor(model => model.NomeQuestao)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.TipoResposta)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.ValorMaximo)
                 </th>
                 <th>
@@ -36,6 +39,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NomeQuestao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoResposta)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ValorMaximo)

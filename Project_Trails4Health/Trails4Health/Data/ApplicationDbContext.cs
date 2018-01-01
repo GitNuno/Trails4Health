@@ -26,7 +26,7 @@ namespace Trails4Health.Models
         public DbSet<Dificuldade> Dificuldades { get; set; }
         public DbSet<EstadoTrilho> EstadoTrilhos { get; set; }
         public DbSet<Estado> Estados { get; set; }
-        
+
         public DbSet<Questao> Questoes { get; set; }
         public DbSet<TipoQuestao> TipoQuestoes { get; set; }
 
@@ -59,12 +59,18 @@ namespace Trails4Health.Models
                 .WithMany(Dificuldade => Dificuldade.Trilhos)
                 .HasForeignKey(Trilho => Trilho.DificuldadeID);
 
-            modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID );
-                     
+            //------------------------------------------------------
+            modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID);
             modelBuilder.Entity<Questao>()
                 .HasOne(q => q.TipoQuestao)
                 .WithMany(tq => tq.Questoes)
                 .HasForeignKey(q => q.TipoQuestaoID);
+
+            modelBuilder.Entity<Turista>().HasKey(t => t.TuristaID);
+
+            modelBuilder.Entity<Guia>().HasKey(g => g.GuiaID);
+
+            modelBuilder.Entity<Resposta>().HasKey(chaveComposta => new { chaveComposta.RespostaQuestionarioID, chaveComposta.QuestaoID, chaveComposta.TuristaID });
         }
     }
 }
