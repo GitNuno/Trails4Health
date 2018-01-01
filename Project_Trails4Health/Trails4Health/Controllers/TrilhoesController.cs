@@ -49,7 +49,7 @@ namespace Trails4Health.Controllers
         public IActionResult Create()
         {
             // viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime
-            // Nome é o campo de texto referente ao DificuldadeID
+            // SelectList(tabelaBD,valoresColuna,nomeColuna) | nota: valores vao ser recebidos num selectList
             ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome");
             ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome");
             return View();
@@ -60,7 +60,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> Create([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         { 
             if (ModelState.IsValid)
             {
@@ -69,6 +69,7 @@ namespace Trails4Health.Controllers
                 //estadoTrilho.DataInicio = DateTime.Now;
                 //estadoTrilho.EstadoID = 1;
 
+                // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
                 Trilho trilho = new Trilho
                 {
                     Nome = VMTrilho.TrilhoNome,
@@ -78,12 +79,15 @@ namespace Trails4Health.Controllers
                     Foto = VMTrilho.TrilhoFoto,
                     Desativado = VMTrilho.TrilhoDesativado,
                     Detalhes = VMTrilho.TrilhoDetalhes,
+                    Sumario = VMTrilho.TrilhoSumario,
                     DificuldadeID = VMTrilho.DificuldadeID
                 };
 
+                // coloco trilho na tabela dbo.Trilhos
                 _context.Add(trilho);
                 //await _context.SaveChangesAsync();
 
+                // crio novo EstadoTrilho a partir de trilho(criado em cima) + campo EstadoID(Bind) + campo DataInicio(DateTime)
                 EstadoTrilho estadoTrilho = new EstadoTrilho
                 {
                     Trilho = trilho,
@@ -91,12 +95,14 @@ namespace Trails4Health.Controllers
                     DataInicio = DateTime.Now,
                 };
 
+                // coloco estadoTrilho na tabela dbo.EstadoTrilhos
                 _context.Add(estadoTrilho);
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "DificuldadeID", VMTrilho.DificuldadeID);
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", VMTrilho.DificuldadeID);
+            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", VMTrilho.DificuldadeID);
             return View(VMTrilho);
         }
 
@@ -122,11 +128,11 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho)
         {
             if (id != trilho.TrilhoID)
             {
-                return NotFound();
+                return NotFound("TrilhoID NotFound");
             }
 
             if (ModelState.IsValid)
@@ -149,7 +155,7 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "DificuldadeID", trilho.DificuldadeID);
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilho.DificuldadeID);
             return View(trilho);
         }
 

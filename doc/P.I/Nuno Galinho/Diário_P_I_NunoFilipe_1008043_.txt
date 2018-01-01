@@ -431,7 +431,13 @@ Tempo:45 min.
 .Corrigi erro: ArgumentOutOfRangeException: startIndex must be less than length of string.(linha 63 /Trilhoes/index.cshtml)
 Tempo:1h
 
+.Visualizar atributo  Nome em vez de DificuldadeID de Dificuldade.cs nas views: /Trilhoes/Details e Edit.
+Tempo:15 min.
 
+.Corrigi problema Criar e Editar trilho; tinha adicionado novo campo (Sumario) ao modelo e 
+ nao tinha atualizado os metodos do controlador Trilhoes.cs: ...Create([Bind("TrilhoID,TrilhoNome,TrilhoInicio,Sumario,... 
+ +...Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,...
+Tempo:1h
 
 //
 

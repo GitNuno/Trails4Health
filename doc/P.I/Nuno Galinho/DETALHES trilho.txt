@@ -7,23 +7,34 @@ Este trilho é longo normalmente recomendada a turistas mais jovens, tem uma ext
 /images/torre.jpg
 
 //
-False
-Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão, constituido por paisagens majestosas e faz-se numa media de 1h15
-2
-13
+Inferno
 Ribeira
-/images/inferno.jpg
 Inferno
-Alvoco
+Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão
+Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão, constituido por paisagens majestosas e faz-se numa media de 1h15
+4
+/images/inferno.jpg
+
 //
-False
-Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, onde não passa mais do que um carro
-2
+Rossim
+Alvoco
+Rossim
+Em pleno coração da Serra da Estrela, nas Penhas Douradas, e junto ao maior vale 
+glaciar da Europa, estende-se este manto de água que no Verão atrai tudo o que são 
+veraneantes das redondezas.
+
+Em pleno coração da Serra da Estrela, nas Penhas Douradas, e junto ao maior vale 
+glaciar da Europa, estende-se este manto de água que no Verão atrai tudo o que são 
+veraneantes das redondezas.
+A Praia do Vale do Rossim é uma das mais famosas praias do Parque Natural da Serra 
+da Estrela. Mas o Vale do Rossim não é só praia, inserido na reserva biogenética do 
+Planalto Superior, o Vale do Rossim é um local único de grande valor científico e 
+sensibilidade ambiental e paisagística, que importa proteger e valorizar.
+Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, onde não passa 
+mais do que um carro...
+
 15
-Poço do Inferno
-/images/inferno.jpg
-Inferno
-Inferno
+/images/rossim.jpg
 
 
 

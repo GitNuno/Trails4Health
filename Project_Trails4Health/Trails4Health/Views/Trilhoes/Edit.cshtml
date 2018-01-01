@@ -15,7 +15,7 @@
         <h4>Trilho</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="TrilhoID" />
+        <input type="hidden" asp-for="TrilhoID" />
         <div class="form-group">
             <label asp-for="Nome" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -35,6 +35,13 @@
             <div class="col-md-10">
                 <input asp-for="Fim" class="form-control" />
                 <span asp-validation-for="Fim" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Sumario" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Sumario" class="form-control" />
+                <span asp-validation-for="Sumario" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
@@ -67,7 +74,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="DificuldadeID" class="control-label col-md-2"></label>
+            <label asp-for="DificuldadeID" class="control-label col-md-2">Dificuldade</label>
             <div class="col-md-10">
                 <select asp-for="DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
                 <span asp-validation-for="DificuldadeID" class="text-danger"></span>
