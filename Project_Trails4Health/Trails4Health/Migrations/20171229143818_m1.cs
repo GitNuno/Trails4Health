@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace Trails4Health.Migrations.ApplicationDb
+namespace Trails4Health.Migrations
 {
-    public partial class Initial : Migration
+    public partial class m1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,16 +37,16 @@ namespace Trails4Health.Migrations.ApplicationDb
                 });
 
             migrationBuilder.CreateTable(
-                name: "TipoResposta",
+                name: "TipoQuestoes",
                 columns: table => new
                 {
-                    TipoRespostaID = table.Column<int>(nullable: false)
+                    TipoQuestaoID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Descricao = table.Column<string>(nullable: true)
+                    Nome = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoResposta", x => x.TipoRespostaID);
+                    table.PrimaryKey("PK_TipoQuestoes", x => x.TipoQuestaoID);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,47 +76,26 @@ namespace Trails4Health.Migrations.ApplicationDb
                 });
 
             migrationBuilder.CreateTable(
-                name: "QuestaoAvaliacaoGuia",
+                name: "Questoes",
                 columns: table => new
                 {
-                    TipoRespostaID = table.Column<int>(nullable: false)
+                    QuestaoID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Desactivada = table.Column<bool>(nullable: false),
                     NomeQuestao = table.Column<string>(nullable: true),
-                    QuestaoID = table.Column<int>(nullable: false),
-                    TipoRespostaID1 = table.Column<int>(nullable: true)
+                    NumeroOpcoes = table.Column<int>(nullable: false),
+                    TipoQuestaoID = table.Column<int>(nullable: false),
+                    ValorMaximo = table.Column<int>(nullable: false),
+                    ValorMinimo = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_QuestaoAvaliacaoGuia", x => x.TipoRespostaID);
+                    table.PrimaryKey("PK_Questoes", x => x.QuestaoID);
                     table.ForeignKey(
-                        name: "FK_QuestaoAvaliacaoGuia_TipoResposta_TipoRespostaID1",
-                        column: x => x.TipoRespostaID1,
-                        principalTable: "TipoResposta",
-                        principalColumn: "TipoRespostaID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "QuestaoAvaliacaoTrilho",
-                columns: table => new
-                {
-                    TipoRespostaID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Desactivada = table.Column<bool>(nullable: false),
-                    NomeQuestao = table.Column<string>(nullable: true),
-                    QuestaoID = table.Column<int>(nullable: false),
-                    TipoRespostaID1 = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_QuestaoAvaliacaoTrilho", x => x.TipoRespostaID);
-                    table.ForeignKey(
-                        name: "FK_QuestaoAvaliacaoTrilho_TipoResposta_TipoRespostaID1",
-                        column: x => x.TipoRespostaID1,
-                        principalTable: "TipoResposta",
-                        principalColumn: "TipoRespostaID",
-                        onDelete: ReferentialAction.Restrict);
+                        name: "FK_Questoes_TipoQuestoes_TipoQuestaoID",
+                        column: x => x.TipoQuestaoID,
+                        principalTable: "TipoQuestoes",
+                        principalColumn: "TipoQuestaoID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,14 +130,9 @@ namespace Trails4Health.Migrations.ApplicationDb
                 column: "TrilhoID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_QuestaoAvaliacaoGuia_TipoRespostaID1",
-                table: "QuestaoAvaliacaoGuia",
-                column: "TipoRespostaID1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_QuestaoAvaliacaoTrilho_TipoRespostaID1",
-                table: "QuestaoAvaliacaoTrilho",
-                column: "TipoRespostaID1");
+                name: "IX_Questoes_TipoQuestaoID",
+                table: "Questoes",
+                column: "TipoQuestaoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Trilhos_DificuldadeID",
@@ -172,10 +146,7 @@ namespace Trails4Health.Migrations.ApplicationDb
                 name: "EstadoTrilhos");
 
             migrationBuilder.DropTable(
-                name: "QuestaoAvaliacaoGuia");
-
-            migrationBuilder.DropTable(
-                name: "QuestaoAvaliacaoTrilho");
+                name: "Questoes");
 
             migrationBuilder.DropTable(
                 name: "Estados");
@@ -184,7 +155,7 @@ namespace Trails4Health.Migrations.ApplicationDb
                 name: "Trilhos");
 
             migrationBuilder.DropTable(
-                name: "TipoResposta");
+                name: "TipoQuestoes");
 
             migrationBuilder.DropTable(
                 name: "Dificuldades");
