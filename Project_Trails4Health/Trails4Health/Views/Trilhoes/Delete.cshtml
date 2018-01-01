@@ -38,8 +38,9 @@
         <dt>
             @Html.DisplayNameFor(model => model.Detalhes)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Detalhes)
+        <!-- redimensionar coluna e n. de carateres por coluna -->
+        <dd style="width:50em">
+            @Model.Detalhes.Remove(120)...
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Distancia)

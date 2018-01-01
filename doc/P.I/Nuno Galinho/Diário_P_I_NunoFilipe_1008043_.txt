@@ -403,7 +403,29 @@ Tempo: 1h
 . Estudei Autenticação do projecto Books Aula 7/12/2017
 Tempo: 1h
 
-//
+. Criada bd aspnet-Trails4Health-Logins + UsersSeedData + ISmsSender + MessageServices
+	Nota: Redefeni o construtor da class LoginsApplicationDbContext.cs estava a dar erro na migração
+Tempo: 1h
+
+. P.I. Falhada visualização da pag. /Account/Login.cshtml
+	ERRO: Cannot create a DbSet for 'ApplicationUser' because this type is not included in the model for the context.)
+Tempo: 1h
+
+// 20/12/2017
+. Autenticação a funcionar
+.O ultimo merge que fiz provocou uma serie de erros em relação á BD
+.Apaguei as minhas migrações e fiz o update da BD
+Tempo: 30min.
+
+//  22/12/2017
+. Pesquisa conceitos sobre WEB app
+.Compilei uma serie de conceitos relacionados com WEB applications:,
+servidor IIS, plataforma .NET, etc...
+Tempo: 1h
+
+// 01/12/2018
+. Redimensionei colunas e n. de carateres por coluna nas views: /trilhoes/index, delete, details.
+Tempo:45 min.
 
 //
 
