@@ -41,7 +41,7 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-
+            //ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome");
             return View(trilho);
         }
 
@@ -113,7 +113,7 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "DificuldadeID", trilho.DificuldadeID);
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilho.DificuldadeID);
             return View(trilho);
         }
 

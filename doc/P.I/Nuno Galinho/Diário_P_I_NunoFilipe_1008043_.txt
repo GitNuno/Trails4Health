@@ -427,6 +427,12 @@ Tempo: 1h
 . Redimensionei colunas e n. de carateres por coluna nas views: /trilhoes/index, delete, details.
 Tempo:45 min.
 
+.Adicionei campo sumario e novas validaçoes em Trilho.cs e ViewModelTrilho.cs+ alterações ás views do CRUD Trilho (/Trilhoes)
+.Corrigi erro: ArgumentOutOfRangeException: startIndex must be less than length of string.(linha 63 /Trilhoes/index.cshtml)
+Tempo:1h
+
+
+
 //
 
 //
