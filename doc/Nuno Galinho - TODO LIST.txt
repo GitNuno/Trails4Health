@@ -1,11 +1,13 @@
 ::
 
 P.I.:
-	.validaçoes vs eng. soft.2
-	.~ ´ nºs - regex, 
+	.
+	.~ ´ nºs - regex_validaçoes:TrilhoNome, TrilhoDistancia,
+								ESTADO, DIFICULDADE,ESTAD9_TRILHO: DataFim
 	.Estado em Edit
 	.trilhoes vs trilhos
 	.snipets
+	.historico
 	.image bitmap
 	.data criação
 	.seedData
