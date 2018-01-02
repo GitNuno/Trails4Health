@@ -51,8 +51,8 @@ namespace Trails4Health.Data
             //context.SaveChanges();
 
             context.TipoQuestoes.AddRange(
-                new TipoQuestao { Nome = "tipo3"},
-                new TipoQuestao { Nome = "tipo4"}
+                new TipoQuestao { Nome = "Trilho"},
+                new TipoQuestao { Nome = "Guia"}
                 );
             context.SaveChanges();
         }
