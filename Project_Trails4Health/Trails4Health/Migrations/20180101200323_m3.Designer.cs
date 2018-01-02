@@ -11,9 +11,10 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180101200323_m3")]
+    partial class m3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,31 +147,23 @@ namespace Trails4Health.Migrations
                     b.Property<bool>("Desativado");
 
                     b.Property<string>("Detalhes")
-                        .IsRequired()
-                        .HasMaxLength(700);
+                        .IsRequired();
 
                     b.Property<int>("DificuldadeID");
 
                     b.Property<decimal>("Distancia");
 
                     b.Property<string>("Fim")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                        .IsRequired();
 
                     b.Property<string>("Foto")
                         .IsRequired();
 
                     b.Property<string>("Inicio")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                        .IsRequired();
 
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Sumario")
-                        .IsRequired()
-                        .HasMaxLength(200);
+                        .IsRequired();
 
                     b.HasKey("TrilhoID");
 
