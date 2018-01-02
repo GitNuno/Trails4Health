@@ -2,7 +2,8 @@
 
 P.I.:
 	.validaçoes vs eng. soft.2
-	.mudar decimal para double em /Models/Trilho.cs
+	.~ ´ nºs - regex, 
+	.Estado em Edit
 	.trilhoes vs trilhos
 	.snipets
 	.image bitmap
@@ -10,6 +11,7 @@ P.I.:
 	.seedData
 	.autenticação/snipet
 	.por ... em Trilhoes/index (col. Detalhes)
+	.form Distancia = 9.3
 
 .ENG. SOFT.2:
 	.Casos uso criar estado + criar dificuldade ??

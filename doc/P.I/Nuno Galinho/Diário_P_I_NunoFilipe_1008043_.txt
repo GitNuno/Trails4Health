@@ -446,6 +446,11 @@ dava-me erro qd tentava criar novo trilho.
 .Apaguei BD e migraçoes e criei novas migraçoes e BD (RESOLVIDO!)
 Tempo:1h
 
+.Mudei Formatos (nºcaracterea) atributo Detalhes e Sumario de Modelo trilho. Estava a dar erro de cada vez que ultrapassava 100 carateres para
+Sumario  ou 200  carateres  para Detalhes .
+Nota: Não basta mudar o formato na validação dos atributos do modelo, é necessaria nova migração e update da BD.
+Tempo:1h
+
 //
 
 //

@@ -1,3 +1,7 @@
+::
+MUDANÇA FORMATOS (nºcaracteres num atributo de um modelo) 
+	.Não basta mudar o formato na validação dos atributos do modelo, é necessaria 
+	 nova migração e update da BD.
 
 ::
 LOCALIZAÇÃO DAS BASE DADOS:

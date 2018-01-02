@@ -30,11 +30,11 @@ namespace Trails4Health.Models
         //public string Longitude { get; set; }
 
         [Required(ErrorMessage = "Introduza Sumario do Trilho")]
-        [StringLength(100, MinimumLength = 5, ErrorMessage = "Fim tem entre 5-100 caracteres")] // entre entre 5-100 caracteres
+        [StringLength(200, MinimumLength = 5, ErrorMessage = "Sumario tem entre 5-200 caracteres")] // entre entre 5-200 caracteres
         public string Sumario { get; set; }
 
         [Required(ErrorMessage = "Introduza detalhes do Trilho")]
-        [StringLength(200, MinimumLength = 5, ErrorMessage = "Fim tem entre 5-200 caracteres")] // entre 5-200 caracteres
+        [StringLength(700, MinimumLength = 5, ErrorMessage = "Detalhes tem entre 5-700 caracteres")] // entre 5-700 caracteres
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
