@@ -13,21 +13,18 @@ namespace Trails4Health.Models
 
         [Required(ErrorMessage = "Introduza nome do Trilho")] // nao nulo 
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Nome tem entre 2-50 caracteres")] // entre 2-50 caracteres
+        //[RegularExpression(@"([^_^0-9]+)", ErrorMessage = "Nome Inválido")] // excepto "_" ou numeros 
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Introduza inicio do Trilho")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Inicio tem entre 2-50 caracteres")] // entre 2-50 caracteres
+        [RegularExpression(@"([^_^0-9]+)", ErrorMessage = "Inicio Inválido")] // excepto "_" ou numeros 
         public string Inicio { get; set; }
 
         [Required(ErrorMessage = "Introduza fim do Trilho")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Fim tem entre 2-50 caracteres")] // entre 2-50 caracteres
+        [RegularExpression(@"([^_^0-9]+)", ErrorMessage = "Fim Inválido")] // excepto "_" ou numeros 
         public string Fim { get; set; }
-
-        // Nota: Acrescentar em SeedData!! Ainda nao está na BD
-        // coordenadas GPS
-        //public string Latitude { get; set; }
-
-        //public string Longitude { get; set; }
 
         [Required(ErrorMessage = "Introduza Sumario do Trilho")]
         [StringLength(200, MinimumLength = 5, ErrorMessage = "Sumario tem entre 5-200 caracteres")] // entre entre 5-200 caracteres
@@ -38,6 +35,7 @@ namespace Trails4Health.Models
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
+        [RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida")] // excepto letras, espaços e "ç" 
         public decimal Distancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]

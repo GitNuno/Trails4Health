@@ -451,6 +451,9 @@ Sumario  ou 200  carateres  para Detalhes .
 Nota: Não basta mudar o formato na validação dos atributos do modelo, é necessaria nova migração e update da BD.
 Tempo:1h
 
+.Adicionadas novas validações (REGEX) em ViewModelTrilho e Trilho
+Tempo: 30 min.
+
 //
 
 //

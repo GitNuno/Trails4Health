@@ -2,8 +2,8 @@
 
 P.I.:
 	.
-	.~ ´ nºs - regex_validaçoes:TrilhoNome, TrilhoDistancia,
-								ESTADO, DIFICULDADE,ESTAD9_TRILHO: DataFim
+	.regex_validaçoes:TrilhoNome, TrilhoDistancia,
+								ESTADO, DIFICULDADE,ESTADO_TRILHO: DataFim
 	.Estado em Edit
 	.trilhoes vs trilhos
 	.snipets

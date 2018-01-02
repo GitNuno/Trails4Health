@@ -83,8 +83,13 @@ ROUTING : "passing parameters between views in MVC"
 		}
 ::
 REGEX - E-MAIL:
-// 
-(\w+\.\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})|(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})
+	// 
+	(\w+\.\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})|(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})
 
-// Aceita qq caracteres atrás e frente de @
-.+@.+	
+	// Aceita qq caracteres atrás e frente de @
+	.+@.+	
+
+::
+ANOTAÇÕES:
+	EX:
+	 [Required(ErrorMessage = "Introduza nome do Trilho")]

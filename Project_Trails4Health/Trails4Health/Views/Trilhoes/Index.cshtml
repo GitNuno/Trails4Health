@@ -62,7 +62,7 @@
             <td style="width:16em">
                 @if (item.Sumario.Length > 91) // Sumario.Length(q está na BD) tem > que Remove(index)
                 {
-                    @item.Sumario.Remove(90);
+                    @item.Sumario.Remove(90); <span>...</span>
                 }
                 else
                 {
@@ -73,7 +73,7 @@
             <td style="width:16em">
                 @if (item.Detalhes.Length > 91)
                 {     
-                    @item.Detalhes.Remove(90);
+                    @item.Detalhes.Remove(90); <span>...</span>
                 }
                 else
                 {
@@ -82,10 +82,10 @@
             </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.Distancia)
+                @Html.DisplayFor(modelItem => item.Distancia) <span>Km</span>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Foto)
+                @Html.DisplayFor(modelItem => item.Foto) 
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Desativado)
