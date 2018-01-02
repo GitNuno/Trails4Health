@@ -11,9 +11,10 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171229143818_m1")]
+    partial class m1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,8 +75,6 @@ namespace Trails4Health.Migrations
 
                     b.Property<int>("TipoQuestaoID");
 
-                    b.Property<string>("TipoResposta");
-
                     b.Property<int>("ValorMaximo");
 
                     b.Property<int>("ValorMinimo");
@@ -107,31 +106,23 @@ namespace Trails4Health.Migrations
                     b.Property<bool>("Desativado");
 
                     b.Property<string>("Detalhes")
-                        .IsRequired()
-                        .HasMaxLength(700);
+                        .IsRequired();
 
                     b.Property<int>("DificuldadeID");
 
                     b.Property<decimal>("Distancia");
 
                     b.Property<string>("Fim")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                        .IsRequired();
 
                     b.Property<string>("Foto")
                         .IsRequired();
 
                     b.Property<string>("Inicio")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                        .IsRequired();
 
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Sumario")
-                        .IsRequired()
-                        .HasMaxLength(200);
+                        .IsRequired();
 
                     b.HasKey("TrilhoID");
 

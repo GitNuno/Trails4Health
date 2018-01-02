@@ -1,7 +1,53 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 17.0 H
+Tempo Total: 23.0 H
 
+---
+
+01/01/2018
+
+- Continuação do projecto "Trails4Health":
+Alterada classe "Models/Questao.cs";
+Acrescentadas classes "Models/Turista.cs", "Models/Guia.cs", "Models/Resposta.cs";
+
+
+Tempo utilizado:  1 H
+
+---
+
+29/12/2017
+
+- Continuação do projecto "Trails4Health":
+Alterada classe "Models/Questao.cs" e "Models/TipoQuestao.cs";
+Alterado controlador "Controllers/QuestoesController.cs";
+Alterada view "Views/Questoes/Details.cshtml";
+
+
+Tempo utilizado:  2 H
+
+---
+
+28/12/2017
+
+- Continuação do projecto "Trails4Health":
+Apagados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho", e apagadas respectivas Views.
+Apagadas classes "Models/QuestoesAvaliacaoGuia.cs" e "Models/QuestoesAvaliacaoTrilho.cs", e substituídas pela classe "Models/Questao.cs". Criado o respectivo controlador CRUD.
+Acrescentada classe "Models/TipoQuestao.cs" e respectivo controlador CRUD e views.
+
+
+Tempo utilizado:  2 H
+
+---
+
+27/12/2017
+
+Consultado tutorial sobre "Entity Framework":
+http://www.entityframeworktutorial.net/entity-relationships.aspx
+- Continuação do projecto "Trails4Health":
+Criados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho".
+
+
+Tempo utilizado:  1 H
 
 ---
 

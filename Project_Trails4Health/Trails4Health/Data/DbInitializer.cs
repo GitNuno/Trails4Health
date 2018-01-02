@@ -19,36 +19,36 @@ namespace Trails4Health.Data
             //    return;   // ... a DB já tem pelo menos um registo.
             //}
 
-            context.TiposRespostas.AddRange(
-                new TipoResposta { Descricao = "Sim/Não" },
-                new TipoResposta { Descricao = "1 - Discordo | 3 - Concordo" },
-                new TipoResposta { Descricao = "1 - Discordo em Absoluto | 5 - Concordo Plenamente" }
-            );
-            context.SaveChanges();
+            //context.TipoRespostas.AddRange(
+            //    new TipoResposta { Descricao = "Sim/Não" },
+            //    new TipoResposta { Descricao = "1 - Discordo | 3 - Concordo" },
+            //    new TipoResposta { Descricao = "1 - Discordo em Absoluto | 5 - Concordo Plenamente" }
+            //);
+            //context.SaveChanges();
 
             //if (context.QuestoesAvalicaoTrilhos.Any())
             //{
             //    return;   
             //}
 
-            context.QuestoesAvalicaoTrilhos.AddRange(
-                new QuestaoAvaliacaoTrilho { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false},
-                new QuestaoAvaliacaoTrilho { NomeQuestao = "O trilho continha sinalização adequada?", Desactivada = false},
-                new QuestaoAvaliacaoTrilho { NomeQuestao = "Como classifica este trilho quanto ao grau de dificuldade?", Desactivada = false}
-            );
-            context.SaveChanges();
+            //context.QuestaoAvalicaoTrilhos.AddRange(
+            //    new QuestaoAvaliacaoTrilho { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false, TipoRespostaID = 1 },
+            //    new QuestaoAvaliacaoTrilho { NomeQuestao = "O trilho continha sinalização adequada?", Desactivada = false,  TipoRespostaID = 2 },
+            //    new QuestaoAvaliacaoTrilho { NomeQuestao = "Como classifica este trilho quanto ao grau de dificuldade?", Desactivada = false, TipoRespostaID = 3 }
+            //);
+            //context.SaveChanges();
 
             //if (context.QuestoesAvalicaoGuias.Any())
             //{
             //    return;
             //}
 
-            context.QuestoesAvalicaoGuias.AddRange(
-                new QuestaoAvalicaoGuia { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false},
-                new QuestaoAvalicaoGuia { NomeQuestao = "O guia percorreu o trilho com um ritmo adequado à dificuldade do trilho?", Desactivada = false },
-                new QuestaoAvalicaoGuia { NomeQuestao = "O guia fez pausas nos locais assinalados como sendo de interesse?", Desactivada = false }
-                );
-            context.SaveChanges();
+            //context.QuestaoAvalicaoGuias.AddRange(
+            //    new QuestaoAvaliacaoGuia { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false, TipoRespostaID = 1 },
+            //    new QuestaoAvaliacaoGuia { NomeQuestao = "O guia percorreu o trilho com um ritmo adequado à dificuldade do trilho?", Desactivada = false, TipoRespostaID = 1 },
+            //    new QuestaoAvaliacaoGuia { NomeQuestao = "O guia fez pausas nos locais assinalados como sendo de interesse?", Desactivada = false, TipoRespostaID = 1 }
+            //    );
+            //context.SaveChanges();
         }
     }
 }
