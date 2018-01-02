@@ -439,7 +439,12 @@ Tempo:15 min.
  +...Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,...
 Tempo:1h
 
-//
+// 02/12/2018
+.Resolvi problema mudança de atributo decimal Distancia para double Distancia no Modelo 
+Trilhos. Ao mudar de tipo de dados no atributo do modelo e feito o update da base dados, 
+dava-me erro qd tentava criar novo trilho.
+.Apaguei BD e migraçoes e criei novas migraçoes e BD (RESOLVIDO!)
+Tempo:1h
 
 //
 

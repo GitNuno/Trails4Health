@@ -8,13 +8,12 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Trails4Health.Models;
 
-namespace Trails4Health.Migrations.ApplicationDb
+namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20171220184254_Initial")]
-    partial class Initial
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,23 +123,31 @@ namespace Trails4Health.Migrations.ApplicationDb
                     b.Property<bool>("Desativado");
 
                     b.Property<string>("Detalhes")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(200);
 
                     b.Property<int>("DificuldadeID");
 
                     b.Property<decimal>("Distancia");
 
                     b.Property<string>("Fim")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("Foto")
                         .IsRequired();
 
                     b.Property<string>("Inicio")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("Nome")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Sumario")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.HasKey("TrilhoID");
 

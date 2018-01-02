@@ -8,13 +8,12 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Trails4Health.Data;
 
-namespace Trails4Health.Migrations
+namespace Trails4Health.Migrations.LoginsApplicationDb
 {
     [DbContext(typeof(LoginsApplicationDbContext))]
-    [Migration("20171220183920_Initial")]
-    partial class Initial
+    partial class LoginsApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
