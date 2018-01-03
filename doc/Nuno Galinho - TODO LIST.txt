@@ -6,11 +6,13 @@ P.I.:
 	.seedData
 	.historico
 	.image bitmap
-	.data criação
-	.seedData
+	.delete
+	.testar entrada de Estados na BD + Desativado
 	.autenticação/snipet
-	.
+	.apagar de \CRUDTrilho: Create.cshtml, Edit.cshtml
+	
 	DUVIDAS:
+		.Paginação
 		.Quando mudamos Estado Aberto > Fechado equivale a desativar trilho?
 		 ou é informação a mostrar ao turista?
 		.Para o mm Trilho de cada vez que mudo de Estado => nova entrada em EstadoTrilho?

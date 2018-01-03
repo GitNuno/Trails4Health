@@ -91,7 +91,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Create
-        public IActionResult FormCriar()
+        public IActionResult Criar()
         {
             // viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime
             // SelectList(tabelaBD,valoresColuna,nomeColuna) | nota: valores vao ser recebidos num selectList
@@ -103,7 +103,7 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> FormCriar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         { 
             if (ModelState.IsValid)
             {
@@ -146,7 +146,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET:Edit
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
             {
@@ -186,7 +186,7 @@ namespace Trails4Health.Controllers
         // POST: Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         {
 
             // crio novo trilho a partir dos valores introduzidos no form (ver Bind)

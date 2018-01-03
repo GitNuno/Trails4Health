@@ -7,7 +7,7 @@ DEVELOPER COMMAND PROMPT FOR VS 2017
 
 ::
 COMANDOS:
-	.cd /dir_myProject (nota: dir_myProject e não do sln! )
+	.cd C:\programacao_internet\Trails4Health\Project_Trails4Health\Trails4Health  (nota: dir_myProject e não do sln! )
 	.dotnet restore
 	.dotnet build
 	.dotnet ef migrations add Initial --context ApplicationDbContext

@@ -11,8 +11,8 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180101095627_m2")]
-    partial class m2
+    [Migration("20180103175150_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,10 +64,30 @@ namespace Trails4Health.Migrations
                     b.ToTable("EstadoTrilhos");
                 });
 
+            modelBuilder.Entity("Trails4Health.Models.Guia", b =>
+                {
+                    b.Property<int>("GuiaID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DataNascimento");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Telefone");
+
+                    b.HasKey("GuiaID");
+
+                    b.ToTable("Guia");
+                });
+
             modelBuilder.Entity("Trails4Health.Models.Questao", b =>
                 {
                     b.Property<int>("QuestaoID")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Desactivada");
 
                     b.Property<string>("NomeQuestao");
 
@@ -86,6 +106,25 @@ namespace Trails4Health.Migrations
                     b.HasIndex("TipoQuestaoID");
 
                     b.ToTable("Questoes");
+                });
+
+            modelBuilder.Entity("Trails4Health.Models.Resposta", b =>
+                {
+                    b.Property<int>("RespostaQuestionarioID");
+
+                    b.Property<int>("QuestaoID");
+
+                    b.Property<int>("TuristaID");
+
+                    b.Property<int>("Resposta_");
+
+                    b.HasKey("RespostaQuestionarioID", "QuestaoID", "TuristaID");
+
+                    b.HasIndex("QuestaoID");
+
+                    b.HasIndex("TuristaID");
+
+                    b.ToTable("Resposta");
                 });
 
             modelBuilder.Entity("Trails4Health.Models.TipoQuestao", b =>
@@ -108,29 +147,61 @@ namespace Trails4Health.Migrations
                     b.Property<bool>("Desativado");
 
                     b.Property<string>("Detalhes")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(700);
 
                     b.Property<int>("DificuldadeID");
 
                     b.Property<decimal>("Distancia");
 
                     b.Property<string>("Fim")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("Foto")
                         .IsRequired();
 
                     b.Property<string>("Inicio")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("Nome")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Sumario")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
                     b.HasKey("TrilhoID");
 
                     b.HasIndex("DificuldadeID");
 
                     b.ToTable("Trilhos");
+                });
+
+            modelBuilder.Entity("Trails4Health.Models.Turista", b =>
+                {
+                    b.Property<int>("TuristaID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DataNascimento");
+
+                    b.Property<string>("Email");
+
+                    b.Property<int>("Idade");
+
+                    b.Property<string>("Morada");
+
+                    b.Property<int>("Nif");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Telefone");
+
+                    b.HasKey("TuristaID");
+
+                    b.ToTable("Turista");
                 });
 
             modelBuilder.Entity("Trails4Health.Models.EstadoTrilho", b =>
@@ -151,6 +222,19 @@ namespace Trails4Health.Migrations
                     b.HasOne("Trails4Health.Models.TipoQuestao", "TipoQuestao")
                         .WithMany("Questoes")
                         .HasForeignKey("TipoQuestaoID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Trails4Health.Models.Resposta", b =>
+                {
+                    b.HasOne("Trails4Health.Models.Questao", "Questao")
+                        .WithMany()
+                        .HasForeignKey("QuestaoID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Trails4Health.Models.Turista", "Turista")
+                        .WithMany()
+                        .HasForeignKey("TuristaID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
