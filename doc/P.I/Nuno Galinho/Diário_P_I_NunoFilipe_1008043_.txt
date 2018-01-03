@@ -469,7 +469,7 @@ Tempo:15 min
 .Criado espaço entre _LayoutBackOffice.cshtml e conteudo das pag.s do CRUD
 Tempo: 15 min.
 
-.Mudado nome: Controlador Trilhoes e \Views\Trilhoes para CRUDTrilho
+.Mudado nome do Controlador Trilhoes e \Views\Trilhoes para CRUDTrilho
 Tempo: 15 min.
 
 .Criei novo layout para criar trilho
@@ -479,6 +479,13 @@ Tempo:1h
 .Conclui Form CriarTrilho
 .Nota: Ainda esta num url temporario
 Tempo: 30 min.
+
+.Criei nova view Editar (Interface para Editar Trilho) - foram previamente apagadas e depois recriadas BDs
+Tempo: 1h
+
+.Criei nova interface da pag. /CRUDTrilho/index
+Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
+Tempo:1h
 //
 
 //

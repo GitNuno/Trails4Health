@@ -22,7 +22,13 @@ namespace Trails4Health.Controllers
             this.repository = repository; 
         }
 
-        // GET: Trilhoes
+        public async Task<IActionResult> I2()
+        {
+            var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
+        // 
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
