@@ -39,9 +39,9 @@
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilhos</a></li>
                     <li><a asp-controller="CRUDTrilho" asp-action="ListaTrilhos">Lista de Trilhos</a></li>
                 </ul>
-        <!-- RICARDO: login e register devem ser chamados na pag. home. Em Home "Login" criei link para Account/Login
-             mas nao sei se nao será necessaria esta linha de código -->
-		@await Html.PartialAsync("_LoginPartial")*
+                <!-- RICARDO: Os links login e register devem estar na pag. home e não em Back Office. Em Home "Login" criei 
+                    link para Account/Login mas nao sei se nao será necessaria esta linha de código -->
+                @await Html.PartialAsync("_LoginPartial")*
             </div>
         </div>
     </nav>

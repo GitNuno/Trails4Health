@@ -458,19 +458,23 @@ Tempo: 30 min.
 Tempo: 1h
 
 // 03/12/2018
-. Movi Lista.cshtml e FornCriar.cshtml de \Trilhos para \Trilhoes
+.Movi Lista.cshtml e FornCriar.cshtml de \Trilhos para \Trilhoes
 .Criei Listagem de Trilhos em TrilhoesControler,
 .Criei link para CRUD Trilho
 Tempo:1h
 
-. Em \Home\Index  criei link para Account/Login
+.Em \Home\Index  criei link para Account/Login
 Tempo:15 min
 
-. Criado espaço entre _LayoutBackOffice.cshtml e conteudo das pag.s do CRUD
+.Criado espaço entre _LayoutBackOffice.cshtml e conteudo das pag.s do CRUD
 Tempo: 15 min.
 
-. Mudado nome: Controlador Trilhoes e \Views\Trilhoes para CRUDTrilho
+.Mudado nome: Controlador Trilhoes e \Views\Trilhoes para CRUDTrilho
 Tempo: 15 min.
+
+.Criei novo layout para criar trilho
+.Nota: No momento  está a funcionar mas com url: localhost/CRUDTrilho/FormCriar
+Tempo:1h
 
 //
 

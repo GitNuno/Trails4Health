@@ -1,6 +1,6 @@
 ﻿<!--MVC faz o render da view em função do modelo: Models/Trilho -->
 <!-- Para poder Ligar os elementos HTML ao objecto Model: EX: Models.Trilhos.Nome-->
-@model Trilho
+@model ViewModelTrilho
 
 
 @{
@@ -15,7 +15,7 @@
 <br />
 <br />
 
-<form asp-action="Criar" method="post">
+<form asp-action="FormCriar" method="post">
     <div class="panel panel-primary" style="margin-top:2ex">
         <div class="text-center text-lg text-uppercase my-0 panel-heading" style="margin-bottom:1em">
             Criar
@@ -26,42 +26,71 @@
                 <div class="form-group col-lg-4">
                     <!-- asp-for: atributo tag helper: liga os elementos HTML ao objecto Model:  EX: Models.Trilhos.Nome -->
                     <!-- para fazer input tenho usar as classes: "class="form-group" + class="form-control" -->
-                    <label asp-for="Nome" class="adjust-margin-left">Nome</label>
-                    <input asp-for="Nome" class="form-control" />
+                    <label asp-for="@Model.TrilhoNome" class="adjust-margin-left">Nome</label>
+                    <input asp-for="@Model.TrilhoNome" class="form-control" />
                 </div>
                 <div class="form-group col-lg-4">
-                    <label asp-for="Inicio" class="adjust-margin-left">Inicio</label>
-                    <input asp-for="Inicio" class="form-control" />
+                    <label asp-for="@Model.TrilhoInicio" class="adjust-margin-left">Inicio</label>
+                    <input asp-for="@Model.TrilhoInicio" class="form-control" />
                 </div>
                 <div class="form-group col-lg-4">
-                    <label asp-for="Fim" class="adjust-margin-left">Fim</label>
-                    <input asp-for="Fim" class="form-control" />
+                    <label asp-for="@Model.TrilhoFim" class="adjust-margin-left">Fim</label>
+                    <input asp-for="@Model.TrilhoFim" class="form-control" />
                 </div>
                 <div class="clearfix"></div>
                 @*@*+++++++ adicionar campo Sumario *@
                 <div class="form-group col-lg-4">
-                    <label class="adjust-margin-left">Sumário</label>
-                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                    <label asp-for="@Model.TrilhoSumario" class="adjust-margin-left">Sumario</label>
+                    <textarea asp-for="@Model.TrilhoSumario" class="form-control" id="exampleTextarea" rows="3"></textarea>
                 </div>
                 @*@*+++++++ faço asp-for para textarea ???? *@
                 <div class="form-group col-lg-4">
-                    <label asp-for="Detalhes" class="adjust-margin-left">Detalhes</label>
-                    <textarea asp-for="Detalhes" class="form-control" id="exampleTextarea" rows="3"></textarea>
+                    <label asp-for="@Model.TrilhoDetalhes" class="adjust-margin-left">Detalhes</label>
+                    <textarea asp-for="@Model.TrilhoDetalhes" class="form-control" id="exampleTextarea" rows="3"></textarea>
                 </div>
                 <div class="form-group col-lg-4">
-                    <label asp-for="Distancia" class="adjust-margin-left">Distancia em Km</label>
-                    <input asp-for="Distancia" class="form-control" />
+                    <label asp-for="@Model.TrilhoDistancia" class="adjust-margin-left">Distancia em Km</label>
+                    <input asp-for="@Model.TrilhoDistancia" class="form-control" />
                 </div>
                 @*+++++++++++ faço asp-for para input type="file ???? *@
+                @*<div class="form-group col-lg-4">
+                <label for="exampleInputFile" class="adjust-margin-left">Escolher Foto</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                <small id="fileHelp" class="form-text text-muted">Escolha a foto que pretende para representar Trilho</small>
+            </div>*@
                 <div class="form-group col-lg-4">
-                    <label for="exampleInputFile" class="adjust-margin-left">Escolher Foto</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">Escolha a foto que pretende para representar Trilho</small>
+                    <label asp-for="@Model.TrilhoFoto" class="adjust-margin-left">Foto</label>
+                    <input asp-for="@Model.TrilhoFoto" class="form-control" />
                 </div>
-                <div class="form-group col-lg-12">
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            <input asp-for="@Model.TrilhoDesativado" />
+                            <label asp-for="@Model.TrilhoDesativado"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime seleccionados da B.D. -->
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.DificuldadeID" class="col-md-2 control-label">Dificuldade</label>
+                <div class="col-md-10">
+                    <select asp-for="@Model.DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
                 </div>
             </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.EstadoID" class="col-md-2 control-label">Estado</label>
+                <div class="col-md-10">
+                    <select asp-for="@Model.EstadoID" class="form-control" asp-items="ViewBag.EstadoID"></select>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-12">
+                <button type="submit" value="FormCriar" class="btn btn-primary">Adicionar</button>
+            </div>
+        </div>
             <!-- to display validation errors to the user -->
             <div asp-validation-summary="All"></div>
         </div>

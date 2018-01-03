@@ -50,11 +50,11 @@ namespace Trails4Health.Controllers
         }
 
         //// APAGAR DEPOIS DE IMPLEMENTADO FORMULARIO !!
-        [HttpGet]
-        public ViewResult FormCriar()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public ViewResult FormCriar()
+        //{
+        //    return View();
+        //}
 
         //[HttpPost]
         //public ViewResult FormCriar(Trilho trilho)
@@ -90,8 +90,8 @@ namespace Trails4Health.Controllers
             return View(trilho);
         }
 
-        // GET: Trilhoes/Create
-        public IActionResult Create()
+        // GET: Create
+        public IActionResult FormCriar()
         {
             // viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime
             // SelectList(tabelaBD,valoresColuna,nomeColuna) | nota: valores vao ser recebidos num selectList
@@ -103,7 +103,7 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> FormCriar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         { 
             if (ModelState.IsValid)
             {
