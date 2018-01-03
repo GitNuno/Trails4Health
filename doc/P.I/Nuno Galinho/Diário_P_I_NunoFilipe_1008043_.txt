@@ -466,6 +466,9 @@ Tempo:1h
 . Em \Home\Index  criei link para Account/Login
 Tempo:15 min
 
+. Criado espaço entre _LayoutBackOffice.cshtml e conteudo das pag.s do CRUD
+Tempo: 15 min.
+
 //
 
 //

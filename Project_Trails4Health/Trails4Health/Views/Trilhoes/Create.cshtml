@@ -8,6 +8,10 @@
     Layout = "_LayoutBackOffice";
 }
 
+<br />
+<br />
+<br />
+
 <h2>Create</h2>
 
 <form asp-action="Create">
@@ -74,26 +78,26 @@
         </div>
         <!-- viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime seleccionados da B.D. -->
     </div>
-        <div class="form-group">
-            <label asp-for="@Model.DificuldadeID" class="col-md-2 control-label">Dificuldade</label>
-            <div class="col-md-10">
-                <select asp-for="@Model.DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
-            </div>
+    <div class="form-group">
+        <label asp-for="@Model.DificuldadeID" class="col-md-2 control-label">Dificuldade</label>
+        <div class="col-md-10">
+            <select asp-for="@Model.DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label asp-for="@Model.EstadoID" class="col-md-2 control-label">Estado</label>
-            <div class="col-md-10">
-                <select asp-for="@Model.EstadoID" class="form-control" asp-items="ViewBag.EstadoID"></select>
-            </div>
+    <div class="form-group">
+        <label asp-for="@Model.EstadoID" class="col-md-2 control-label">Estado</label>
+        <div class="col-md-10">
+            <select asp-for="@Model.EstadoID" class="form-control" asp-items="ViewBag.EstadoID"></select>
         </div>
+    </div>
 
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
         </div>
+    </div>
     @*</div>*@
 </form>
 
