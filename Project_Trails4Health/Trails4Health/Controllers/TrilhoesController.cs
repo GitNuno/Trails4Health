@@ -55,20 +55,13 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-        // POST: Trilhoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         { 
             if (ModelState.IsValid)
             {
-                ////// ++++ não atualiza TrilhoID na tb EstadoTrilho ???
-                //estadoTrilho.TrilhoID = trilho.TrilhoID; //se fizer Ex: 7 funciona !
-                //estadoTrilho.DataInicio = DateTime.Now;
-                //estadoTrilho.EstadoID = 1;
-
                 // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
                 Trilho trilho = new Trilho
                 {
@@ -85,14 +78,14 @@ namespace Trails4Health.Controllers
 
                 // coloco trilho na tabela dbo.Trilhos
                 _context.Add(trilho);
-                //await _context.SaveChangesAsync();
-
-                // crio novo EstadoTrilho a partir de trilho(criado em cima) + campo EstadoID(Bind) + campo DataInicio(DateTime)
+               
+                // crio novo EstadoTrilho a partir de trilho + campo EstadoID(Bind) + campo DataInicio(DateTime)
                 EstadoTrilho estadoTrilho = new EstadoTrilho
                 {
                     Trilho = trilho,
                     EstadoID = VMTrilho.EstadoID,
                     DataInicio = DateTime.Now,
+                    // ?? if VMTrilho.EstadoID == 2 (fechado) ...
                 };
 
                 // coloco estadoTrilho na tabela dbo.EstadoTrilhos
@@ -101,12 +94,13 @@ namespace Trails4Health.Controllers
 
                 return RedirectToAction("Index");
             }
+            // se modelo inválido fica na mma view com os dados introduzidos no form
             ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", VMTrilho.DificuldadeID);
-            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", VMTrilho.DificuldadeID);
+            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", VMTrilho.EstadoID);
             return View(VMTrilho);
         }
 
-        // GET: Trilhoes/Edit/5
+        // GET:Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -114,22 +108,66 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
 
-            var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
+            // devolve registo do trilho cujo id seja o do trilho seleccionado
+            Trilho trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
+
             if (trilho == null)
             {
                 return NotFound();
             }
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilho.DificuldadeID);
-            return View(trilho);
+
+            ViewModelTrilho VMTrilho = new ViewModelTrilho
+            {
+                TrilhoID = trilho.TrilhoID,
+                TrilhoNome = trilho.Nome,
+                TrilhoInicio = trilho.Inicio,
+                TrilhoFim = trilho.Fim,
+                TrilhoDistancia = trilho.Distancia,
+                TrilhoFoto = trilho.Foto,
+                TrilhoDesativado = trilho.Desativado,
+                TrilhoDetalhes = trilho.Detalhes,
+                TrilhoSumario = trilho.Sumario,
+                DificuldadeID = trilho.DificuldadeID,
+                EstadoID = 1 // se for a criar 1 nova entrada em EstadoTrilho de cada vez que mudo de Estado(POST), preciso de ler
+                             // aqui qual é o Estado(GET) - nota: pensar na repetiçao da chave primaria(composta)
+            };
+
+            // passa campos do trilho para a view
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", VMTrilho.DificuldadeID);
+            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", VMTrilho.EstadoID);
+            return View(VMTrilho);
         }
 
-        // POST: Trilhoes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         {
+
+            // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
+            Trilho trilho = new Trilho
+            {
+                TrilhoID = VMTrilho.TrilhoID,
+                Nome = VMTrilho.TrilhoNome,
+                Inicio = VMTrilho.TrilhoInicio,
+                Fim = VMTrilho.TrilhoFim,
+                Distancia = VMTrilho.TrilhoDistancia,
+                Foto = VMTrilho.TrilhoFoto,
+                Desativado = VMTrilho.TrilhoDesativado,
+                Detalhes = VMTrilho.TrilhoDetalhes,
+                Sumario = VMTrilho.TrilhoSumario,
+                DificuldadeID = VMTrilho.DificuldadeID
+            };
+
+            //// crio novo EstadoTrilho a partir de trilho + campo EstadoID(Bind) + campo DataInicio(DateTime)
+            //EstadoTrilho estadoTrilho = new EstadoTrilho
+            //{
+            //    Trilho = trilho,
+            //    EstadoID = VMTrilho.EstadoID,
+            //    DataInicio = DateTime.Now,
+            //    // ?? if VMTrilho.EstadoID == 2 (fechado) ...
+            //};
+
             if (id != trilho.TrilhoID)
             {
                 return NotFound("TrilhoID NotFound");
@@ -139,7 +177,9 @@ namespace Trails4Health.Controllers
             {
                 try
                 {
+                    // Update de dbo.trilhos
                     _context.Update(trilho);
+                    //_context.Update(estadoTrilho);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -155,9 +195,45 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilho.DificuldadeID);
-            return View(trilho);
+            // se modelo inválido fica na mma view com os dados introduzidos no form
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", VMTrilho.DificuldadeID);
+            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", VMTrilho.DificuldadeID);
+            return View(VMTrilho);
         }
+
+        //// POST: Edit
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho)
+        //{
+        //    if (id != trilho.TrilhoID)
+        //    {
+        //        return NotFound("TrilhoID NotFound");
+        //    }
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(trilho);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!TrilhoExists(trilho.TrilhoID))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilho.DificuldadeID);
+        //    return View(trilho);
+        //}
 
         // GET: Trilhoes/Delete/5
         public async Task<IActionResult> Delete(int? id)

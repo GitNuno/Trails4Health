@@ -1,9 +1,7 @@
 ::
 
 P.I.:
-	.
-	.regex_validaçoes:TrilhoNome, TrilhoDistancia,
-								ESTADO, DIFICULDADE,ESTADO_TRILHO: DataFim
+
 	.Estado em Edit
 	.trilhoes vs trilhos
 	.snipets
@@ -12,8 +10,13 @@ P.I.:
 	.data criação
 	.seedData
 	.autenticação/snipet
-	.por ... em Trilhoes/index (col. Detalhes)
-	.form Distancia = 9.3
+	.
+	DUVIDAS:
+		.Quando mudamos Estado Aberto > Fechado equivale a desativar trilho?
+		 ou é informação a mostrar ao turista?
+		.Para o mm Trilho de cada vez que mudo de Estado => nova entrada em EstadoTrilho?
+		.Como leio Estado(Edit:GET) se trilho.cs ñ tem essa info? ver (Edit.cshtml:130)
+		.No form Distancia = 9.3 > Erro!
 
 .ENG. SOFT.2:
 	.Casos uso criar estado + criar dificuldade ??

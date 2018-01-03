@@ -454,6 +454,9 @@ Tempo:1h
 .Adicionadas novas validações (REGEX) em ViewModelTrilho e Trilho
 Tempo: 30 min.
 
+.Criei Edit.cshtml(Trilhoes) usando ViewModelTrilho para incluir Estado no modelo.
+Tempo: 1h
+
 //
 
 //

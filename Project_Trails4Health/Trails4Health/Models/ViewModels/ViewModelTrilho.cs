@@ -8,6 +8,7 @@ namespace Trails4Health.Models.ViewModels
 {
     public class ViewModelTrilho
     {
+        public int TrilhoID { get; set; }
 
         [Required(ErrorMessage = "Introduza nome do Trilho")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Nome tem entre 2-50 caracteres")] // entre 2-50 caracteres
@@ -34,7 +35,8 @@ namespace Trails4Health.Models.ViewModels
 
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
-        [RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida")] // excepto letras, espaços e "ç", max: 6 car
+        [RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida - " +
+            "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
         public decimal TrilhoDistancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]

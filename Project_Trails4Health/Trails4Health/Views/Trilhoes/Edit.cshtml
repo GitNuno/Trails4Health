@@ -1,4 +1,4 @@
-@model Trails4Health.Models.Trilho
+@model ViewModelTrilho
 
 @{
     ViewData["Title"] = "Edit";
@@ -15,77 +15,87 @@
         <h4>Trilho</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="TrilhoID" />
+        <input type="hidden" asp-for="@Model.TrilhoID" />
         <div class="form-group">
-            <label asp-for="Nome" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoNome" class="col-md-2 control-label">Nome</label>
             <div class="col-md-10">
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoNome" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoNome" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Inicio" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoInicio" class="col-md-2 control-label">Inicio</label>
             <div class="col-md-10">
-                <input asp-for="Inicio" class="form-control" />
-                <span asp-validation-for="Inicio" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoInicio" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoInicio" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Fim" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoFim" class="col-md-2 control-label">Fim</label>
             <div class="col-md-10">
-                <input asp-for="Fim" class="form-control" />
-                <span asp-validation-for="Fim" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoFim" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoFim" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Sumario" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoSumario" class="col-md-2 control-label">Sumario</label>
             <div class="col-md-10">
-                <input asp-for="Sumario" class="form-control" />
-                <span asp-validation-for="Sumario" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoSumario" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoSumario" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Detalhes" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoDetalhes" class="col-md-2 control-label">Detalhes</label>
             <div class="col-md-10">
-                <input asp-for="Detalhes" class="form-control" />
-                <span asp-validation-for="Detalhes" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoDetalhes" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoDetalhes" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Distancia" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoDistancia" class="col-md-2 control-label">Distancia</label>
             <div class="col-md-10">
-                <input asp-for="Distancia" class="form-control" />
-                <span asp-validation-for="Distancia" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoDistancia" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoDistancia" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Foto" class="col-md-2 control-label"></label>
+            <label asp-for="@Model.TrilhoFoto" class="col-md-2 control-label">Foto</label>
             <div class="col-md-10">
-                <input asp-for="Foto" class="form-control" />
-                <span asp-validation-for="Foto" class="text-danger"></span>
+                <input asp-for="@Model.TrilhoFoto" class="form-control" />
+                <span asp-validation-for="@Model.TrilhoFoto" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <div class="checkbox">
-                    <input asp-for="Desativado" />
-                    <label asp-for="Desativado"></label>
+                    <input asp-for="@Model.TrilhoDesativado" />
+                    <label asp-for="@Model.TrilhoDesativado"></label>
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label asp-for="DificuldadeID" class="control-label col-md-2">Dificuldade</label>
-            <div class="col-md-10">
-                <select asp-for="DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
-                <span asp-validation-for="DificuldadeID" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <!-- viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime seleccionados da B.D. -->
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.DificuldadeID" class="col-md-2 control-label">Dificuldade</label>
+        <div class="col-md-10">
+            <select asp-for="@Model.DificuldadeID" class="form-control" asp-items="ViewBag.DificuldadeID"></select>
         </div>
     </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.EstadoID" class="col-md-2 control-label">Estado</label>
+        <div class="col-md-10">
+            <select asp-for="@Model.EstadoID" class="form-control" asp-items="ViewBag.EstadoID"></select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Edit" class="btn btn-default" />
+        </div>
+    </div>
+    @*</div>*@
 </form>
 
 <div>
