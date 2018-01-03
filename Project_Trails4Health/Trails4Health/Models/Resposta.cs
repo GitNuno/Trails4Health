@@ -7,13 +7,17 @@ namespace Trails4Health.Models
 {
     public class Resposta
     {
-        public int RespostaQuestionarioID { get; set; }
-        public int Resposta_ { get; set; }
+        // classe com 3 chaves primárias compostas
 
-        public Questao Questao { get; set; }
-        public int QuestaoID { get; set; }
+        //public RespostaQuestionario RespostaQuestionario { get; set; }
+        //public int RespostaQuestionarioID { get; set; }
+        
+        //public Questao Questao { get; set; }
+        //public int QuestaoID { get; set; }
 
-        public Turista Turista { get; set; }
-        public int TuristaID { get; set; }
+        //public Turista Turista { get; set; }
+        //public int TuristaID { get; set; }
+
+        //public int Resposta_ { get; set; }
     }
 }

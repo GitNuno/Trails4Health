@@ -15,10 +15,13 @@ namespace Trails4Health.Models
         public int ValorMaximo { get; set; }
         public int ValorMinimo { get; set; }
 
-        [Range (0, 5)]
+        [Range(0, 5)]
         public int NumeroOpcoes { get; set; }
 
         public TipoQuestao TipoQuestao { get; set; }
         public int TipoQuestaoID { get; set; }
+
+        //public ICollection<Resposta> Respostas {get; set;}
+        public ICollection<QuestionarioQuestao> QuestionarioQuestoes { get; set; }
     }
 }
