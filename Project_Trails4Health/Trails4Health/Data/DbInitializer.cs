@@ -49,6 +49,12 @@ namespace Trails4Health.Data
             //    new QuestaoAvaliacaoGuia { NomeQuestao = "O guia fez pausas nos locais assinalados como sendo de interesse?", Desactivada = false, TipoRespostaID = 1 }
             //    );
             //context.SaveChanges();
+
+            context.TipoQuestoes.AddRange(
+                new TipoQuestao { Nome = "Trilho"},
+                new TipoQuestao { Nome = "Guia"}
+                );
+            context.SaveChanges();
         }
     }
 }

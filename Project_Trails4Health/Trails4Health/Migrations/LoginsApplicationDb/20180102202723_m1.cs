@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Trails4Health.Migrations.LoginsApplicationDb
 {
-    public partial class Initial : Migration
+    public partial class m1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

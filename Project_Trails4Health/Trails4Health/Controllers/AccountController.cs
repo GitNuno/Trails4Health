@@ -28,6 +28,7 @@ namespace Trails4Health.Controllers
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager, // adicionado 
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ILogger<AccountController> logger)
@@ -38,7 +39,7 @@ namespace Trails4Health.Controllers
             _logger = logger;
 
             // 6. (b.d.AUTENTICAÇÃO)
-            UsersSeedData.EnsurePopulatedAsync(userManager).Wait(); // correr url: account/login > **ERRO!
+            UsersSeedData.EnsurePopulatedAsync(userManager, roleManager).Wait();
             // ver /Models/AccountViewModels/loginViewModel
         }
 
