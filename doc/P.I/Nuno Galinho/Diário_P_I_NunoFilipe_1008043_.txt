@@ -469,6 +469,9 @@ Tempo:15 min
 . Criado espaço entre _LayoutBackOffice.cshtml e conteudo das pag.s do CRUD
 Tempo: 15 min.
 
+. Mudado nome: Controlador Trilhoes e \Views\Trilhoes para CRUDTrilho
+Tempo: 15 min.
+
 //
 
 //

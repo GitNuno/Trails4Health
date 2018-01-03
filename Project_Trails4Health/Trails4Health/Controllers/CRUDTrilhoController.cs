@@ -10,13 +10,13 @@ using Trails4Health.Models.ViewModels;
 
 namespace Trails4Health.Controllers
 {
-    public class TrilhoesController : Controller
+    public class CRUDTrilhoController : Controller
     {
         private readonly ApplicationDbContext _context;
         private ITrails4HealthRepository repository;  // para Lista Trilhos
 
-        // ORIG: TrilhoesController(ApplicationDbContext context)
-        public TrilhoesController(ApplicationDbContext context, ITrails4HealthRepository repository)
+        // ORIG: CRUDTrilhoController(ApplicationDbContext context)
+        public CRUDTrilhoController(ApplicationDbContext context, ITrails4HealthRepository repository)
         {
             _context = context;
             this.repository = repository; 
@@ -32,7 +32,7 @@ namespace Trails4Health.Controllers
         // paginação
         // Listar Trilhos
         public int TamanhoPagina = 4;
-        public ViewResult Lista(int pagina = 1)
+        public ViewResult ListaTrilhos(int pagina = 1)
         {
             return View(
                 new ViewModelListaTrilhos
