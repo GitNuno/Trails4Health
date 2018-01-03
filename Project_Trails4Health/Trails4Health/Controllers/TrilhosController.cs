@@ -20,8 +20,6 @@ namespace Trails4Health.Controllers
     public class TrilhosController : Controller
     {
 
-        // LISTAGEM DE DADOS SEEDDATA -------------------
-        // (ver construtor!)
         private ITrails4HealthRepository repository;
 
         // Controlador vai ver se existe um serviço para ITrails4HealthRepository
@@ -50,23 +48,7 @@ namespace Trails4Health.Controllers
                 }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
         }           // passa trilhos para view: @model IEnumerable<Trilho>
 
-        // Listar Trilhos em Backoffice
-        public ViewResult Lista(int pagina = 1)
-        {
-            return View(
-                new ViewModelListaTrilhos
-                {
-                    Trilho = repository.Trilhos
-                        .Skip(TamanhoPagina * (pagina - 1))
-                        .Take(TamanhoPagina),
-                    InfoPaginacao = new InfoPaginacao
-                    {
-                        PaginaAtual = pagina,
-                        ItemsPorPagina = TamanhoPagina,
-                        TotalItems = repository.Trilhos.Count()
-                    }
-                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
-        }
+
 
         // devolve o trilho selecionado (de acordo com o id: botão saber_mais - ver taghelper Detalhes.cshtml)
         public ViewResult Detalhes(int? id)
@@ -84,28 +66,6 @@ namespace Trails4Health.Controllers
             }
 
             return View(trilho);
-        }
-
-        // mudar nome !!
-        [HttpGet]
-        public ViewResult CriarTrilho()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ViewResult CriarTrilho(Trilho trilho)
-        {
-            // validação
-            if (ModelState.IsValid)
-            {
-                return View("Lista",repository.Trilhos);
-            }
-            else
-            {
-                // There are Validation Errors > devolve a view em que estava 
-                return View();
-            }
         }
     }
 }

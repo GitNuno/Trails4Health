@@ -1,8 +1,6 @@
 ::
 
 P.I.:
-
-	.Estado em Edit
 	.trilhoes vs trilhos
 	.snipets
 	.historico

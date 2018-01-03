@@ -457,7 +457,12 @@ Tempo: 30 min.
 .Criei Edit.cshtml(Trilhoes) usando ViewModelTrilho para incluir Estado no modelo.
 Tempo: 1h
 
-//
+// 03/12/2018
+. Movi Lista.cshtml e FornCriar.cshtml de \Trilhos para \Trilhoes
+.Criei Listagem de Trilhos em TrilhoesControler,
+.Criei link para CRUD Trilho
+Tempo:1h
+
 
 //
 

@@ -31,14 +31,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="Trilhos" asp-action="CriarTrilho">Editar Trilhos</a></li>
+                    <li><a asp-controller="Trilhoes" asp-action="FormCriar">Form Criar</a></li>
+                    <li><a asp-controller="Trilhoes" asp-action="Index">CRUD Trilho</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoTrilho">Perguntas Avaliação Trilho</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoGuia">Perguntas Avaliação Guia</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoGuia">Avaliar Guia</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilhos</a></li>
-                    <li><a asp-controller="Trilhos" asp-action="Lista">Lista de Trilhos</a></li>
+                    <li><a asp-controller="Trilhoes" asp-action="Lista">Lista de Trilhos</a></li>
                 </ul>
-		@await Html.PartialAsync("_LoginPartial")
+        <!-- login e register passam a ser chamados na pag. home -->
+		@await Html.PartialAsync("_LoginPartial")*
             </div>
         </div>
     </nav>

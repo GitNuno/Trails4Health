@@ -13,10 +13,13 @@ namespace Trails4Health.Controllers
     public class TrilhoesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private ITrails4HealthRepository repository;  // para Lista Trilhos
 
-        public TrilhoesController(ApplicationDbContext context)
+        // ORIG: TrilhoesController(ApplicationDbContext context)
+        public TrilhoesController(ApplicationDbContext context, ITrails4HealthRepository repository)
         {
-            _context = context;    
+            _context = context;
+            this.repository = repository; 
         }
 
         // GET: Trilhoes
@@ -25,6 +28,48 @@ namespace Trails4Health.Controllers
             var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
             return View(await applicationDbContext.ToListAsync());
         }
+
+        // paginação
+        // Listar Trilhos
+        public int TamanhoPagina = 4;
+        public ViewResult Lista(int pagina = 1)
+        {
+            return View(
+                new ViewModelListaTrilhos
+                {
+                    Trilho = repository.Trilhos
+                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Take(TamanhoPagina),
+                    InfoPaginacao = new InfoPaginacao
+                    {
+                        PaginaAtual = pagina,
+                        ItemsPorPagina = TamanhoPagina,
+                        TotalItems = repository.Trilhos.Count()
+                    }
+                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
+        }
+
+        //// APAGAR DEPOIS DE IMPLEMENTADO FORMULARIO !!
+        [HttpGet]
+        public ViewResult FormCriar()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //public ViewResult FormCriar(Trilho trilho)
+        //{
+        //    // validação
+        //    if (ModelState.IsValid)
+        //    {
+        //        return View("Lista", repository.Trilhos);
+        //    }
+        //    else
+        //    {
+        //        // There are Validation Errors > devolve a view em que estava 
+        //        return View();
+        //    }
+        //}
 
         // GET: Trilhoes/Details/5
         public async Task<IActionResult> Details(int? id)
