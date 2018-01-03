@@ -14,4 +14,9 @@ Nuno Galinho para Ricardo:
 	 a pasta "trilhoes" :).
 	 
 	 Vou-te mandar esta mensagem para o mail.
-	
+	 
+03/01/2018
+Nuno Galinho para Ricardo:
+	.Os links login e register devem estar na pag. Home e não em Back Office. Em Home "Login" 
+	 criei link para Account/Login  mas nao sei se nao será necessaria a linha de código(44) 
+	 em \shared\_LayoutBackOffice.cshtml

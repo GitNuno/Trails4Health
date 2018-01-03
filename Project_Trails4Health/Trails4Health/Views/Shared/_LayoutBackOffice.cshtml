@@ -39,7 +39,8 @@
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilhos</a></li>
                     <li><a asp-controller="Trilhoes" asp-action="Lista">Lista de Trilhos</a></li>
                 </ul>
-        <!-- login e register passam a ser chamados na pag. home -->
+        <!-- RICARDO: login e register devem ser chamados na pag. home. Em Home "Login" criei link para Account/Login
+             mas nao sei se nao será necessaria esta linha de código -->
 		@await Html.PartialAsync("_LoginPartial")*
             </div>
         </div>

@@ -463,6 +463,8 @@ Tempo: 1h
 .Criei link para CRUD Trilho
 Tempo:1h
 
+. Em \Home\Index  criei link para Account/Login
+Tempo:15 min
 
 //
 
