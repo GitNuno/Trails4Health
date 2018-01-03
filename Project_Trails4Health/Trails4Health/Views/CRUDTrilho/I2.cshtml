@@ -4,7 +4,7 @@
 }
 
 @{
-    Layout = "_LayoutBackOffice";
+    Layout = "_LayoutBackOffice2";
 }
 
 <br />
@@ -12,7 +12,7 @@
 <br />
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-<div class="container" style="width:85em; margin-left:-10px">
+<div style="width:90em; margin-left:0px !important">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
@@ -20,10 +20,10 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col col-xs-6">
-                            <h3 class="panel-title">Panel Heading</h3>
+                            <h3 class="panel-title">Trilhos</h3>
                         </div>
                         <div class="col col-xs-6 text-right">
-                            <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+                            <a asp-action="Criar" class="btn btn-sm btn-primary btn-create">Criar Trilho</a>
                         </div>
                     </div>
                 </div>
@@ -50,16 +50,20 @@
                             <tr>
                                 <!-- ICONS -->
                                 <td align="justify">
-                                    <a class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
+                                    <a asp-action="Editar" asp-route-id="@item.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
+                                    <a asp-action="Delete" asp-route-id="@item.TrilhoID" class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
+                                    <a asp-action="Details" asp-route-id="@item.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em"><em class="glyphicon glyphicon-th-list"></em></a>
+                                    @*<a class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
                                     <a class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
-                                    <a class="btn btn-default"><em class="fa fa-pencil"></em></a>                                </td>
+                                    <a class="btn btn-default list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>*@
+                                </td>
                                 <td>@Html.DisplayFor(modelItem => item.Nome)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Inicio)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Fim)</td>
                                 <td style="width:16em">
-                                    @if (item.Sumario.Length > 91) // Sumario.Length(q está na BD) tem > que Remove(index)
+                                    @if (item.Sumario.Length > 151) // Sumario.Length(q está na BD) tem > que Remove(index)
                                     {
-                                        @item.Sumario.Remove(90); <span>...</span>
+                                        @item.Sumario.Remove(150); <span>...</span>
                                     }
                                     else
                                     {
@@ -67,9 +71,9 @@
                                     }
                                 </td>
                                 <td style="width:16em">
-                                    @if (item.Detalhes.Length > 91)
+                                    @if (item.Detalhes.Length > 151)
                                     {
-                                        @item.Detalhes.Remove(90); <span>...</span>
+                                        @item.Detalhes.Remove(150); <span>...</span>
                                     }
                                     else
                                     {

@@ -486,6 +486,10 @@ Tempo: 1h
 .Criei nova interface da pag. /CRUDTrilho/index
 Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
 Tempo:1h
+
+.Terminei nova interface da pag. /CRUDTrilho/index
+Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
+Tempo:30 min.
 //
 
 //

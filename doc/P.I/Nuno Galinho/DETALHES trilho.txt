@@ -40,8 +40,9 @@ mais do que um carro...
 
 // O COVÃO D’AMETADE:
 O Covão d’Ametade, outrora uma pastagem cerval, representa uma depressão de origem 
-glaciar que foi arborizada com vidoeiros ao longo das margens do rio. É um cenário 
-paradisíaco carregado de sentimento bucólico e poético. São três os Cântaros que se 
+glaciar que foi arborizada com vidoeiros ao longo das margens do rio.
+
+É um cenário paradisíaco carregado de sentimento bucólico e poético. São três os Cântaros que se 
 erguem em torno do Covão d´Ametade: o Cântaro Raso, mais a sul; o Cântaro Magro, 
 central e emblemático de toda a Serra da Estrela; e o Cântaro Gordo, a norte.
 

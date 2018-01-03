@@ -38,14 +38,14 @@
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilho</a></li>
                     <li><a asp-controller="CRUDTrilho" asp-action="ListaTrilhos">Lista Trilhos</a></li>
                 </ul>
-                <!-- RICARDO: Os links login e register devem estar na pag. home e não em Back Office. Em Home "Login" criei 
+                <!-- RICARDO: Os links login e register devem estar na pag. home e não em Back Office. Em Home "Login" criei
                     link para Account/Login mas nao sei se nao será necessaria esta linha de código -->
                 @await Html.PartialAsync("_LoginPartial")*
             </div>
         </div>
     </nav>
-    <!-- mudei style -->
-    <div class="container body-content" style="margin-top:2em;">
+    <!-- margin-left:0 !!! -->
+    <div class="container body-content" style="margin-top:2em; margin-left:0">
         @RenderBody()
         <hr />
         <footer></footer>
