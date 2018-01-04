@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Trails4Health.Migrations
 {
-    public partial class Initial : Migration
+    public partial class m3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,7 +37,7 @@ namespace Trails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Guia",
+                name: "Guias",
                 columns: table => new
                 {
                     GuiaID = table.Column<int>(nullable: false)
@@ -49,7 +49,20 @@ namespace Trails4Health.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Guia", x => x.GuiaID);
+                    table.PrimaryKey("PK_Guias", x => x.GuiaID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Questionarios",
+                columns: table => new
+                {
+                    QuestionarioID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DataRespostas = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Questionarios", x => x.QuestionarioID);
                 });
 
             migrationBuilder.CreateTable(
@@ -66,7 +79,7 @@ namespace Trails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Turista",
+                name: "Turistas",
                 columns: table => new
                 {
                     TuristaID = table.Column<int>(nullable: false)
@@ -81,7 +94,7 @@ namespace Trails4Health.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Turista", x => x.TuristaID);
+                    table.PrimaryKey("PK_Turistas", x => x.TuristaID);
                 });
 
             migrationBuilder.CreateTable(
@@ -112,6 +125,27 @@ namespace Trails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AvaliacaoGuias",
+                columns: table => new
+                {
+                    AvaliacaoGuiaID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Avaliacao = table.Column<double>(nullable: false),
+                    GuiaID = table.Column<int>(nullable: false),
+                    NumeroAvaliacoes = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AvaliacaoGuias", x => x.AvaliacaoGuiaID);
+                    table.ForeignKey(
+                        name: "FK_AvaliacaoGuias_Guias_GuiaID",
+                        column: x => x.GuiaID,
+                        principalTable: "Guias",
+                        principalColumn: "GuiaID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Questoes",
                 columns: table => new
                 {
@@ -133,6 +167,27 @@ namespace Trails4Health.Migrations
                         column: x => x.TipoQuestaoID,
                         principalTable: "TipoQuestoes",
                         principalColumn: "TipoQuestaoID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AvaliacaoTrilhos",
+                columns: table => new
+                {
+                    AvaliacaoTrilhoID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Avaliacao = table.Column<double>(nullable: false),
+                    NumeroAvaliacoes = table.Column<int>(nullable: false),
+                    TrilhoID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AvaliacaoTrilhos", x => x.AvaliacaoTrilhoID);
+                    table.ForeignKey(
+                        name: "FK_AvaliacaoTrilhos_Trilhos_TrilhoID",
+                        column: x => x.TrilhoID,
+                        principalTable: "Trilhos",
+                        principalColumn: "TrilhoID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -163,30 +218,81 @@ namespace Trails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Resposta",
+                name: "Opcoes",
                 columns: table => new
                 {
-                    RespostaQuestionarioID = table.Column<int>(nullable: false),
-                    QuestaoID = table.Column<int>(nullable: false),
-                    TuristaID = table.Column<int>(nullable: false),
-                    Resposta_ = table.Column<int>(nullable: false)
+                    OpcaoID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    QuestaoID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Resposta", x => new { x.RespostaQuestionarioID, x.QuestaoID, x.TuristaID });
+                    table.PrimaryKey("PK_Opcoes", x => x.OpcaoID);
                     table.ForeignKey(
-                        name: "FK_Resposta_Questoes_QuestaoID",
+                        name: "FK_Opcoes_Questoes_QuestaoID",
+                        column: x => x.QuestaoID,
+                        principalTable: "Questoes",
+                        principalColumn: "QuestaoID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "QuestionarioQuestoes",
+                columns: table => new
+                {
+                    QuestionarioID = table.Column<int>(nullable: false),
+                    QuestaoID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_QuestionarioQuestoes", x => new { x.QuestionarioID, x.QuestaoID });
+                    table.ForeignKey(
+                        name: "FK_QuestionarioQuestoes_Questoes_QuestaoID",
                         column: x => x.QuestaoID,
                         principalTable: "Questoes",
                         principalColumn: "QuestaoID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Resposta_Turista_TuristaID",
+                        name: "FK_QuestionarioQuestoes_Questionarios_QuestionarioID",
+                        column: x => x.QuestionarioID,
+                        principalTable: "Questionarios",
+                        principalColumn: "QuestionarioID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Respostas",
+                columns: table => new
+                {
+                    OpcaoID = table.Column<int>(nullable: false),
+                    TuristaID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Respostas", x => new { x.OpcaoID, x.TuristaID });
+                    table.ForeignKey(
+                        name: "FK_Respostas_Opcoes_OpcaoID",
+                        column: x => x.OpcaoID,
+                        principalTable: "Opcoes",
+                        principalColumn: "OpcaoID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Respostas_Turistas_TuristaID",
                         column: x => x.TuristaID,
-                        principalTable: "Turista",
+                        principalTable: "Turistas",
                         principalColumn: "TuristaID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AvaliacaoGuias_GuiaID",
+                table: "AvaliacaoGuias",
+                column: "GuiaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AvaliacaoTrilhos_TrilhoID",
+                table: "AvaliacaoTrilhos",
+                column: "TrilhoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EstadoTrilhos_TrilhoID",
@@ -194,18 +300,23 @@ namespace Trails4Health.Migrations
                 column: "TrilhoID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Opcoes_QuestaoID",
+                table: "Opcoes",
+                column: "QuestaoID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_QuestionarioQuestoes_QuestaoID",
+                table: "QuestionarioQuestoes",
+                column: "QuestaoID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Questoes_TipoQuestaoID",
                 table: "Questoes",
                 column: "TipoQuestaoID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Resposta_QuestaoID",
-                table: "Resposta",
-                column: "QuestaoID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Resposta_TuristaID",
-                table: "Resposta",
+                name: "IX_Respostas_TuristaID",
+                table: "Respostas",
                 column: "TuristaID");
 
             migrationBuilder.CreateIndex(
@@ -217,13 +328,22 @@ namespace Trails4Health.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AvaliacaoGuias");
+
+            migrationBuilder.DropTable(
+                name: "AvaliacaoTrilhos");
+
+            migrationBuilder.DropTable(
                 name: "EstadoTrilhos");
 
             migrationBuilder.DropTable(
-                name: "Guia");
+                name: "QuestionarioQuestoes");
 
             migrationBuilder.DropTable(
-                name: "Resposta");
+                name: "Respostas");
+
+            migrationBuilder.DropTable(
+                name: "Guias");
 
             migrationBuilder.DropTable(
                 name: "Estados");
@@ -232,13 +352,19 @@ namespace Trails4Health.Migrations
                 name: "Trilhos");
 
             migrationBuilder.DropTable(
-                name: "Questoes");
+                name: "Questionarios");
 
             migrationBuilder.DropTable(
-                name: "Turista");
+                name: "Opcoes");
+
+            migrationBuilder.DropTable(
+                name: "Turistas");
 
             migrationBuilder.DropTable(
                 name: "Dificuldades");
+
+            migrationBuilder.DropTable(
+                name: "Questoes");
 
             migrationBuilder.DropTable(
                 name: "TipoQuestoes");

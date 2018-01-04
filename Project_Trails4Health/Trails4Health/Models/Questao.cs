@@ -21,7 +21,7 @@ namespace Trails4Health.Models
         public TipoQuestao TipoQuestao { get; set; }
         public int TipoQuestaoID { get; set; }
 
-        //public ICollection<Resposta> Respostas {get; set;}
+        public ICollection<Opcao> Opcoes {get; set;}
         public ICollection<QuestionarioQuestao> QuestionarioQuestoes { get; set; }
     }
 }
