@@ -9,7 +9,7 @@ Tempo Total: 29.0 H
 - Continuação do projecto "Trails4Health":
 Acrescentada classe "Models/Opcao.cs";
 Actualizado controlador para a classe "Questao".
-Criados controladores para as classes "Turista", "Opcao", "Questionario".
+Criados controladores para as classes "Turista", "Opcao", "Questionario", "Resposta".
 
 
 Tempo utilizado:  2 H
