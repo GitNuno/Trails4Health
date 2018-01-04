@@ -10,26 +10,26 @@ using Trails4Health.Models.ViewModels;
 
 namespace Trails4Health.Controllers
 {
-    public class CRUDTrilhoController : Controller
+    public class TrilhoCRUDController : Controller
     {
         private readonly ApplicationDbContext _context;
         private ITrails4HealthRepository repository;  // para Lista Trilhos
 
-        // ORIG: CRUDTrilhoController(ApplicationDbContext context)
-        public CRUDTrilhoController(ApplicationDbContext context, ITrails4HealthRepository repository)
+        // ORIG: TrilhoCRUDController(ApplicationDbContext context)
+        public TrilhoCRUDController(ApplicationDbContext context, ITrails4HealthRepository repository)
         {
             _context = context;
             this.repository = repository; 
         }
 
-        public async Task<IActionResult> I2()
+        public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
             return View(await applicationDbContext.ToListAsync());
         }
 
         // 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index2()
         {
             var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
             return View(await applicationDbContext.ToListAsync());

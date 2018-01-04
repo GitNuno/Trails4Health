@@ -1,14 +1,18 @@
 ::
 
 P.I.:
-	.snipets
+	.snipets:
+		.mudar nome CRUDTrilhoController
+		.terminar ligações I2.cshtml
+	. 
 	.seedData
 	.historico
 	.image bitmap
-	.delete
+	.delete ???
 	.testar entrada de Estados na BD + Desativado
 	.autenticação/snipet
 	.apagar de \CRUDTrilho: Create.cshtml, Edit.cshtml
+	.paginação para trilhoCRUD\Index
 	
 	DUVIDAS:
 		.Paginação

@@ -490,7 +490,13 @@ Tempo:1h
 .Terminei nova interface da pag. /CRUDTrilho/index
 Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
 Tempo:30 min.
-//
+
+// 04/12/2018
+.Renomeado \CRUDTrilho para \TrilhoCRUD + renomeada acção I2 de TrilhoCRUD para Index + recreado 
+ conteudos de DETALHES trilho.txt
+Tempo: 30 min.
+
+
 
 //
 

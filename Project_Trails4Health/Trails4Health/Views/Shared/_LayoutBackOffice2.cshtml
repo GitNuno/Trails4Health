@@ -31,12 +31,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="CRUDTrilho" asp-action="Index">TRILHO <strong>CRUD</strong></a></li>
+                    <li><a asp-controller="TrilhoCRUD" asp-action="Index">TRILHO <strong>CRUD</strong></a></li>
                     <li><a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoTrilho">Perguntas Avaliação Trilho</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoGuia">Perguntas Avaliação Guia</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoGuia">Avaliar Guia</a></li>
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilho</a></li>
-                    <li><a asp-controller="CRUDTrilho" asp-action="ListaTrilhos">Lista Trilhos</a></li>
+                    <li><a asp-controller="TrilhoCRUD" asp-action="ListaTrilhos">Lista Trilhos</a></li>
                 </ul>
                 <!-- RICARDO: Os links login e register devem estar na pag. home e não em Back Office. Em Home "Login" criei
                     link para Account/Login mas nao sei se nao será necessaria esta linha de código -->
@@ -45,7 +45,7 @@
         </div>
     </nav>
     <!-- margin-left:0 !!! -->
-    <div class="container body-content" style="margin-top:2em; margin-left:0">
+    <div class="container body-content" style="margin-top:1em; margin-left:0">
         @RenderBody()
         <hr />
         <footer></footer>

@@ -1,44 +1,35 @@
+// Rota das Faias
+Manteigas
+Cruz das Jugadas
+/images/faias.jpg
 
+Este é um bosque para descobrir todo o ano. O percurso começa na zona de Manteigas, 
+mais concretamente junto à Cruz das Jugadas.
+
+Queres caminhar entre gnomos, florestas encantadas, cogumelos selvagens e ouvir o 
+crepitar das folhas debaixo dos pés? Tens de fazer a “Rota das Faias”. 
+Ainda que seja mais aconselhável fazer o percurso pedestre no outono para 
+podermos apreciar as cores quentes da folhagem das faias, este é um bosque para 
+descobrir todo o ano. O percurso começa na zona de Manteigas, mais concretamente 
+junto à Cruz das Jugadas.
+
+// Torre
 Torre
 Alvoco
-Torre
-Este trilho é longo normalmente recomendada a turistas mais jovens, tem uma extensão de 10 km, percorre-se numa media de 3h00,  começa com uma subida de 300 metros em Alvoco e termina na Torre
-27
 /images/torre.jpg
 
-//
-Inferno
-Ribeira
-Inferno
-Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão
-Situado no coração da Serra da Estrela, este Trilho é curto com 4 km de extensão, constituido por paisagens majestosas e faz-se numa media de 1h15
-4
-/images/inferno.jpg
+Se a Serra da Estrela é para ti sinónimo de Neve, então é aqui que tu pertences. 
+A Torre é o ponto de maior altitude da Serra da Estrela e também de Portugal 
+Continental. 
 
-//
-Rossim
-Alvoco
-Rossim
-Em pleno coração da Serra da Estrela, nas Penhas Douradas, e junto ao maior vale 
-glaciar da Europa, estende-se este manto de água que no Verão atrai tudo o que são 
-veraneantes das redondezas.
+Diz-se, embora tal não seja confirmado, que o rei D. João VI teria no início do século XIX mandado 
+erigir aqui um monumento em pedra, de modo a completar a altitude até chegar aos 2000 metros. 
+A altitude da Torre é de 1993. As temperaturas mais baixas de Portugal são registadas
+no cume da Serra da Estrela,onde os termómetros já atingiram quase os  -20 °C no inverno.
 
-Em pleno coração da Serra da Estrela, nas Penhas Douradas, e junto ao maior vale 
-glaciar da Europa, estende-se este manto de água que no Verão atrai tudo o que são 
-veraneantes das redondezas.
-A Praia do Vale do Rossim é uma das mais famosas praias do Parque Natural da Serra 
-da Estrela. Mas o Vale do Rossim não é só praia, inserido na reserva biogenética do 
-Planalto Superior, o Vale do Rossim é um local único de grande valor científico e 
-sensibilidade ambiental e paisagística, que importa proteger e valorizar.
-Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, onde não passa 
-mais do que um carro...
+// Covão de Ametade:
+/images/covao.jpg
 
-15
-/images/rossim.jpg
-
-
-
-// O COVÃO D’AMETADE:
 O Covão d’Ametade, outrora uma pastagem cerval, representa uma depressão de origem 
 glaciar que foi arborizada com vidoeiros ao longo das margens do rio.
 
@@ -55,18 +46,29 @@ percorre 248km por entre vales de abundante fertilidade, até desaguar no rio Te
 em Constância. Com mais de 10km de extensão, o Vale Glaciar do Zêzere apresenta-se 
 bem moldado, em forma de «U», expurgando água por todos os seus poros.
 
-// LINHARES DA BEIRA
-Esta é uma aldeia medieval do século XII cujas origens remontam ao tempo dos romanos,
-existindo ainda por toda a aldeia vários testemunhos desse tempo, razão pela qual é 
-chamada de "museu ao ar livre". Lá encontrei a hospitalidade de que Portugal tanto 
+// Linhares da Beira
+Linhares da Beira
+Loriga
+/images/linhares.jpg
+
+Esta é uma aldeia medieval do século XII cujas origens remontam ao tempo dos romanos.
+
+Existindo ainda por toda a aldeia vários testemunhos desse tempo, razão pela qual é 
+chamada de "museu ao ar livre". 
+Lá encontrei a hospitalidade de que Portugal tanto 
 se orgulha, uma tranquilidade imensa e uma vontade enorme de me perder nos seus 
 inúmeros recantos. Na estrada que dá acesso à aldeia, é impossível não ver de 
-imediato no topo, erguido de forma imponente, o Castelo de Linhares da Beira. 
+imediato no topo, erguido de forma imponente, o Castelo de Linhares da Beira.
+ 
 Hoje em dia Linhares da Beira é também conhecida como a Capital do Parapente, 
 sendo frequentemente procurada por vários adeptos da modalidade devido às excelentes 
 condições que oferece.
 
-// Alvoco da serra
+// Alvoco
+Alvoco
+Vale do Rossim
+/images/alvoco.jpg
+
 Situada no coração do Parque Natural da Serra da Estrela, Alvoco da Serra é uma 
 localidade de fortes tradições e origens muito antigas, conservando alguns vestígios
  da presença dos romanos, nomeadamente uma calçada onde foram encontradas moedas da 
@@ -75,6 +77,8 @@ Em redor, não faltam múltiplas possibilidades para óptimos passeios, à desco
 das maravilhas e segredos da serra, entre lendas e histórias antigas.
 
 // poço do inferno
+/images/inferno.jpg
+
 Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, 
 onde não passa mais do que um carro, chegamos a um dos ex-libris da Serra da Estrela
 e uma das mais bonitas cascatas do país: o Poço do Inferno!
@@ -90,28 +94,9 @@ Aqui, no coração da Serra a 1080 metros de altitude, as águas são geladas,
 como não poderia deixar de ser nesta altura do ano. Cristalinas e transparentes 
 convidam a um mergulho, noutra altura do ano, pois claro!
 
-// Torre
-Se a Serra da Estrela é para ti sinónimo de Neve, então é aqui que tu pertences. 
-A Torre  é o ponto de maior altitude da Serra da Estrela e também de Portugal 
-Continental, e o segundo mais elevado de Portugal (apenas a Montanha do Pico, 
-nos Açores, tem maior altitude, com 2351 metros). Diz-se, embora tal não seja 
-confirmado, que o rei D. João VI teria no início do século XIX mandado erigir aqui 
-um monumento em pedra, de modo a completar a altitude até chegar aos 2000 metros. 
-A altitude da Torre é de 1993. As temperaturas mais baixas de Portugal são registadas
-no cume da Serra da Estrela,onde os termómetros já atingiram quase os  -20 °C 
-no inverno.
-
-// Rota das Faias
-
-Queres caminhar entre gnomos, florestas encantadas, cogumelos selvagens e ouvir o 
-crepitar das folhas debaixo dos pés? Tens de fazer a “Rota das Faias”. 
-Ainda que seja mais aconselhável fazer o percurso pedestre no outono para 
-podermos apreciar as cores quentes da folhagem das faias, este é um bosque para 
-descobrir todo o ano. O percurso começa na zona de Manteigas, mas concretamente 
-junto à Cruz das Jugadas.
-
 // Vale do Rossim
-
+/images/rossim.jpg
+ 
 Em pleno coração da Serra da Estrela, nas Penhas Douradas, e junto ao maior vale 
 glaciar da Europa, estende-se este manto de água que no Verão atrai tudo o que são 
 veraneantes das redondezas.
@@ -122,6 +107,7 @@ Planalto Superior, o Vale do Rossim é um local único de grande valor científi
 sensibilidade ambiental e paisagística, que importa proteger e valorizar.
 
 // Lagoa Comprida
+/images/lagoa.jpg
 
 A Lagoa Comprida é a mais conhecida e a maior das lagoas do maciço superior da Serra 
 da Estrela. Construída a partir de uma lagoa natural, constitui o principal 
@@ -140,6 +126,7 @@ as águas da Ribeira das Naves.
 
  
 // Vale Glaciar
+/images/vale.jpg
 
 O Vale Glaciar por onde corre o Rio Zêzere é o maior vale glaciar da Europa e 
 estende-se por 13 quilómetros de comprimento, desde o Maciço Central da serra até 
@@ -153,6 +140,7 @@ Rota do Glaciar. Ao longo do percurso não é difícil ficar cativado pelas enco
 Serra.
 
 // Covão dos Conchos
+/images/covao.jpg
 
 O Covão dos Conchos tornou-se famoso quando no início deste ano uma série de filmes 
 gravados com um drone mostrava as águas da lagoa a precipitarem-se num gigantesco 
