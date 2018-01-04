@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "_LayoutBackoffice";
 }
 
 <h2>Index</h2>
@@ -15,6 +14,9 @@
         <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.NomeQuestao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desactivada)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.TipoResposta)
@@ -39,6 +41,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NomeQuestao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desactivada)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoResposta)

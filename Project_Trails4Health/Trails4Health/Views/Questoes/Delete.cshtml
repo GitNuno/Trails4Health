@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "_LayoutBackoffice";
 }
 
 <h2>Delete</h2>
@@ -17,6 +16,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.NomeQuestao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Desactivada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Desactivada)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TipoResposta)

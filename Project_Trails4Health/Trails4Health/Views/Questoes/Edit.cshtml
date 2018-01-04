@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "_LayoutBackoffice";
 }
 
 <h2>Edit</h2>
@@ -18,6 +17,11 @@
                 <label asp-for="NomeQuestao" class="control-label"></label>
                 <input asp-for="NomeQuestao" class="form-control" />
                 <span asp-validation-for="NomeQuestao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desactivada" class="control-label"></label>
+                <input asp-for="Desactivada" class="form-control" />
+                <span asp-validation-for="Desactivada" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TipoResposta" class="control-label"></label>
