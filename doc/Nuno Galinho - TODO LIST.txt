@@ -1,10 +1,7 @@
 ::
 
 P.I.:
-	.snipets:
-		.mudar nome CRUDTrilhoController
-		.terminar ligações I2.cshtml
-	. 
+
 	.seedData
 	.historico
 	.image bitmap

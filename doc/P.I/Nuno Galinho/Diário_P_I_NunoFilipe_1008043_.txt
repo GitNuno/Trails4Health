@@ -496,6 +496,10 @@ Tempo:30 min.
  conteudos de DETALHES trilho.txt
 Tempo: 30 min.
 
+.Falhada implementaçao da classe seedData
+Erro: Cannot resolve scoped service 'Trails4Health.Models.ApplicationDbContext' from root provider.
+Tempo: 1h
+
 
 
 //

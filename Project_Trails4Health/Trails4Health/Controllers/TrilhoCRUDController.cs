@@ -13,7 +13,7 @@ namespace Trails4Health.Controllers
     public class TrilhoCRUDController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private ITrails4HealthRepository repository;  // para Lista Trilhos
+        private ITrails4HealthRepository repository;  // para Lista Trilhos em BackOffice
 
         // ORIG: TrilhoCRUDController(ApplicationDbContext context)
         public TrilhoCRUDController(ApplicationDbContext context, ITrails4HealthRepository repository)
@@ -36,7 +36,7 @@ namespace Trails4Health.Controllers
         }
 
         // paginação
-        // Listar Trilhos
+        // Listar Trilhos em BackOffice
         public int TamanhoPagina = 4;
         public ViewResult ListaTrilhos(int pagina = 1)
         {
@@ -52,7 +52,7 @@ namespace Trails4Health.Controllers
                         ItemsPorPagina = TamanhoPagina,
                         TotalItems = repository.Trilhos.Count()
                     }
-                }); // BEFORE VIEW_MODEL:  return View(repository.Trilhos)
+                }); // BEFORE ViewModel: return View(repository.Trilhos)
         }
 
         //// APAGAR DEPOIS DE IMPLEMENTADO FORMULARIO !!
