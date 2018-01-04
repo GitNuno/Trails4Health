@@ -1,6 +1,16 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 24.0 H
+Tempo Total: 26.0 H
+
+---
+
+03/01/2018
+
+- Continuação do projecto "Trails4Health":
+Acrescentadas classes: "Models/QuestionarioQuestao.cs", "Models/Questionario.cs", "Models/RespostaQuestionario.cs", "Models/AvaliacaoGuia.cs", "Models/AvaliacaoTrilho.cs";
+
+
+Tempo utilizado:  2 H
 
 ---
 

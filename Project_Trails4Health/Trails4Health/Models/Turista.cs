@@ -15,5 +15,8 @@ namespace Trails4Health.Models
         public DateTime DataNascimento { get; set; }
         public int Idade { get; set; }
         public int Nif { get; set; }
+
+        //public ICollection<Resposta> Respostas { get; set; }
+        public ICollection<RespostaQuestionario> RespostaQuestionarios { get; set; }
     }
 }
