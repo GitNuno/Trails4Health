@@ -1,4 +1,29 @@
 ::
+.RESOLUÇÃO DE PROBLEMAS SEED_DATA:
+
+1. No upgrade para versão ASP.NET Core 2.0 é necessario em program.cs 
+mudar:
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .Build();
+para:
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseDefaultServiceProvider(options => 
+            options.ValidateScopes = false)
+        .Build();
+ver Google: Announcing EF Core 2.0 Preview
+
+2. As tabelas Dificuldades.dbo e Estados.dbo nao permitem inserção explicita dos IDs 
+   DificuldadeID e EstadoID (são criados automaticamente) isto pode dar conflito Ex:
+   se já tiverem sido criados registos na tabela Dificuldade antes de correr 
+   SeedData  o 1º ID já não é 1 entrando em conflito com a inserção de
+   DificuldadeID (FK) na tabela Trilho.
+   SOLUÇÃO: recriar BD Trails4Health (reenicia criação automatica dos IDs a 1)
+
+::
 MUDANÇA FORMATOS (nºcaracteres num atributo de um modelo) 
 	.Não basta mudar o formato na validação dos atributos do modelo, é necessaria 
 	 nova migração e update da BD.
@@ -17,6 +42,23 @@ FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
 		.Add-Migration "nome da migração"
 			.cria pasta migrations
 		.Update-Database
+::
+FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS via DEVELOPER COMMAND PROMPT FOR VS 2017:
+	.cd C:\programacao_internet\Trails4Health\Project_Trails4Health\Trails4Health  (nota: dir_myProject e não do sln! )
+	.dotnet restore
+	.dotnet build
+	.dotnet ef migrations add Initial --context ApplicationDbContext
+	.dotnet ef migrations add Initial --context LoginsApplicationDbContext
+	.dotnet ef database update --context ApplicationDbContext
+	.dotnet ef database update --context LoginsApplicationDbContext
+
+	EX: MIGRAÇÃO + UPDATE_DB DEPOIS DE ADICIONADO NOVO CAMPO A MODELO (sumario em Trilho.cs)
+		.cd /dir_myProject (nota: dir_myProject e não do sln! )
+		.dotnet restore
+		.dotnet build
+		.dotnet ef migrations add Initial --context ApplicationDbContext
+		.dotnet ef database update --context ApplicationDbContext
+		(verificar mudanças)
 ::
 RESOLVER PROBLEMA - using Microsoft.EntityFrameworkCore (não reconhecido):
 	.Tools

@@ -100,7 +100,7 @@ namespace Trails4Health.Controllers
         public IActionResult Criar()
         {
             // viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime
-            // SelectList(tabelaBD,valoresColuna,nomeColuna) | nota: valores vao ser recebidos num selectList
+            // SelectList(tabelaBD,valoresColuna,nomeColuna) | nota: valores vao ser recebidos num dropDownList
             ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome");
             ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome");
             return View();
@@ -109,34 +109,34 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho trilhoVM)
         { 
             if (ModelState.IsValid)
             {
                 // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
                 Trilho trilho = new Trilho
                 {
-                    Nome = VMTrilho.TrilhoNome,
-                    Inicio = VMTrilho.TrilhoInicio,
-                    Fim = VMTrilho.TrilhoFim,
-                    Distancia = VMTrilho.TrilhoDistancia,
-                    Foto = VMTrilho.TrilhoFoto,
-                    Desativado = VMTrilho.TrilhoDesativado,
-                    Detalhes = VMTrilho.TrilhoDetalhes,
-                    Sumario = VMTrilho.TrilhoSumario,
-                    DificuldadeID = VMTrilho.DificuldadeID
+                    Nome = trilhoVM.TrilhoNome,
+                    Inicio = trilhoVM.TrilhoInicio,
+                    Fim = trilhoVM.TrilhoFim,
+                    Distancia = trilhoVM.TrilhoDistancia,
+                    Foto = trilhoVM.TrilhoFoto,
+                    Desativado = trilhoVM.TrilhoDesativado,
+                    Detalhes = trilhoVM.TrilhoDetalhes,
+                    Sumario = trilhoVM.TrilhoSumario,
+                    DificuldadeID = trilhoVM.DificuldadeID
                 };
 
                 // coloco trilho na tabela dbo.Trilhos
                 _context.Add(trilho);
                
-                // crio novo EstadoTrilho a partir de trilho + campo EstadoID(Bind) + campo DataInicio(DateTime)
+                // crio novo EstadoTrilho a partir de trilho, EstadoID(Bind) e DataInicio(DateTime)
                 EstadoTrilho estadoTrilho = new EstadoTrilho
                 {
                     Trilho = trilho,
-                    EstadoID = VMTrilho.EstadoID,
+                    EstadoID = trilhoVM.EstadoID,
                     DataInicio = DateTime.Now,
-                    // ?? if VMTrilho.EstadoID == 2 (fechado) ...
+                    // ?? if trilhoVM.EstadoID == 2 (fechado) ...
                 };
 
                 // coloco estadoTrilho na tabela dbo.EstadoTrilhos
@@ -146,9 +146,9 @@ namespace Trails4Health.Controllers
                 return RedirectToAction("Index");
             }
             // se modelo inválido fica na mma view com os dados introduzidos no form
-            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", VMTrilho.DificuldadeID);
-            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", VMTrilho.EstadoID);
-            return View(VMTrilho);
+            ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilhoVM.DificuldadeID);
+            ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", trilhoVM.EstadoID);
+            return View(trilhoVM);
         }
 
         // GET:Edit
@@ -214,9 +214,9 @@ namespace Trails4Health.Controllers
             //EstadoTrilho estadoTrilho = new EstadoTrilho
             //{
             //    Trilho = trilho,
-            //    EstadoID = VMTrilho.EstadoID,
+            //    EstadoID = trilhoVM.EstadoID,
             //    DataInicio = DateTime.Now,
-            //    // ?? if VMTrilho.EstadoID == 2 (fechado) ...
+            //    // ?? if trilhoVM.EstadoID == 2 (fechado) ...
             //};
 
             if (id != trilho.TrilhoID)

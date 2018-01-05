@@ -118,8 +118,10 @@ namespace Trails4Health
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+
+
             // popular B:D.
-             SeedData.EnsurePopulated(app.ApplicationServices);
+            SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }

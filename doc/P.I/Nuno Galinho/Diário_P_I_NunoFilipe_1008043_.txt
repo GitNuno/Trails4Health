@@ -500,6 +500,32 @@ Tempo: 30 min.
 Erro: Cannot resolve scoped service 'Trails4Health.Models.ApplicationDbContext' from root provider.
 Tempo: 1h
 
+// 05/12/2018
+.SeedData a funcionar (corrigidos problemas)
+.RESOLUÇÃO DE PROBLEMAS:
+
+1. No upgrade para versão ASP.NET Core 2.0 é necessario em program.cs mudar:
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .Build();
+para:
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseDefaultServiceProvider(options => 
+            options.ValidateScopes = false)
+        .Build();
+ver Google: Announcing EF Core 2.0 Preview
+
+2. As tabelas Dificuldades.dbo e Estados.dbo nao permitem inserção explicita dos IDs 
+   DificuldadeID e EstadoID (são criados automaticamente) isto pode dar conflito Ex:
+   se já tiverem sido criados registos na tabela Dificuldade antes de correr 
+   SeedData  o 1º ID já não é 1 entrando em conflito com a inserção de
+   DificuldadeID (FK) na tabela Trilho.
+SOLUÇÃO: recriar BD Trails4Health (reenicia criação automatica dos IDs a 1)
+Tempo:2h
+
 
 
 //
