@@ -547,6 +547,10 @@ Tempo: 15 min.
 	Nota: No momento está a funcionar ms ainda não exibe EstadoTrilhos
 Tempo: 1h30
 
+.Listagem de todos os registos da tabela EstadoTrilhos na view Detalhes
+Nota: Ainda não é isto o pretendido tenho de fazer filtro.
+Tempo:30 min.
+
 
 //
 

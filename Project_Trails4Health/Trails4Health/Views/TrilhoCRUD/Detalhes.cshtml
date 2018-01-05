@@ -26,67 +26,61 @@
     <hr />
     <dl class="panel-heading">
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoNome)
+            Nome
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TrilhoNome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoInicio)
+            Inicio
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TrilhoInicio)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoFim)
+            Fim
         </dt>
         <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoFim)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoSumario)
+            Sumario
         </dt>
         <!-- redimensionar coluna -->
         <dd style="width:66em;margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoSumario)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoDetalhes)
+            Detalhes
         </dt>
         <!-- redimensionar coluna -->
         <dd style="width:66em;margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoDetalhes)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoDistancia)
+            Distancia
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TrilhoDistancia) <span>Km</span>
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoFoto)
+            Foto
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TrilhoFoto)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TrilhoDesativado)
+            Desativado
         </dt>
         <dd>
             @Html.DisplayFor(model => model.TrilhoDesativado)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Dificuldade)
+            Dificuldade
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Dificuldade.Nome)
-        </dd>
-        @*<dt>
-                @Html.DisplayNameFor(model => model.Estado.)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Dificuldade.DificuldadeID)
-            </dd>*@
+        </dd>  
     </dl>
 </div>
 <div class="panel-heading">
@@ -99,18 +93,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                @*<td>@Html.DisplayFor(modelItem => item.Nome)</td>*@
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                @*<td>@Html.DisplayFor(modelItem => item.Nome)</td>*@
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            @foreach (var item in Model.EstadoTrilhos)
+            {
+                <tr>
+                    <td>@item.EstadoID</td>
+                    <td>@item.DataInicio</td>
+                    <td>@item.DataFim</td>
+                </tr>
+            }            
         </tbody>
     </table>
 

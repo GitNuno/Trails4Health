@@ -80,6 +80,7 @@ namespace Trails4Health.Controllers
 
             ViewModelTrilho viewModelTrilho = new ViewModelTrilho
             {
+                TrilhoID = trilho.TrilhoID,
                 TrilhoNome = trilho.Nome,
                 TrilhoInicio = trilho.Inicio,
                 TrilhoFim = trilho.Fim,
