@@ -4,6 +4,15 @@ Tempo Total: 29.0 H
 
 ---
 
+05/01/2018
+
+- Continuação do projecto "Trails4Health":
+Adicionadas perguntas de avaliação na classe DbInitializer;
+
+
+Tempo utilizado:   H
+
+---
 04/01/2018
 
 - Continuação do projecto "Trails4Health":

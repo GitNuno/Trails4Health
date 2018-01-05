@@ -13,48 +13,28 @@ namespace Trails4Health.Data
         {
             context.Database.EnsureCreated();
 
-            // Se encontrou um registo ...
-            //if (context.TiposRespostas.Any())
-            //{
-            //    return;   // ... a DB já tem pelo menos um registo.
-            //}
-
-            //context.TipoRespostas.AddRange(
-            //    new TipoResposta { Descricao = "Sim/Não" },
-            //    new TipoResposta { Descricao = "1 - Discordo | 3 - Concordo" },
-            //    new TipoResposta { Descricao = "1 - Discordo em Absoluto | 5 - Concordo Plenamente" }
-            //);
-            //context.SaveChanges();
-
-            //if (context.QuestoesAvalicaoTrilhos.Any())
-            //{
-            //    return;   
-            //}
-
-            //context.QuestaoAvalicaoTrilhos.AddRange(
-            //    new QuestaoAvaliacaoTrilho { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false, TipoRespostaID = 1 },
-            //    new QuestaoAvaliacaoTrilho { NomeQuestao = "O trilho continha sinalização adequada?", Desactivada = false,  TipoRespostaID = 2 },
-            //    new QuestaoAvaliacaoTrilho { NomeQuestao = "Como classifica este trilho quanto ao grau de dificuldade?", Desactivada = false, TipoRespostaID = 3 }
-            //);
-            //context.SaveChanges();
-
-            //if (context.QuestoesAvalicaoGuias.Any())
-            //{
-            //    return;
-            //}
-
-            //context.QuestaoAvalicaoGuias.AddRange(
-            //    new QuestaoAvaliacaoGuia { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false, TipoRespostaID = 1 },
-            //    new QuestaoAvaliacaoGuia { NomeQuestao = "O guia percorreu o trilho com um ritmo adequado à dificuldade do trilho?", Desactivada = false, TipoRespostaID = 1 },
-            //    new QuestaoAvaliacaoGuia { NomeQuestao = "O guia fez pausas nos locais assinalados como sendo de interesse?", Desactivada = false, TipoRespostaID = 1 }
-            //    );
-            //context.SaveChanges();
-
-            context.TipoQuestoes.AddRange(
-                new TipoQuestao { Nome = "Trilho"},
-                new TipoQuestao { Nome = "Guia"}
+            // Se não encontrou um registo ...
+            if (!context.TipoQuestoes.Any())
+            {
+                context.TipoQuestoes.AddRange(
+                new TipoQuestao { Nome = "Trilho" },
+                new TipoQuestao { Nome = "Guia" }
                 );
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+
+            if (!context.Questoes.Any())
+            {
+                context.Questoes.AddRange(
+                new Questao { NomeQuestao = "Classifique globalmente este trilho?", Desactivada = false, TipoResposta = "1 - Horrível | 5 - Excelente", ValorMaximo = 5, ValorMinimo = 1, NumeroOpcoes = 5, TipoQuestaoID = 29 },
+                new Questao { NomeQuestao = "O trilho continha sinalização adequada?", Desactivada = false, TipoResposta = "Sim | Não", ValorMaximo = 5, ValorMinimo = 1, NumeroOpcoes = 2, TipoQuestaoID = 29 },
+                new Questao { NomeQuestao = "Como classifica este trilho quanto ao grau de dificuldade?", Desactivada = false, TipoResposta = "1 - Muito Difícil | 5 - Muito Fácil", ValorMaximo = 5, ValorMinimo = 1, NumeroOpcoes = 5, TipoQuestaoID = 29 },
+                new Questao { NomeQuestao = "O guia demonstrou conhecimento do trilho?", Desactivada = false, TipoResposta = "1 - Discordo em absoluto | 5 - Concordo plenamente", ValorMaximo = 5, ValorMinimo = 1, NumeroOpcoes = 5, TipoQuestaoID = 30 },
+                new Questao { NomeQuestao = "O guia percorreu o trilho com um ritmo adequado à dificuldade do trilho?", Desactivada = false, TipoResposta = "1 - Discordo | 3 - Concordo", ValorMaximo = 5, ValorMinimo = 1, NumeroOpcoes = 3, TipoQuestaoID = 30 },
+                new Questao { NomeQuestao = "O guia fez pausas nos locais assinalados como sendo de interesse?", Desactivada = false, TipoResposta = "Sim | Não", ValorMaximo = 5, ValorMinimo = 1, NumeroOpcoes = 2, TipoQuestaoID = 30 }
+                );
+                context.SaveChanges();
+            }
         }
     }
 }
