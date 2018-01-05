@@ -8,26 +8,6 @@ namespace Trails4Health.Models
     public static class SeedData
     {
 
-        // TRILHOS
-        public static Trilho Faias = new Trilho
-        {
-            Nome = "Rota das Faias",
-            Foto = "/images/faias.jpg",
-            Detalhes = "Queres caminhar entre gnomos, " +
-                 "florestas encantadas, cogumelos selvagens e ouvir o crepitar das folhas debaixo dos pés ? Tens de fazer a " +
-                 "Rota das Faias.Ainda que seja mais aconselhável fazer o percurso pedestre no outono para podermos apreciar " +
-                 "as cores quentes da folhagem das faias, este é um bosque para descobrir todo o ano.",
-            Sumario = "Este é um bosque para descobrir todo o ano. O percurso começa na zona de Manteigas, mais " +
-                     "concretamente junto à Cruz das Jugadas.",
-            Desativado = false,
-            Inicio = "Manteigas",
-            Fim = "Cruz das Jugadas",
-            Distancia = 15m,
-            DificuldadeID = MEDIA // Nota: DificuldadeID na tabela Dificuldade é criado automaticamente. Se já tiverem sido
-                                  // criados registos na tabela Dificuldade antes de correr SeedData, vai haver conflito
-                                  // pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health
-        };
-
         // DIFICULDADE
         // ID Dificuldade
         public const int GRANDE = 1;
@@ -49,6 +29,46 @@ namespace Trails4Health.Models
         // Nome Estado
         public const string NOME_ESTADO_1 = "Aberto";
         public const string NOME_ESTADO_2 = "Fechado";
+
+        // TRILHOS
+        public static Trilho faias = new Trilho
+        {
+            Nome = "Rota das Faias",
+            Foto = "/images/faias.jpg",
+            Detalhes = "Queres caminhar entre gnomos, " +
+                 "florestas encantadas, cogumelos selvagens e ouvir o crepitar das folhas debaixo dos pés ? Tens de fazer a " +
+                 "Rota das Faias.Ainda que seja mais aconselhável fazer o percurso pedestre no outono para podermos apreciar " +
+                 "as cores quentes da folhagem das faias, este é um bosque para descobrir todo o ano.",
+            Sumario = "Este é um bosque para descobrir todo o ano. O percurso começa na zona de Manteigas, mais " +
+                     "concretamente junto à Cruz das Jugadas.",
+            Desativado = false,
+            Inicio = "Manteigas",
+            Fim = "Cruz das Jugadas",
+            Distancia = 15m,
+            DificuldadeID = MEDIA // Nota: DificuldadeID na tabela Dificuldade é criado automaticamente. Se já tiverem sido
+                                  // criados registos na tabela Dificuldade antes de correr SeedData, vai haver conflito
+                                  // pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health
+        };
+
+        // TRILHOS
+        public static Trilho covao = new Trilho
+        {
+            Nome = "Covão dos Conchos",
+            Foto = "/images/covao.jpg",
+            Detalhes = "O funil não é mais do que um túnel construído na década de ’50 e que leva as águas recolhidas da " +
+                "Ribeira das Naves e as encaminha para a Lagoa Comprida, bem mais abaixo.O túnel tem 48 m de coroamento e " +
+                "1519 metros de comprimento. Para aqui chegar basta fazer uma caminhada de 8 km(quatro para cada lado), " +
+                "desde a Lagoa Comprida.",
+            Sumario = "O Covão dos Conchos tornou - se famoso quando no início deste ano uma série de filmes gravados com um " +
+                "drone mostrava as águas da lagoa a precipitarem - se num gigantesco funil e a desaparecerem misteriosamente…",
+            Desativado = false,
+            Inicio = "Lagoa Comprida",
+            Fim = "Covão dos Conchos",
+            Distancia = 8m,
+            DificuldadeID = PEQUENA // Nota: DificuldadeID na tabela Dificuldade é criado automaticamente. Se já tiverem sido
+                                    // criados registos na tabela Dificuldade antes de correr SeedData, vai haver conflito
+                                    // pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health
+        };
 
         // Popular BD
         public static void EnsurePopulated(IServiceProvider serviceProvider)
@@ -91,7 +111,7 @@ namespace Trails4Health.Models
 
         private static void EnsureTrilhosPopulated(ApplicationDbContext dbContext)
         {
-            dbContext.Trilhos.AddRange(Faias);
+            dbContext.Trilhos.AddRange(faias, covao);
         }
 
         private static void EnsureDificuldadesPopulated(ApplicationDbContext dbContext)
@@ -116,8 +136,13 @@ namespace Trails4Health.Models
         private static void EnsureEstadoTrilhosPopulated(ApplicationDbContext dbContext)
         {
             dbContext.EstadoTrilhos.AddRange(
-                new EstadoTrilho { Trilho = Faias, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = new DateTime(2018, 01, 27) },
-                new EstadoTrilho { Trilho = Faias, EstadoID = FECHADO, DataInicio = new DateTime(2018, 01, 27) }
+                // faias abre Now e fecha a (2018, 01, 27)
+                new EstadoTrilho { Trilho = faias, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = new DateTime(2018, 01, 27) },
+                new EstadoTrilho { Trilho = faias, EstadoID = FECHADO, DataInicio = new DateTime(2018, 01, 27) },
+                // covao abre Now, fecha daqui a 3 meses e volta a abrir a (2018, 12, 15)
+                new EstadoTrilho { Trilho = covao, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = DateTime.Now.AddMonths(3) },
+                new EstadoTrilho { Trilho = covao, EstadoID = FECHADO, DataInicio = DateTime.Now.AddMonths(3), DataFim = new DateTime(2018, 12, 15) },
+                new EstadoTrilho { Trilho = covao, EstadoID = ABERTO, DataInicio = new DateTime(2018, 12, 15) }
                 );
         }
     

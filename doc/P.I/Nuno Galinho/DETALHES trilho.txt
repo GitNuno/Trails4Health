@@ -1,16 +1,5 @@
-// Rota das Faias
-Manteigas
-Cruz das Jugadas
-/images/faias.jpg
 
-Este é um bosque para descobrir todo o ano. O percurso começa na zona de Manteigas, 
-mais concretamente junto à Cruz das Jugadas.
 
-Queres caminhar entre gnomos, florestas encantadas, cogumelos selvagens e ouvir o 
-crepitar das folhas debaixo dos pés? Tens de fazer a “Rota das Faias”. 
-Ainda que seja mais aconselhável fazer o percurso pedestre no outono para 
-podermos apreciar as cores quentes da folhagem das faias, este é um bosque para 
-descobrir todo o ano.
 
 // Torre
 Torre
@@ -26,24 +15,6 @@ erigir aqui um monumento em pedra, de modo a completar a altitude até chegar ao
 A altitude da Torre é de 1993. As temperaturas mais baixas de Portugal são registadas
 no cume da Serra da Estrela,onde os termómetros já atingiram quase os  -20 °C no inverno.
 
-// Covão de Ametade:
-/images/covao.jpg
-
-O Covão d’Ametade, outrora uma pastagem cerval, representa uma depressão de origem 
-glaciar que foi arborizada com vidoeiros ao longo das margens do rio.
-
-É um cenário paradisíaco carregado de sentimento bucólico e poético. São três os Cântaros que se 
-erguem em torno do Covão d´Ametade: o Cântaro Raso, mais a sul; o Cântaro Magro, 
-central e emblemático de toda a Serra da Estrela; e o Cântaro Gordo, a norte.
-
-O rio Zêzere nasce junto à Torre, a cerca de 1993m de altitude, precipita-se por 
-entre as paredes íngremes dos Cântaros e começa a ganhar forma no Covão d´Ametade, 
-onde se passeia com sobeja vaidade, como que preparando-se para engrossar o caudal 
-para depois o depositar, com toda a sua força, no rio Tejo. Deixando o 
-Covão d´Ametade, o rio Zêzere irrompe pelo Vale Glaciário e 
-percorre 248km por entre vales de abundante fertilidade, até desaguar no rio Tejo, 
-em Constância. Com mais de 10km de extensão, o Vale Glaciar do Zêzere apresenta-se 
-bem moldado, em forma de «U», expurgando água por todos os seus poros.
 
 // Linhares da Beira
 Linhares da Beira
@@ -138,17 +109,34 @@ Rota do Glaciar. Ao longo do percurso não é difícil ficar cativado pelas enco
 íngremes e pelas bolas graníticas que miraculosamente se suspendem nos píncaros da 
 Serra.
 
+
+// EM SEED_DATA:
+
+// Rota das Faias
+Manteigas
+Cruz das Jugadas
+/images/faias.jpg
+
+Este é um bosque para descobrir todo o ano. O percurso começa na zona de Manteigas, 
+mais concretamente junto à Cruz das Jugadas.
+
+Queres caminhar entre gnomos, florestas encantadas, cogumelos selvagens e ouvir o 
+crepitar das folhas debaixo dos pés? Tens de fazer a “Rota das Faias”. 
+Ainda que seja mais aconselhável fazer o percurso pedestre no outono para 
+podermos apreciar as cores quentes da folhagem das faias, este é um bosque para 
+descobrir todo o ano.
+
 // Covão dos Conchos
+Covão dos Conchos
+Lagoa Comprida
 /images/covao.jpg
 
 O Covão dos Conchos tornou-se famoso quando no início deste ano uma série de filmes 
 gravados com um drone mostrava as águas da lagoa a precipitarem-se num gigantesco 
 funil e a desaparecerem misteriosamente…
 
-Ora o funil não é mais do que um túnel construído na década de ’50 e que leva as 
+O funil não é mais do que um túnel construído na década de ’50 e que leva as 
 águas recolhidas da Ribeira das Naves e as encaminha para a Lagoa Comprida, bem mais 
 abaixo.O túnel tem 48 m de coroamento e 1519 metros de comprimento.
-
 Para aqui chegar basta fazer uma caminhada de 8 km (quatro para cada lado), desde a
 Lagoa Comprida.
-

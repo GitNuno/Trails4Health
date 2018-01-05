@@ -526,6 +526,8 @@ ver Google: Announcing EF Core 2.0 Preview
 SOLUÇÃO: recriar BD Trails4Health (reenicia criação automatica dos IDs a 1)
 Tempo:2h
 
+.Adicionado trilho covao em seedData
+Tempo: 30 min.
 
 
 //

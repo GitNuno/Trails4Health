@@ -39,11 +39,14 @@ namespace Trails4Health
             host.Run();
         }
 
+        // ver Google: Announcing EF Core 2.0 Preview
         //public static IWebHost BuildWebHost(string[] args) =>
         //    WebHost.CreateDefaultBuilder(args)
         //        .UseStartup<Startup>()
         //        .Build();
 
+        // upgrade para versão ASP.NET Core 2.0
+        // ver Google: Announcing EF Core 2.0 Preview
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
