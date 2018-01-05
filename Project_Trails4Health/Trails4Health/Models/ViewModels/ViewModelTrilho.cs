@@ -45,9 +45,11 @@ namespace Trails4Health.Models.ViewModels
         public bool TrilhoDesativado { get; set; } = false;
 
         public int DificuldadeID { get; set; }
-        // public int DificuldadeNome { get; set; }
+        public Dificuldade Dificuldade { get; set; }
 
         public int EstadoID { get; set; }
         // public int EstadoNome { get; set; }
+
+        public IEnumerable<EstadoTrilho> EstadoTrilhos { get; set; }
     }
 }

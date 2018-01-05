@@ -12,8 +12,11 @@ namespace Trails4Health.Controllers
 {
     public class TrilhoCRUDController : Controller
     {
+        // para listar EstadoTrilhos em Detalhes
+        private IEnumerable<EstadoTrilho> ListaEstadoTrilhos { get; set; }
+
         private readonly ApplicationDbContext _context;
-        private ITrails4HealthRepository repository;  // para Lista Trilhos em BackOffice
+        private ITrails4HealthRepository repository;  // para Listar Trilhos em BackOffice
 
         // ORIG: TrilhoCRUDController(ApplicationDbContext context)
         public TrilhoCRUDController(ApplicationDbContext context, ITrails4HealthRepository repository)
@@ -55,45 +58,46 @@ namespace Trails4Health.Controllers
                 }); // BEFORE ViewModel: return View(repository.Trilhos)
         }
 
-        //// APAGAR DEPOIS DE IMPLEMENTADO FORMULARIO !!
-        //[HttpGet]
-        //public ViewResult FormCriar()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public ViewResult FormCriar(Trilho trilho)
-        //{
-        //    // validação
-        //    if (ModelState.IsValid)
-        //    {
-        //        return View("Lista", repository.Trilhos);
-        //    }
-        //    else
-        //    {
-        //        // There are Validation Errors > devolve a view em que estava 
-        //        return View();
-        //    }
-        //}
-
-        // GET: Trilhoes/Detalhes/5
+        // GET: Detalhes
         public async Task<IActionResult> Detalhes(int? id)
         {
+
             if (id == null)
             {
-                return NotFound();
+                return NotFound("ID NotFound");
             }
 
             var trilho = await _context.Trilhos
                 .Include(t => t.Dificuldade)
                 .SingleOrDefaultAsync(m => m.TrilhoID == id);
+
+
+            var estadoTrilho = _context.EstadoTrilhos
+                .Include(et => et.Estado)
+                .Include(et => et.Trilho);
+
+            ListaEstadoTrilhos = estadoTrilho.ToListAsync().Result;
+
+            ViewModelTrilho viewModelTrilho = new ViewModelTrilho
+            {
+                TrilhoNome = trilho.Nome,
+                TrilhoInicio = trilho.Inicio,
+                TrilhoFim = trilho.Fim,
+                TrilhoSumario = trilho.Sumario,
+                TrilhoDetalhes = trilho.Detalhes,
+                TrilhoFoto = trilho.Foto,
+                TrilhoDistancia = trilho.Distancia,
+                TrilhoDesativado = trilho.Desativado,
+                Dificuldade = trilho.Dificuldade,
+                EstadoTrilhos = ListaEstadoTrilhos
+            };
+
             if (trilho == null)
             {
                 return NotFound();
             }
             //ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome");
-            return View(trilho);
+            return View(viewModelTrilho);
         }
 
         // GET: Create

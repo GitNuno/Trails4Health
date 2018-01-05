@@ -1,4 +1,4 @@
-@model Trilho
+@model ViewModelTrilho
 
 @{
     ViewData["Title"] = "Detalhes";
@@ -13,67 +13,67 @@
 
 <hr />
 <div class="text-uppercase panel-heading" style="margin-bottom:1em; font-size:large">
-    Detalhes <strong style="margin-left:0.1em"> @Html.DisplayFor(model => model.Nome) </strong>
+    Detalhes <strong style="margin-left:0.1em"> @Html.DisplayFor(model => model.TrilhoNome) </strong>
 </div>
 <hr />
 <br />
 <div>  
     <div class="row">
         <div class="col-lg-6">
-            <img class="img-fluid mb-4 mb-lg-0" src="@Model.Foto" alt="">
+            <img class="img-fluid mb-4 mb-lg-0" src="@Model.TrilhoFoto" alt="">
         </div>
     </div>
     <hr />
     <dl class="panel-heading">
         <dt>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.TrilhoNome)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Nome)
+            @Html.DisplayFor(model => model.TrilhoNome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Inicio)
+            @Html.DisplayNameFor(model => model.TrilhoInicio)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Inicio)
+            @Html.DisplayFor(model => model.TrilhoInicio)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Fim)
+            @Html.DisplayNameFor(model => model.TrilhoFim)
         </dt>
         <dd style="margin-bottom:1em">
-            @Html.DisplayFor(model => model.Fim)
+            @Html.DisplayFor(model => model.TrilhoFim)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Sumario)
+            @Html.DisplayNameFor(model => model.TrilhoSumario)
         </dt>
         <!-- redimensionar coluna -->
         <dd style="width:66em;margin-bottom:1em">
-            @Html.DisplayFor(model => model.Sumario)
+            @Html.DisplayFor(model => model.TrilhoSumario)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Detalhes)
+            @Html.DisplayNameFor(model => model.TrilhoDetalhes)
         </dt>
         <!-- redimensionar coluna -->
         <dd style="width:66em;margin-bottom:1em">
-            @Html.DisplayFor(model => model.Detalhes)
+            @Html.DisplayFor(model => model.TrilhoDetalhes)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Distancia)
+            @Html.DisplayNameFor(model => model.TrilhoDistancia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Distancia) <span>Km</span>
+            @Html.DisplayFor(model => model.TrilhoDistancia) <span>Km</span>
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Foto)
+            @Html.DisplayNameFor(model => model.TrilhoFoto)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Foto)
+            @Html.DisplayFor(model => model.TrilhoFoto)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Desativado)
+            @Html.DisplayNameFor(model => model.TrilhoDesativado)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Desativado)
+            @Html.DisplayFor(model => model.TrilhoDesativado)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Dificuldade)

@@ -541,6 +541,12 @@ Tempo: 1h
 .Renomeado \TrilhoCRUD\details para \TrilhoCRUD\detailhes
 Tempo: 15 min.
 
+.Exibição view Detalhes a partir de ViewModelTrilho:
+	.Redefini ViewModelTrilho
+	.Redefini acção: public async Task<IActionResult> Detalhes(int? id) {...} com o objectivo de exibir Estados do Trilho na view: return View(viewModelTrilho)
+	Nota: No momento está a funcionar ms ainda não exibe EstadoTrilhos
+Tempo: 1h30
+
 
 //
 
