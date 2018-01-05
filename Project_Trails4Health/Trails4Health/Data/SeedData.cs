@@ -19,8 +19,8 @@ namespace Trails4Health.Models
         public const string NOME_DIFICULDADE_3 = "Pequena";
         // Observaçao Dificuldade
         public const string OBSERVACAO_DIFICULDADE_1 = "Trilho de grande exigencia fisica";
-        public const string OBSERVACAO_DIFICULDADE_2 = "Trilho de media exigencia fisica";
-        public const string OBSERVACAO_DIFICULDADE_3 = "Trilho de pequena exigencia fisica";
+        public const string OBSERVACAO_DIFICULDADE_2 = "Trilho de média exigência fisica";
+        public const string OBSERVACAO_DIFICULDADE_3 = "Trilho de pequena exigência fisica";
 
         // ESTADO
         // ID Estado
@@ -49,8 +49,7 @@ namespace Trails4Health.Models
                                   // criados registos na tabela Dificuldade antes de correr SeedData, vai haver conflito
                                   // pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health
         };
-
-        // TRILHOS
+                
         public static Trilho covao = new Trilho
         {
             Nome = "Covão dos Conchos",
@@ -75,7 +74,7 @@ namespace Trails4Health.Models
         {
             // 
             ApplicationDbContext dbContext = (ApplicationDbContext)serviceProvider.GetService(typeof(ApplicationDbContext));
-            // Limpa base dados
+            // Limpar registos base dados, Nota: ATENÇÃO aos IDs Dificuldades e Estado!! 
             //dbContext.Trilhos.RemoveRange(dbContext.Trilhos);
             //dbContext.Dificuldades.RemoveRange(dbContext.Dificuldades);
             //dbContext.Estados.RemoveRange(dbContext.Estados);

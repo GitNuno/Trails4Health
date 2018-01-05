@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    <title>@ViewData["Title"]**</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/css/flatly_bootstrap.css" />
@@ -38,14 +38,23 @@
                     <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilho</a></li>
                     <li><a asp-controller="TrilhoCRUD" asp-action="ListaTrilhos">Lista Trilhos</a></li>
                 </ul>
-                <!-- RICARDO: Os links login e register devem estar na pag. home e não em Back Office. Em Home "Login" criei 
+                <!-- RICARDO: Os links login e register devem estar na pag. home e não em Back Office. Em Home "Login" criei
                     link para Account/Login mas nao sei se nao será necessaria esta linha de código -->
                 @await Html.PartialAsync("_LoginPartial")*
             </div>
         </div>
     </nav>
+
+    <hr class="divider" style="margin-top:6em">
+    <h2 class="text-center text-lg text-uppercase my-0" style="font-size:3em">
+        Lista
+        <strong>Trilhos</strong>
+    </h2>
+    <hr />
+
     <!-- mudei style -->
-    <div class="container body-content" style="margin-top:1em;">
+    <div class="container body-content" style="margin-left:11em; margin-top:5em">
+
         @RenderBody()
         <hr />
         <footer></footer>

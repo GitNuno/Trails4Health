@@ -2,7 +2,7 @@
 
 P.I.:
 
-	.seedData
+	.detalhes baseado em Lista Trilhos
 	.historico
 	.image bitmap
 	.delete ???

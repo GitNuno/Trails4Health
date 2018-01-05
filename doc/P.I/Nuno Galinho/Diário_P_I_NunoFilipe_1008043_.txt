@@ -535,6 +535,9 @@ Nota - nao inseria por:
 2. não é possivel introduzir 2 registos com mma chave_composta!
 Tempo: 30 min.
 
+.Criado novo interface para view details de TrilhoCRUD
+Tempo: 1h
+
 
 //
 
