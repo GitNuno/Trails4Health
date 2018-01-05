@@ -59,8 +59,8 @@ namespace Trails4Health.Models
                 "Ribeira das Naves e as encaminha para a Lagoa Comprida, bem mais abaixo.O túnel tem 48 m de coroamento e " +
                 "1519 metros de comprimento. Para aqui chegar basta fazer uma caminhada de 8 km(quatro para cada lado), " +
                 "desde a Lagoa Comprida.",
-            Sumario = "O Covão dos Conchos tornou - se famoso quando no início deste ano uma série de filmes gravados com um " +
-                "drone mostrava as águas da lagoa a precipitarem - se num gigantesco funil e a desaparecerem misteriosamente…",
+            Sumario = "O Covão dos Conchos tornou-se famoso quando no início deste ano uma série de filmes gravados com um " +
+                "drone mostrava as águas da lagoa a precipitarem-se num gigantesco funil.",
             Desativado = false,
             Inicio = "Lagoa Comprida",
             Fim = "Covão dos Conchos",
@@ -134,16 +134,15 @@ namespace Trails4Health.Models
         // Nota: EstadoID na tabela Estado é criado automaticamente. Se já tiverem sido sido criados registos na tabela Estado
         // antes de correr SeedData, vai haver conflito pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health
         private static void EnsureEstadoTrilhosPopulated(ApplicationDbContext dbContext)
-        {
+        {   
             dbContext.EstadoTrilhos.AddRange(
                 // faias abre Now e fecha a (2018, 01, 27)
                 new EstadoTrilho { Trilho = faias, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = new DateTime(2018, 01, 27) },
                 new EstadoTrilho { Trilho = faias, EstadoID = FECHADO, DataInicio = new DateTime(2018, 01, 27) },
-                // covao abre Now, fecha daqui a 3 meses e volta a abrir a (2018, 12, 15)
+                // covao abre Now, fecha daqui a 3 meses
                 new EstadoTrilho { Trilho = covao, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = DateTime.Now.AddMonths(3) },
-                new EstadoTrilho { Trilho = covao, EstadoID = FECHADO, DataInicio = DateTime.Now.AddMonths(3), DataFim = new DateTime(2018, 12, 15) },
-                new EstadoTrilho { Trilho = covao, EstadoID = ABERTO, DataInicio = new DateTime(2018, 12, 15) }
-                );
+                new EstadoTrilho { Trilho = covao, EstadoID = FECHADO, DataInicio = DateTime.Now.AddMonths(3) }
+                );// Nota: não é possivel introduzir 2 registos com mma chave_composta!
         }
     
     }

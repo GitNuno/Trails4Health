@@ -529,6 +529,12 @@ Tempo:2h
 .Adicionado trilho covao em seedData
 Tempo: 30 min.
 
+.Resolvido problema inserção do trilho covao em seedData
+Nota - nao inseria por: 
+1. já existia registo nas tabelas Trilhos e EstadoTrilhos
+2. não é possivel introduzir 2 registos com mma chave_composta!
+Tempo: 30 min.
+
 
 //
 
