@@ -77,8 +77,8 @@ namespace Trails4Health.Controllers
         //    }
         //}
 
-        // GET: Trilhoes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Trilhoes/Detalhes/5
+        public async Task<IActionResult> Detalhes(int? id)
         {
             if (id == null)
             {

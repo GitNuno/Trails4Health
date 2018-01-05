@@ -25,7 +25,7 @@ namespace Trails4Health.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Questoes/Details/5
+        // GET: Questoes/Detalhes/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

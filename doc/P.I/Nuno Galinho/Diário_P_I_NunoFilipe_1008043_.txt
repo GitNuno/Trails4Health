@@ -538,6 +538,9 @@ Tempo: 30 min.
 .Criado novo interface para view details de TrilhoCRUD
 Tempo: 1h
 
+.Renomeado \TrilhoCRUD\details para \TrilhoCRUD\detailhes
+Tempo: 15 min.
+
 
 //
 
