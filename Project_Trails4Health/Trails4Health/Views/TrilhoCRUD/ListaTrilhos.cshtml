@@ -10,18 +10,21 @@
 
 
 @foreach (Trilho T in Model.Trilho)
-{
-    <!-- Lista apenas Trilho ativos -->
-    if (!T.Desativado)
+{ 
+<div class="panel-body">
+    <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
+    <h3>@T.Nome</h3>
+    <p>@T.Inicio - @T.Fim</p>
+    <p>Distancia: @T.Distancia Km</p>
+    @if (T.Desativado)
     {
-        <div>
-            <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
-            <h3>@T.Nome</h3>
-            <p>@T.Inicio - @T.Fim</p>
-            <p>Distancia: @T.Distancia Km</p>
-        </div>
-        <hr />
+        @*<p class=" btn btn-danger">
+            Desativado / Editar
+        </p>*@
+
+        <a asp-action="Editar" asp-route-id="@T.TrilhoID" class="btn btn btn-danger"> DESATIVADO <strong>EDITAR</strong></a>
     }
+</div>
 }
 <!--Pagination-->
 <div page-model="@Model.InfoPaginacao"

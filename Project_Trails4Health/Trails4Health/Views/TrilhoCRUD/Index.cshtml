@@ -47,6 +47,7 @@
                         <tbody>
                             @foreach (Trilho T in Model)
                             {
+                                // Se registo Trilho estiver desativado "marca" linha da tabela a vermelho
                                 if (T.Desativado)
                                 {
                                     <tr class="danger">
