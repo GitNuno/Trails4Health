@@ -40,7 +40,7 @@ namespace Trails4Health.Models.ViewModels
         public decimal TrilhoDistancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]
-        public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados
+        public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados ??
 
         public bool TrilhoDesativado { get; set; } = false;
 
@@ -48,8 +48,9 @@ namespace Trails4Health.Models.ViewModels
         public Dificuldade Dificuldade { get; set; }
 
         public int EstadoID { get; set; }
-        // public int EstadoNome { get; set; }
+        // public string EstadoNome { get; set; }
 
+        // para listar EstadoTrilhos na View /TrilhoCRUD/Detalhes
         public IEnumerable<EstadoTrilho> EstadoTrilhos { get; set; }
     }
 }

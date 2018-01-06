@@ -551,6 +551,9 @@ Tempo: 1h30
 Nota: Ainda não é isto o pretendido tenho de fazer filtro.
 Tempo:30 min.
 
+.Listagem dos Estados de um Trilho selecionado, na View Detalhes
+Tempo: 30 min.
+
 
 //
 

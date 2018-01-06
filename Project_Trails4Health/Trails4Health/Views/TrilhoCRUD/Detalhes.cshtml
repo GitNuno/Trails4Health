@@ -95,12 +95,39 @@
         <tbody>
             @foreach (var item in Model.EstadoTrilhos)
             {
+                if (item.TrilhoID == Model.TrilhoID)
+                {
                 <tr>
-                    <td>@item.EstadoID</td>
-                    <td>@item.DataInicio</td>
-                    <td>@item.DataFim</td>
+                    @if (item.EstadoID == 1)
+                    {
+                         <td>Aberto</td>
+                    }
+                    else
+                    {
+                        <td>Fechado</td>
+                    }
+
+                    <!-- Se DataInicio nula-->
+                     @if (item.DataInicio == new DateTime(0001, 01, 01)) 
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
+                        <td>@item.DataInicio</td>
+                    }
+                    <!-- Se DataFim nula-->
+                    @if (item.DataFim == new DateTime(0001, 01, 01))
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
+                        <td>@item.DataFim</td>
+                    }                
                 </tr>
-            }            
+                }
+            }
         </tbody>
     </table>
 
