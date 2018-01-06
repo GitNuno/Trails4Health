@@ -31,16 +31,9 @@ namespace Trails4Health.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // 
-        public async Task<IActionResult> Index2()
-        {
-            var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
-            return View(await applicationDbContext.ToListAsync());
-        }
-
         // paginação
         // Listar Trilhos em BackOffice
-        public int TamanhoPagina = 4;
+        public int TamanhoPagina = 3;
         public ViewResult ListaTrilhos(int pagina = 1)
         {
             return View(
@@ -156,7 +149,7 @@ namespace Trails4Health.Controllers
             return View(trilhoVM);
         }
 
-        // GET:Edit
+        // GET:Editar
         public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
@@ -194,7 +187,7 @@ namespace Trails4Health.Controllers
             return View(VMTrilho);
         }
 
-        // POST: Edit
+        // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
@@ -214,15 +207,6 @@ namespace Trails4Health.Controllers
                 Sumario = VMTrilho.TrilhoSumario,
                 DificuldadeID = VMTrilho.DificuldadeID
             };
-
-            //// crio novo EstadoTrilho a partir de trilho + campo EstadoID(Bind) + campo DataInicio(DateTime)
-            //EstadoTrilho estadoTrilho = new EstadoTrilho
-            //{
-            //    Trilho = trilho,
-            //    EstadoID = trilhoVM.EstadoID,
-            //    DataInicio = DateTime.Now,
-            //    // ?? if trilhoVM.EstadoID == 2 (fechado) ...
-            //};
 
             if (id != trilho.TrilhoID)
             {
@@ -257,42 +241,8 @@ namespace Trails4Health.Controllers
             return View(VMTrilho);
         }
 
-        //// POST: Edit
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,Detalhes,Distancia,Foto,Desativado,DificuldadeID")] Trilho trilho)
-        //{
-        //    if (id != trilho.TrilhoID)
-        //    {
-        //        return NotFound("TrilhoID NotFound");
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(trilho);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!TrilhoExists(trilho.TrilhoID))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction("Index");
-        //    }
-        //    ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilho.DificuldadeID);
-        //    return View(trilho);
-        //}
-
-        // GET: Trilhoes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Desativar
+        public async Task<IActionResult> Desativar(int? id)
         {
             if (id == null)
             {
@@ -310,10 +260,10 @@ namespace Trails4Health.Controllers
             return View(trilho);
         }
 
-        // POST: Trilhoes/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Desativar
+        [HttpPost, ActionName("Desativar")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DesativacaoConfirmada(int id)
         {
             var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
             trilho.Desativado = true;

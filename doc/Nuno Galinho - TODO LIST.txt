@@ -1,8 +1,6 @@
 ::
 
 P.I.:
-
-	.seedData com Dificuldade \ DificuldadeID
 	.REGEX detalhes
 	.image bitmap
 	.delete ???
