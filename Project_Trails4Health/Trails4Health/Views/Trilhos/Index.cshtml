@@ -37,7 +37,11 @@
     <!-- ver \views\shared\SumarioTrilhos -->
     @foreach (Trilho T in Model.Trilho)
     {
-        @Html.Partial("SumarioTrilhos", T) // mudar nome para ListaTrilhosCRUD
+        <!-- Lista apenas Trilhos ativos -->
+        @if (!T.Desativado)
+        {
+            @Html.Partial("TrilhosIndex", T)
+        }
     }
 </div>
 

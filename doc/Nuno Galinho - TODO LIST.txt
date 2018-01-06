@@ -2,8 +2,8 @@
 
 P.I.:
 
-	.detalhes baseado em Lista Trilhos
-	.historico
+	.seedData com Dificuldade \ DificuldadeID
+	.REGEX detalhes
 	.image bitmap
 	.delete ???
 	.testar entrada de Estados na BD + Desativado

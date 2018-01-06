@@ -554,8 +554,11 @@ Tempo:30 min.
 .Listagem dos Estados de um Trilho selecionado, na View Detalhes
 Tempo: 30 min.
 
+// 06/12/2018
+.Listagem (apenas) de trilhos ativos em \trilhos\index e \trilhosCRUD\ListaTrilhos
+Nota: Renomeei \Views\Shared\SumarioTrilhos.cshtml para ...\TrilhosIndex
+Tempo: 30 min.
 
-//
 
 //
 

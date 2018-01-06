@@ -11,20 +11,23 @@
 
 @foreach (Trilho T in Model.Trilho)
 {
-    <div>
-        <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
-        <h3>@T.Nome</h3>
-        <p>@T.Inicio - @T.Fim</p>
-        <p>Distancia: @T.Distancia Km</p>
-    </div>
-    <hr /> <!--barra horizontal-->
-
-    <!--Pagination-->
-    <div page-model="@Model.InfoPaginacao"
-         css-classes-enabled="true"
-         css-class-page="btn btn-sm"
-         css-class-page-normal="btn-default"
-         css-class-page-selected="btn-primary"
-         class="pull-right">
-    </div>
+    <!-- Lista apenas Trilho ativos -->
+    if (!T.Desativado)
+    {
+        <div>
+            <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
+            <h3>@T.Nome</h3>
+            <p>@T.Inicio - @T.Fim</p>
+            <p>Distancia: @T.Distancia Km</p>
+        </div>
+        <hr />
+    }
 }
+<!--Pagination-->
+<div page-model="@Model.InfoPaginacao"
+     css-classes-enabled="true"
+     css-class-page="btn btn-sm"
+     css-class-page-normal="btn-default"
+     css-class-page-selected="btn-primary"
+     class="pull-right">
+</div>
