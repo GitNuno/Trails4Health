@@ -45,89 +45,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model)
+                            @foreach (Trilho T in Model)
                             {
-                                if (item.Desativado)
+                                if (T.Desativado)
                                 {
-                                <tr class="danger">
-                                    <!-- ICONS -->
-                                    <td align="justify">
-                                        <a asp-action="Editar" asp-route-id="@item.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
-                                        <a asp-action="Delete" asp-route-id="@item.TrilhoID" class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
-                                        <a asp-action="Detalhes" asp-route-id="@item.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em"><em class="glyphicon glyphicon-th-list"></em></a>
-                                        @*<a class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
-                                        <a class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
-                                        <a class="btn btn-default list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>*@
-                                    </td>
-                                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Inicio)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Fim)</td>
-                                    <td style="width:16em">
-                                        @if (item.Sumario.Length > 151) // Nota: Na BD Sumario:VARCHAR(size) tem > que Remove(size)
-                                        {
-                                            @item.Sumario.Remove(150); <span>...</span>
-                                        }
-                                        else
-                                        {
-                                            @item.Sumario;
-                                        }
-                                    </td>
-                                    <td style="width:16em">
-                                        @if (item.Detalhes.Length > 151)
-                                        {
-                                            @item.Detalhes.Remove(150); <span>...</span>
-                                        }
-                                        else
-                                        {
-                                            @item.Detalhes;
-                                        }
-                                    </td>
-                                    <td>@Html.DisplayFor(modelItem => item.Distancia) <span>Km</span></td>
-                                    <td>@Html.DisplayFor(modelItem => item.Foto)</td>
-                                    <td align="center">@Html.DisplayFor(modelItem => item.Desativado)</td>
-                                    <td align="center">@Html.DisplayFor(modelItem => item.Dificuldade.Nome)</td>
-                                </tr>
+                                    <tr class="danger">
+                                         @Html.Partial("TrilhoCRUDIndex", T)
+                                    </tr>
                                 }
                                 else
                                 {
-                                     <tr>
-                                <!-- ICONS -->
-                                <td align="justify">
-                                    <a asp-action="Editar" asp-route-id="@item.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
-                                    <a asp-action="Delete" asp-route-id="@item.TrilhoID" class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
-                                    <a asp-action="Detalhes" asp-route-id="@item.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em"><em class="glyphicon glyphicon-th-list"></em></a>
-                                    @*<a class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
-                                    <a class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
-                                    <a class="btn btn-default list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>*@
-                                </td>
-                                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
-                                <td>@Html.DisplayFor(modelItem => item.Inicio)</td>
-                                <td>@Html.DisplayFor(modelItem => item.Fim)</td>
-                                <td style="width:16em">
-                                    @if (item.Sumario.Length > 151) // Nota: Na BD Sumario:VARCHAR(size) tem > que Remove(size)
-                                    {
-                                        @item.Sumario.Remove(150); <span>...</span>
-                                    }
-                                    else
-                                    {
-                                        @item.Sumario;
-                                    }
-                                </td>
-                                <td style="width:16em">
-                                    @if (item.Detalhes.Length > 151)
-                                    {
-                                        @item.Detalhes.Remove(150); <span>...</span>
-                                    }
-                                    else
-                                    {
-                                        @item.Detalhes;
-                                    }
-                                </td>
-                                <td>@Html.DisplayFor(modelItem => item.Distancia) <span>Km</span></td>
-                                <td>@Html.DisplayFor(modelItem => item.Foto)</td>
-                                <td align="center">@Html.DisplayFor(modelItem => item.Desativado)</td>
-                                <td align="center">@Html.DisplayFor(modelItem => item.Dificuldade.Nome)</td>
-                            </tr>
+                                    <tr>
+                                        @Html.Partial("TrilhoCRUDIndex", T)
+                                    </tr>
                                 }
                             }
                         </tbody>

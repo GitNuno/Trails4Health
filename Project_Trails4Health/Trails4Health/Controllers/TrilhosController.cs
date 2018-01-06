@@ -50,14 +50,14 @@ namespace Trails4Health.Controllers
 
 
 
-        // devolve o trilho selecionado (de acordo com o id: botão saber_mais - ver taghelper Detalhes.cshtml)
+        // devolve o trilho selecionado (de acordo com o id: botão saber_mais - ver taghelper Trilhos\Index.cshtml)
         public ViewResult Detalhes(int? id)
         {
             if (id == null)
             {
                 return View("../Shared/Error");
             }
-
+            // trilho selecionado de acordo com TrilhoID == id
             var trilho = repository.Trilhos.SingleOrDefault(t => t.TrilhoID == id);
 
             if (trilho == null)

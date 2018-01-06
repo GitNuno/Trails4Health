@@ -559,6 +559,9 @@ Tempo: 30 min.
 Nota: Renomeei \Views\Shared\SumarioTrilhos.cshtml para ...\TrilhosIndex
 Tempo: 30 min.
 
+.P.I. Criado @Html.Partial("TrilhoCRUDIndex", T) para \Views\TrilhoCRUD\Index.cshtml
+Tempo:15 min
+
 
 //
 
