@@ -31,12 +31,13 @@ namespace Trails4Health.Models
         public DbSet<TipoQuestao> TipoQuestoes { get; set; }
         public DbSet<Turista> Turistas { get; set; }
         public DbSet<Guia> Guias { get; set; }
-        //public DbSet<Resposta> Respostas { get; set; }
+        public DbSet<Resposta> Respostas { get; set; }
         public DbSet<Questionario> Questionarios { get; set; }
         public DbSet<QuestionarioQuestao> QuestionarioQuestoes { get; set; }
-        public DbSet<RespostaQuestionario> RespostaQuestionarios { get; set; }
+        //public DbSet<RespostaQuestionario> RespostaQuestionarios { get; set; }
         public DbSet<AvaliacaoGuia> AvaliacaoGuias { get; set; }
         public DbSet<AvaliacaoTrilho> AvaliacaoTrilhos { get; set; }
+        public DbSet<Opcao> Opcoes { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -78,7 +79,7 @@ namespace Trails4Health.Models
 
             modelBuilder.Entity<Guia>().HasKey(g => g.GuiaID);
 
-            modelBuilder.Entity<RespostaQuestionario>().HasKey(rq => rq.RespostaQuestionarioID);
+            //modelBuilder.Entity<RespostaQuestionario>().HasKey(rq => rq.RespostaQuestionarioID);
 
             modelBuilder.Entity<AvaliacaoGuia>().HasKey(ag => ag.AvaliacaoGuiaID);
 
@@ -87,23 +88,30 @@ namespace Trails4Health.Models
             modelBuilder.Entity<Questionario>().HasKey(qu => qu.QuestionarioID);
 
             modelBuilder.Entity<QuestionarioQuestao>().HasKey(qq => new { qq.QuestionarioID, qq.QuestaoID });
+            modelBuilder.Entity<QuestionarioQuestao>()
+                .HasOne(qq => qq.Questionario)
+                .WithMany(qu => qu.QuestionarioQuestoes);
+            modelBuilder.Entity<QuestionarioQuestao>()
+                .HasOne(qq => qq.Questao)
+                .WithMany(q => q.QuestionarioQuestoes);
 
             modelBuilder.Entity<TipoQuestao>().HasKey(tq => tq.TipoQuestaoID);
 
-            //modelBuilder.Entity<Resposta>().HasKey(chaveComposta =>
-            //    new { chaveComposta.RespostaQuestionarioID, chaveComposta.QuestaoID, chaveComposta.TuristaID });
-            //modelBuilder.Entity<Resposta>()
-            //    .HasOne(r => r.Questao)
-            //    .WithMany(q => q.Respostas)
-            //    .OnDelete(DeleteBehavior.Cascade);
-            //modelBuilder.Entity<Resposta>()
-            //    .HasOne(r => r.RespostaQuestionario)
-            //    .WithMany(rq => rq.Respostas)
-            //    .OnDelete(DeleteBehavior.Cascade);
-            //modelBuilder.Entity<Resposta>()
-            //    .HasOne(r => r.Turista)
-            //    .WithMany(t => t.Respostas)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Resposta>().HasKey(r => new { r.OpcaoID, r.TuristaID });
+            modelBuilder.Entity<Resposta>()
+                .HasOne(r => r.Opcao)
+                .WithMany(o => o.Respostas);
+            //.OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Resposta>()
+                .HasOne(r => r.Turista)
+                .WithMany(t => t.Respostas);
+            //.OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Opcao>().HasKey(o => o.OpcaoID);
+            modelBuilder.Entity<Opcao>()
+                .HasOne(o => o.Questao)
+                .WithMany(q => q.Opcoes)
+                .HasForeignKey(o => o.QuestaoID);
         }
     }
 }

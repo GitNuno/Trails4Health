@@ -10,7 +10,8 @@ namespace Trails4Health.Models
         public int QuestionarioID { get; set; }
         public DateTime DataRespostas { get; set; }
 
-        public QuestionarioQuestao QuestionarioQuestao { get; set; }
-        public RespostaQuestionario RespostaQuestionario { get; set; }
+        public ICollection<QuestionarioQuestao> QuestionarioQuestoes { get; set; }
+        //public QuestionarioQuestao QuestionarioQuestao { get; set; }
+        //public RespostaQuestionario RespostaQuestionario { get; set; }
     }
 }

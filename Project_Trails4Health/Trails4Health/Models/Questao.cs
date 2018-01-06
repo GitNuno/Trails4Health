@@ -10,7 +10,7 @@ namespace Trails4Health.Models
     {
         public int QuestaoID { get; set; }
         public string NomeQuestao { get; set; }
-        public string Desactivada { get; set; }
+        public bool Desactivada { get; set; }
         public string TipoResposta { get; set; }
         public int ValorMaximo { get; set; }
         public int ValorMinimo { get; set; }
@@ -21,7 +21,7 @@ namespace Trails4Health.Models
         public TipoQuestao TipoQuestao { get; set; }
         public int TipoQuestaoID { get; set; }
 
-        //public ICollection<Resposta> Respostas {get; set;}
+        public ICollection<Opcao> Opcoes {get; set;}
         public ICollection<QuestionarioQuestao> QuestionarioQuestoes { get; set; }
     }
 }

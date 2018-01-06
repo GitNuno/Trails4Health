@@ -20,6 +20,13 @@
                 <span asp-validation-for="NomeQuestao" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Desactivada" /> @Html.DisplayNameFor(model => model.Desactivada)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
                 <label asp-for="TipoResposta" class="control-label"></label>
                 <input asp-for="TipoResposta" class="form-control" />
                 <span asp-validation-for="TipoResposta" class="text-danger"></span>

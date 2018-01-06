@@ -17,6 +17,9 @@
                     @Html.DisplayNameFor(model => model.NomeQuestao)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.Desactivada)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.TipoResposta)
                 </th>
                 <th>
@@ -39,6 +42,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NomeQuestao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desactivada)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoResposta)
