@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]**</title>
+    <title>@ViewData["Title"]</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/css/flatly_bootstrap.css" />
@@ -46,14 +46,14 @@
     </nav>
 
     <hr class="divider" style="margin-top:6em">
-    <h2 class="text-center text-lg text-uppercase my-0" style="font-size:3em">
+    <h2 class="container body-content text-uppercase my-0" style="margin-left:4.5em;font-size:3em">
         Lista
         <strong>Trilhos</strong>
     </h2>
     <hr />
 
     <!-- mudei style -->
-    <div class="container body-content" style="margin-left:11em; margin-top:5em">
+    <div class="container body-content" style="margin-left:11em; margin-top:1em">
 
         @RenderBody()
         <hr />

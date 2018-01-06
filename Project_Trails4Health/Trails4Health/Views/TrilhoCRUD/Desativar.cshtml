@@ -13,7 +13,7 @@
 <br />
 <hr />
 <div class="text-uppercase panel-heading" style="margin-bottom:1em; font-size:large">
-    Desativar <strong style="margin-left:0.1em"> @Html.DisplayFor(model => model.Nome) ?</strong>    
+    <h2>Desativar <strong style="margin-left:0.1em"> @Html.DisplayFor(model => model.Nome) ?</strong></h2>
 </div>
 <hr />
 <br />
@@ -28,13 +28,13 @@
         <dt>
             Nome
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt>
             Inicio
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Inicio)
         </dd>
         <dt>
@@ -60,25 +60,25 @@
         <dt>
             Distancia
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Distancia) <span>Km</span>
         </dd>
         <dt>
             Foto
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Foto)
         </dd>
         <dt>
             Desativado
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Desativado)
         </dd>
         <dt>
             Dificuldade
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Dificuldade.Nome)
         </dd>
     </dl>
@@ -87,7 +87,7 @@
 <form asp-action="Desativar">
     <div class="form-actions no-color">
         <input type="submit" value="Desativar" class="btn btn-primary" /> |
-        <a asp-action="Index" class="btn btn-danger">Voltar</a>
+        <a asp-action="Index" class="btn btn-danger">Cancelar</a>
     </div>
 </form>
 

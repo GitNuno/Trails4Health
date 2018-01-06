@@ -13,7 +13,7 @@
 
 <hr />
 <div class="text-uppercase panel-heading" style="margin-bottom:1em; font-size:large">
-    Detalhes <strong style="margin-left:0.1em"> @Html.DisplayFor(model => model.TrilhoNome) </strong>
+    <h2>Detalhes <strong style="margin-left:0.1em"> @Html.DisplayFor(model => model.TrilhoNome) </strong></h2>
 </div>
 <hr />
 <br />
@@ -28,13 +28,13 @@
         <dt>
             Nome
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoNome)
         </dd>
         <dt>
             Inicio
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoInicio)
         </dd>
         <dt>
@@ -60,25 +60,25 @@
         <dt>
             Distancia
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoDistancia) <span>Km</span>
         </dd>
         <dt>
             Foto
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoFoto)
         </dd>
         <dt>            
             Desativado
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.TrilhoDesativado)
         </dd>
         <dt>
             Dificuldade
         </dt>
-        <dd>
+        <dd style="margin-bottom:1em">
             @Html.DisplayFor(model => model.Dificuldade.Nome)
         </dd>
     </dl>

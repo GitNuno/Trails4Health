@@ -570,6 +570,9 @@ Tempo: 15 min.
 Nota: Ao clicar botao Desativar Trilho (GET) e confirmada destativação (POST) o valor desativado da tabela trilho passa a true. O registo do Trilho desativado fica a vermelho na pagina /TrilhoCRUD e a pagina /Trilho deixa de exibir trilho desativado.
 Tempo:1h.
 
+.Melhorados pormenores das paginas TrilhoCRUD
+Tempo: 30 min.
+
 
 //
 

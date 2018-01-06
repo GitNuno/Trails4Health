@@ -1,6 +1,6 @@
 ﻿@model ViewModelListaTrilhos
 @{
-    ViewData["Title"] = "List";
+    ViewData["Title"] = "Lista Trilhos";
 }
 
 @{
@@ -8,19 +8,19 @@
 }
 
 
-
 @foreach (Trilho T in Model.Trilho)
-{ 
+{
 <div class="panel-body">
 
     <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
-    <h3>@T.Nome</h3>
-    <p>@T.Inicio - @T.Fim</p>
-    <p>Distancia: @T.Distancia Km</p>
-
+    <div style="margin-left:1em">
+        <h3>@T.Nome</h3>
+        <p>@T.Inicio - @T.Fim</p>
+        <p>Distancia: @T.Distancia Km</p>
+    </div>
     @if (T.Desativado)
     {
-      <a asp-action="Editar" asp-route-id="@T.TrilhoID" class="btn btn btn-danger"> DESATIVADO <strong>EDITAR</strong></a>
+        <a asp-action="Editar" asp-route-id="@T.TrilhoID" class="btn btn btn-danger"> DESATIVADO <strong>EDITAR</strong></a>
     }
 
 </div>
