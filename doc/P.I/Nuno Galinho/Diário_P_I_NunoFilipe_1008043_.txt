@@ -601,6 +601,11 @@ values for this property.
 2-Se mudar de Estado pela segunda vez vai haver PK duplicada e dá erro!
 Tempo: 1h.30min.
 
+.Novas Migrações e update das BD
+Nota: 
+Só posso chamar SeedData depois de atualizada BD !!
+Tempo: 15 min.
+
 //
 
 //

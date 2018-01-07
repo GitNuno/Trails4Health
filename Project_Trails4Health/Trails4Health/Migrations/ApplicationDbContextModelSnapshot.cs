@@ -257,8 +257,6 @@ namespace Trails4Health.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<int>("Idade");
-
                     b.Property<string>("Morada");
 
                     b.Property<int>("Nif");

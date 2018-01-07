@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Trails4Health.Migrations
 {
-    public partial class m1 : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -86,7 +86,6 @@ namespace Trails4Health.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DataNascimento = table.Column<DateTime>(nullable: false),
                     Email = table.Column<string>(nullable: true),
-                    Idade = table.Column<int>(nullable: false),
                     Morada = table.Column<string>(nullable: true),
                     Nif = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),

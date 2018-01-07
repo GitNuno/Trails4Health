@@ -11,8 +11,8 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180106200337_m1")]
-    partial class m1
+    [Migration("20180107231742_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -257,8 +257,6 @@ namespace Trails4Health.Migrations
                     b.Property<DateTime>("DataNascimento");
 
                     b.Property<string>("Email");
-
-                    b.Property<int>("Idade");
 
                     b.Property<string>("Morada");
 
