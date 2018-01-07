@@ -1,16 +1,16 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 29.0 H
+Tempo Total: 29.5 H
 
 ---
 
 05/01/2018
 
 - Continuação do projecto "Trails4Health":
-Adicionadas perguntas de avaliação na classe DbInitializer;
+Adicionadas perguntas de avaliação para Guia e Trilho na classe DbInitializer;
 
 
-Tempo utilizado:   H
+Tempo utilizado: 0.5 H
 
 ---
 04/01/2018

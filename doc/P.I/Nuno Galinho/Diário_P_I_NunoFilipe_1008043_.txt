@@ -574,9 +574,13 @@ Tempo:1h.
 Tempo: 30 min.
 
 // 07/12/2018
-.Exibir erro: "Nome Trilho já existe" quando se cria novo Trilho.Nome e este valor já existe na BD.
+.Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já existe na BD.
 .Criada view que exibe dados do Trilho.Nome (valor que já existe na BD)
 Tempo: 1h
+
+.Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já existe na BD.(versão-2)
+Nota: Se a 1ª versão tinha a vantagem de mostrar erro noutra View, com os dados do registo do Trilho na BD cujo nome estava a ser repetido no formulario - a 2ª versão tem a vantagem de mostrar erro na mma View, preservando os dados introduzidos, coisa  que a 1ª versão não fazia.
+Tempo: 30 min.
 
 
 //
