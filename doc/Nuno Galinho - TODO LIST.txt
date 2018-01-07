@@ -12,7 +12,9 @@ ALGORITMO MUDAR ESTADO:
 	.Em Editar quando mudo de Estado de um Trilho, insiro na BD EstadoTrilho novo registo, em que a 
 	 DataInicio do novo Estado é Date.Now e DataFim é nulo.
 	
-	
+	Trilho Estado DataInicio DataFim
+	1       1      12         now    > inserir DataFim (1,1)
+	1       2      now       
 	
 	DUVIDAS:
 		.Paginação

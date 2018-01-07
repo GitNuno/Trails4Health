@@ -567,7 +567,9 @@ Nota: Botao só aparece se Trilho estiver desativado
 Tempo: 15 min.
 
 .Desativar Trilho a funcionar
-Nota: Ao clicar botao Desativar Trilho (GET) e confirmada destativação (POST) o valor desativado da tabela trilho passa a true. O registo do Trilho desativado fica a vermelho na pagina /TrilhoCRUD e a pagina /Trilho deixa de exibir trilho desativado.
+Nota: Ao clicar botao Desativar Trilho (GET) e confirmada destativação (POST) o valor desativado da tabela 
+trilho passa a true. O registo do Trilho desativado fica a vermelho na pagina /TrilhoCRUD e a pagina /Trilho 
+deixa de exibir trilho desativado.
 Tempo:1h.
 
 .Melhorados pormenores das paginas TrilhoCRUD
@@ -578,14 +580,26 @@ Tempo: 30 min.
 .Criada view que exibe dados do Trilho.Nome (valor que já existe na BD)
 Tempo: 1h
 
-.Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já existe na BD.(versão-2)
-Nota: Se a 1ª versão tinha a vantagem de mostrar erro noutra View, com os dados do registo do Trilho na BD cujo nome estava a ser repetido no formulario - a 2ª versão tem a vantagem de mostrar erro na mma View, preservando os dados introduzidos, coisa  que a 1ª versão não fazia.
+.Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já 
+ existe na BD.(versão-2)
+Nota: Se a 1ª versão tinha a vantagem de mostrar erro noutra View, com os dados do registo do Trilho na 
+BD cujo nome estava a ser repetido no formulario - a 2ª versão tem a vantagem de mostrar erro na mma View, 
+preservando os dados introduzidos, coisa  que a 1ª versão não fazia.
 Tempo: 30 min.
 
-.Passagem do valor Estado (atual) do Trilho a partir da tbl dbo.EstadoTrilho, para dropDownList Estado da View \TrilhoCRUD\Editar.
+.Passagem do valor Estado (atual) do Trilho a partir da tbl dbo.EstadoTrilho, para dropDownList Estado da 
+View \TrilhoCRUD\Editar.
 Nota: Antes o valor que a dropDownList Estado recebia era sempre 1=Aberto.
 Tempo:1h
 
+.Inserção de novo registo em dbo.EstadoTrilhos quando mudado Estado em Editar
+Nota:  
+1-A inserção de DataInicio no novo registo é feita com sucesso no entanto a inserção de DataFim no registo 
+anterior falha - Erro: InvalidOperationException: The property 'EstadoID' on entity type 'EstadoTrilho' has a 
+temporary value. Either set a permanent value explicitly or ensure that the database is configured to generate 
+values for this property.
+2-Se mudar de Estado pela segunda vez vai haver PK duplicada e dá erro!
+Tempo: 1h.30min.
 
 //
 
