@@ -573,6 +573,11 @@ Tempo:1h.
 .Melhorados pormenores das paginas TrilhoCRUD
 Tempo: 30 min.
 
+// 07/12/2018
+.Exibir erro: "Nome Trilho já existe" quando se cria novo Trilho.Nome e este valor já existe na BD.
+.Criada view que exibe dados do Trilho.Nome (valor que já existe na BD)
+Tempo: 1h
+
 
 //
 

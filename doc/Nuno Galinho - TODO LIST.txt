@@ -2,11 +2,7 @@
 
 P.I.:
 	.Mudar Estado
-	.REGEX:
-    	detalhes: palavra < 30
-		criar: começar sem espaços
-	.EstadoTrilho: pk nao unica?
-	.Criar: se nomeTrilho já existe > acçao Trilho já existe: View_Detalhes + Botao voltar
+	.Criar: se nomeTrilho já existe > acçao "Trilho já existe": View_Detalhes + Botao voltar
 	.bit controlo
 	.image bitmap
 	.autenticação/snipet

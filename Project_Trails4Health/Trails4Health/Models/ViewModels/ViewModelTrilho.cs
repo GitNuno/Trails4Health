@@ -12,17 +12,17 @@ namespace Trails4Health.Models.ViewModels
 
         [Required(ErrorMessage = "Introduza nome do Trilho")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Nome tem entre 2-50 caracteres")] // entre 2-50 caracteres
-        [RegularExpression(@"([^_^0-9]+)", ErrorMessage = "Nome Inválido")] // excepto "_" ou numeros 
+        [RegularExpression(@"(\w+[^_^0-9]+[^\s]+)", ErrorMessage = "Nome Inválido")] // começa com palavra(sem espaço!) > termina sem espaço  
         public string TrilhoNome { get; set; }
 
         [Required(ErrorMessage = "Introduza inicio do Trilho")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Inicio tem entre 2-50 caracteres")] // entre 2-50 caracteres
-        [RegularExpression(@"([^_^0-9]+)", ErrorMessage = "Inicio Inválido")] // excepto "_" ou numeros 
+        [RegularExpression(@"(\w+[^_^0-9]+[^\s]+)", ErrorMessage = "Inicio Inválido")] // excepto "_" ou numeros 
         public string TrilhoInicio { get; set; }
 
         [Required(ErrorMessage = "Introduza fim do Trilho")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Fim tem entre 2-50 caracteres")] // entre 2-50 caracteres
-        [RegularExpression(@"([^_^0-9]+)", ErrorMessage = "Fim Inválido")] // excepto "_" ou numeros 
+        [RegularExpression(@"(\w+[^_^0-9]+[^\s]+)", ErrorMessage = "Fim Inválido")] // excepto "_" ou numeros 
         public string TrilhoFim { get; set; }
 
         [Required(ErrorMessage = "Introduza detalhes do Trilho")]

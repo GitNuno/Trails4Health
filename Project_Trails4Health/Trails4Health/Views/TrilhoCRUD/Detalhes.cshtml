@@ -93,7 +93,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.EstadoTrilhos)
+            @foreach (var item in Model.EstadoTrilhos) // EstadoTrilhos: IEnumerable<EstadoTrilhos>
             {
                 if (item.TrilhoID == Model.TrilhoID)
                 {

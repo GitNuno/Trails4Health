@@ -13,7 +13,9 @@ namespace Trails4Health.Controllers
     public class TrilhoCRUDController : Controller
     {
         // para listar EstadoTrilhos em Detalhes
-        private IEnumerable<EstadoTrilho> ListaEstadoTrilhos { get; set; }
+        private IEnumerable<EstadoTrilho> ListaEstadoTrilhosBD;
+        // 
+        private IEnumerable<Trilho> ListaTrilhosBD;
 
         private readonly ApplicationDbContext _context;
         private ITrails4HealthRepository repository;  // para Listar Trilhos em BackOffice
@@ -65,11 +67,11 @@ namespace Trails4Health.Controllers
                 .SingleOrDefaultAsync(m => m.TrilhoID == id);
 
 
-            var estadoTrilho = _context.EstadoTrilhos
+            var estadoTrilhos = _context.EstadoTrilhos
                 .Include(et => et.Estado)
                 .Include(et => et.Trilho);
 
-            ListaEstadoTrilhos = estadoTrilho.ToListAsync().Result;
+            ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;
 
             ViewModelTrilho viewModelTrilho = new ViewModelTrilho
             {
@@ -83,7 +85,7 @@ namespace Trails4Health.Controllers
                 TrilhoDistancia = trilho.Distancia,
                 TrilhoDesativado = trilho.Desativado,
                 Dificuldade = trilho.Dificuldade,
-                EstadoTrilhos = ListaEstadoTrilhos
+                EstadoTrilhos = ListaEstadoTrilhosBD
             };
 
             if (trilho == null)
@@ -108,7 +110,27 @@ namespace Trails4Health.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho trilhoVM)
-        { 
+        {
+            // Colocar todos trilhos da BD numa lista
+            var trilhos = _context.Trilhos
+              .Include(t => t.Dificuldade);
+
+            ListaTrilhosBD = trilhos.ToListAsync().Result;
+
+            // se existir um trilho com o mesmo Nome, não insere na BD
+            foreach (var et in ListaTrilhosBD)
+            {
+                if (et.Nome.Equals(trilhoVM.TrilhoNome))
+                {
+                    // Ler registo da tb Trilhos cujo nome está na BD
+                    var trilho = await _context.Trilhos
+                        .Include(t => t.Dificuldade)
+                        .SingleOrDefaultAsync(m => m.Nome == trilhoVM.TrilhoNome);
+
+                    return View("ErroNomeTrilho", trilho);
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
