@@ -117,17 +117,15 @@ namespace Trails4Health.Controllers
 
             ListaTrilhosBD = trilhos.ToListAsync().Result;
 
-            // se existir um trilho com o mesmo Nome, não insere na BD
+            // se existir um trilho com o mesmo Nome, reinsere dados introduzidos na mma View c\ msg ErroNomeTrilho!
             foreach (var et in ListaTrilhosBD)
             {
                 if (et.Nome.Equals(trilhoVM.TrilhoNome))
                 {
-                    // Ler registo da tb Trilhos cujo nome está na BD
-                    var trilho = await _context.Trilhos
-                        .Include(t => t.Dificuldade)
-                        .SingleOrDefaultAsync(m => m.Nome == trilhoVM.TrilhoNome);
-
-                    return View("ErroNomeTrilho", trilho);
+                    ViewData["ErroNomeTrilho"] = "*Já existe um trilho com esse nome!";
+                    ViewData["DificuldadeID"] = new SelectList(_context.Dificuldades, "DificuldadeID", "Nome", trilhoVM.DificuldadeID);
+                    ViewData["EstadoID"] = new SelectList(_context.Estados, "EstadoID", "Nome", trilhoVM.EstadoID);
+                    return View(trilhoVM);
                 }
             }
 

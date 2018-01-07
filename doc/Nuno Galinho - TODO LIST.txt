@@ -2,7 +2,6 @@
 
 P.I.:
 	.Mudar Estado
-	.Criar: se nomeTrilho já existe > acçao "Trilho já existe": View_Detalhes + Botao voltar
 	.bit controlo
 	.image bitmap
 	.autenticação/snipet
