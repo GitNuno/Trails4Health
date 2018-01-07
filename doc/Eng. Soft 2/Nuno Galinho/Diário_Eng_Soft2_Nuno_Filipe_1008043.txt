@@ -136,3 +136,7 @@ Tempo: 2h
  + Tabela: Diagramas de Sequência em que as classes participam
 Nota: Há operações que tem de ser revistas se implementadas.
 Tempo: 1.30h
+
+// 07/01/2018 ---------------------------------------------------------
+.Corrigida semantica classe Trilho
+Tempo:1h
