@@ -13,7 +13,6 @@ namespace Trails4Health.Models
         public string Morada { get; set; }
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
-        public int Idade { get; set; }
         public int Nif { get; set; }
 
         public ICollection<Resposta> Respostas { get; set; }
