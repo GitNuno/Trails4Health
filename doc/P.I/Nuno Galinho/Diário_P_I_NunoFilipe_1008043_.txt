@@ -582,6 +582,10 @@ Tempo: 1h
 Nota: Se a 1ª versão tinha a vantagem de mostrar erro noutra View, com os dados do registo do Trilho na BD cujo nome estava a ser repetido no formulario - a 2ª versão tem a vantagem de mostrar erro na mma View, preservando os dados introduzidos, coisa  que a 1ª versão não fazia.
 Tempo: 30 min.
 
+.Passagem do valor Estado (atual) do Trilho a partir da tbl dbo.EstadoTrilho, para dropDownList Estado da View \TrilhoCRUD\Editar.
+Nota: Antes o valor que a dropDownList Estado recebia era sempre 1=Aberto.
+Tempo:1h
+
 
 //
 

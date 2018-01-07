@@ -7,6 +7,13 @@ P.I.:
 	.autenticação/snipet
 	.paginação para \trilhoCRUD\Index
 	
+ALGORITMO MUDAR ESTADO:
+	OBJECTIVO:
+	.Em Editar quando mudo de Estado de um Trilho, insiro na BD EstadoTrilho novo registo, em que a 
+	 DataInicio do novo Estado é Date.Now e DataFim é nulo.
+	
+	
+	
 	DUVIDAS:
 		.Paginação
 		.Para o mm Trilho de cada vez que mudo de Estado => nova entrada em EstadoTrilho?

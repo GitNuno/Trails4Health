@@ -14,8 +14,12 @@ namespace Trails4Health.Controllers
     {
         // para listar EstadoTrilhos em Detalhes
         private IEnumerable<EstadoTrilho> ListaEstadoTrilhosBD;
-        // 
-        private IEnumerable<Trilho> ListaTrilhosBD;
+        private IEnumerable<EstadoTrilho> ListaEstadoTrilhosBD2;
+        // para pesquisar Nome em dbo.Trilho: msg ErroNomeTrilho em Criar
+        private IEnumerable<Trilho> ListaTrilhosBD;        
+        // usada em Editar: GET
+        private int estadoId;
+
 
         private readonly ApplicationDbContext _context;
         private ITrails4HealthRepository repository;  // para Listar Trilhos em BackOffice
@@ -111,7 +115,7 @@ namespace Trails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho trilhoVM)
         {
-            // Colocar todos trilhos da BD numa lista
+            // Colocar registos da dbo.Trilhos numa lista
             var trilhos = _context.Trilhos
               .Include(t => t.Dificuldade);
 
@@ -180,6 +184,22 @@ namespace Trails4Health.Controllers
             // devolve registo do trilho cujo id seja o do trilho seleccionado
             Trilho trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
 
+            var estadoTrilhos = _context.EstadoTrilhos
+                .Include(et => et.Estado)
+                .Include(et => et.Trilho);
+
+            ListaEstadoTrilhosBD2 = estadoTrilhos.ToListAsync().Result;
+
+            
+            foreach(EstadoTrilho et in ListaEstadoTrilhosBD2)
+            {
+                if (et.TrilhoID == id && (et.DataInicio == new DateTime(0001, 01, 01) || et.DataFim == new DateTime(0001, 01, 01)))
+                {
+                    estadoId = et.EstadoID;
+                } 
+            }
+
+
             if (trilho == null)
             {
                 return NotFound();
@@ -197,8 +217,8 @@ namespace Trails4Health.Controllers
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
                 DificuldadeID = trilho.DificuldadeID,
-                EstadoID = 1 // se for a criar 1 nova entrada em EstadoTrilho de cada vez que mudo de Estado(POST), preciso de ler
-                             // aqui qual é o Estado(GET) - nota: pensar na repetiçao da chave primaria(composta)
+                EstadoID = estadoId // se for a criar 1 nova entrada em EstadoTrilho de cada vez que mudo de Estado(POST), preciso de ler
+                                    // aqui qual é o Estado(GET) - nota: pensar na repetiçao da chave primaria(composta)
             };
 
             // passa campos do trilho para a view
