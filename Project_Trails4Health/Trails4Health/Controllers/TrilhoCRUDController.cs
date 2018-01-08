@@ -49,7 +49,8 @@ namespace Trails4Health.Controllers
                 {
                     Trilho = repository.Trilhos
                         .Skip(TamanhoPagina * (pagina - 1))
-                        .Take(TamanhoPagina),
+                        .Take(TamanhoPagina)
+                        .OrderBy(t => t.Desativado),
                     InfoPaginacao = new InfoPaginacao
                     {
                         PaginaAtual = pagina,

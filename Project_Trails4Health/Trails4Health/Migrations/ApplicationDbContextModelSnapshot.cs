@@ -84,15 +84,20 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.EstadoTrilho", b =>
                 {
-                    b.Property<int>("EstadoID");
-
-                    b.Property<int>("TrilhoID");
+                    b.Property<int>("EstadoTrilhoID")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DataFim");
 
                     b.Property<DateTime>("DataInicio");
 
-                    b.HasKey("EstadoID", "TrilhoID");
+                    b.Property<int>("EstadoID");
+
+                    b.Property<int>("TrilhoID");
+
+                    b.HasKey("EstadoTrilhoID");
+
+                    b.HasIndex("EstadoID");
 
                     b.HasIndex("TrilhoID");
 

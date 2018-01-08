@@ -11,7 +11,7 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180107231742_Initial")]
+    [Migration("20180108211134_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,15 +85,20 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.EstadoTrilho", b =>
                 {
-                    b.Property<int>("EstadoID");
-
-                    b.Property<int>("TrilhoID");
+                    b.Property<int>("EstadoTrilhoID")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DataFim");
 
                     b.Property<DateTime>("DataInicio");
 
-                    b.HasKey("EstadoID", "TrilhoID");
+                    b.Property<int>("EstadoID");
+
+                    b.Property<int>("TrilhoID");
+
+                    b.HasKey("EstadoTrilhoID");
+
+                    b.HasIndex("EstadoID");
 
                     b.HasIndex("TrilhoID");
 

@@ -194,14 +194,16 @@ namespace Trails4Health.Migrations
                 name: "EstadoTrilhos",
                 columns: table => new
                 {
-                    EstadoID = table.Column<int>(nullable: false),
-                    TrilhoID = table.Column<int>(nullable: false),
+                    EstadoTrilhoID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DataFim = table.Column<DateTime>(nullable: false),
-                    DataInicio = table.Column<DateTime>(nullable: false)
+                    DataInicio = table.Column<DateTime>(nullable: false),
+                    EstadoID = table.Column<int>(nullable: false),
+                    TrilhoID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EstadoTrilhos", x => new { x.EstadoID, x.TrilhoID });
+                    table.PrimaryKey("PK_EstadoTrilhos", x => x.EstadoTrilhoID);
                     table.ForeignKey(
                         name: "FK_EstadoTrilhos_Estados_EstadoID",
                         column: x => x.EstadoID,
@@ -292,6 +294,11 @@ namespace Trails4Health.Migrations
                 name: "IX_AvaliacaoTrilhos_TrilhoID",
                 table: "AvaliacaoTrilhos",
                 column: "TrilhoID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EstadoTrilhos_EstadoID",
+                table: "EstadoTrilhos",
+                column: "EstadoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EstadoTrilhos_TrilhoID",

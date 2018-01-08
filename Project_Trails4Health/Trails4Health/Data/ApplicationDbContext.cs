@@ -44,10 +44,14 @@ namespace Trails4Health.Models
         {
             // explicitar PK composta
             // EstadoTrilho tem PK constituida por: EstadoID TrilhoID
-            modelBuilder.Entity<EstadoTrilho>()
-                .HasKey(et => new { et.EstadoID, et.TrilhoID });
+            // OLD:
+            //modelBuilder.Entity<EstadoTrilho>()
+            //    .HasKey(et => new { et.EstadoID, et.TrilhoID });
 
-            // relação: EstadoTrilho - Estad
+            modelBuilder.Entity<EstadoTrilho>()
+                .HasKey(EstadoTrilho => EstadoTrilho.EstadoTrilhoID);
+
+            // relação: EstadoTrilho - Estado
             // 1 EstadoTrilho tem 1 Estado; 1 Estado tem mts EstadoTrilhos; EstadoTrilho tem FK: EstadoID
             modelBuilder.Entity<EstadoTrilho>()
                 .HasOne(EstadoTrilho => EstadoTrilho.Estado)
