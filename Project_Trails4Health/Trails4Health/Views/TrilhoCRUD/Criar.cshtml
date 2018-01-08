@@ -50,7 +50,8 @@
                 </div>
                 <div class="form-group col-lg-4">
                     <label asp-for="@Model.TrilhoDistancia" class="adjust-margin-left">Distancia em Km</label>
-                    <input asp-for="@Model.TrilhoDistancia" class="form-control" />
+                    <!-- asp-is-invariant: decimal Distancia 00.00 ou 00,00 (ver\InfraStructure\InvariantDecimalTagHelper.cs) -->
+                    <input asp-for="@Model.TrilhoDistancia" class="form-control" asp-is-invariant="true" />
                 </div>
                 <div class="form-group col-lg-4">
                     <label asp-for="@Model.TrilhoFoto" class="adjust-margin-left">Foto</label>

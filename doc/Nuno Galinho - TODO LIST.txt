@@ -13,8 +13,9 @@ ALGORITMO MUDAR ESTADO:
 	 DataInicio do novo Estado é Date.Now e DataFim é nulo.
 	
 	Trilho Estado DataInicio DataFim
-	1       1      12         now    > inserir DataFim (1,1)
-	1       2      now       
+    1       1      12         now    > inserir DataFim (1,1)
+	1       2      now         
+	1       1
 	
 	DUVIDAS:
 		.Paginação

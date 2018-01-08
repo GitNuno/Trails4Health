@@ -35,8 +35,8 @@ namespace Trails4Health.Models.ViewModels
 
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
-        [RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida - " +
-            "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
+        //[RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida - " +
+          //  "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
         public decimal TrilhoDistancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]

@@ -34,7 +34,8 @@ namespace Trails4Health.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade);
+            // OrderBy(t => t.Desativado); Coloca desativados em baixo
+            var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade).OrderBy(t => t.Desativado);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -71,9 +72,9 @@ namespace Trails4Health.Controllers
                 .Include(t => t.Dificuldade)
                 .SingleOrDefaultAsync(m => m.TrilhoID == id);
 
-
+            // OrderByDescending(et => et.DataInicio) | ordena por data 
             var estadoTrilhos = _context.EstadoTrilhos
-                .Include(et => et.Estado)
+                .Include(et => et.Estado).OrderByDescending(et => et.DataInicio)
                 .Include(et => et.Trilho);
 
             ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;

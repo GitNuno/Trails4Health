@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using Trails4Health.Data;
 using Trails4Health.Models;
 using Trails4Health.Services;
-
+using Microsoft.AspNetCore.Localization;
 
 namespace Trails4Health
 {
@@ -68,6 +68,11 @@ namespace Trails4Health
             // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
 
 
+            // ERRO: decimal Distancia 00.00 ou 00,00
+            services.Configure<RequestLocalizationOptions>(options => options.DefaultRequestCulture = new RequestCulture("pt-PT")
+            );
+
+
             /* configurar a app para usar a ConnectionStringTrails4Health e ligar á B.D.*/
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
              (
@@ -111,6 +116,9 @@ namespace Trails4Health
             // 3. (b.d.AUTENTICAÇÃO) 
             //app.UseIdentity();
 
+            // ERRO: decimal Distancia 00.00 ou 00,00
+            app.UseRequestLocalization();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -118,9 +126,7 @@ namespace Trails4Health
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-
-
-            // popular B:D.
+            // Nota: SeedData só pode ser chamada depois das Migrações e updates !!
             SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }

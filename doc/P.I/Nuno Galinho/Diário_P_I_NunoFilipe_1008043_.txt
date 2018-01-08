@@ -606,6 +606,14 @@ Nota:
 Só posso chamar SeedData depois de atualizada BD !!
 Tempo: 15 min.
 
+// 08/12/2018
+.Alterações Gabinete Duvidas: OrderBy: /TrilhosCRUD/Index; /TrilhosCRUD/Detalhes + Inserir Distancia 
+com casas decimais (Falhada)
+Nota: 
+.Criei class: \InfraStructure\InvariantDecimalTagHelper .cs (tagHelper) para tentar inserir casas decimais 
+em Distancia (criar Trilho) - Não resolve!
+Tempo: 1h
+
 //
 
 //

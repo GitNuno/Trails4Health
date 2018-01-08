@@ -35,7 +35,7 @@ namespace Trails4Health.Models
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
-        [RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida")] // excepto letras, espaços e "ç" 
+        //[DataType(DataType. ErrorMessage = "Distancia Inválida")] // excepto letras, espaços e "ç" 
         public decimal Distancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]
