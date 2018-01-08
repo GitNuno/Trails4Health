@@ -140,3 +140,9 @@ Tempo: 1.30h
 // 07/01/2018 ---------------------------------------------------------
 .Corrigida semantica classe Trilho
 Tempo:1h
+
+.Revisão da Semantica de classes: Trilho, Estado, EstadoTrilho, Dificuldade, Revisão dos 
+ Diagramas Fisicos  CRUD Trilho
+Tempo: 1h30min.
+
+
