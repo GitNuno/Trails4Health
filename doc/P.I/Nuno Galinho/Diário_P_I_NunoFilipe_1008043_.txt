@@ -614,6 +614,9 @@ Nota:
 em Distancia (criar Trilho) - Não resolve!
 Tempo: 1h
 
+.Retirados campos: Detalhes, Sumario e adicionada foto a ..\TrilhoCRUD\Index.cshtml 
+Tempo: 45 min.
+
 //
 
 //

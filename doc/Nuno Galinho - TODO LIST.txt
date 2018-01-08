@@ -6,6 +6,7 @@ P.I.:
 	.image bitmap
 	.autenticação/snipet
 	.paginação para \trilhoCRUD\Index
+	.glyphicon
 	
 ALGORITMO MUDAR ESTADO:
 	OBJECTIVO:
