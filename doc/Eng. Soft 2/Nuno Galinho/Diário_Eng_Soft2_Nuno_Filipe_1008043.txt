@@ -145,4 +145,8 @@ Tempo:1h
  Diagramas Fisicos  CRUD Trilho
 Tempo: 1h30min.
 
+// 09/01/2018 ---------------------------------------------------------
+. Mudado Diagrama Classes Global (Agregação EstadoTrlho-Trilho)
+Tempo: 15 min.
+
 
