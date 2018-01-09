@@ -620,6 +620,9 @@ Tempo: 45 min.
 .Recriado modelo EstadoTrilho sem chave composta
 Tempo:15 min.
 
+.Criada acção GET:  MudarEstado + View
+Tempo: 1h
+
 //
 
 //

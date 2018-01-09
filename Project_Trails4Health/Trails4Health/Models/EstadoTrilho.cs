@@ -7,6 +7,7 @@ namespace Trails4Health.Models
 {
     public class EstadoTrilho
     {
+        // PK
         public int EstadoTrilhoID { get; set; }
 
         // FK Estado
