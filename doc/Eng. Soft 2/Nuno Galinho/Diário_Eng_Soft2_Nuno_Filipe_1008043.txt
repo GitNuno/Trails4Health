@@ -149,4 +149,7 @@ Tempo: 1h30min.
 . Mudado Diagrama Classes Global (Agregação EstadoTrlho-Trilho)
 Tempo: 15 min.
 
+.Alterados nome das operaçao consultar() para Ler() nas tabelas Dificuldade, Estado e EstadoTrilho
+Tempo 15 min.
+
 
