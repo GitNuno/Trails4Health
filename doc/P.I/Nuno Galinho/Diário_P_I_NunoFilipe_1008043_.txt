@@ -623,6 +623,11 @@ Tempo:15 min.
 .Criada acção GET:  MudarEstado + View
 Tempo: 1h
 
+// 09/12/2018
+.Reposta versão Editar Estado na view Editar
+Nota: Por falta de tempo voltei a esta versão, pois parece-me que em termos de custo de tempo e beneficio é a melhor escolha.
+Tempo: 15 min.
+
 //
 
 //

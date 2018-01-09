@@ -1,23 +1,13 @@
 ﻿@model Trilho
 
 <!-- ICONS -->
-<td style="max-width:7em">
+<td >
     <a asp-action="Editar" asp-route-id="@Model.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em">
-        <em class="fa fa-pencil"></em>
-    </a>
+    <em class="fa fa-pencil"></em></a>
     <a asp-action="Desativar" asp-route-id="@Model.TrilhoID" class="btn btn-danger" style="margin-bottom:0.2em">
-        <em class="fa fa-trash"></em>
-    </a>
-
-    <a asp-action="EditarEstado" asp-route-id="@Model.TrilhoID" class="btn btn-primary" style="margin-bottom:0.2em">
-        <em class="fa fa-pencil"></em>
-    </a>
-
+    <em class="fa fa-trash"></em></a>
     <a asp-action="Detalhes" asp-route-id="@Model.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em">
-        <em class="glyphicon glyphicon-th-list"></em>
-    </a>
-
-
+    <em class="glyphicon glyphicon-th-list"></em></a>
     @*<a class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
         <a class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
         <a class="btn btn-default list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>*@

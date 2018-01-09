@@ -17,13 +17,9 @@ namespace Trails4Health.Controllers
         private IEnumerable<EstadoTrilho> ListaEstadoTrilhosBD;
         
         // para pesquisar Nome em dbo.Trilho: msg ErroNomeTrilho em Criar
-        private IEnumerable<Trilho> ListaTrilhosBD; 
-        
-        // usada em Editar:GET e MudarEstado:GET
+        private IEnumerable<Trilho> ListaTrilhosBD;        
+        // usada em Editar: GET
         private int estadoId;
-
-        // usada em MudarEstado:GET
-        private DateTime data;
 
 
         private readonly ApplicationDbContext _context;
@@ -79,7 +75,7 @@ namespace Trails4Health.Controllers
 
             // OrderByDescending(et => et.DataInicio) | ordena por data 
             var estadoTrilhos = _context.EstadoTrilhos
-                .Include(et => et.Estado).OrderBy(et => et.DataInicio)
+                .Include(et => et.Estado).OrderByDescending(et => et.DataInicio)
                 .Include(et => et.Trilho);
 
             ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;
@@ -178,43 +174,15 @@ namespace Trails4Health.Controllers
             return View(trilhoVM);
         }
 
-        // GET:
-        public IActionResult EditarEstado(int? id)
-        {
-            // guardar todos registos dbo.EstadoTrilhos
-            var estadoTrilhos = _context.EstadoTrilhos
-                .Include(et => et.Estado)
-                .Include(et => et.Trilho);
-
-            ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;
-
-            // procurar EstadoID e DataInicio (atuais) do trilho selecionado
-            foreach (EstadoTrilho et in ListaEstadoTrilhosBD)
-            {
-                // Nota: O ultimo registo que entrou (Estado Trilho atual) tem DataInicio ou DataFim = null
-                if (et.TrilhoID == id && (et.DataInicio == new DateTime(0001, 01, 01) || et.DataFim == new DateTime(0001, 01, 01)))
-                {
-                    estadoId = et.EstadoID;
-                    data = et.DataInicio;
-                }
-            }
-
-            // EstadoID e DataInicio (atuais) do trilho selecionado
-            EstadoTrilho estadoTrilho = new EstadoTrilho { EstadoID = estadoId, DataInicio = data, DataFim = DateTime.Today };
-            
-            return View(estadoTrilho);
-        }
-
-
-            // GET:Editar
-            public async Task<IActionResult> Editar(int? id)
+        // GET:Editar
+        public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            // registo do trilho seleccionado
+            // guarda registo do trilho cujo id seja o do trilho seleccionado
             Trilho trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
 
             // guardar todos registos dbo.EstadoTrilhos
@@ -251,7 +219,7 @@ namespace Trails4Health.Controllers
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
                 DificuldadeID = trilho.DificuldadeID,
-                EstadoID = estadoId                                   
+                EstadoID = estadoId // nota: pensar na repetiçao da chave primaria(composta)                                    
             };
 
             // passa campos do trilho para a view
@@ -312,7 +280,7 @@ namespace Trails4Health.Controllers
                     if (estadoId != VMTrilho.EstadoID)
                     {
                         _context.Update(estadoTrilhoAtual);
-                        _context.Update(estadoTrilhoAnterior);
+                        //_context.Update(estadoTrilhoAnterior);
                     }
 
                     await _context.SaveChangesAsync();
