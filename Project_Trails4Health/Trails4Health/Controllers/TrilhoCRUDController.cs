@@ -13,16 +13,10 @@ namespace Trails4Health.Controllers
     public class TrilhoCRUDController : Controller
     {
         // para listar EstadoTrilhos em Detalhes
-        // para pesquisar EstadoID atual em Editar: por Estado atual do Trilho na dropDownList
-        private IEnumerable<EstadoTrilho> ListaEstadoTrilhosBD;
+        private IEnumerable<EstadoTrilho> ListaEstadoTrilhos;
         
         // para pesquisar Nome em dbo.Trilho: msg ErroNomeTrilho em Criar
         private IEnumerable<Trilho> ListaTrilhosBD;        
-        // usada em Editar: GET
-        private int estadoId;
-        // usada em Editar: POST
-        private DateTime dataInicio;
-
 
         private readonly ApplicationDbContext _context;
         private ITrails4HealthRepository repository;  // para Listar Trilhos em BackOffice
@@ -80,7 +74,8 @@ namespace Trails4Health.Controllers
                 .Include(et => et.Estado).OrderBy(et => et.DataInicio)
                 .Include(et => et.Trilho);
 
-            ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;
+            // ** fazer com query á BD (se houver tempo)
+            ListaEstadoTrilhos = estadoTrilhos.ToListAsync().Result;
 
             ViewModelTrilho viewModelTrilho = new ViewModelTrilho
             {
@@ -94,7 +89,7 @@ namespace Trails4Health.Controllers
                 TrilhoDistancia = trilho.Distancia,
                 TrilhoDesativado = trilho.Desativado,
                 Dificuldade = trilho.Dificuldade,
-                EstadoTrilhos = ListaEstadoTrilhosBD
+                EstadoTrilhos = ListaEstadoTrilhos
             };
 
             if (trilho == null)
@@ -127,6 +122,7 @@ namespace Trails4Health.Controllers
             ListaTrilhosBD = trilhos.ToListAsync().Result;
 
             // se existir um trilho com o mesmo Nome, reinsere dados introduzidos na mma View c\ msg ErroNomeTrilho!
+            // ** fazer com query á B.D. (se houver tempo)
             foreach (var et in ListaTrilhosBD)
             {
                 if (et.Nome.Equals(trilhoVM.TrilhoNome))
@@ -184,28 +180,13 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
 
-            // guarda registo do trilho cujo id seja o do trilho seleccionado
+            // registo do trilho seleccionado
             Trilho trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);
 
-            // guardar todos os registos dbo.EstadoTrilhos numa lista
-            //var estadoTrilhos = _context.EstadoTrilhos
-            //    .Include(et => et.Estado)
-            //    .Include(et => et.Trilho);
-
-            //ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;
-
-            //// procurar EstadoID atual
-            //foreach (EstadoTrilho et in ListaEstadoTrilhosBD)
-            //{
-            //    // Nota: O ultimo registo que entrou (com Estado Trilho atual) tem DataInicio ou DataFim = null
-            //    if (et.TrilhoID == id && (et.DataInicio == new DateTime(0001, 01, 01) || et.DataFim == new DateTime(0001, 01, 01)))
-            //    {
-            //        estadoId = et.EstadoID;
-            //    } 
-            //}
-
-            EstadoTrilho ultimoEstadoTrilho = await _context.EstadoTrilhos.SingleOrDefaultAsync(uet => uet.TrilhoID == id && uet.DataFim == null);
-
+            // registo do ultimo EstadoTrilho do trilho seleccionado
+            EstadoTrilho ultimoEstadoTrilho = await _context.EstadoTrilhos.SingleOrDefaultAsync(uet => uet.TrilhoID == id 
+                                                                                                    && uet.DataFim == null);
+            //
             if (ultimoEstadoTrilho == null)
             {
                 return NotFound("GET: ultimoEstadoTrilho == null");
@@ -216,7 +197,7 @@ namespace Trails4Health.Controllers
             {
                 return NotFound("GET: trilho == null");
             }
-
+            // ViewModel com dados para exibir
             ViewModelTrilho VMTrilho = new ViewModelTrilho
             {
                 TrilhoID = trilho.TrilhoID,
@@ -260,29 +241,10 @@ namespace Trails4Health.Controllers
                 DificuldadeID = VMTrilho.DificuldadeID
             };
 
-            ///*  */
-            //// guardar todos os registos dbo.EstadoTrilhos numa lista
-            //var estadoTrilhos = _context.EstadoTrilhos
-            //    .Include(et => et.Estado)
-            //    .Include(et => et.Trilho);
-
-            //ListaEstadoTrilhosBD = estadoTrilhos.ToListAsync().Result;
-
-            //// procurar EstadoID do Estado Atual e DataInicio do Estado Atual
-            //foreach (EstadoTrilho et in ListaEstadoTrilhosBD)
-            //{
-            //    // Nota: O ultimo registo que entrou (com Estado Trilho atual) tem DataInicio ou DataFim = null
-            //    if (et.TrilhoID == id && (et.DataInicio == new DateTime(0001, 01, 01) || et.DataFim == new DateTime(0001, 01, 01)))
-            //    {
-            //        estadoId = et.EstadoID;
-            //        //dataInicio = et.DataInicio;
-
-            //    }
-            //}
-
+            // registo do ultimo EstadoTrilho do trilho seleccionado
             EstadoTrilho ultimoEstadoTrilho = await _context.EstadoTrilhos.SingleOrDefaultAsync(uet => uet.TrilhoID == id
                                                                                                     && uet.DataFim == null);
-
+            // 
             if (ultimoEstadoTrilho == null)
             {
                  return NotFound("POST: ultimoEstadoTrilho = NULL");
@@ -292,7 +254,7 @@ namespace Trails4Health.Controllers
             EstadoTrilho novoEstadoTrilho = new EstadoTrilho
             {
                 Trilho = trilho,
-                EstadoID = VMTrilho.EstadoID, // É guardado na submissão
+                EstadoID = VMTrilho.EstadoID,
                 DataInicio = DateTime.Now
             };
 
@@ -308,8 +270,8 @@ namespace Trails4Health.Controllers
                     // Update dbo.trilhos
                     _context.Update(trilho);
 
-                    // Update dbo.EstadoTrilhos
-                    if (ultimoEstadoTrilho.EstadoID != VMTrilho.EstadoID) // ERRO: SÃO SP IGUAIS !!????
+                    // Update + insert dbo.EstadoTrilhos
+                    if (ultimoEstadoTrilho.EstadoID != VMTrilho.EstadoID)
                     {
                         ultimoEstadoTrilho.DataFim = DateTime.Now;
                         _context.Update(ultimoEstadoTrilho);

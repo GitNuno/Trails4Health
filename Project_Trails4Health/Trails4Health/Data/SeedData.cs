@@ -75,8 +75,8 @@ namespace Trails4Health.Models
             // 
             ApplicationDbContext dbContext = (ApplicationDbContext)serviceProvider.GetService(typeof(ApplicationDbContext));
             // Limpar registos base dados, Nota: ATENÇÃO aos IDs Dificuldades e Estado!! 
-            //dbContext.Trilhos.RemoveRange(dbContext.Trilhos);
-            //dbContext.EstadoTrilhos.RemoveRange(dbContext.EstadoTrilhos);
+            dbContext.Trilhos.RemoveRange(dbContext.Trilhos);
+            dbContext.EstadoTrilhos.RemoveRange(dbContext.EstadoTrilhos);
             //dbContext.Dificuldades.RemoveRange(dbContext.Dificuldades);
             //dbContext.Estados.RemoveRange(dbContext.Estados);
 
@@ -136,13 +136,9 @@ namespace Trails4Health.Models
         private static void EnsureEstadoTrilhosPopulated(ApplicationDbContext dbContext)
         {   
             dbContext.EstadoTrilhos.AddRange(
-                // faias abre Now e fecha a (2018, 01, 27)
-                new EstadoTrilho { Trilho = faias, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = new DateTime(2018, 01, 27) },
-                new EstadoTrilho { Trilho = faias, EstadoID = FECHADO, DataInicio = new DateTime(2018, 01, 27) },
-                // covao abre Now, fecha daqui a 3 meses
-                new EstadoTrilho { Trilho = covao, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = DateTime.Now.AddMonths(3) },
-                new EstadoTrilho { Trilho = covao, EstadoID = FECHADO, DataInicio = DateTime.Now.AddMonths(3) }
-                );// Nota: não é possivel introduzir 2 registos com mma chave_composta!
+                new EstadoTrilho { Trilho = faias, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = null },
+                new EstadoTrilho { Trilho = covao, EstadoID = ABERTO, DataInicio = DateTime.Now, DataFim = null }
+                );
         }
     
     }

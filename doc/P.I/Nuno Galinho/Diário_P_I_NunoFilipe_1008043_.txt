@@ -635,6 +635,9 @@ Tempo: 4h
 // 10/12/2018
 .Aula -10-01-2018: Historico EstadoTrilhos - A funcionar!
 
+.Corrigida SeedData.cs + Revisão do projecto ("clean code")
+Tempo: 30 min.
+
 //
 
 //
