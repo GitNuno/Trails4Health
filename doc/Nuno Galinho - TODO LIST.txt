@@ -1,14 +1,24 @@
 ::
 
 P.I.:
-	.Mudar Estado
+	.SeedData - DataFim - Null
 	.Traço | no botão CRIAR
 	.bit controlo
 	.image bitmap
 	.autenticação/snipet
 	.paginação para \trilhoCRUD\Index
 	.glyphicon
+
 	
+::	
+ALGORITMO DIGITO CONTROLO:
+
+	120/10 = 12 r: 0
+	12/10 = 1 r: 2
+	1/10 = 0 r: 1
+	
+	
+::	
 ALGORITMO MUDAR ESTADO:
 	OBJECTIVO:
 	.Em Editar quando mudo de Estado de um Trilho, insiro na BD EstadoTrilho novo registo, em que a 

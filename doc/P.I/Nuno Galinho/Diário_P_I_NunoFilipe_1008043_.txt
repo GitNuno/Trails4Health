@@ -638,6 +638,9 @@ Tempo: 4h
 .Corrigida SeedData.cs + Revisão do projecto ("clean code")
 Tempo: 30 min.
 
+.Implementada metodo: private int DigitoControlo(int nif) em TuristasController.cs
+Tempo:1h
+
 //
 
 //

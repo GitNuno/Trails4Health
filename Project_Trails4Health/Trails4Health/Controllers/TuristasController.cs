@@ -148,5 +148,37 @@ namespace Trails4Health.Controllers
         {
             return _context.Turistas.Any(e => e.TuristaID == id);
         }
+
+        private int DigitoControlo(int nif)
+        {
+
+            int digito;
+            int[] arrDigitos = new int[8];
+            int soma = 0;
+            int n = 2;
+            int resto;
+            int digitoControlo;
+
+            for (int i = 0; i < 8; i++)
+            {
+                nif /= 10;
+                digito = nif % 10; // 1º valor é o 8º digito!
+                arrDigitos[i] = digito;
+
+                soma += arrDigitos[i] * n;
+                n++;
+            }
+            resto = soma % 11;
+
+            if (resto == 0 || resto == 1)
+            {
+                digitoControlo = 0;
+            }
+            else
+            {
+                digitoControlo = 11 - resto;
+            }
+            return digitoControlo;
+        }
     }
 }
