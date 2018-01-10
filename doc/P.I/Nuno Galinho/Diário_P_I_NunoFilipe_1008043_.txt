@@ -641,6 +641,10 @@ Tempo: 30 min.
 .Implementada metodo: private int DigitoControlo(int nif) em TuristasController.cs
 Tempo:1h
 
+.P.I. + Eng. soft.2 - Digito de Controlo em /turistas/Create a funcionar!
+.Atualizado relatorio
+Tempo: 1h
+
 //
 
 //

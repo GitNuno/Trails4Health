@@ -158,4 +158,9 @@ Tempo 15 min.
 .Revisão e correcção Diagramas Sequencia CRUD Trilho
 Tempo: 1h.30min.
 
+// 10/01/2018 ---------------------------------------------------------
+.P.I. + Eng. soft.2 - Digito de Controlo em /turistas/Create a funcionar!
+.Atualizado relatorio
+Tempo: 1h
+
 

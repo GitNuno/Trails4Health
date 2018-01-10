@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Trails4Health.Models.Turista>
+﻿@model IEnumerable<Turista>
 
 @{
     ViewData["Title"] = "Index";
@@ -29,7 +29,7 @@
                     @Html.DisplayNameFor(model => model.DataNascimento)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Idade)
+                    @*@Html.DisplayNameFor(model => model.Idade)*@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Nif)
@@ -56,7 +56,7 @@
                 @Html.DisplayFor(modelItem => item.DataNascimento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Idade)
+                @*@Html.DisplayFor(modelItem => item.Idade)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nif)

@@ -48,13 +48,21 @@ namespace Trails4Health.Controllers
             return View();
         }
 
-        // POST: Turistas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Turistas/Create       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TuristaID,Nome,Telefone,Morada,Email,DataNascimento,Idade,Nif")] Turista turista)
         {
+            // usar exemplo: 211338508
+            int ultimoDigitoNIF = turista.Nif % 10;
+            int digitoControlo = DigitoControlo(turista.Nif);
+
+            if(ultimoDigitoNIF != digitoControlo)
+            {
+                ViewData["ErroDigitoControlo"] = "*NIF inválido!";
+                return View(turista);
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(turista);
