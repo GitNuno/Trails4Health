@@ -1,6 +1,17 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 29.5 H
+Tempo Total: 29.75 H
+
+---
+
+10/01/2018
+
+- Continuação do projecto "Trails4Health":
+Quando um utilizador se regista, fica com o role "Turista" atribuído por defeito (implementado em "Controllers/AccountController.cs");
+Exemplo de restrição de acesso implementado para as views de "Views/Backoffice/" (implementado em "Controllers/Backoffice.cs"), é necessário estar autenticado (utilizadores com o role Administrador ou Professor). O utilizador com role "Turista" não tem acesso;
+
+
+Tempo utilizado: 0.25 H
 
 ---
 
@@ -13,6 +24,7 @@ Adicionadas perguntas de avaliação para Guia e Trilho na classe DbInitializer;
 Tempo utilizado: 0.5 H
 
 ---
+
 04/01/2018
 
 - Continuação do projecto "Trails4Health":
