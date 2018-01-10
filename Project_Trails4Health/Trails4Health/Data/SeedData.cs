@@ -76,9 +76,10 @@ namespace Trails4Health.Models
             ApplicationDbContext dbContext = (ApplicationDbContext)serviceProvider.GetService(typeof(ApplicationDbContext));
             // Limpar registos base dados, Nota: ATENÇÃO aos IDs Dificuldades e Estado!! 
             //dbContext.Trilhos.RemoveRange(dbContext.Trilhos);
+            //dbContext.EstadoTrilhos.RemoveRange(dbContext.EstadoTrilhos);
             //dbContext.Dificuldades.RemoveRange(dbContext.Dificuldades);
             //dbContext.Estados.RemoveRange(dbContext.Estados);
-            //dbContext.EstadoTrilhos.RemoveRange(dbContext.EstadoTrilhos);
+
 
             // se não houver qq registo nestas tabelas...
             if (!dbContext.Dificuldades.Any())
