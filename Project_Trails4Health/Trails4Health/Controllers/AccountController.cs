@@ -230,6 +230,7 @@ namespace Trails4Health.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "Turista"); // quando um utilizador se regista, passa a ter o role "Turista" por defeito
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
