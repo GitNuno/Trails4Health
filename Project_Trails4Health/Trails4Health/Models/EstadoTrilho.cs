@@ -17,7 +17,7 @@ namespace Trails4Health.Models
         public Trilho Trilho { get; set; }
 
         // ATRIBUTOS
-        public DateTime DataInicio { get; set; }
-        public DateTime DataFim { get; set; }
+        public DateTime? DataInicio { get; set; } // permitir nulos
+        public DateTime? DataFim { get; set; }
     }
 }

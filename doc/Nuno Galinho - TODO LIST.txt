@@ -2,6 +2,7 @@
 
 P.I.:
 	.Mudar Estado
+	.Traço | no botão CRIAR
 	.bit controlo
 	.image bitmap
 	.autenticação/snipet
@@ -14,9 +15,11 @@ ALGORITMO MUDAR ESTADO:
 	 DataInicio do novo Estado é Date.Now e DataFim é nulo.
 	
 	Trilho Estado DataInicio DataFim
-    1       1      12         now    > inserir DataFim (1,1)
-	1       2      now         
-	1       1
+    1       1      12         13    
+	1       2      13         now 
+	1       1      now         --
+	2       1      5          now
+	2       2      now         --
 	
 	DUVIDAS:
 		.Paginação

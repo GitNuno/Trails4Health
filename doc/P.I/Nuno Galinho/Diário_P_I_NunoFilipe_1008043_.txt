@@ -632,6 +632,9 @@ Tempo: 15 min.
 NOTA:  Não sei que mais voltas tenho de dar para por isto a funcionar - esta é a parte do projecto mais frustrante!
 Tempo: 4h
 
+// 10/12/2018
+.Aula -10-01-2018: Historico EstadoTrilhos - A funcionar!
+
 //
 
 //
