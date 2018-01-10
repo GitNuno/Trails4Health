@@ -48,7 +48,8 @@ namespace Trails4Health.Models.ViewModels
         public Dificuldade Dificuldade { get; set; }
 
         public int EstadoID { get; set; }
-        // public string EstadoNome { get; set; }
+
+        public int EstadoIdGuardado { get; set; }
 
         // para listar EstadoTrilhos na View /TrilhoCRUD/Detalhes
         public IEnumerable<EstadoTrilho> EstadoTrilhos { get; set; }
