@@ -1,9 +1,7 @@
 ::
 
 P.I.:
-	.SeedData - DataFim - Null
-	.Traço | no botão CRIAR
-	.bit controlo
+	.paginação
 	.image bitmap
 	.autenticação/snipet
 	.paginação para \trilhoCRUD\Index
@@ -40,11 +38,7 @@ ALGORITMO MUDAR ESTADO:
 		
 
 .ENG. SOFT.2:
-	.Para o mm Trilho de cada vez que mudo de Estado => nova entrada em EstadoTrilho?
-	 Isto significa haver chaves duplicadas!S\Ñ?
-	.Quando mudamos Estado Aberto > Fechado equivale a desativar trilho? ou é informação a mostrar ao turista?
-	.Casos uso criar estado + criar dificuldade ??
-	.
+	.Metrica
 	.SEMANTICA DAS CLASSES: 
 		.Operações - classe EstadoTrilho: (implementar primeiro para perceber)
 

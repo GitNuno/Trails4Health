@@ -645,6 +645,9 @@ Tempo:1h
 .Atualizado relatorio
 Tempo: 1h
 
+.Modificadas Views: TrilhoCRUD\Index.cshtml, \TrilhoCRUD\Desativar.cshtml
+Tempo:1h
+
 //
 
 //

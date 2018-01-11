@@ -31,7 +31,7 @@ namespace Trails4Health.Controllers
         public async Task<IActionResult> Index()
         {
             // OrderBy(t => t.Desativado); Coloca desativados em baixo
-            var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade).OrderBy(t => t.Desativado);
+            var applicationDbContext = _context.Trilhos.Include(t => t.Dificuldade).OrderBy(t => t.Desativado);            
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -121,7 +121,7 @@ namespace Trails4Health.Controllers
 
             ListaTrilhosBD = trilhos.ToListAsync().Result;
 
-            // se existir um trilho com o mesmo Nome, reinsere dados introduzidos na mma View c\ msg ErroNomeTrilho!
+            // se existir um trilho com o mesmo Nome, mostra msg ErroNomeTrilho e reinsere dados introduzidos na mma View
             // ** fazer com query á B.D. (se houver tempo)
             foreach (var et in ListaTrilhosBD)
             {
