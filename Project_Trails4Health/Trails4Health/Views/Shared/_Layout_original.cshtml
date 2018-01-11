@@ -1,12 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication1</title>
+    <title>@ViewData["Title"]</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <environment names="Development">
+        <!-- reconhecer glyphicons!!-->
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> <!-- reconhecer glyphicons!!-->
+        <link rel="stylesheet" href="~/css/flatly_bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -26,23 +29,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">WebApplication1</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Trails4Health</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-controller="TrilhoCRUD" asp-action="Index">TRILHO <strong>CRUD</strong></a></li>
+                    <li><a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoTrilho">Perguntas Avaliação Trilho</a></li>
+                    <li><a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoGuia">Perguntas Avaliação Guia</a></li>
+                    <li><a asp-controller="Avaliacao" asp-action="AvaliacaoGuia">Avaliar Guia</a></li>
+                    <li><a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">Avaliar Trilho</a></li>
+                    <li><a asp-controller="TrilhoCRUD" asp-action="ListaTrilhos">Lista Trilhos</a></li>
                 </ul>
+                @await Html.PartialAsync("_LoginPartial")*
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <!-- mudei style -->
+    <div style="margin-top:1em;">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2018 - WebApplication1</p>
-        </footer>
+        <footer></footer>
     </div>
 
     <environment include="Development">

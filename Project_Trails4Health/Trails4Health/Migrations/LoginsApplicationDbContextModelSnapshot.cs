@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Trails4Health.Data;
 
-namespace Trails4Health.Migrations.LoginsApplicationDb
+namespace Trails4Health.Migrations
 {
     [DbContext(typeof(LoginsApplicationDbContext))]
     partial class LoginsApplicationDbContextModelSnapshot : ModelSnapshot

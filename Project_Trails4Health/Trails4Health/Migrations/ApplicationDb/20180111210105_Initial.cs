@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace Trails4Health.Migrations
+namespace Trails4Health.Migrations.ApplicationDb
 {
     public partial class Initial : Migration
     {
@@ -196,8 +196,8 @@ namespace Trails4Health.Migrations
                 {
                     EstadoTrilhoID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DataFim = table.Column<DateTime>(nullable: false),
-                    DataInicio = table.Column<DateTime>(nullable: false),
+                    DataFim = table.Column<DateTime>(nullable: true),
+                    DataInicio = table.Column<DateTime>(nullable: true),
                     EstadoID = table.Column<int>(nullable: false),
                     TrilhoID = table.Column<int>(nullable: false)
                 },

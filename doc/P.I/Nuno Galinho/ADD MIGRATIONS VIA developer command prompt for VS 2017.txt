@@ -22,3 +22,5 @@ COMANDOS:
 		.dotnet ef migrations add Initial --context ApplicationDbContext
 		.dotnet ef database update --context ApplicationDbContext
 		(verificar mudanças)
+		
+		Trails4HealthDbContext

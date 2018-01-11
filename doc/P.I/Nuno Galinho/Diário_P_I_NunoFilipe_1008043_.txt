@@ -651,6 +651,11 @@ Tempo:1h
 // 11/12/2018
 .Aula - terminada paginação + resolvido problema Glyphicon
 
+.Reconhecer Glyphicons com flatly_bootstrap.css
+Nota: A razão do começo pelo não reconhecimento dos Glyphicons é porque é necessario referenciar  flatly_bootstrap.css (incluido no template original) com 
+ <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> <!-- reconhecer glyphicons!!-->
+Tempo: 1h
+
 //
 
 //

@@ -1,3 +1,16 @@
+
+::
+RECONHECIMENTO DOS GLYPHICONS:
+	Em \views\shared\_layout:
+		É necessario referenciar flatly_bootstrap.css (acrescentado no template original) com 
+		 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> <!-- reconhecer glyphicons!!-->
+
+::
+RECONHECER CARATERES ESPECIAIS (PT) 
+	.abrir ficheiros cs.html com notepad++
+	.Encoding > UTF-8 ou UTF-8-BOM
+
+
 :: 
 RESOLUÇÃO DE PROBLEMA - SqlException: String or binary data would be truncated.
 	Erro acontece qd estou a tentar inserir por exemplo uma string detalhes(800 caracteres)
