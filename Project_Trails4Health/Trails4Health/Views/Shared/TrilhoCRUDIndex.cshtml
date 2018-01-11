@@ -10,9 +10,6 @@
     <a asp-action="Detalhes" asp-route-id="@Model.TrilhoID" class="btn btn-default" style="margin-bottom:0.2em">
         <em class="glyphicon glyphicon-th-list"></em>
     </a>
-    @*<a class="btn btn-default" style="margin-bottom:0.2em"><em class="fa fa-pencil"></em></a>
-        <a class="btn btn-danger" style="margin-bottom:0.2em"><em class="fa fa-trash"></em></a>
-        <a class="btn btn-default list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>*@
 </td>
 
 <td>@Html.DisplayFor(modelItem => Model.Nome)</td>
@@ -20,7 +17,7 @@
 <td>@Html.DisplayFor(modelItem => Model.Fim)</td>
 <td>@Html.DisplayFor(modelItem => Model.Distancia) <span>Km</span></td>
 <td>@Html.DisplayFor(modelItem => Model.Dificuldade.Nome)</td>
-<td align="center"><img src=" @Model.Foto" style="width:5em; height:4em; padding-bottom:1em" /> </td>
+<td align="center"><img src=" @Model.Foto" style="width:5em; height:3.3em;" /> </td>
 @if (Model.Desativado == true)
 {
     <td class="alert-danger" align="center">@Html.DisplayFor(modelItem => Model.Desativado)</td>

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Trails4Health.Models.ViewModels;
 
 // ver _ViewImports.
-namespace SportsStore.Infrastructure
+namespace Trails4Health.Infrastructure
 {
 
     // isto é um tag helper Ex: asp-action

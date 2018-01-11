@@ -648,7 +648,8 @@ Tempo: 1h
 .Modificadas Views: TrilhoCRUD\Index.cshtml, \TrilhoCRUD\Desativar.cshtml
 Tempo:1h
 
-//
+// 11/12/2018
+.Aula - terminada paginação + resolvido problema Glyphicon
 
 //
 

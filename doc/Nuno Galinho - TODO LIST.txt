@@ -5,7 +5,12 @@ P.I.:
 	.image bitmap
 	.autenticação/snipet
 	.paginação para \trilhoCRUD\Index
-	.glyphicon
+	.glyphicon : tools extensions
+	
+::
+RECONHECER NOTEPAD++:
+	.abrir ficheiros cs.html com notepad++
+	.Encoding > UTF-8 ou UTF-8-BOM
 
 	
 ::	
