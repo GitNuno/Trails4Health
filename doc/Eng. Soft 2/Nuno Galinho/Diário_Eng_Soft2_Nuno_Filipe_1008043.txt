@@ -163,4 +163,12 @@ Tempo: 1h.30min.
 .Atualizado relatorio
 Tempo: 1h
 
+// 12/01/2018 ---------------------------------------------------------
++ Criado Diagrama Pacotes e diagrama casos uso CRUD Trilho 
++ Prototipos 
++ metrica  CRUD Trilho 
++ Descrição operação inserir() de EstadoTrilho 
++ atualização da descrição todos casos uso CRUD Trilho
+Tempo: 3h
+
 

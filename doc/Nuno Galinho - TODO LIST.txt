@@ -33,61 +33,22 @@ ALGORITMO MUDAR ESTADO:
 	1       1      now         --
 	2       1      5          now
 	2       2      now         --
-	
-	DUVIDAS:
-		.Paginação
-		.Para o mm Trilho de cada vez que mudo de Estado => nova entrada em EstadoTrilho?
-	     Isto significa haver chaves duplicadas!S\Ñ?
-		.No form Distancia = 9.3 > Erro!
-		.Quando mudamos Estado Aberto > Fechado equivale a desativar trilho? ou é informação a mostrar ao turista?
-		
 
 .ENG. SOFT.2:
-	.Metrica
-	.SEMANTICA DAS CLASSES: 
-		.Operações - classe EstadoTrilho: (implementar primeiro para perceber)
+	
+	.Prototipos
+	
+.Dá uma vista de olhos á metrica nas tabelas de descrição dos meus casos uso.
+.Deixo conclusão e formatações para ti. Este relatorio tem já todas as atualizações
+ referentes ao meu modulo - não as descartes sem querer!
+.Introduzir Foto do trilho (+++++++++++++++++ver se blob ou url
+.Detalhes Covão dos Conchos 
+.Diagrama de pacotes no power designer... usei uma caixa de texto, sobrepus e no ficheiro fiz
+ rightClick > order > bring to back
+	
 
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-.VALIDAÇÕES:
-	.grupo 12
-	.leandro
-	.paredes
-.INSERÇÃO + ALTERAÇÃO + HISTORICO:
-	.paredes (ver dificuldade: Trails1/create)
-
-// ---------------------------------------------------------------
-	public static class StringExt
-{
-    public static string Truncate(this string value, int maxLength)
-    {
-        if (string.IsNullOrEmpty(value)) return value;
-        return value.Length <= maxLength ? value : value.Substring(0, maxLength); 
-    }
-}
-// ---------------------------------------------------------------
-public static class StringExt
-{
-    public static string Truncate( this string value, int maxLength )
-    {
-        if (string.IsNullOrEmpty(value)) { return value; }
-
-        return value.Substring(0, Math.Min(value.Length, maxLength));
-    }
-}
-
-// --------------------------------------------------------------
-string result = string.Join("", value.Take(maxLength)); // .NET 4 Join
-
-string.Concat(myString.Take(maxLength));
-
-string Left(string s, int left)
-
-myString.Substring(0, length); // myString >= length
-
-
-// ---------------------------------------------------------------
 
 Relatório final, com entrega a 16/01/2018, deve incluir:
 Índices (de conteúdos, de figuras, ¿),
