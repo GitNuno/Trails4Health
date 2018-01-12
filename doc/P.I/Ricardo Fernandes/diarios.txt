@@ -1,6 +1,18 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-Tempo Total: 30 H
+
+Tempo Total: 30.25 H
+
+---
+
+12/01/2018
+
+- Continuação do projecto "Trails4Health":
+Alterado layout da home page.
+Criada view "Sobre Nós", com identificação dos elementos do grupo.
+
+
+Tempo utilizado: 0.25 H
 
 ---
 
@@ -20,7 +32,7 @@ Tempo utilizado: 0.25 H
 Quando um utilizador se regista, fica com o role "Turista" atribuído por defeito (implementado em "Controllers/AccountController.cs");
 Exemplo de restrição de acesso implementado para as views de "Views/Backoffice/" (implementado em "Controllers/Backoffice.cs"), é necessário estar autenticado (utilizadores com o role "Administrador" ou "Professor"). O utilizador com role "Turista" não tem acesso;
 
-Implementação em javascript do algoritmo de validação do NIF:
+Exemplo de implementação em javascript do algoritmo de validação do NIF:
 https://gist.github.com/eresende/88562d2c4dc85b62cb0c
 
 

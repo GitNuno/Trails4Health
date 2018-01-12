@@ -1,10 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Sobre Nós";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+@*<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>*@
 
-<<<<<<< HEAD
 <!-- Informação Introdutória -->
 <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Trails4Health</div>
 <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Rua Comercio | 6300 Guarda</div>
@@ -13,8 +12,8 @@
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active px-lg-4">
-                    <a asp-action="Index" class="nav-link text-uppercase text-expanded">
+                <li class="nav-item px-lg-4">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link text-uppercase text-expanded">
                         Home
                         <span class="sr-only">(current)</span>
                     </a>
@@ -22,8 +21,8 @@
                 <li class="nav-item px-lg-4">
                     <a asp-controller="Trilhos" asp-action="Index" class="nav-link text-uppercase text-expanded">Trilhos</a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a asp-controller="Home" asp-action="About" class="nav-link text-uppercase text-expanded">Sobre Nós</a>
+                <li class="nav-item active px-lg-4">
+                    <a asp-controller="Home" asp-action="About" class="nav-link active text-uppercase text-expanded">Sobre Nós</a>
                 </li>
                 @*<li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
@@ -52,6 +51,3 @@
         <br />
     </div>
 </div>
-=======
-<p>Use this area to provide additional information.</p>
->>>>>>> parent of 5e030db... PI Alterações homepage
