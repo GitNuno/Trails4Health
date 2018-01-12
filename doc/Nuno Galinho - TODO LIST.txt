@@ -1,10 +1,10 @@
 ::
 
 P.I.:
-	.
+	.paginação
+	.layout: detalhes + lista trilhos
 	.image bitmap
 	.paginação para \trilhoCRUD\Index
-	.glyphicon
 	.autenticação/snipet
 	
 ::
