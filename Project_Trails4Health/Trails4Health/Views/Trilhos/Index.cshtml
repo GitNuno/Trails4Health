@@ -13,20 +13,27 @@
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4">
-                    <a asp-controller="Home" asp-action="Index" class="nav-link text-uppercase text-expanded"> Home
+                <li class="nav-item active px-lg-4">
+                    <a asp-action="Index" class="nav-link text-uppercase text-expanded">
+                        Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item active px-lg-4">
-                    <a asp-action="Index" class="nav-link text-uppercase text-expanded">Trilhos</a>
+                <li class="nav-item px-lg-4">
+                    <a asp-controller="Trilhos" asp-action="Index" class="nav-link text-uppercase text-expanded">Trilhos</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="blog.html">About</a>
+                    <a asp-controller="Home" asp-action="About" class="nav-link text-uppercase text-expanded">Sobre Nós</a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
+                @*<li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
+                    </li>*@
+                <li class="nav-item  px-lg-4">
+                    <a asp-controller="Account" asp-action="Login" class="nav-link text-uppercase text-expanded">Login</a>
                 </li>
+                @*<li class="nav-item px-lg-4">
+                        <a asp-controller="Account" asp-action="Register" class="nav-link text-uppercase text-expanded">Registar</a>
+                    </li>*@
             </ul>
         </div>
     </div>
