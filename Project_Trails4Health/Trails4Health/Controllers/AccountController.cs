@@ -71,7 +71,7 @@ namespace Trails4Health.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    // return RedirectToLocal(returnUrl); // linha original
+                    // return RedirectToLocal(returnUrl); // linha comentada
                     return View("../BackOffice/Index");
                 }
                 if (result.RequiresTwoFactor)
