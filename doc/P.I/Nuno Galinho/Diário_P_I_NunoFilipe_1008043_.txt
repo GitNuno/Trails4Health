@@ -674,6 +674,12 @@ POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !!
       Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
 Tempo: 1h
 
+.Adicionado Project_Trails4Health_ImageURL
+Nota: Adicionei esta versao mais antiga do projecto porque estou a ter problemas com o upload de imagens e o que isso implica sobretudo na parte de POST: Editar na versao atual.
+.A partir de agora vou trabalhar simultaneamente nos 2 e entregar o melhor.
+MSG PARA RICARDO: Se puderes trabalhar simultaneamente nos 2 projectos seria o Ideal, senão trabalha apenas num e avisa-me pff.
+Tempo:15 min.
+
 //
 
 //
