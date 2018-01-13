@@ -41,8 +41,8 @@
 
 <!-- Container -->
 <div class="container">
-    <!-- ver \views\shared\SumarioTrilhos -->
-    @foreach (Trilho T in Model.Trilho)
+    <!-- ver \views\shared\TrilhosIndex -->
+    @foreach (Trilho T in Model.ListaTrilhos)
     {
         <!-- Lista apenas Trilhos ativos -->
         @if (!T.Desativado)

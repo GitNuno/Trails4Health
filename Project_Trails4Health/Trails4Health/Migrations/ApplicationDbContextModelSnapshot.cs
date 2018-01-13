@@ -212,7 +212,7 @@ namespace Trails4Health.Migrations
                     b.ToTable("TipoQuestoes");
                 });
 
-            modelBuilder.Entity("Trails4Health.Models.Trilho", b =>
+            modelBuilder.Entity("Trails4Health.Models.ListaTrilhos", b =>
                 {
                     b.Property<int>("TrilhoID")
                         .ValueGeneratedOnAdd();
@@ -287,7 +287,7 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.AvaliacaoTrilho", b =>
                 {
-                    b.HasOne("Trails4Health.Models.Trilho", "Trilho")
+                    b.HasOne("Trails4Health.Models.ListaTrilhos", "ListaTrilhos")
                         .WithMany()
                         .HasForeignKey("TrilhoID")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -300,7 +300,7 @@ namespace Trails4Health.Migrations
                         .HasForeignKey("EstadoID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Trails4Health.Models.Trilho", "Trilho")
+                    b.HasOne("Trails4Health.Models.ListaTrilhos", "ListaTrilhos")
                         .WithMany("EstadoTrilhos")
                         .HasForeignKey("TrilhoID")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -348,7 +348,7 @@ namespace Trails4Health.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Trails4Health.Models.Trilho", b =>
+            modelBuilder.Entity("Trails4Health.Models.ListaTrilhos", b =>
                 {
                     b.HasOne("Trails4Health.Models.Dificuldade", "Dificuldade")
                         .WithMany("Trilhos")

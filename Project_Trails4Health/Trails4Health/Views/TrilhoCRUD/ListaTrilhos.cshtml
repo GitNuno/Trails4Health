@@ -8,11 +8,14 @@
 }
 
 
-@foreach (Trilho T in Model.Trilho)
+@foreach (Trilho T in Model.ListaTrilhos)
 {
 <div class="panel-body">
-
-    <img class="img-fluid mb-4 mb-lg-0" src="@T.Foto" alt="">
+    @{
+        var base64 = Convert.ToBase64String(T.ImagemTrilho);
+        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    }
+    <img class="img-fluid mb-4 mb-lg-0" src="@imgSrc" alt="">
     <div style="margin-left:1em">
         <h3>@T.Nome</h3>
         <p>@T.Inicio - @T.Fim</p>

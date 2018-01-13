@@ -1,7 +1,7 @@
 ::
 
 P.I.:
-	.imagemURL null: VARBINARY
+	.retirar imagemURL null: VARBINARY
 	.paginação paginação para \trilhoCRUD\Index
 	.Range
 	.layout: detalhes + lista trilhos

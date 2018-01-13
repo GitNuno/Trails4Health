@@ -680,6 +680,9 @@ Nota: Adicionei esta versao mais antiga do projecto porque estou a ter problemas
 MSG PARA RICARDO: Se puderes trabalhar simultaneamente nos 2 projectos seria o Ideal, senão trabalha apenas num e avisa-me pff.
 Tempo:15 min.
 
+.Exibir Imagens (VARBINARY) em ListaTrilhos 
+Tempo: 15 min.
+
 //
 
 //

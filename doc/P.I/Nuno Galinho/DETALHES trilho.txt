@@ -46,12 +46,12 @@ localidade de fortes tradições e origens muito antigas, conservando alguns ves
 Em redor, não faltam múltiplas possibilidades para óptimos passeios, à descoberta 
 das maravilhas e segredos da serra, entre lendas e histórias antigas.
 
-// poço do inferno
+// Poço do inferno
 /images/inferno.jpg
 
 Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, 
 onde não passa mais do que um carro, chegamos a um dos ex-libris da Serra da Estrela
-e uma das mais bonitas cascatas do país: o Poço do Inferno!
+e uma das mais bonitas cascatas do país.
 
 O som da água que cai a mais de 10 metros e se precipita com vigor e estrondo na 
 pequena lagoa é uma espécie de música terapêutica, que neste recanto a serra decidiu 
