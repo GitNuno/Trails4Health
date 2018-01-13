@@ -689,6 +689,9 @@ A acção  public ViewResult ListaTrilhos(int pagina = 1) não recebia valor GET
 IMPORTANTE: arg da acção tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
 Tempo: 1h
 
+.Criadas novas Views Detalhes
+Tempo: 1h
+
 //
 
 //

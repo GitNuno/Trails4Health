@@ -38,7 +38,7 @@ namespace Trails4Health.Controllers
         // paginação
         // Listar Trilhos em BackOffice
         // IMPORTANTE: arg tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
-        public int TamanhoPagina = 3;
+        public int TamanhoPagina = 4;
         public ViewResult ListaTrilhos(int page = 1)
         {
             return View(
