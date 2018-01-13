@@ -692,6 +692,9 @@ Tempo: 1h
 .Criadas novas Views Detalhes
 Tempo: 1h
 
+.Criada novas Views para \TrilhoCRUD\ListaTrilhos.cshtml
+Tempo: 1h
+
 //
 
 //
