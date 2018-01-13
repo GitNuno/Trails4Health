@@ -667,6 +667,13 @@ Tempo: 1.30h
 .Criado novo input file btn com validação
 Tempo: 30 min.
 
+.Falhada edição de Imagem!
+GET: Editar - Como passo o caminho da imagem? 
+	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
+POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
+      Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
+Tempo: 1h
+
 //
 
 //

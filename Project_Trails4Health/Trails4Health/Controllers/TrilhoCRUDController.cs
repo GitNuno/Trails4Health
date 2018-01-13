@@ -117,7 +117,8 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho trilhoVM)
+        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario," +
+            "TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho trilhoVM)
         {
             // Colocar registos da dbo.Trilhos numa lista
             var trilhos = _context.Trilhos
@@ -216,7 +217,7 @@ namespace Trails4Health.Controllers
                 TrilhoInicio = trilho.Inicio,
                 TrilhoFim = trilho.Fim,
                 TrilhoDistancia = trilho.Distancia,
-                //TrilhoFoto = trilho.Foto,
+                //TrilhoFoto = trilho.Foto,                
                 TrilhoDesativado = trilho.Desativado,
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
@@ -234,7 +235,8 @@ namespace Trails4Health.Controllers
         // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes," +
+            "TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho VMTrilho)
         {
 
             // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
@@ -251,6 +253,14 @@ namespace Trails4Health.Controllers
                 Sumario = VMTrilho.TrilhoSumario,
                 DificuldadeID = VMTrilho.DificuldadeID
             };
+
+            // upload de imagem
+            // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
+            using (var memoryStream = new MemoryStream())             
+            {
+                await VMTrilho.ImageFile.CopyToAsync(memoryStream);  // DÁ NULL ???!!
+                trilho.ImagemTrilho = memoryStream.ToArray();
+            }
 
             // registo do ultimo EstadoTrilho do trilho seleccionado
             EstadoTrilho ultimoEstadoTrilho = await _context.EstadoTrilhos.SingleOrDefaultAsync(uet => uet.TrilhoID == id
