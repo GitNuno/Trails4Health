@@ -683,6 +683,12 @@ Tempo:15 min.
 .Exibir Imagens (VARBINARY) em ListaTrilhos 
 Tempo: 15 min.
 
+.Paginação a funcionar
+Nota: 
+A acção  public ViewResult ListaTrilhos(int pagina = 1) não recebia valor GET
+IMPORTANTE: arg da acção tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
+Tempo: 1h
+
 //
 
 //

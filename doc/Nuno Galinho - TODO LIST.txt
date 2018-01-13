@@ -1,17 +1,17 @@
 ::
 
 P.I.:
-	.retirar imagemURL null: VARBINARY
+	.retirar imagemURL do modelo Trilho null: VARBINARY
 	.paginação paginação para \trilhoCRUD\Index
 	.Range
 	.layout: detalhes + lista trilhos
 
 :: 
-GET: Editar - Como passo o caminho da imagem? 
+.GET: Editar - Como passo o caminho da imagem? 
 	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
-POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
+.POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
       Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
-
+.Colocar imagem em SeedData;
 	
 ::
 RECONHECER NOTEPAD++:

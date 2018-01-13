@@ -34,7 +34,7 @@ namespace Trails4Health.Models
         public static Trilho faias = new Trilho
         {
             Nome = "Rota das Faias",
-            ImagemURL = "/images/faias.jpg",
+            ImagemURL = "/images/faias.jpg",         
             Detalhes = "Queres caminhar entre gnomos, " +
                  "florestas encantadas, cogumelos selvagens e ouvir o crepitar das folhas debaixo dos pés ? Tens de fazer a " +
                  "Rota das Faias.Ainda que seja mais aconselhável fazer o percurso pedestre no outono para podermos apreciar " +

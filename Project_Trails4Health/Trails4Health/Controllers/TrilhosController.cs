@@ -31,17 +31,17 @@ namespace Trails4Health.Controllers
 
         // paginação
         public int TamanhoPagina = 4;
-        public ViewResult Index(int pagina = 1)
+        public ViewResult Index(int page = 1)
         {
             return View(
                 new ViewModelListaTrilhos
                 {
                     ListaTrilhos = repository.Trilhos
-                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Skip(TamanhoPagina * (page - 1))
                         .Take(TamanhoPagina),
                     InfoPaginacao = new InfoPaginacao
                     {
-                        PaginaAtual = pagina,
+                        PaginaAtual = page,
                         ItemsPorPagina = TamanhoPagina,
                         TotalItems = repository.Trilhos.Count()
                     }
