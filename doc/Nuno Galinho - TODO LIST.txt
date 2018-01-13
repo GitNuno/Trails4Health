@@ -1,11 +1,10 @@
 ::
 
 P.I.:
+	.imagemURL null: VARBINARY
 	.paginação
 	.layout: detalhes + lista trilhos
-	.image bitmap
 	.paginação para \trilhoCRUD\Index
-	.autenticação/snipet
 	
 ::
 RECONHECER NOTEPAD++:
@@ -35,16 +34,6 @@ ALGORITMO MUDAR ESTADO:
 	2       2      now         --
 
 .ENG. SOFT.2:
-	
-	.Prototipos
-	
-.Dá uma vista de olhos á metrica nas tabelas de descrição dos meus casos uso.
-.Deixo conclusão e formatações para ti. Este relatorio tem já todas as atualizações
- referentes ao meu modulo - não as descartes sem querer!
-.Introduzir Foto do trilho (+++++++++++++++++ver se blob ou url
-.Detalhes Covão dos Conchos 
-.Diagrama de pacotes no power designer... usei uma caixa de texto, sobrepus e no ficheiro fiz
- rightClick > order > bring to back
 	
 
 

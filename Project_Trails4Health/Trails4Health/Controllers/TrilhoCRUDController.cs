@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Trails4Health.Models;
 using Trails4Health.Models.ViewModels;
+using System.IO;
+using System.Net.Http.Headers;
+using System.Threading;
 
 namespace Trails4Health.Controllers
 {
@@ -85,7 +88,8 @@ namespace Trails4Health.Controllers
                 TrilhoFim = trilho.Fim,
                 TrilhoSumario = trilho.Sumario,
                 TrilhoDetalhes = trilho.Detalhes,
-                TrilhoFoto = trilho.Foto,
+                //TrilhoFoto = trilho.Foto,
+                TrilhoImagem = trilho.ImagemTrilho,
                 TrilhoDistancia = trilho.Distancia,
                 TrilhoDesativado = trilho.Desativado,
                 Dificuldade = trilho.Dificuldade,
@@ -113,7 +117,7 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho trilhoVM)
+        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho trilhoVM)
         {
             // Colocar registos da dbo.Trilhos numa lista
             var trilhos = _context.Trilhos
@@ -143,12 +147,19 @@ namespace Trails4Health.Controllers
                     Inicio = trilhoVM.TrilhoInicio,
                     Fim = trilhoVM.TrilhoFim,
                     Distancia = trilhoVM.TrilhoDistancia,
-                    Foto = trilhoVM.TrilhoFoto,
+                    //Foto = trilhoVM.TrilhoFoto,
                     Desativado = trilhoVM.TrilhoDesativado,
                     Detalhes = trilhoVM.TrilhoDetalhes,
                     Sumario = trilhoVM.TrilhoSumario,
                     DificuldadeID = trilhoVM.DificuldadeID
                 };
+                // upload de imagem
+                // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
+                using (var memoryStream = new MemoryStream())
+                {
+                    await trilhoVM.ImageFile.CopyToAsync(memoryStream);
+                    trilho.ImagemTrilho = memoryStream.ToArray();
+                }
 
                 // coloco trilho na tabela dbo.Trilhos
                 _context.Add(trilho);
@@ -205,7 +216,7 @@ namespace Trails4Health.Controllers
                 TrilhoInicio = trilho.Inicio,
                 TrilhoFim = trilho.Fim,
                 TrilhoDistancia = trilho.Distancia,
-                TrilhoFoto = trilho.Foto,
+                //TrilhoFoto = trilho.Foto,
                 TrilhoDesativado = trilho.Desativado,
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
@@ -234,7 +245,7 @@ namespace Trails4Health.Controllers
                 Inicio = VMTrilho.TrilhoInicio,
                 Fim = VMTrilho.TrilhoFim,
                 Distancia = VMTrilho.TrilhoDistancia,
-                Foto = VMTrilho.TrilhoFoto,
+                //Foto = VMTrilho.TrilhoFoto,
                 Desativado = VMTrilho.TrilhoDesativado,
                 Detalhes = VMTrilho.TrilhoDetalhes,
                 Sumario = VMTrilho.TrilhoSumario,

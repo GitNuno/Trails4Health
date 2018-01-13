@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Trails4Health.Models;
 
-namespace Trails4Health.Migrations.ApplicationDb
+namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180111210105_Initial")]
+    [Migration("20180113000944_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -232,7 +232,9 @@ namespace Trails4Health.Migrations.ApplicationDb
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("Foto")
+                    b.Property<byte[]>("ImagemTrilho");
+
+                    b.Property<string>("ImagemURL")
                         .IsRequired();
 
                     b.Property<string>("Inicio")

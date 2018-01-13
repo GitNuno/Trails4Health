@@ -659,9 +659,12 @@ Tempo: 1h
 .Criado nova view BackOffice\Index.cshtml e alterados layouts
 Tempo: 1h
 
-//
+// 12/12/2018
+.Upload de imagens
+Tempo: 1.30h
 
-//
+// 13/12/2018
+
 
 //
 

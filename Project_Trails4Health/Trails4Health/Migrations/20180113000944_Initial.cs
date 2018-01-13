@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace Trails4Health.Migrations.ApplicationDb
+namespace Trails4Health.Migrations
 {
     public partial class Initial : Migration
     {
@@ -107,7 +107,8 @@ namespace Trails4Health.Migrations.ApplicationDb
                     DificuldadeID = table.Column<int>(nullable: false),
                     Distancia = table.Column<decimal>(nullable: false),
                     Fim = table.Column<string>(maxLength: 50, nullable: false),
-                    Foto = table.Column<string>(nullable: false),
+                    ImagemTrilho = table.Column<byte[]>(nullable: true),
+                    ImagemURL = table.Column<string>(nullable: false),
                     Inicio = table.Column<string>(maxLength: 50, nullable: false),
                     Nome = table.Column<string>(maxLength: 50, nullable: false),
                     Sumario = table.Column<string>(maxLength: 200, nullable: false)

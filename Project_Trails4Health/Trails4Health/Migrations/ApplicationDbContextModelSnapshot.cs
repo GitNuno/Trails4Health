@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Trails4Health.Models;
 
-namespace Trails4Health.Migrations.ApplicationDb
+namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -231,7 +231,9 @@ namespace Trails4Health.Migrations.ApplicationDb
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("Foto")
+                    b.Property<byte[]>("ImagemTrilho");
+
+                    b.Property<string>("ImagemURL")
                         .IsRequired();
 
                     b.Property<string>("Inicio")
