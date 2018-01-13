@@ -2,9 +2,10 @@
 
 P.I.:
 	.imagemURL null: VARBINARY
-	.paginação
+	.paginação paginação para \trilhoCRUD\Index
+	.Range
 	.layout: detalhes + lista trilhos
-	.paginação para \trilhoCRUD\Index
+	.
 	
 ::
 RECONHECER NOTEPAD++:

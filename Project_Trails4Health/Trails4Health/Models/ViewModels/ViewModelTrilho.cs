@@ -42,8 +42,11 @@ namespace Trails4Health.Models.ViewModels
 
         //[Required(ErrorMessage = "Escolha uma foto")]
         //public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados ??
+        // UPLOAD IMAGEM
         public string ImagePath { get; set; }
-        public IFormFile ImageFile { get; set; }
+        [Required(ErrorMessage = "Escolha uma Imagem")]
+        public IFormFile ImageFile { get; set; }        
+        public byte[] TrilhoImagem { get; set; }
 
         public bool TrilhoDesativado { get; set; } = false;
 
@@ -51,9 +54,6 @@ namespace Trails4Health.Models.ViewModels
         public Dificuldade Dificuldade { get; set; }
 
         public int EstadoID { get; set; }
-
-        // para upload de imagem
-        public byte[] TrilhoImagem { get; set; }
 
         // para listar EstadoTrilhos na View /TrilhoCRUD/Detalhes
         public IEnumerable<EstadoTrilho> EstadoTrilhos { get; set; }

@@ -58,11 +58,11 @@
                     <input asp-for="@Model.TrilhoFoto" class="form-control" />
                 </div>*@
 
-                <div class="form-group">
-                    <label asp-for="ImageFile" class="col-md-2 control-label"></label>
-                    <div class="col-md-10">
-                        <input type="file" name="ImageFile" class="form-control" />
-                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                <div class="form-group col-lg-4">
+                    <label asp-for="@Model.ImageFile" class="adjust-margin-left">Imagem</label>
+                    <div>
+                        <input asp-for="@Model.ImageFile" name="ImageFile" class="form-control-file" aria-describedby="fileHelp" />
+                        <small id="fileHelp" class="form-text text-muted">Escolha Imagem para representar Trilho</small>                        
                     </div>
                 </div>
 
