@@ -40,8 +40,9 @@ Vale do Rossim
 /images/alvoco.jpg
 
 Situada no coração do Parque Natural da Serra da Estrela, Alvoco da Serra é uma 
-localidade de fortes tradições e origens muito antigas, conservando alguns vestígios
- da presença dos romanos, nomeadamente uma calçada onde foram encontradas moedas da 
+localidade de fortes tradições e origens muito antigas... 
+
+Alvoco conserva alguns vestígios da presença dos romanos, nomeadamente uma calçada onde foram encontradas moedas da 
 época.
 Em redor, não faltam múltiplas possibilidades para óptimos passeios, à descoberta 
 das maravilhas e segredos da serra, entre lendas e histórias antigas.
@@ -66,8 +67,9 @@ como não poderia deixar de ser nesta altura do ano. Cristalinas e transparentes
 convidam a um mergulho, noutra altura do ano, pois claro!
 
 // Vale do Rossim
+Alvoco
 /images/rossim.jpg
- 
+
 Em pleno coração da Serra da Estrela, nas Penhas Douradas, e junto ao maior vale 
 glaciar da Europa, estende-se este manto de água que no Verão atrai tudo o que são 
 veraneantes das redondezas.
