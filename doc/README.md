@@ -1,0 +1,1 @@
+A versão mais recente do relatório está na raiz desta directoria.

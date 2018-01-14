@@ -87,3 +87,88 @@ Tempo: 1h.30min.
 
 .Criado diagrama de contexto + fluxo dados + Revisão relatorio
 Tempo: 1h.30min
+
+// 20/12/2017 ---------------------------------------------------------
+.Criei Semantica da Classe Trilho que inclui no relatorio
+Tempo: 1.30h
+
+
+// 21/12/2017 ---------------------------------------------------------
+
+.Tirei duvidas com profª
+Tempo: 2h
+
+.Criei Diagramas de componentes e Fisico Parcial de CRUD Trilho e inclui no relatório.
+.Foram feitas correcções e anotações no relatório.
+Tempo: 2h
+
+.Adicionei atributo Sumario á classe Trilho - atualizadas diagrama classes parciais e globais, 
+ corrigi ainda o tipo de ligação das classes Trilho com EstadoTrilho.
+Tempo: 30min
+
+.Revi os diagramas de sequencia e Atualizei os  diagramas de classe Parcial e global - mudado 
+ nome da operação criar para inserir na classe Trilho, para ficar coerente com os diagramas 
+ de sequencia.
+Tempo: 30 min.
+
+.Iniciei a alteração do Diagrama de sequencia consultar trilho - Acrescentadas classes Guia e 
+ Guia Trilho (não terminei porque não sei se vou ter tempo de implementar isto em P.I.);
+Nota: Na versão do relatório está coerente com a aplicação.
+Tempo: 15min.
+
+
+// 22/12/2017 ---------------------------------------------------------
+
+.Compilei uma serie de conceitos relacionados com WEB applications: 
+ servidor IIS, plataforma .NET, etc... Para melhor entender Diagramas Fisicos...
+Tempo: 1h
+
+. Criei semantica das classes Estado, EstadoTrilho, Dificuldade
+Nota: As operações tem de ser revistas com o exemplo do G1.
+Tempo: 1.30h
+
+// 23/12/2017 ---------------------------------------------------------
+.Criei operações Classe Trilho  + Tabela: Diagramas de Sequência em que a 
+ classe Trilho participa (semantica classes) + TODO LIST.txt
+Tempo: 2h
+
+.Completei semantica das classes Estado, EstadoTrilho, Dificuldade
+ + Tabela: Diagramas de Sequência em que as classes participam
+Nota: Há operações que tem de ser revistas se implementadas.
+Tempo: 1.30h
+
+// 07/01/2018 ---------------------------------------------------------
+.Corrigida semantica classe Trilho
+Tempo:1h
+
+.Revisão da Semantica de classes: Trilho, Estado, EstadoTrilho, Dificuldade, Revisão dos 
+ Diagramas Fisicos  CRUD Trilho
+Tempo: 1h30min.
+
+// 09/01/2018 ---------------------------------------------------------
+.Tiragem Duvidas no Gabinete
+Tempo: 1h30min.
+
+. Mudado Diagrama Classes Global (Agregação EstadoTrlho-Trilho)
+Tempo: 15 min.
+
+.Alterados nome das operaçao consultar() para Ler() nas tabelas Dificuldade, Estado e EstadoTrilho
+Tempo 15 min.
+
+.Revisão e correcção Diagramas Sequencia CRUD Trilho
+Tempo: 1h.30min.
+
+// 10/01/2018 ---------------------------------------------------------
+.P.I. + Eng. soft.2 - Digito de Controlo em /turistas/Create a funcionar!
+.Atualizado relatorio
+Tempo: 1h
+
+// 12/01/2018 ---------------------------------------------------------
++ Criado Diagrama Pacotes e diagrama casos uso CRUD Trilho 
++ Prototipos 
++ metrica  CRUD Trilho 
++ Descrição operação inserir() de EstadoTrilho 
++ atualização da descrição todos casos uso CRUD Trilho
+Tempo: 3h
+
+

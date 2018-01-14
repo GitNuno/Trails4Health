@@ -1,0 +1,9 @@
+
+::
+INSTALAÇÃO:
+	.instalar versão community
+		..NET CORE
+		.instalar pacote de linguagem
+	.adicionar conta microsoft (ver O13)
+	
+	

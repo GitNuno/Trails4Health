@@ -1,5 +1,54 @@
 
 ::
+RECONHECIMENTO DOS GLYPHICONS:
+	Em \views\shared\_layout:
+		É necessario referenciar flatly_bootstrap.css (acrescentado no template original) com 
+		 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> <!-- reconhecer glyphicons!!-->
+
+::
+RECONHECER CARATERES ESPECIAIS (PT) 
+	.abrir ficheiros cs.html com notepad++
+	.Encoding > UTF-8 ou UTF-8-BOM
+
+
+:: 
+RESOLUÇÃO DE PROBLEMA - SqlException: String or binary data would be truncated.
+	Erro acontece qd estou a tentar inserir por exemplo uma string detalhes(800 caracteres)
+	num campo BD nvarchar(700).
+::
+.RESOLUÇÃO DE PROBLEMAS SEED_DATA:
+
+	1. No upgrade para versão ASP.NET Core 2.0 é necessario em program.cs 
+	mudar:
+	public static IWebHost BuildWebHost(string[] args) =>
+		WebHost.CreateDefaultBuilder(args)
+			.UseStartup<Startup>()
+			.Build();
+	para:
+	public static IWebHost BuildWebHost(string[] args) =>
+		WebHost.CreateDefaultBuilder(args)
+			.UseStartup<Startup>()
+			.UseDefaultServiceProvider(options => 
+				options.ValidateScopes = false)
+			.Build();
+	ver Google: Announcing EF Core 2.0 Preview
+
+	2. As tabelas Dificuldades.dbo e Estados.dbo nao permitem inserção explicita dos IDs 
+	   DificuldadeID e EstadoID (são criados automaticamente) isto pode dar conflito Ex:
+	   se já tiverem sido criados registos na tabela Dificuldade antes de correr 
+	   SeedData  o 1º ID já não é 1 entrando em conflito com a inserção de
+	   DificuldadeID (FK) na tabela Trilho.
+	   SOLUÇÃO: recriar BD Trails4Health (reenicia criação automatica dos IDs a 1)
+
+::
+MUDANÇA FORMATOS (nºcaracteres num atributo de um modelo) 
+	.Não basta mudar o formato na validação dos atributos do modelo, é necessaria 
+	 nova migração e update da BD.
+
+::
+LOCALIZAÇÃO DAS BASE DADOS:
+	.C:\Users\Nuno
+::
 FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
 // Faz migrar dados dos modelos e cria tabelas na B.D.
 // De cada vez que altero modelos, tenho de fazer migração
@@ -10,6 +59,23 @@ FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS:
 		.Add-Migration "nome da migração"
 			.cria pasta migrations
 		.Update-Database
+::
+FAZER MIGRAÇÃO DE DADOS PARA BASE DADOS via DEVELOPER COMMAND PROMPT FOR VS 2017:
+	.cd C:\programacao_internet\Trails4Health\Project_Trails4Health\Trails4Health  (nota: dir_myProject e não do sln! )
+	.dotnet restore
+	.dotnet build
+	.dotnet ef migrations add Initial --context ApplicationDbContext
+	.dotnet ef migrations add Initial --context LoginsApplicationDbContext
+	.dotnet ef database update --context ApplicationDbContext
+	.dotnet ef database update --context LoginsApplicationDbContext
+
+	EX: MIGRAÇÃO + UPDATE_DB DEPOIS DE ADICIONADO NOVO CAMPO A MODELO (sumario em Trilho.cs)
+		.cd /dir_myProject (nota: dir_myProject e não do sln! )
+		.dotnet restore
+		.dotnet build
+		.dotnet ef migrations add Initial --context ApplicationDbContext
+		.dotnet ef database update --context ApplicationDbContext
+		(verificar mudanças)
 ::
 RESOLVER PROBLEMA - using Microsoft.EntityFrameworkCore (não reconhecido):
 	.Tools
@@ -76,8 +142,13 @@ ROUTING : "passing parameters between views in MVC"
 		}
 ::
 REGEX - E-MAIL:
-// 
-(\w+\.\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})|(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})
+	// 
+	(\w+\.\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})|(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})
 
-// Aceita qq caracteres atrás e frente de @
-.+@.+	
+	// Aceita qq caracteres atrás e frente de @
+	.+@.+	
+
+::
+ANOTAÇÕES:
+	EX:
+	 [Required(ErrorMessage = "Introduza nome do Trilho")]

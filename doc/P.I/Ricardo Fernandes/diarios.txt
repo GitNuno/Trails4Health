@@ -1,14 +1,267 @@
-Diários: Ricardo Fernandes - 1011936
+Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
-22/11/2017
 
-Primeira contribuição para o projecto:
-- Adicionada View "Home/AvaliarTrilho.cshtml" (sem conteúdo);
-- Adicionada View "Home/Sobre";
-- Adicionados ficheiros de layout "Shared/_LayoutSobre.cshtml" e "Shared/_LayoutComum.cshtml";
-- Alterado controlador "HomeController.cs" para que as Views adicionadas funcionem;
+Tempo Total: 30.25 H
 
-Tempo Utilizado: 1.5 H
+---
+
+12/01/2018
+
+- Continuação do projecto "Trails4Health":
+Alterado layout da home page.
+Criada view "Sobre Nós", com identificação dos elementos do grupo.
+
+
+Tempo utilizado: 0.25 H
+
+---
+
+11/01/2018
+
+- Continuação do projecto "Trails4Health":
+Alterado menu da página incial e criado layout "Shared/_Account.cshtml".
+
+
+Tempo utilizado: 0.25 H
+
+---
+
+10/01/2018
+
+- Continuação do projecto "Trails4Health":
+Quando um utilizador se regista, fica com o role "Turista" atribuído por defeito (implementado em "Controllers/AccountController.cs");
+Exemplo de restrição de acesso implementado para as views de "Views/Backoffice/" (implementado em "Controllers/Backoffice.cs"), é necessário estar autenticado (utilizadores com o role "Administrador" ou "Professor"). O utilizador com role "Turista" não tem acesso;
+
+Exemplo de implementação em javascript do algoritmo de validação do NIF:
+https://gist.github.com/eresende/88562d2c4dc85b62cb0c
+
+
+Tempo utilizado: 0.25 H
+
+---
+
+05/01/2018
+
+- Continuação do projecto "Trails4Health":
+Adicionadas perguntas de avaliação para Guia e Trilho na classe DbInitializer;
+
+
+Tempo utilizado: 0.5 H
+
+---
+
+04/01/2018
+
+- Continuação do projecto "Trails4Health":
+Acrescentada classe "Models/Opcao.cs";
+Actualizado controlador para a classe "Questao".
+Criados controladores para as classes "Turista", "Opcao", "Questionario", "Resposta".
+
+
+Tempo utilizado:  2 H
+
+---
+
+03/01/2018
+
+- Continuação do projecto "Trails4Health":
+Acrescentadas classes: "Models/QuestionarioQuestao.cs", "Models/Questionario.cs", "Models/RespostaQuestionario.cs", "Models/AvaliacaoGuia.cs", "Models/AvaliacaoTrilho.cs";
+
+
+Tempo utilizado:  2 H
+
+---
+
+02/01/2018
+
+- Continuação do projecto "Trails4Health":
+Criação de "roles" (Administrador, Professor, Turista):
+	Alterado controlador "Controllers/AccountController.cs";
+	Alterada classe "Data/UsersSeedData.cs", com a criação dos utilizadores "turista" e "professor";
+
+
+Tempo utilizado:  1 H
+
+---
+
+01/01/2018
+
+- Continuação do projecto "Trails4Health":
+Alterada classe "Models/Questao.cs";
+Acrescentadas classes "Models/Turista.cs", "Models/Guia.cs", "Models/Resposta.cs";
+
+
+Tempo utilizado:  1 H
+
+---
+
+29/12/2017
+
+- Continuação do projecto "Trails4Health":
+Alterada classe "Models/Questao.cs" e "Models/TipoQuestao.cs";
+Alterado controlador "Controllers/QuestoesController.cs";
+Alterada view "Views/Questoes/Details.cshtml";
+
+
+Tempo utilizado:  2 H
+
+---
+
+28/12/2017
+
+- Continuação do projecto "Trails4Health":
+Apagados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho", e apagadas respectivas Views.
+Apagadas classes "Models/QuestoesAvaliacaoGuia.cs" e "Models/QuestoesAvaliacaoTrilho.cs", e substituídas pela classe "Models/Questao.cs". Criado o respectivo controlador CRUD.
+Acrescentada classe "Models/TipoQuestao.cs" e respectivo controlador CRUD e views.
+
+
+Tempo utilizado:  2 H
+
+---
+
+27/12/2017
+
+Consultado tutorial sobre "Entity Framework":
+http://www.entityframeworktutorial.net/entity-relationships.aspx
+- Continuação do projecto "Trails4Health":
+Criados controladores para as Views "QuestoesAvaliacaoGuia" e "QuestoesAvaliacaoTrilho".
+
+
+Tempo utilizado:  1 H
+
+---
+
+14/12/2017
+
+- Continuação do projecto "Trails4Health":
+Alteração da classe "Data/DbInitializer.cs" para permitir inicializar a base de dados (sucesso para a classe/tabela "TipoResposta");
+
+
+Tempo utilizado:  1 H
+
+---
+
+13/12/2017
+
+- Continuação do projecto "Trails4Health":
+Consultado tutorial sobre "entity framework":
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro#add-code-to-initialize-the-database-with-test-data
+Adicionadas classes "Models/TipoResposta.cs", "Models/QuestoesAvaliacaoGuia.cs", "Models/QuestoesAvaliacaoGuia.cs";
+Alterado ficheiro "Data/ApplicationDbContext.cs" para acomodar novas classes criadas;
+Criada classe "Data/DbInitializer.cs", com o objectivo de colocar alguns dados de teste na base de dados;
+Alterado conteúdo da função Main() do ficheiro ("Program.cs"), com o intuito de popular a base de dados a partir da classe "Data/DbInitializer.cs";
+Criado controlador "Controllers/TipoRespostas.cs" com a opção "scaffolding";
+Aceder às view criada: http://localhost:*****/TipoRespostas;
+
+
+Tempo utilizado:  2.5 H
+
+---
+
+12/12/2017
+
+- Continuação do projecto "Trails4Health":
+Acrescentados serviços relacionados com passwords ("Startup.cs");
+Editada classe "Data/LoginsApplicationDbContext.cs";
+Acrescentada classe "Data/UsersSeedData.cs" para adicionar o utilizador-administrador à base de dados;
+Efectuada migração e actualização da base de dados de utilizadores ("dotnet ef migrations add Initial --context LoginsApplicationDbContext" e "dotnet ef database update --context LoginsApplicationDbContext");
+Adicionado controlador "AdminController.cs";
+
+
+Tempo utilizado: 1 H
+
+---
+
+10/12/2017
+
+- Leitura das páginas 249 a 257 do livro "Pro ASP.NET Core MVC 2";
+- Continuação do projecto "SportsStore":
+Alteração do esquema de URLs ("Startup.cs");
+Adicionado ficheiro "bower.json" (categoria "Web/Bower Configuration File") e instalado bootstrap v3.3.6;
+Aplicado bootstrap no ficheiro "Shared/_Layout.cshtml";
+Aplicado estilo no ficheiro "Views/Product/List.cshtml";
+Adicionadas classes (para estilizar elementos) ao ficheiro "Infrastructure/PageLinkTagHelper.cs";
+
+- Continuação do projecto "Trails4Health":
+Consultado tutorial sobre autenticação:
+https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?tabs=visual-studio%2Caspnetcore2x
+Adicionada segunda "String" de ligação à base de dados, relacionada com autenticação;
+Adicionada view "Home/QuestoesAvaliacaoGuia.cshtml";
+
+
+Tempo utilizado: 2 H
+
+---
+
+06/12/2017
+
+- Leitura das páginas 237 a 248 do livro "Pro ASP.NET Core MVC 2";
+- Continuação do projecto "SportsStore":
+Criada migração inicial (command prompt: "cd C:\Users\******\source\repos\SportsStore\SportsStore", "dotnet ef migrations add Initial");
+Adicionadas classes:
+	"Models/SeedData.cs";
+	"Models/ViewModels/PageInfo.cs";
+	"Infrastructure/PageLinkTagHelper.cs";
+	"Models/ViewModels/ProductsListViewModel.cs";
+Criação das classes de testes:
+	"ProductControllerTests.cs";
+	"PageLinkTagHelperTests.cs";
+
+	
+Tempo Utilizado:  1 H
+
+---
+
+04/12/2017
+
+- Leitura das páginas 233 a 237 do livro "Pro ASP.NET Core MVC 2";
+- Continuação do projecto "SportsStore":
+Adicionadas classes:
+	"Models/ApplicationDbContext.cs";
+	"Models/EFProductRepository.cs";
+Adicionados ficheiros:
+	"appsettings.json" (connection string);
+
+	
+Tempo Utilizado: 0.5 H
+
+---
+
+03/12/2017
+
+- Leitura das páginas 79 a 106 do livro "Pro ASP.NET Core MVC 2";
+- Construído projecto "LanguageFeatures" (sobre algumas funcionalidades da linguagem c#);
+
+- Leitura das páginas 216 a 233 do livro "Pro ASP.NET Core MVC 2";
+- Criado projecto "SportsStore":
+Adicionadas classes:
+	"Startup.cs";
+	"Models/Product.cs";
+	"Models/IProductRepository.cs";
+	"Models/FakeProductRepository.cs";
+	"Controllers/ProductController.cs";
+Adicionados ficheiros:
+	"Views/_ViewImports.cshtml";
+	"Startup.cs";
+	"Views/Shared/_Layout.cshtml";
+	"Views/_ViewStart.cshtml";
+	"Views/Product/List.cshtml";
+		
+- Criação do projecto de testes unitários (adicionada package "Moq" ao ficheiro "SportsStore.Tests/SportsStore.csproj");
+
+- Instalação da package "Entity Framework Core Tools" (ficheiro "SportsStore/SportsStore.csproj");
+
+
+Tempo Utilizado: 4 H
+
+---
+
+02/12/2017
+
+- Leitura das páginas 3 a 78 do livro "Pro ASP.NET Core MVC 2";
+- Construído projecto "PartyInvites";
+
+Tempo Utilizado: 3 H
 
 ---
 
@@ -33,4 +286,12 @@ Tempo Utilizado: 1.5 H
 
 ---
 
-Tempo Total: 3 H
+22/11/2017
+
+Primeira contribuição para o projecto:
+- Adicionada View "Home/AvaliarTrilho.cshtml" (sem conteúdo);
+- Adicionada View "Home/Sobre";
+- Adicionados ficheiros de layout "Shared/_LayoutSobre.cshtml" e "Shared/_LayoutComum.cshtml";
+- Alterado controlador "HomeController.cs" para que as Views adicionadas funcionem;
+
+Tempo Utilizado: 1.5 H

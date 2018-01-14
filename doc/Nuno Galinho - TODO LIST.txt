@@ -1,0 +1,68 @@
+::
+
+P.I.:
+	.retirar imagemURL do modelo Trilho null: 
+	.Range, [DisplayFormat(... DataFormatString = "{0:dd/MM/yyyy}")] em Turista 
+	.mudar thumb nails de back office
+:: 
+.GET: Editar - Como passo o caminho da imagem? 
+	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
+.POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
+      Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
+.Colocar imagem em SeedData;
+	
+::
+RECONHECER NOTEPAD++:
+	.abrir ficheiros cs.html com notepad++
+	.Encoding > UTF-8 ou UTF-8-BOM
+
+	
+::	
+ALGORITMO DIGITO CONTROLO:
+
+	120/10 = 12 r: 0
+	12/10 = 1 r: 2
+	1/10 = 0 r: 1
+	
+	
+::	
+ALGORITMO MUDAR ESTADO:
+	OBJECTIVO:
+	.Em Editar quando mudo de Estado de um Trilho, insiro na BD EstadoTrilho novo registo, em que a 
+	 DataInicio do novo Estado é Date.Now e DataFim é nulo.
+	
+	Trilho Estado DataInicio DataFim
+    1       1      12         13    
+	1       2      13         now 
+	1       1      now         --
+	2       1      5          now
+	2       2      now         --
+
+.ENG. SOFT.2:
+	.Foto - VARBINARY
+	.Horas
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Relatório final, com entrega a 16/01/2018, deve incluir:
+Índices (de conteúdos, de figuras, ¿),
+Introdução, Conclusão, Anexos
+Descrição do tema do projeto
+Atividades e tempos gastos, em horas, por elemento de grupo (tabela ou gráfico)
+Diagrama de Contexto
+Descrição dos três padrões
+Estado da arte: tabela com a comparação das funcionalidades (Projeto, Arribas do Douro e Passadiços do Paiva)
+Tabela de Atores, objetivos e respetivos Casos de Uso
+Diagrama de Casos de Uso
+Descrição de todos os Casos de Uso, dentro da fronteira, com o template (Nome do caso de uso, descrição, pré condição, caminho principal, caminhos alternativos, pós condições, suplementos ou adornos); Incluir um novo campo Tamanho (NOVO).
+¿ O campo Tamanho indica uma estimativa do tempo de desenvolvimento do caso de uso baseado na quantidade de trabalho, na complexidade do trabalho e nos riscos e incertezas inerentes ao desenvolvimento desse caso de uso.
+Diagramas de Sequência de todos os Casos de Uso dentro da fronteira
+Diagramas de Classes completo
+Diagrama de Estados (um ou dois)
+Semântica completa das 3 Classes mais importantes (Indicar os diagramas de sequência em que a classe participa; descrição dos atributos; algoritmos das operações)
+Diagrama de Atividades (um ou dois)
+1 Diagrama de Componentes
+1 Diagrama de Instalação
+1 Diagrama de Pacotes (de classes ou de casos de uso)
+Protótipos da aplicação

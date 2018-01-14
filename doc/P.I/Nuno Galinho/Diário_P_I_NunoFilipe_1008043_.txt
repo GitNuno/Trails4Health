@@ -359,23 +359,348 @@ Nota:  botões nao aparecem, nao reconhece tag helpers:
     </div>
 Tempo: 1h
 
-//
+// 26/11/2017 --------------------------------------------------------------
+. Adicionada Paginaçao em Lista.cshtml (backoffice)
+Tempo: 15 min. 
+. Criado relacionamento entre as tabelas: Estado, EstadoTrilho, Trilho e Dificuldade 
+Tempo: 1 h
+. Reoganizada as rotas do site:
+	.Separei /Trilhos (CRUD) de /Avaliação (CRUD Questões e avaliação)
+	.Criei os controladores e hiperligações necessarias
+.Tempo: 30min.
+. Adicionado texto para detalhes Trilho + imagens
+.Fiz pesquisa de Lugares, fotos e descrições relativo ao parque natural da serra 
+ da estrela para colocar na base dados.
+Tempo: 45min.
 
-//
+// 27/11/2017 --------------------------------------------------------------
+. Scaffolding da tabela Trilho + adiçao dados nas tabelas
+Nota: Scaffolding falhou, nao reconhecia um FK.
+Resolvi o problema apagando as tabelas de migração e a base de dados,
+fisicamente no disco /users/... e logicamente no V.S.
+Tempo: 1h
+. Atualizar TrilhoID na tb EstadoTrilho, Atualizar EstadoID na tabela EstadoTrilho
+.Estudei o codigo gerado a partir do scaffolding para aprender a fazer operaçoes 
+sobre a BD como por EX: Atualizar TrilhoID(FK) na tb EstadoTrilho...
+Nota: Não consegui Atualizar TrilhoID na tb EstadoTrilho a partir da acção create...
+Tempo: 1h
+. Criada acção detalhes para mostrar descrição do trilho seleccionado (botao saber mais)
+Nota: Estava a dar null pointer exception (runtime error) - referenciei mal TrilhoID em /shared/sumarioTrilhos.cshtml 
+Tempo:1h
+. Alterada acção delete de apagar registo para desativar=true
+Nota: Falhei nova tentativa de inserir TrilhoID(FK) na tabela EstadoTrilho.
+Erro: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EstadoTrilhos_Trilhos_TrilhoID". The conflict occurred in database "Trails4Health", table "dbo.Trilhos", column 'TrilhoID'.
+usei outros metodos de inserção como addRange mas nao funcionaram.
+Tempo:45 min.
 
-//
+// 29/11/2017 --------------------------------------------------------------
+. Criada ViewModelTrilho + Falhada inserção de TrilhoID na tabela EstadoTrilho
+Nota:
+ERRO: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EstadoTrilhos_Trilhos_TrilhoID". The conflict occurred in database "Trails4Health", table "dbo.Trilhos", column 'TrilhoID'.
+Tempo: 1h
 
-//
+// 12/12/2017
+. Estudei Autenticação do projecto Books Aula 7/12/2017
+Tempo: 1h
 
-//
+. Criada bd aspnet-Trails4Health-Logins + UsersSeedData + ISmsSender + MessageServices
+	Nota: Redefeni o construtor da class LoginsApplicationDbContext.cs estava a dar erro na migração
+Tempo: 1h
 
-//
+. P.I. Falhada visualização da pag. /Account/Login.cshtml
+	ERRO: Cannot create a DbSet for 'ApplicationUser' because this type is not included in the model for the context.)
+Tempo: 1h
 
-//
+// 20/12/2017
+. Autenticação a funcionar
+.O ultimo merge que fiz provocou uma serie de erros em relação á BD
+.Apaguei as minhas migrações e fiz o update da BD
+Tempo: 30min.
 
-//
+//  22/12/2017
+. Pesquisa conceitos sobre WEB app
+.Compilei uma serie de conceitos relacionados com WEB applications:,
+servidor IIS, plataforma .NET, etc...
+Tempo: 1h
 
-//
+// 01/12/2018
+. Redimensionei colunas e n. de carateres por coluna nas views: /trilhoes/index, delete, details.
+Tempo:45 min.
+
+.Adicionei campo sumario e novas validaçoes em Trilho.cs e ViewModelTrilho.cs+ alterações ás views do CRUD Trilho (/Trilhoes)
+.Corrigi erro: ArgumentOutOfRangeException: startIndex must be less than length of string.(linha 63 /Trilhoes/index.cshtml)
+Tempo:1h
+
+.Visualizar atributo  Nome em vez de DificuldadeID de Dificuldade.cs nas views: /Trilhoes/Details e Edit.
+Tempo:15 min.
+
+.Corrigi problema Criar e Editar trilho; tinha adicionado novo campo (Sumario) ao modelo e 
+ nao tinha atualizado os metodos do controlador Trilhoes.cs: ...Create([Bind("TrilhoID,TrilhoNome,TrilhoInicio,Sumario,... 
+ +...Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,...
+Tempo:1h
+
+// 02/12/2018
+.Resolvi problema mudança de atributo decimal Distancia para double Distancia no Modelo 
+Trilhos. Ao mudar de tipo de dados no atributo do modelo e feito o update da base dados, 
+dava-me erro qd tentava criar novo trilho.
+.Apaguei BD e migraçoes e criei novas migraçoes e BD (RESOLVIDO!)
+Tempo:1h
+
+.Mudei Formatos (nºcaracterea) atributo Detalhes e Sumario de Modelo trilho. Estava a dar erro de cada vez que ultrapassava 100 carateres para
+Sumario  ou 200  carateres  para Detalhes .
+Nota: Não basta mudar o formato na validação dos atributos do modelo, é necessaria nova migração e update da BD.
+Tempo:1h
+
+.Adicionadas novas validações (REGEX) em ViewModelTrilho e Trilho
+Tempo: 30 min.
+
+.Criei Edit.cshtml(Trilhoes) usando ViewModelTrilho para incluir Estado no modelo.
+Tempo: 1h
+
+// 03/12/2018
+.Movi Lista.cshtml e FornCriar.cshtml de \Trilhos para \Trilhoes
+.Criei Listagem de Trilhos em TrilhoesControler,
+.Criei link para CRUD Trilho
+Tempo:1h
+
+.Em \Home\Index  criei link para Account/Login
+Tempo:15 min
+
+.Criado espaço entre _LayoutBackOffice.cshtml e conteudo das pag.s do CRUD
+Tempo: 15 min.
+
+.Mudado nome do Controlador Trilhoes e \Views\Trilhoes para CRUDTrilho
+Tempo: 15 min.
+
+.Criei novo layout para criar trilho
+.Nota: No momento  está a funcionar mas com url: localhost/CRUDTrilho/FormCriar
+Tempo:1h
+
+.Conclui Form CriarTrilho
+.Nota: Ainda esta num url temporario
+Tempo: 30 min.
+
+.Criei nova view Editar (Interface para Editar Trilho) - foram previamente apagadas e depois recriadas BDs
+Tempo: 1h
+
+.Criei nova interface da pag. /CRUDTrilho/index
+Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
+Tempo:1h
+
+.Terminei nova interface da pag. /CRUDTrilho/index
+Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
+Tempo:30 min.
+
+// 04/12/2018
+.Renomeado \CRUDTrilho para \TrilhoCRUD + renomeada acção I2 de TrilhoCRUD para Index + recreado 
+ conteudos de DETALHES trilho.txt
+Tempo: 30 min.
+
+.Falhada implementaçao da classe seedData
+Erro: Cannot resolve scoped service 'Trails4Health.Models.ApplicationDbContext' from root provider.
+Tempo: 1h
+
+// 05/12/2018
+.SeedData a funcionar (corrigidos problemas)
+.RESOLUÇÃO DE PROBLEMAS:
+
+1. No upgrade para versão ASP.NET Core 2.0 é necessario em program.cs mudar:
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .Build();
+para:
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseDefaultServiceProvider(options => 
+            options.ValidateScopes = false)
+        .Build();
+ver Google: Announcing EF Core 2.0 Preview
+
+2. As tabelas Dificuldades.dbo e Estados.dbo nao permitem inserção explicita dos IDs 
+   DificuldadeID e EstadoID (são criados automaticamente) isto pode dar conflito Ex:
+   se já tiverem sido criados registos na tabela Dificuldade antes de correr 
+   SeedData  o 1º ID já não é 1 entrando em conflito com a inserção de
+   DificuldadeID (FK) na tabela Trilho.
+SOLUÇÃO: recriar BD Trails4Health (reenicia criação automatica dos IDs a 1)
+Tempo:2h
+
+.Adicionado trilho covao em seedData
+Tempo: 30 min.
+
+.Resolvido problema inserção do trilho covao em seedData
+Nota - nao inseria por: 
+1. já existia registo nas tabelas Trilhos e EstadoTrilhos
+2. não é possivel introduzir 2 registos com mma chave_composta!
+Tempo: 30 min.
+
+.Criado novo interface para view details de TrilhoCRUD
+Tempo: 1h
+
+.Renomeado \TrilhoCRUD\details para \TrilhoCRUD\detailhes
+Tempo: 15 min.
+
+.Exibição view Detalhes a partir de ViewModelTrilho:
+	.Redefini ViewModelTrilho
+	.Redefini acção: public async Task<IActionResult> Detalhes(int? id) {...} com o objectivo de exibir Estados do Trilho na view: return View(viewModelTrilho)
+	Nota: No momento está a funcionar ms ainda não exibe EstadoTrilhos
+Tempo: 1h30
+
+.Listagem de todos os registos da tabela EstadoTrilhos na view Detalhes
+Nota: Ainda não é isto o pretendido tenho de fazer filtro.
+Tempo:30 min.
+
+.Listagem dos Estados de um Trilho selecionado, na View Detalhes
+Tempo: 30 min.
+
+// 06/12/2018
+.Listagem (apenas) de trilhos ativos em \trilhos\index e \trilhosCRUD\ListaTrilhos
+Nota: Renomeei \Views\Shared\SumarioTrilhos.cshtml para ...\TrilhosIndex
+Tempo: 30 min.
+
+.Criado @Html.Partial("TrilhoCRUDIndex", T) para \Views\TrilhoCRUD\Index.cshtml
+Tempo:15 min
+
+.Colocado botao DESATIVADO|EDITAR em \Views\TrilhoCRUD\ListaTrilhos.cshtml
+Nota: Botao só aparece se Trilho estiver desativado
+Tempo: 15 min.
+
+.Desativar Trilho a funcionar
+Nota: Ao clicar botao Desativar Trilho (GET) e confirmada destativação (POST) o valor desativado da tabela 
+trilho passa a true. O registo do Trilho desativado fica a vermelho na pagina /TrilhoCRUD e a pagina /Trilho 
+deixa de exibir trilho desativado.
+Tempo:1h.
+
+.Melhorados pormenores das paginas TrilhoCRUD
+Tempo: 30 min.
+
+// 07/12/2018
+.Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já existe na BD.
+.Criada view que exibe dados do Trilho.Nome (valor que já existe na BD)
+Tempo: 1h
+
+.Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já 
+ existe na BD.(versão-2)
+Nota: Se a 1ª versão tinha a vantagem de mostrar erro noutra View, com os dados do registo do Trilho na 
+BD cujo nome estava a ser repetido no formulario - a 2ª versão tem a vantagem de mostrar erro na mma View, 
+preservando os dados introduzidos, coisa  que a 1ª versão não fazia.
+Tempo: 30 min.
+
+.Passagem do valor Estado (atual) do Trilho a partir da tbl dbo.EstadoTrilho, para dropDownList Estado da 
+View \TrilhoCRUD\Editar.
+Nota: Antes o valor que a dropDownList Estado recebia era sempre 1=Aberto.
+Tempo:1h
+
+.Inserção de novo registo em dbo.EstadoTrilhos quando mudado Estado em Editar
+Nota:  
+1-A inserção de DataInicio no novo registo é feita com sucesso no entanto a inserção de DataFim no registo 
+anterior falha - Erro: InvalidOperationException: The property 'EstadoID' on entity type 'EstadoTrilho' has a 
+temporary value. Either set a permanent value explicitly or ensure that the database is configured to generate 
+values for this property.
+2-Se mudar de Estado pela segunda vez vai haver PK duplicada e dá erro!
+Tempo: 1h.30min.
+
+.Novas Migrações e update das BD
+Nota: 
+Só posso chamar SeedData depois de atualizada BD !!
+Tempo: 15 min.
+
+// 08/12/2018
+.Alterações Gabinete Duvidas: OrderBy: /TrilhosCRUD/Index; /TrilhosCRUD/Detalhes + Inserir Distancia 
+com casas decimais (Falhada)
+Nota: 
+.Criei class: \InfraStructure\InvariantDecimalTagHelper .cs (tagHelper) para tentar inserir casas decimais 
+em Distancia (criar Trilho) - Não resolve!
+Tempo: 1h
+
+.Retirados campos: Detalhes, Sumario e adicionada foto a ..\TrilhoCRUD\Index.cshtml 
+Tempo: 45 min.
+
+.Recriado modelo EstadoTrilho sem chave composta
+Tempo:15 min.
+
+.Criada acção GET:  MudarEstado + View
+Tempo: 1h
+
+// 09/12/2018
+.Reposta versão Editar Estado na view Editar
+Nota: Por falta de tempo voltei a esta versão, pois parece-me que em termos de custo de tempo e beneficio é a melhor escolha.
+Tempo: 15 min.
+
+.Falhado historico de EstadoTrilhos
+NOTA:  Não sei que mais voltas tenho de dar para por isto a funcionar - esta é a parte do projecto mais frustrante!
+Tempo: 4h
+
+// 10/12/2018
+.Aula -10-01-2018: Historico EstadoTrilhos - A funcionar!
+
+.Corrigida SeedData.cs + Revisão do projecto ("clean code")
+Tempo: 30 min.
+
+.Implementada metodo: private int DigitoControlo(int nif) em TuristasController.cs
+Tempo:1h
+
+.P.I. + Eng. soft.2 - Digito de Controlo em /turistas/Create a funcionar!
+.Atualizado relatorio
+Tempo: 1h
+
+.Modificadas Views: TrilhoCRUD\Index.cshtml, \TrilhoCRUD\Desativar.cshtml
+Tempo:1h
+
+// 11/12/2018
+.Aula - terminada paginação + resolvido problema Glyphicon
+
+.Reconhecer Glyphicons com flatly_bootstrap.css
+Nota: A razão do começo pelo não reconhecimento dos Glyphicons é porque é necessario referenciar  flatly_bootstrap.css (incluido no template original) com 
+ <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> <!-- reconhecer glyphicons!!-->
+Tempo: 1h
+
+.Criado nova view BackOffice\Index.cshtml e alterados layouts
+Tempo: 1h
+
+// 12/12/2018
+.Upload de imagens
+Tempo: 1.30h
+
+// 13/12/2018
+.Criado novo input file btn com validação
+Tempo: 30 min.
+
+.Falhada edição de Imagem!
+GET: Editar - Como passo o caminho da imagem? 
+	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
+POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
+      Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
+Tempo: 1h
+
+.Adicionado Project_Trails4Health_ImageURL
+Nota: Adicionei esta versao mais antiga do projecto porque estou a ter problemas com o upload de imagens e o que isso implica sobretudo na parte de POST: Editar na versao atual.
+.A partir de agora vou trabalhar simultaneamente nos 2 e entregar o melhor.
+MSG PARA RICARDO: Se puderes trabalhar simultaneamente nos 2 projectos seria o Ideal, senão trabalha apenas num e avisa-me pff.
+Tempo:15 min.
+
+.Exibir Imagens (VARBINARY) em ListaTrilhos 
+Tempo: 15 min.
+
+.Paginação a funcionar
+Nota: 
+A acção  public ViewResult ListaTrilhos(int pagina = 1) não recebia valor GET
+IMPORTANTE: arg da acção tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
+Tempo: 1h
+
+.Criadas novas Views Detalhes
+Tempo: 1h
+
+.Criada novas Views para \TrilhoCRUD\ListaTrilhos.cshtml
+Tempo: 1h
+
+.Corrigidas Views e Layouts
+Tempo: 30 min.
+
+// 14/12/2018
+.Substituido projecto com Foto Trilho VARBINARY (defeituoso) por versao Foto Trilho URL (fully functional)
+Tempo:15 min.
 
 //
 
