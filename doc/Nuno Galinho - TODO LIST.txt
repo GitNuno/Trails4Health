@@ -1,9 +1,9 @@
 ::
 
 P.I.:
-	.retirar imagemURL do modelo Trilho null: VARBINARY
-	.Range
-
+	.retirar imagemURL do modelo Trilho null: 
+	.Range, [DisplayFormat(... DataFormatString = "{0:dd/MM/yyyy}")] em Turista 
+	.mudar thumb nails de back office
 :: 
 .GET: Editar - Como passo o caminho da imagem? 
 	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
@@ -39,7 +39,8 @@ ALGORITMO MUDAR ESTADO:
 	2       2      now         --
 
 .ENG. SOFT.2:
-	
+	.Foto - VARBINARY
+	.Horas
 
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

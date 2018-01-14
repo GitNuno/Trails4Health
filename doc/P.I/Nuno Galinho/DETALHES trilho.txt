@@ -47,11 +47,12 @@ Em redor, não faltam múltiplas possibilidades para óptimos passeios, à desco
 das maravilhas e segredos da serra, entre lendas e histórias antigas.
 
 // Poço do inferno
+Lagoa Comprida
 /images/inferno.jpg
 
 Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, 
 onde não passa mais do que um carro, chegamos a um dos ex-libris da Serra da Estrela
-e uma das mais bonitas cascatas do país.
+.
 
 O som da água que cai a mais de 10 metros e se precipita com vigor e estrondo na 
 pequena lagoa é uma espécie de música terapêutica, que neste recanto a serra decidiu 
@@ -77,6 +78,7 @@ Planalto Superior, o Vale do Rossim é um local único de grande valor científi
 sensibilidade ambiental e paisagística, que importa proteger e valorizar.
 
 // Lagoa Comprida
+Poço do inferno
 /images/lagoa.jpg
 
 A Lagoa Comprida é a mais conhecida e a maior das lagoas do maciço superior da Serra 

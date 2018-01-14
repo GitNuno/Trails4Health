@@ -695,6 +695,9 @@ Tempo: 1h
 .Criada novas Views para \TrilhoCRUD\ListaTrilhos.cshtml
 Tempo: 1h
 
+.Corrigidas Views e Layouts
+Tempo: 30 min.
+
 //
 
 //
