@@ -1,8 +1,5 @@
 ::
-
 P.I.:
-	.decimal Distancia
-	.Range, [DisplayFormat(... DataFormatString = "{0:dd/MM/yyyy}")] em Turista 
 	.mudar thumb nails de back office
 :: 
 .GET: Editar - Como passo o caminho da imagem? 

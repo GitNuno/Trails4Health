@@ -7,13 +7,14 @@ DEVELOPER COMMAND PROMPT FOR VS 2017
 
 ::
 COMANDOS:
-	.cd C:\programacao_internet\Trails4Health\Project_Trails4Health\Trails4Health  (nota: dir_myProject e não do sln! )
-	.dotnet restore
-	.dotnet build
-	.dotnet ef migrations add Initial --context ApplicationDbContext
-	.dotnet ef migrations add Initial --context LoginsApplicationDbContext
-	.dotnet ef database update --context ApplicationDbContext
-	.dotnet ef database update --context LoginsApplicationDbContext
+	 // nota: dir_myProject e não do sln! )
+	cd C:\programacao_internet\Trails4Health\Project_Trails4Health\Trails4Health  
+	dotnet restore
+	dotnet build
+	dotnet ef migrations add Initial --context ApplicationDbContext
+	dotnet ef migrations add Initial --context LoginsApplicationDbContext
+	dotnet ef database update --context ApplicationDbContext
+	dotnet ef database update --context LoginsApplicationDbContext
 	
 	EX: MIGRAÇÃO + UPDATE_DB DEPOIS DE ADICIONADO NOVO CAMPO A MODELO (sumario em Trilho.cs)
 		.cd /dir_myProject (nota: dir_myProject e não do sln! )
@@ -24,3 +25,4 @@ COMANDOS:
 		(verificar mudanças)
 		
 		Trails4HealthDbContext
+		
