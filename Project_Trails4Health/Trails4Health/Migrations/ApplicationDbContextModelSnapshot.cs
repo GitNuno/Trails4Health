@@ -212,7 +212,7 @@ namespace Trails4Health.Migrations
                     b.ToTable("TipoQuestoes");
                 });
 
-            modelBuilder.Entity("Trails4Health.Models.ListaTrilhos", b =>
+            modelBuilder.Entity("Trails4Health.Models.Trilho", b =>
                 {
                     b.Property<int>("TrilhoID")
                         .ValueGeneratedOnAdd();
@@ -231,9 +231,7 @@ namespace Trails4Health.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<byte[]>("ImagemTrilho");
-
-                    b.Property<string>("ImagemURL")
+                    b.Property<string>("Foto")
                         .IsRequired();
 
                     b.Property<string>("Inicio")
@@ -287,7 +285,7 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.AvaliacaoTrilho", b =>
                 {
-                    b.HasOne("Trails4Health.Models.ListaTrilhos", "ListaTrilhos")
+                    b.HasOne("Trails4Health.Models.Trilho", "Trilho")
                         .WithMany()
                         .HasForeignKey("TrilhoID")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -300,7 +298,7 @@ namespace Trails4Health.Migrations
                         .HasForeignKey("EstadoID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Trails4Health.Models.ListaTrilhos", "ListaTrilhos")
+                    b.HasOne("Trails4Health.Models.Trilho", "Trilho")
                         .WithMany("EstadoTrilhos")
                         .HasForeignKey("TrilhoID")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -348,7 +346,7 @@ namespace Trails4Health.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Trails4Health.Models.ListaTrilhos", b =>
+            modelBuilder.Entity("Trails4Health.Models.Trilho", b =>
                 {
                     b.HasOne("Trails4Health.Models.Dificuldade", "Dificuldade")
                         .WithMany("Trilhos")

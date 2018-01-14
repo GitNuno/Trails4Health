@@ -7,9 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Trails4Health.Models;
 using Trails4Health.Models.ViewModels;
-using System.IO;
-using System.Net.Http.Headers;
-using System.Threading;
 
 namespace Trails4Health.Controllers
 {
@@ -41,17 +38,16 @@ namespace Trails4Health.Controllers
         // paginação
         // Listar Trilhos em BackOffice
         // IMPORTANTE: arg tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
-        public int TamanhoPagina = 3;
-        public ViewResult ListaTrilhos(int page = 1) 
+        public int TamanhoPagina = 4;
+        public ViewResult ListaTrilhos(int page = 1)
         {
             return View(
                 new ViewModelListaTrilhos
                 {
-                    ListaTrilhos = repository.Trilhos
-                        .OrderBy(t => t.Desativado)
+                    Trilho = repository.Trilhos
                         .Skip(TamanhoPagina * (page - 1))
-                        .Take(TamanhoPagina),
-                        
+                        .Take(TamanhoPagina)
+                        .OrderBy(t => t.Desativado),
                     InfoPaginacao = new InfoPaginacao
                     {
                         PaginaAtual = page,
@@ -90,8 +86,7 @@ namespace Trails4Health.Controllers
                 TrilhoFim = trilho.Fim,
                 TrilhoSumario = trilho.Sumario,
                 TrilhoDetalhes = trilho.Detalhes,
-                //TrilhoFoto = trilho.Foto,
-                TrilhoImagem = trilho.ImagemTrilho,
+                TrilhoFoto = trilho.Foto,
                 TrilhoDistancia = trilho.Distancia,
                 TrilhoDesativado = trilho.Desativado,
                 Dificuldade = trilho.Dificuldade,
@@ -119,8 +114,7 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario," +
-            "TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho trilhoVM)
+        public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho trilhoVM)
         {
             // Colocar registos da dbo.Trilhos numa lista
             var trilhos = _context.Trilhos
@@ -150,19 +144,12 @@ namespace Trails4Health.Controllers
                     Inicio = trilhoVM.TrilhoInicio,
                     Fim = trilhoVM.TrilhoFim,
                     Distancia = trilhoVM.TrilhoDistancia,
-                    //Foto = trilhoVM.TrilhoFoto,
+                    Foto = trilhoVM.TrilhoFoto,
                     Desativado = trilhoVM.TrilhoDesativado,
                     Detalhes = trilhoVM.TrilhoDetalhes,
                     Sumario = trilhoVM.TrilhoSumario,
                     DificuldadeID = trilhoVM.DificuldadeID
                 };
-                // upload de imagem
-                // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
-                using (var memoryStream = new MemoryStream())
-                {
-                    await trilhoVM.ImageFile.CopyToAsync(memoryStream);
-                    trilho.ImagemTrilho = memoryStream.ToArray();
-                }
 
                 // coloco trilho na tabela dbo.Trilhos
                 _context.Add(trilho);
@@ -219,7 +206,7 @@ namespace Trails4Health.Controllers
                 TrilhoInicio = trilho.Inicio,
                 TrilhoFim = trilho.Fim,
                 TrilhoDistancia = trilho.Distancia,
-                //TrilhoFoto = trilho.Foto,                
+                TrilhoFoto = trilho.Foto,
                 TrilhoDesativado = trilho.Desativado,
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
@@ -237,8 +224,7 @@ namespace Trails4Health.Controllers
         // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes," +
-            "TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho VMTrilho)
+        public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID")] ViewModelTrilho VMTrilho)
         {
 
             // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
@@ -249,20 +235,12 @@ namespace Trails4Health.Controllers
                 Inicio = VMTrilho.TrilhoInicio,
                 Fim = VMTrilho.TrilhoFim,
                 Distancia = VMTrilho.TrilhoDistancia,
-                //Foto = VMTrilho.TrilhoFoto,
+                Foto = VMTrilho.TrilhoFoto,
                 Desativado = VMTrilho.TrilhoDesativado,
                 Detalhes = VMTrilho.TrilhoDetalhes,
                 Sumario = VMTrilho.TrilhoSumario,
                 DificuldadeID = VMTrilho.DificuldadeID
             };
-
-            // upload de imagem
-            // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
-            using (var memoryStream = new MemoryStream())             
-            {
-                await VMTrilho.ImageFile.CopyToAsync(memoryStream);  // DÁ NULL ???!!
-                trilho.ImagemTrilho = memoryStream.ToArray();
-            }
 
             // registo do ultimo EstadoTrilho do trilho seleccionado
             EstadoTrilho ultimoEstadoTrilho = await _context.EstadoTrilhos.SingleOrDefaultAsync(uet => uet.TrilhoID == id

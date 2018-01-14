@@ -1,4 +1,4 @@
-﻿<!-- 1. criei stronglyType model para receber Trilhos (a partir do controlador) -->
+﻿<!-- 1. criei stronglyType model para receber Trilhos (a partir do controlador) -->  
 <!-- BEFORE ViewModel: amodel IEnumerable<Trilho> -->
 @model ViewModelListaTrilhos
 @{
@@ -13,7 +13,7 @@
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4">
+                <li class="nav-item  px-lg-4">
                     <a asp-controller="Home" asp-action="Index" class="nav-link text-uppercase text-expanded">
                         Home
                         <span class="sr-only">(current)</span>
@@ -41,8 +41,8 @@
 
 <!-- Container -->
 <div class="container">
-    <!-- ver \views\shared\TrilhosIndex -->
-    @foreach (Trilho T in Model.ListaTrilhos)
+    <!-- ver \views\shared\SumarioTrilhos -->
+    @foreach (Trilho T in Model.Trilho)
     {
         <!-- Lista apenas Trilhos ativos -->
         @if (!T.Desativado)
@@ -53,6 +53,7 @@
 </div>
 
 <!-- /.container -->
+
 <!--Pagination-->
 <div page-model="@Model.InfoPaginacao"
      css-classes-enabled="true"
@@ -62,7 +63,7 @@
      class=" bg-faded p-4 my-4 pagination mb-0">
 </div>
 
-@*<div class="bg-faded p-4 my-4">
+    @*<div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">
             <li class="page-item">
                 <a class="page-link" href="#">&larr; Older</a>

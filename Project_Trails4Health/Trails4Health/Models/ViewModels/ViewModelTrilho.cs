@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 
 namespace Trails4Health.Models.ViewModels
 {
@@ -40,13 +39,8 @@ namespace Trails4Health.Models.ViewModels
           //  "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
         public decimal TrilhoDistancia { get; set; }
 
-        //[Required(ErrorMessage = "Escolha uma foto")]
-        //public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados ??
-        // UPLOAD IMAGEM
-        public string ImagePath { get; set; }
-        [Required(ErrorMessage = "Escolha uma Imagem")]
-        public IFormFile ImageFile { get; set; }        
-        public byte[] TrilhoImagem { get; set; }
+        [Required(ErrorMessage = "Escolha uma foto")]
+        public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados ??
 
         public bool TrilhoDesativado { get; set; } = false;
 

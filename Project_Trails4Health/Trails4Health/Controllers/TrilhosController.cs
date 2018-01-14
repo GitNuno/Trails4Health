@@ -37,7 +37,7 @@ namespace Trails4Health.Controllers
             return View(
                 new ViewModelListaTrilhos
                 {
-                    ListaTrilhos = repository.Trilhos
+                    Trilho = repository.Trilhos
                         .Skip(TamanhoPagina * (page - 1))
                         .Take(TamanhoPagina),
                     InfoPaginacao = new InfoPaginacao

@@ -39,15 +39,11 @@
             <strong>Descrição</strong>
         </h2>
         <hr class="divider">
-        <div class="row">
+        <div class="row" style="padding:2em">
             <div class="col-lg-6" align="center" style="margin-bottom:2em">
-                @{
-                    var base64 = Convert.ToBase64String(Model.ImagemTrilho);
-                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                }
-                <img class="img-fluid mb-4 mb-lg-0" src="@imgSrc" style="width:25em; height:15em;"  alt="">
+                <img class="img-fluid mb-4 mb-lg-0" src="@Model.Foto" alt="">
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                @Model.Detalhes
             </div>
         </div>

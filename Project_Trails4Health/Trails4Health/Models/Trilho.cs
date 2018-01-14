@@ -39,10 +39,7 @@ namespace Trails4Health.Models
         public decimal Distancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]
-
-        public string ImagemURL { get; set; }
-
-        public byte[] ImagemTrilho { get; set; }
+        public string Foto { get; set; } // mais tarde vai ser na base dados
 
         public bool Desativado { get; set; } = false;
 

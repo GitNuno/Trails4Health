@@ -698,6 +698,10 @@ Tempo: 1h
 .Corrigidas Views e Layouts
 Tempo: 30 min.
 
+// 14/12/2018
+.Substituido projecto com Foto Trilho VARBINARY (defeituoso) por versao Foto Trilho URL (fully functional)
+Tempo:15 min.
+
 //
 
 //

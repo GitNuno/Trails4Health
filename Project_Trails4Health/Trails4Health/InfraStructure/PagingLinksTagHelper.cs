@@ -4,10 +4,6 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Trails4Health.Models.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 // ver _ViewImports.
 namespace Trails4Health.Infrastructure
@@ -17,15 +13,17 @@ namespace Trails4Health.Infrastructure
     // vai-me gerar os botões e os links de pag. para pagina, onde vou aplicar o tag helper(div) 
     // Attributes > page-model == PageModel
     [HtmlTargetElement("div", Attributes = "page-model")]
-    public class PagingLinksTagHelper : TagHelper {
+    public class PagingLinksTagHelper : TagHelper
+    {
 
         // vai-me gerar os links da paginação
-        private IUrlHelperFactory urlHelperFactory; 
+        private IUrlHelperFactory urlHelperFactory;
         // links antes e dps pag. atual
         public static int MaxLinksBeforeAndAfterCurrentPage = 7;
 
         // IUrlHelperFactory fabrica de links o MVC vai-me providenciar um serviço
-        public PagingLinksTagHelper(IUrlHelperFactory urlHelperFactory) {
+        public PagingLinksTagHelper(IUrlHelperFactory urlHelperFactory)
+        {
             this.urlHelperFactory = urlHelperFactory;
         }
 
@@ -46,7 +44,8 @@ namespace Trails4Health.Infrastructure
 
         // codigo para gerar link: qts pag.s vou pôr e que está em PagingInfo PageModel
         // metodo_override de TagHelper
-        public override void Process(TagHelperContext context, TagHelperOutput output) {
+        public override void Process(TagHelperContext context, TagHelperOutput output)
+        {
 
             // para gerar os url
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
@@ -59,14 +58,16 @@ namespace Trails4Health.Infrastructure
             int final = PageModel.TotalPages + MaxLinksBeforeAndAfterCurrentPage;
             if (final > PageModel.TotalPages) final = PageModel.TotalPages;
 
-            for (int p = initial; p <= final; p++) {
+            for (int p = initial; p <= final; p++)
+            {
                 // criar a tag <a> hiperligacao
                 TagBuilder pageLink = new TagBuilder("a");
                 pageLink.Attributes["href"] = urlHelper.Action(PageAction, new { page = p });
                 // numeros que vejo: 1 2 3 ...(<a> com nºs)
                 pageLink.InnerHtml.Append(p.ToString());
                 // se ativas adiciona css a pag.
-                if (CssClassesEnabled) {
+                if (CssClassesEnabled)
+                {
                     // aplicada a todas as paginas
                     pageLink.AddCssClass(CssClassPage);
                     // se minha pag. == ativa(atual) mostro Css da pagina selecionada senão da normal
