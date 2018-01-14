@@ -1,7 +1,7 @@
 ::
 
 P.I.:
-	.retirar imagemURL do modelo Trilho null: 
+	.decimal Distancia
 	.Range, [DisplayFormat(... DataFormatString = "{0:dd/MM/yyyy}")] em Turista 
 	.mudar thumb nails de back office
 :: 

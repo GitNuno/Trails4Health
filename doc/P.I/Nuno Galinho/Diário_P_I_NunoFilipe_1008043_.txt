@@ -702,6 +702,9 @@ Tempo: 30 min.
 .Substituido projecto com Foto Trilho VARBINARY (defeituoso) por versao Foto Trilho URL (fully functional)
 Tempo:15 min.
 
+.Branch NunoG: Criada BD - Introduzidos registos - Confirmados Erros
+Tempo: 30 min.
+
 //
 
 //

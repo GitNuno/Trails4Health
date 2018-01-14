@@ -33,8 +33,7 @@ namespace Trails4Health.Models
         // TRILHOS
         public static Trilho faias = new Trilho
         {
-            Nome = "Rota das Faias",
-            ImagemURL = "/images/faias.jpg",         
+            Nome = "Rota das Faias",                   
             Detalhes = "Queres caminhar entre gnomos, " +
                  "florestas encantadas, cogumelos selvagens e ouvir o crepitar das folhas debaixo dos pés ? Tens de fazer a " +
                  "Rota das Faias.Ainda que seja mais aconselhável fazer o percurso pedestre no outono para podermos apreciar " +
@@ -52,8 +51,7 @@ namespace Trails4Health.Models
                 
         public static Trilho covao = new Trilho
         {
-            Nome = "Covão dos Conchos",
-            ImagemURL = "/images/covao.jpg",
+            Nome = "Covão dos Conchos",            
             Detalhes = "O funil não é mais do que um túnel construído na década de ’50 e que leva as águas recolhidas da " +
                 "Ribeira das Naves e as encaminha para a Lagoa Comprida, bem mais abaixo.O túnel tem 48 m de coroamento e " +
                 "1519 metros de comprimento. Para aqui chegar basta fazer uma caminhada de 8 km(quatro para cada lado), " +
