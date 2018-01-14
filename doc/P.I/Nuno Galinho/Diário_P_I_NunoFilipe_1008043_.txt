@@ -659,9 +659,51 @@ Tempo: 1h
 .Criado nova view BackOffice\Index.cshtml e alterados layouts
 Tempo: 1h
 
-//
+// 12/12/2018
+.Upload de imagens
+Tempo: 1.30h
 
-//
+// 13/12/2018
+.Criado novo input file btn com validação
+Tempo: 30 min.
+
+.Falhada edição de Imagem!
+GET: Editar - Como passo o caminho da imagem? 
+	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
+POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
+      Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
+Tempo: 1h
+
+.Adicionado Project_Trails4Health_ImageURL
+Nota: Adicionei esta versao mais antiga do projecto porque estou a ter problemas com o upload de imagens e o que isso implica sobretudo na parte de POST: Editar na versao atual.
+.A partir de agora vou trabalhar simultaneamente nos 2 e entregar o melhor.
+MSG PARA RICARDO: Se puderes trabalhar simultaneamente nos 2 projectos seria o Ideal, senão trabalha apenas num e avisa-me pff.
+Tempo:15 min.
+
+.Exibir Imagens (VARBINARY) em ListaTrilhos 
+Tempo: 15 min.
+
+.Paginação a funcionar
+Nota: 
+A acção  public ViewResult ListaTrilhos(int pagina = 1) não recebia valor GET
+IMPORTANTE: arg da acção tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
+Tempo: 1h
+
+.Criadas novas Views Detalhes
+Tempo: 1h
+
+.Criada novas Views para \TrilhoCRUD\ListaTrilhos.cshtml
+Tempo: 1h
+
+.Corrigidas Views e Layouts
+Tempo: 30 min.
+
+// 14/12/2018
+.Substituido projecto com Foto Trilho VARBINARY (defeituoso) por versao Foto Trilho URL (fully functional)
+Tempo:15 min.
+
+.Branch NunoG: Criada BD - Introduzidos registos - Confirmados Erros
+Tempo: 30 min.
 
 //
 

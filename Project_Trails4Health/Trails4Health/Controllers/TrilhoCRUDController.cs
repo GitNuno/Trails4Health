@@ -37,19 +37,20 @@ namespace Trails4Health.Controllers
 
         // paginação
         // Listar Trilhos em BackOffice
-        public int TamanhoPagina = 3;
-        public ViewResult ListaTrilhos(int pagina = 1)
+        // IMPORTANTE: arg tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
+        public int TamanhoPagina = 4;
+        public ViewResult ListaTrilhos(int page = 1)
         {
             return View(
                 new ViewModelListaTrilhos
                 {
                     Trilho = repository.Trilhos
-                        .Skip(TamanhoPagina * (pagina - 1))
+                        .Skip(TamanhoPagina * (page - 1))
                         .Take(TamanhoPagina)
                         .OrderBy(t => t.Desativado),
                     InfoPaginacao = new InfoPaginacao
                     {
-                        PaginaAtual = pagina,
+                        PaginaAtual = page,
                         ItemsPorPagina = TamanhoPagina,
                         TotalItems = repository.Trilhos.Count()
                     }
