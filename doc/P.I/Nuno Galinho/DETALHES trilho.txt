@@ -1,6 +1,4 @@
 
-
-
 // Torre
 Torre
 Alvoco
@@ -15,6 +13,21 @@ erigir aqui um monumento em pedra, de modo a completar a altitude até chegar ao
 A altitude da Torre é de 1993. As temperaturas mais baixas de Portugal são registadas
 no cume da Serra da Estrela,onde os termómetros já atingiram quase os  -20 °C no inverno.
 
+
+// Rota do Glaciar
+Manteigas
+Torre
+/images/vale.jpg
+
+O Vale Glaciar por onde corre o Rio Zêzere é o maior vale glaciar da Europa e 
+estende-se por 13 quilómetros de comprimento, desde o Maciço Central da serra até 
+à Vila de Manteigas.
+
+A melhor forma de apreciar este magnífico vale é percorrendo de carro a estrada 
+Nacional N338 que liga Manteigas à Torre, ou a pé, através do trilho de 17km, a 
+Rota do Glaciar. Ao longo do percurso não é difícil ficar cativado pelas encostas 
+íngremes e pelas bolas graníticas que miraculosamente se suspendem nos píncaros da 
+Serra.
 
 // Linhares da Beira
 Linhares da Beira
@@ -52,8 +65,8 @@ Lagoa Comprida
 /images/inferno.jpg
 
 Subindo paralelo à Ribeira de Leandres e seguindo por caminhos estreitos, 
-onde não passa mais do que um carro, chegamos a um dos ex-libris da Serra da Estrela
-.
+onde não passa mais do que um carro, chegamos a um dos ex-libris da Serra da Estrela.
+
 
 O som da água que cai a mais de 10 metros e se precipita com vigor e estrondo na 
 pequena lagoa é uma espécie de música terapêutica, que neste recanto a serra decidiu 
@@ -98,21 +111,6 @@ Nesta lagoa desaguam dois túneis: o do Covão do Meio, com 2354 metros que desv
 a água das encostas da Torre e o do Covão dos Conchos com 1519 metros que desvia 
 as águas da Ribeira das Naves.
 
- 
-// Vale Glaciar
-/images/vale.jpg
-
-O Vale Glaciar por onde corre o Rio Zêzere é o maior vale glaciar da Europa e 
-estende-se por 13 quilómetros de comprimento, desde o Maciço Central da serra até 
-à Vila de Manteigas. O Vale Glaciar serve de berço ao Rio Zêzere e dá vida às 
-dezenas de rebanhos de cabras e ovelhas que estendem pelas suas encostas.
-
-A melhor forma de apreciar este magnífico vale é percorrendo de carro a estrada 
-Nacional N338 que liga Manteigas à Torre, ou a pé, através do trilho de 17km, a 
-Rota do Glaciar. Ao longo do percurso não é difícil ficar cativado pelas encostas 
-íngremes e pelas bolas graníticas que miraculosamente se suspendem nos píncaros da 
-Serra.
-
 
 // EM SEED_DATA:
 
@@ -137,7 +135,7 @@ Lagoa Comprida
 
 O Covão dos Conchos tornou-se famoso quando no início deste ano uma série de filmes 
 gravados com um drone mostrava as águas da lagoa a precipitarem-se num gigantesco 
-funil e a desaparecerem misteriosamente…
+funil e a desaparecerem...
 
 O funil não é mais do que um túnel construído na década de ’50 e que leva as 
 águas recolhidas da Ribeira das Naves e as encaminha para a Lagoa Comprida, bem mais 

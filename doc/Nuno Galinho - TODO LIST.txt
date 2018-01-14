@@ -1,11 +1,5 @@
 ::
-
 P.I.:
-	.decimal Distancia:
-		.[RegularExpression(@"^\d+(\.\d)?$", ErrorMessage = "It cannot have more than one decimal point value")]
-		[Range( 0.1,100)]
-		public double xyz{get;set;}  
-
 	.mudar thumb nails de back office
 :: 
 .GET: Editar - Como passo o caminho da imagem? 
@@ -40,6 +34,7 @@ ALGORITMO MUDAR ESTADO:
 	1       1      now         --
 	2       1      5          now
 	2       2      now         --
+	
 
 .ENG. SOFT.2:
 	.Foto - VARBINARY
