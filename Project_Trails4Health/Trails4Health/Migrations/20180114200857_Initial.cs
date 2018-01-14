@@ -105,7 +105,7 @@ namespace Trails4Health.Migrations
                     Desativado = table.Column<bool>(nullable: false),
                     Detalhes = table.Column<string>(maxLength: 700, nullable: false),
                     DificuldadeID = table.Column<int>(nullable: false),
-                    Distancia = table.Column<decimal>(nullable: false),
+                    Distancia = table.Column<double>(nullable: false),
                     Fim = table.Column<string>(maxLength: 50, nullable: false),
                     Foto = table.Column<string>(nullable: false),
                     Inicio = table.Column<string>(maxLength: 50, nullable: false),

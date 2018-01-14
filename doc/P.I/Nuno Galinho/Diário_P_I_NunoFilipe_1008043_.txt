@@ -705,6 +705,10 @@ Tempo:15 min.
 .Branch NunoG: Criada BD - Introduzidos registos - Confirmados Erros
 Tempo: 30 min.
 
+.Falhada tentativa de atribuição de casas decimais ao campo Distancia
+.Nota: Tentei com novas anotaçoes e tipos decimal e double: nao reconhece parte decimal quer separado por ponto ou virgula
+Tempo: 1h
+
 //
 
 //

@@ -1,8 +1,11 @@
 ::
 
 P.I.:
-	.retirar imagemURL do modelo Trilho null: 
-	.Range, [DisplayFormat(... DataFormatString = "{0:dd/MM/yyyy}")] em Turista 
+	.decimal Distancia:
+		.[RegularExpression(@"^\d+(\.\d)?$", ErrorMessage = "It cannot have more than one decimal point value")]
+		[Range( 0.1,100)]
+		public double xyz{get;set;}  
+
 	.mudar thumb nails de back office
 :: 
 .GET: Editar - Como passo o caminho da imagem? 

@@ -33,14 +33,14 @@ namespace Trails4Health.Models.ViewModels
         [StringLength(200, MinimumLength = 5, ErrorMessage = "Sumario tem entre 5-200 caracteres")] // entre entre 5-200 caracteres
         public string TrilhoSumario { get; set; }
 
-
-        [Required(ErrorMessage = "Introduza Distancia do Trilho")]
         //[RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida - " +
-          //  "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
-        public decimal TrilhoDistancia { get; set; }
+        //  "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
+        [Required(ErrorMessage = "Introduza Distancia do Trilho")]
+        [Range(0, 999.99)]
+        public double TrilhoDistancia { get; set; }
 
         [Required(ErrorMessage = "Escolha uma foto")]
-        public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados ??
+        public string TrilhoFoto { get; set; } 
 
         public bool TrilhoDesativado { get; set; } = false;
 

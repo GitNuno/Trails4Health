@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Trails4Health.Models
-{
+{   
     public class Trilho
     {
         // ATRIBUTOS
@@ -35,11 +36,12 @@ namespace Trails4Health.Models
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
-        //[DataType(DataType. ErrorMessage = "Distancia Inválida")] // excepto letras, espaços e "ç" 
-        public decimal Distancia { get; set; }
+        [Range(0, 999.99)]
+        public double Distancia { get; set; }
 
+        //[DataType(DataType. ErrorMessage = "Distancia Inválida")] 
         [Required(ErrorMessage = "Escolha uma foto")]
-        public string Foto { get; set; } // mais tarde vai ser na base dados
+        public string Foto { get; set; } 
 
         public bool Desativado { get; set; } = false;
 

@@ -225,7 +225,7 @@ namespace Trails4Health.Migrations
 
                     b.Property<int>("DificuldadeID");
 
-                    b.Property<decimal>("Distancia");
+                    b.Property<double>("Distancia");
 
                     b.Property<string>("Fim")
                         .IsRequired()
