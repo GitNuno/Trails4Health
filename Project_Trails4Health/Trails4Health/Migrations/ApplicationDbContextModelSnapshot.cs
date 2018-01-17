@@ -231,8 +231,7 @@ namespace Trails4Health.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<byte[]>("ImagemTrilho")
-                        .IsRequired();
+                    b.Property<byte[]>("ImagemTrilho");
 
                     b.Property<string>("Inicio")
                         .IsRequired()

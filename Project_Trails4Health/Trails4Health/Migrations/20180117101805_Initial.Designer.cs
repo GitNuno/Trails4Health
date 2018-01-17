@@ -11,7 +11,7 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180114202942_Initial")]
+    [Migration("20180117101805_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -232,8 +232,7 @@ namespace Trails4Health.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<byte[]>("ImagemTrilho")
-                        .IsRequired();
+                    b.Property<byte[]>("ImagemTrilho");
 
                     b.Property<string>("Inicio")
                         .IsRequired()

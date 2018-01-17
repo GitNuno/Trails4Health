@@ -1,6 +1,7 @@
 ::
 P.I.:
-	.mudar thumb nails de back office
+	.mudar ImagemTrilho > Foto
+	.verificar se img obrigatorio
 :: 
 .GET: Editar - Como passo o caminho da imagem? 
 	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
@@ -38,6 +39,11 @@ ALGORITMO MUDAR ESTADO:
 .ENG. SOFT.2:
 	.Foto - VARBINARY
 	.Horas
+	
+::
+
+se turista colocou imagem edita senão ...
+
 
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

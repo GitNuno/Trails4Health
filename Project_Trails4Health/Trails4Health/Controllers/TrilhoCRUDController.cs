@@ -156,12 +156,15 @@ namespace Trails4Health.Controllers
                     Sumario = trilhoVM.TrilhoSumario,
                     DificuldadeID = trilhoVM.DificuldadeID
                 };
+
+                if (trilhoVM.ImageFile != null) {
                 // upload de imagem
                 // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
-                using (var memoryStream = new MemoryStream())
-                {
-                    await trilhoVM.ImageFile.CopyToAsync(memoryStream);
-                    trilho.ImagemTrilho = memoryStream.ToArray();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await trilhoVM.ImageFile.CopyToAsync(memoryStream);
+                        trilho.ImagemTrilho = memoryStream.ToArray();
+                    }
                 }
 
                 // coloco trilho na tabela dbo.Trilhos
@@ -219,7 +222,8 @@ namespace Trails4Health.Controllers
                 TrilhoInicio = trilho.Inicio,
                 TrilhoFim = trilho.Fim,
                 TrilhoDistancia = trilho.Distancia,
-                //TrilhoFoto = trilho.Foto,                
+                //TrilhoFoto = trilho.Foto,
+                TrilhoImagem = trilho.ImagemTrilho,
                 TrilhoDesativado = trilho.Desativado,
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
@@ -238,7 +242,7 @@ namespace Trails4Health.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes," +
-            "TrilhoSumario,TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho VMTrilho)
+            "TrilhoSumario,TrilhoDistancia,TrilhoFoto,TrilhoDesativado,DificuldadeID,EstadoID,TrilhoImagem,ImageFile")] ViewModelTrilho VMTrilho)
         {
 
             // crio novo trilho a partir dos valores introduzidos no form (ver Bind)
@@ -250,20 +254,24 @@ namespace Trails4Health.Controllers
                 Fim = VMTrilho.TrilhoFim,
                 Distancia = VMTrilho.TrilhoDistancia,
                 //Foto = VMTrilho.TrilhoFoto,
+                ImagemTrilho = VMTrilho.TrilhoImagem,
                 Desativado = VMTrilho.TrilhoDesativado,
                 Detalhes = VMTrilho.TrilhoDetalhes,
                 Sumario = VMTrilho.TrilhoSumario,
                 DificuldadeID = VMTrilho.DificuldadeID
             };
 
-            // upload de imagem
-            // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
-            using (var memoryStream = new MemoryStream())             
+            if (VMTrilho.ImageFile != null)
             {
-                await VMTrilho.ImageFile.CopyToAsync(memoryStream);  // DÁ NULL ???!!
-                trilho.ImagemTrilho = memoryStream.ToArray();
+                // upload de imagem
+                // nota: criado controlador UploadFiles, ver mudanças em ViewModelTrilho e Trilho.cs
+                using (var memoryStream = new MemoryStream())
+                {
+                    await VMTrilho.ImageFile.CopyToAsync(memoryStream);
+                    trilho.ImagemTrilho = memoryStream.ToArray();
+                }
             }
-
+           
             // registo do ultimo EstadoTrilho do trilho seleccionado
             EstadoTrilho ultimoEstadoTrilho = await _context.EstadoTrilhos.SingleOrDefaultAsync(uet => uet.TrilhoID == id
                                                                                                     && uet.DataFim == null);
