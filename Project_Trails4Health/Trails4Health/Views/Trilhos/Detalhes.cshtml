@@ -39,27 +39,20 @@
             <strong>Descrição</strong>
         </h2>
         <hr class="divider">
-        <div class="row">
-            <div class="col-lg-6" align="center" style="margin-bottom:2em">
+        <div class="row"  style="padding:2em">
+            <div class="col-lg-6" align="center">
                @if (Model.Foto != null)
                 {
                     var base64 = Convert.ToBase64String(Model.Foto);
                     var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                    <img class="card-img img-fluid w-100" src="@imgSrc" style="width:25em; height:15em;" alt="">
+                    <img class="card-img img-fluid w-100" src="@imgSrc" style="width:25em; height:17em;" alt="">
                 }
                 else
                 {
-                    <img class="card-img img-fluid w-100" src="~/images/imageNA.png" style="width:25em; height:15em;" alt="">
+                    <img class="card-img img-fluid w-100" src="~/images/imageNA.png" style="width:25em; height:17em;" alt="">
                 }
-
-                @*@{
-                    var base64 = Convert.ToBase64String(Model.ImagemTrilho);
-                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                }
-                <img class="img-fluid mb-4 mb-lg-0" src="@imgSrc" style="width:25em; height:15em;"  alt="">*@
-
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                @Model.Detalhes
             </div>
         </div>

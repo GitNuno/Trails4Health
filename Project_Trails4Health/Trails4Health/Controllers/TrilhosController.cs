@@ -31,7 +31,7 @@ namespace Trails4Health.Controllers
 
         // paginação
         // IMPORTANTE: arg tem de ser "page" como no url Ex: .../TrilhoCRUD/ListaTrilhos?page=2
-        public int TamanhoPagina = 4;
+        public int TamanhoPagina = 3;
         public ViewResult Index(int page = 1)
         {
             return View(

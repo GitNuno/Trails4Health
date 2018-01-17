@@ -1,10 +1,6 @@
 ::
 P.I.:
 
-
-:: 
-
-	
 ::
 RECONHECER NOTEPAD++:
 	.abrir ficheiros cs.html com notepad++

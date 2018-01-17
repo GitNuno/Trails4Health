@@ -17,7 +17,7 @@ no cume da Serra da Estrela,onde os termómetros já atingiram quase os  -20 °C
 // Rota do Glaciar
 Manteigas
 Torre
-/images/vale.jpg
+/images/glaciar.jpg
 
 O Vale Glaciar por onde corre o Rio Zêzere é o maior vale glaciar da Europa e 
 estende-se por 13 quilómetros de comprimento, desde o Maciço Central da serra até 
