@@ -1,7 +1,9 @@
 ::
 P.I.:
-	.mudar ImagemTrilho > Foto
+	.seedData
+	.mudar ImagemTrilho > Foto em VM + Trilho
 	.verificar se img obrigatorio
+	.por backoffice em thumnails
 :: 
 .GET: Editar - Como passo o caminho da imagem? 
 	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?

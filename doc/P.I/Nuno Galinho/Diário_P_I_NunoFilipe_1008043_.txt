@@ -417,13 +417,13 @@ Tempo: 1h
 .Apaguei as minhas migrações e fiz o update da BD
 Tempo: 30min.
 
-//  22/12/2017
+// 22/12/2017
 . Pesquisa conceitos sobre WEB app
 .Compilei uma serie de conceitos relacionados com WEB applications:,
 servidor IIS, plataforma .NET, etc...
 Tempo: 1h
 
-// 01/12/2018
+// 01/01/2018
 . Redimensionei colunas e n. de carateres por coluna nas views: /trilhoes/index, delete, details.
 Tempo:45 min.
 
@@ -439,7 +439,7 @@ Tempo:15 min.
  +...Edit(int id, [Bind("TrilhoID,Nome,Inicio,Fim,Sumario,...
 Tempo:1h
 
-// 02/12/2018
+// 02/01/2018
 .Resolvi problema mudança de atributo decimal Distancia para double Distancia no Modelo 
 Trilhos. Ao mudar de tipo de dados no atributo do modelo e feito o update da base dados, 
 dava-me erro qd tentava criar novo trilho.
@@ -457,7 +457,7 @@ Tempo: 30 min.
 .Criei Edit.cshtml(Trilhoes) usando ViewModelTrilho para incluir Estado no modelo.
 Tempo: 1h
 
-// 03/12/2018
+// 03/01/2018
 .Movi Lista.cshtml e FornCriar.cshtml de \Trilhos para \Trilhoes
 .Criei Listagem de Trilhos em TrilhoesControler,
 .Criei link para CRUD Trilho
@@ -491,7 +491,7 @@ Tempo:1h
 Nota: continua num url temporario: http://localhost:59900/CRUDTrilho/i2
 Tempo:30 min.
 
-// 04/12/2018
+// 04/01/2018
 .Renomeado \CRUDTrilho para \TrilhoCRUD + renomeada acção I2 de TrilhoCRUD para Index + recreado 
  conteudos de DETALHES trilho.txt
 Tempo: 30 min.
@@ -500,7 +500,7 @@ Tempo: 30 min.
 Erro: Cannot resolve scoped service 'Trails4Health.Models.ApplicationDbContext' from root provider.
 Tempo: 1h
 
-// 05/12/2018
+// 05/01/2018
 .SeedData a funcionar (corrigidos problemas)
 .RESOLUÇÃO DE PROBLEMAS:
 
@@ -554,7 +554,7 @@ Tempo:30 min.
 .Listagem dos Estados de um Trilho selecionado, na View Detalhes
 Tempo: 30 min.
 
-// 06/12/2018
+// 06/01/2018
 .Listagem (apenas) de trilhos ativos em \trilhos\index e \trilhosCRUD\ListaTrilhos
 Nota: Renomeei \Views\Shared\SumarioTrilhos.cshtml para ...\TrilhosIndex
 Tempo: 30 min.
@@ -575,7 +575,7 @@ Tempo:1h.
 .Melhorados pormenores das paginas TrilhoCRUD
 Tempo: 30 min.
 
-// 07/12/2018
+// 07/01/2018
 .Exibir erro: "*Já existe um trilho com esse nome!" quando se cria novo Trilho.Nome e este valor já existe na BD.
 .Criada view que exibe dados do Trilho.Nome (valor que já existe na BD)
 Tempo: 1h
@@ -606,7 +606,7 @@ Nota:
 Só posso chamar SeedData depois de atualizada BD !!
 Tempo: 15 min.
 
-// 08/12/2018
+// 08/01/2018
 .Alterações Gabinete Duvidas: OrderBy: /TrilhosCRUD/Index; /TrilhosCRUD/Detalhes + Inserir Distancia 
 com casas decimais (Falhada)
 Nota: 
@@ -623,7 +623,7 @@ Tempo:15 min.
 .Criada acção GET:  MudarEstado + View
 Tempo: 1h
 
-// 09/12/2018
+// 09/01/2018
 .Reposta versão Editar Estado na view Editar
 Nota: Por falta de tempo voltei a esta versão, pois parece-me que em termos de custo de tempo e beneficio é a melhor escolha.
 Tempo: 15 min.
@@ -632,7 +632,7 @@ Tempo: 15 min.
 NOTA:  Não sei que mais voltas tenho de dar para por isto a funcionar - esta é a parte do projecto mais frustrante!
 Tempo: 4h
 
-// 10/12/2018
+// 10/01/2018
 .Aula -10-01-2018: Historico EstadoTrilhos - A funcionar!
 
 .Corrigida SeedData.cs + Revisão do projecto ("clean code")
@@ -648,7 +648,7 @@ Tempo: 1h
 .Modificadas Views: TrilhoCRUD\Index.cshtml, \TrilhoCRUD\Desativar.cshtml
 Tempo:1h
 
-// 11/12/2018
+// 11/01/2018
 .Aula - terminada paginação + resolvido problema Glyphicon
 
 .Reconhecer Glyphicons com flatly_bootstrap.css
@@ -659,11 +659,11 @@ Tempo: 1h
 .Criado nova view BackOffice\Index.cshtml e alterados layouts
 Tempo: 1h
 
-// 12/12/2018
+// 12/01/2018
 .Upload de imagens
 Tempo: 1.30h
 
-// 13/12/2018
+// 13/01/2018
 .Criado novo input file btn com validação
 Tempo: 30 min.
 
@@ -698,7 +698,7 @@ Tempo: 1h
 .Corrigidas Views e Layouts
 Tempo: 30 min.
 
-// 14/12/2018
+// 14/01/2018
 .Substituido projecto com Foto Trilho VARBINARY (defeituoso) por versao Foto Trilho URL (fully functional)
 Tempo:15 min.
 
@@ -713,7 +713,12 @@ Tempo: 1h
 Tempo: 15 min
 */
 
-//
+// 17/01/2018
+.Corrigidos Null Point Exception relativos a \Views\Trilhos\Detalhes.cshtml; \Views\TrilhoCRUD\Desativar.cshtml;  \Views\TrilhoCRUD\ListaTrilhos.cshtml
+Tempo: 30 min.
+
+
+
 
 //
 
