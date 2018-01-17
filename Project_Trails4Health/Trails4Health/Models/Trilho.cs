@@ -35,14 +35,13 @@ namespace Trails4Health.Models
         public string Detalhes { get; set; }
 
         [Required(ErrorMessage = "Introduza Distancia do Trilho")]
-        //[DataType(DataType. ErrorMessage = "Distancia Inválida")]
+        // [DataType(DataType. ErrorMessage = "Distancia Inválida")]
         public decimal Distancia { get; set; }
 
-        //[Required(ErrorMessage = "Escolha uma foto")]
+        // [Required(ErrorMessage = "Escolha uma foto")]
         public byte[] ImagemTrilho { get; set; }
 
         public bool Desativado { get; set; } = false;
-
 
         // FK Dificuldade
         public int DificuldadeID { get; set; }

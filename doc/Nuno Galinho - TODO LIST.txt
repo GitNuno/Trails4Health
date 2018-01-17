@@ -1,12 +1,10 @@
 ::
 P.I.:
-	.mudar thumb nails de back office
+	.
+	.Foto, double
+
 :: 
-.GET: Editar - Como passo o caminho da imagem? 
-	Crio 1 campo public IFormFile ImageFile { get; set; } no Modelo Trilho e vou buscar a info á BD?
-.POST: Editar - await VMTrilho.ImageFile.CopyToAsync(memoryStream) 261: Null !! 
-      Não faz o Bind do valor VMTrilho.ImageFile introduzido no formulario!
-.Colocar imagem em SeedData;
+
 	
 ::
 RECONHECER NOTEPAD++:
