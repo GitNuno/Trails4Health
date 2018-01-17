@@ -1,0 +1,64 @@
+﻿@model Trails4Health.Models.Questao
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_LayoutBackoffice";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Questao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeQuestao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeQuestao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Desactivada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Desactivada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoResposta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoResposta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMaximo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorMaximo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMinimo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorMinimo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroOpcoes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroOpcoes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoQuestao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoQuestao.TipoQuestaoID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="QuestaoID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
