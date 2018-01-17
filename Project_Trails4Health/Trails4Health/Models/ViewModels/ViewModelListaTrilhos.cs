@@ -7,7 +7,7 @@ namespace Trails4Health.Models.ViewModels
 {
     public class ViewModelListaTrilhos
     {
-        public IEnumerable<Trilho> Trilho { get; set; }
+        public IEnumerable<Trilho> ListaTrilhos { get; set; }
         public InfoPaginacao InfoPaginacao { get; set; }
     }
 }

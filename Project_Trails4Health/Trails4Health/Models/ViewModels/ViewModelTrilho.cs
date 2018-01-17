@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace Trails4Health.Models.ViewModels
 {
@@ -33,14 +34,19 @@ namespace Trails4Health.Models.ViewModels
         [StringLength(200, MinimumLength = 5, ErrorMessage = "Sumario tem entre 5-200 caracteres")] // entre entre 5-200 caracteres
         public string TrilhoSumario { get; set; }
 
-        //[RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida - " +
-        //  "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
-        [Required(ErrorMessage = "Introduza Distancia do Trilho")]
-        [Range(0, 999.99)]
-        public double TrilhoDistancia { get; set; }
 
-        [Required(ErrorMessage = "Escolha uma foto")]
-        public string TrilhoFoto { get; set; } 
+        [Required(ErrorMessage = "Introduza Distancia do Trilho")]
+        //[RegularExpression(@"([^a-zA-Z^\sÇ^]{1,6})", ErrorMessage = "Distancia Inválida - " +
+          //  "introduza apenas valores numericos sem espaços num maximo de 6 caracteres")] // excepto letras, espaços e "ç", max: 6 caracteres
+        public decimal TrilhoDistancia { get; set; }
+
+        //[Required(ErrorMessage = "Escolha uma foto")]
+        //public string TrilhoFoto { get; set; } // mais tarde vai ser na base dados ??
+        // UPLOAD IMAGEM
+        //public string ImagePath { get; set; }
+        //[Required(ErrorMessage = "Escolha uma Imagem")]
+        public IFormFile ImageFile { get; set; }
+        public byte[] TrilhoImagem { get; set; }
 
         public bool TrilhoDesativado { get; set; } = false;
 

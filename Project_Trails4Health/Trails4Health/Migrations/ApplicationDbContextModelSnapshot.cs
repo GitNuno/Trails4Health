@@ -225,14 +225,13 @@ namespace Trails4Health.Migrations
 
                     b.Property<int>("DificuldadeID");
 
-                    b.Property<double>("Distancia");
+                    b.Property<decimal>("Distancia");
 
                     b.Property<string>("Fim")
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("Foto")
-                        .IsRequired();
+                    b.Property<byte[]>("ImagemTrilho");
 
                     b.Property<string>("Inicio")
                         .IsRequired()
