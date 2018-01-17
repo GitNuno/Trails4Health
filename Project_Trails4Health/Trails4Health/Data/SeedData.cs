@@ -44,7 +44,7 @@ namespace Trails4Health.Models
             Desativado = false,
             Inicio = "Manteigas",
             Fim = "Cruz das Jugadas",
-            Distancia = 15m,
+            Distancia = 15,
             DificuldadeID = MEDIA // Nota: DificuldadeID na tabela Dificuldade é criado automaticamente. Se já tiverem sido
                                   // criados registos na tabela Dificuldade antes de correr SeedData, vai haver conflito
                                   // pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health
@@ -62,7 +62,7 @@ namespace Trails4Health.Models
             Desativado = false,
             Inicio = "Lagoa Comprida",
             Fim = "Covão dos Conchos",
-            Distancia = 8m,
+            Distancia = 8,
             DificuldadeID = PEQUENA // Nota: DificuldadeID na tabela Dificuldade é criado automaticamente. Se já tiverem sido
                                     // criados registos na tabela Dificuldade antes de correr SeedData, vai haver conflito
                                     // pois o 1º ID já não é 1 - SOLUÇÃO: recriar BD Trails4Health

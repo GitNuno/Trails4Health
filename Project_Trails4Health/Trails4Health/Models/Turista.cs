@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace Trails4Health.Models
         public string Morada { get; set; }
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
+
+        [Range(100000000, 999999999)]
         public int Nif { get; set; }
 
         public ICollection<Resposta> Respostas { get; set; }

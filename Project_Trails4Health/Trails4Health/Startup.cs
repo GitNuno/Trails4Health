@@ -127,7 +127,7 @@ namespace Trails4Health
             });
 
             // Nota: SeedData só pode ser chamada depois das Migrações e updates !!
-            SeedData.EnsurePopulated(app.ApplicationServices);
+            // SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }

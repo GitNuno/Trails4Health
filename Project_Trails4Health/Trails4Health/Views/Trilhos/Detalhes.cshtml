@@ -41,9 +41,9 @@
         <hr class="divider">
         <div class="row">
             <div class="col-lg-6" align="center" style="margin-bottom:2em">
-               @if (Model.ImagemTrilho != null)
+               @if (Model.Foto != null)
                 {
-                    var base64 = Convert.ToBase64String(Model.ImagemTrilho);
+                    var base64 = Convert.ToBase64String(Model.Foto);
                     var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                     <img class="card-img img-fluid w-100" src="@imgSrc" style="width:25em; height:15em;" alt="">
                 }

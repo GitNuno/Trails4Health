@@ -91,7 +91,7 @@ namespace Trails4Health.Controllers
                 TrilhoSumario = trilho.Sumario,
                 TrilhoDetalhes = trilho.Detalhes,
                 //TrilhoFoto = trilho.Foto,
-                TrilhoImagem = trilho.ImagemTrilho,
+                TrilhoFoto = trilho.Foto,
                 TrilhoDistancia = trilho.Distancia,
                 TrilhoDesativado = trilho.Desativado,
                 Dificuldade = trilho.Dificuldade,
@@ -163,7 +163,7 @@ namespace Trails4Health.Controllers
                     using (var memoryStream = new MemoryStream())
                     {
                         await trilhoVM.ImageFile.CopyToAsync(memoryStream);
-                        trilho.ImagemTrilho = memoryStream.ToArray();
+                        trilho.Foto = memoryStream.ToArray();
                     }
                 }
 
@@ -223,7 +223,7 @@ namespace Trails4Health.Controllers
                 TrilhoFim = trilho.Fim,
                 TrilhoDistancia = trilho.Distancia,
                 //TrilhoFoto = trilho.Foto,
-                TrilhoImagem = trilho.ImagemTrilho,
+                TrilhoFoto = trilho.Foto,
                 TrilhoDesativado = trilho.Desativado,
                 TrilhoDetalhes = trilho.Detalhes,
                 TrilhoSumario = trilho.Sumario,
@@ -254,7 +254,7 @@ namespace Trails4Health.Controllers
                 Fim = VMTrilho.TrilhoFim,
                 Distancia = VMTrilho.TrilhoDistancia,
                 //Foto = VMTrilho.TrilhoFoto,
-                ImagemTrilho = VMTrilho.TrilhoImagem,
+                Foto = VMTrilho.TrilhoFoto,
                 Desativado = VMTrilho.TrilhoDesativado,
                 Detalhes = VMTrilho.TrilhoDetalhes,
                 Sumario = VMTrilho.TrilhoSumario,
@@ -268,7 +268,7 @@ namespace Trails4Health.Controllers
                 using (var memoryStream = new MemoryStream())
                 {
                     await VMTrilho.ImageFile.CopyToAsync(memoryStream);
-                    trilho.ImagemTrilho = memoryStream.ToArray();
+                    trilho.Foto = memoryStream.ToArray();
                 }
             }
            

@@ -708,14 +708,17 @@ Tempo: 30 min.
 .Falhada tentativa de atribuição de casas decimais ao campo Distancia
 .Nota: Tentei com novas anotaçoes e tipos decimal e double: nao reconhece parte decimal quer separado por ponto ou virgula
 Tempo: 1h
-/*
-.BranchNunoG: Migraçoes+Update-testar aplicação
-Tempo: 15 min
-*/
+
 
 // 17/01/2018
 .Corrigidos Null Point Exception relativos a \Views\Trilhos\Detalhes.cshtml; \Views\TrilhoCRUD\Desativar.cshtml;  \Views\TrilhoCRUD\ListaTrilhos.cshtml
 Tempo: 30 min.
+
+.Corrigidos SeedData, Layouts, Views
+Tempo: 30 min.
+
+.Mudado Modelo Trilho; mudada view Editar
+Tempo: 1h
 
 //
 
