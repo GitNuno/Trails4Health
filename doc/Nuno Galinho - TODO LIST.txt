@@ -1,5 +1,8 @@
 ::
 P.I.:
+	.Ver Cristiana/Fabio (Autenticação)
+		.Nota: Admin não pode editar NIF, ...
+
 
 ::
 RECONHECER NOTEPAD++:
