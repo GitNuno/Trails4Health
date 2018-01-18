@@ -26,7 +26,7 @@ namespace Trails4Health.Models
         [RegularExpression(@"(\w+[^_^0-9]+[^\s]+)", ErrorMessage = "Fim Inválido")] // começa com palavra(sem espaço!) > termina sem espaço  
         public string Fim { get; set; }
 
-        [Required(ErrorMessage = "Introduza Sumario do Trilho")]
+        [Required(ErrorMessage = "Introduza sumario do Trilho")]
         [StringLength(200, MinimumLength = 5, ErrorMessage = "Sumario tem entre 5-200 caracteres")] // entre entre 5-200 caracteres
         public string Sumario { get; set; }
 
@@ -34,7 +34,7 @@ namespace Trails4Health.Models
         [StringLength(700, MinimumLength = 5, ErrorMessage = "Detalhes tem entre 5-700 caracteres")] // entre 5-700 caracteres
         public string Detalhes { get; set; }
 
-        [Required(ErrorMessage = "Introduza Distancia do Trilho")]
+        [Required(ErrorMessage = "Introduza distancia do Trilho")]
         [Range(0, 999.99)]
         public double Distancia { get; set; }
 
