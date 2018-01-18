@@ -13,6 +13,7 @@ using Trails4Health.Data;
 using Trails4Health.Models;
 using Trails4Health.Services;
 using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace Trails4Health
 {
@@ -67,11 +68,7 @@ namespace Trails4Health
             //- assim não preciso de mudar mais nada que nao seja FakeProductRepository
             // services.AddTransient<ITrails4HealthRepository, FakeProductRepository>(); // mudado!!
 
-
-            // ERRO: decimal Distancia 00.00 ou 00,00
-            services.Configure<RequestLocalizationOptions>(options => options.DefaultRequestCulture = new RequestCulture("pt-PT")
-            );
-
+                  
 
             /* configurar a app para usar a ConnectionStringTrails4Health e ligar á B.D.*/
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
@@ -117,7 +114,29 @@ namespace Trails4Health
             //app.UseIdentity();
 
             // ERRO: decimal Distancia 00.00 ou 00,00
-            app.UseRequestLocalization();
+            // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization
+            const string enUSCulture = "en-US";
+
+            var supportedCultures = new[] {
+                new CultureInfo(enUSCulture)
+                //new CultureInfo("en-GB"),
+                //new CultureInfo("en"),
+                //new CultureInfo("es-ES"),
+                //new CultureInfo("es-MX"),
+                //new CultureInfo("es"),
+                //new CultureInfo("fr-FR"),
+                //new CultureInfo("fr"),
+            };
+            // END_ERRO
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(enUSCulture),
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseMvc(routes =>
             {

@@ -723,19 +723,7 @@ Tempo: 1h
 .Melhorada Views\Trilhos\Detalhes.cshtml 
 Tempo:15min.
 
-//
 
-//
+// 18/01/2018
+.Aula Introdução de casas decimais em Distancia a funcionar
 
-//
-
-//
-
-//
-
-//
-
-//
-
-
-	
