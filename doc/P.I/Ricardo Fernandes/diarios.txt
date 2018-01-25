@@ -5,6 +5,20 @@ Tempo Total: 30.25 H
 
 ---
 
+25/01/2018
+
+- Remodelação do modelo de classes:
+Removidas classes (e respectivos controladores e vistas):
+	Models/Questionario.cs
+	Models/QuestionarioQuestao.cs
+	Models/TipoQuestao.cs
+	Models/RespostaQuestionario.cs
+	
+
+Tempo utilizado: 1 H
+
+---
+
 12/01/2018
 
 - Continuação do projecto "Trails4Health":
