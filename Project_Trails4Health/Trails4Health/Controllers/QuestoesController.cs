@@ -9,23 +9,23 @@ using Trails4Health.Models;
 
 namespace Trails4Health.Controllers
 {
-    public class OpcoesController : Controller
+    public class QuestoesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public OpcoesController(ApplicationDbContext context)
+        public QuestoesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Opcoes
+        // GET: Questoes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Opcoes.Include(o => o.Questao);
+            var applicationDbContext = _context.Questoes.Include(q => q.Opcao);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Opcoes/Details/5
+        // GET: Questoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,42 +33,42 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
 
-            var opcao = await _context.Opcoes
-                .Include(o => o.Questao)
-                .SingleOrDefaultAsync(m => m.OpcaoID == id);
-            if (opcao == null)
+            var questao = await _context.Questoes
+                .Include(q => q.Opcao)
+                .SingleOrDefaultAsync(m => m.QuestaoID == id);
+            if (questao == null)
             {
                 return NotFound();
             }
 
-            return View(opcao);
+            return View(questao);
         }
 
-        // GET: Opcoes/Create
+        // GET: Questoes/Create
         public IActionResult Create()
         {
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID");
+            ViewData["OpcaoID"] = new SelectList(_context.Opcoes, "OpcaoID", "OpcaoID");
             return View();
         }
 
-        // POST: Opcoes/Create
+        // POST: Questoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OpcaoID,QuestaoID")] Opcao opcao)
+        public async Task<IActionResult> Create([Bind("QuestaoID,NomeQuestao,Desactivada,Descricao,OpcaoID")] Questao questao)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(opcao);
+                _context.Add(questao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID", opcao.QuestaoID);
-            return View(opcao);
+            ViewData["OpcaoID"] = new SelectList(_context.Opcoes, "OpcaoID", "OpcaoID", questao.OpcaoID);
+            return View(questao);
         }
 
-        // GET: Opcoes/Edit/5
+        // GET: Questoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,23 +76,23 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
 
-            var opcao = await _context.Opcoes.SingleOrDefaultAsync(m => m.OpcaoID == id);
-            if (opcao == null)
+            var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.QuestaoID == id);
+            if (questao == null)
             {
                 return NotFound();
             }
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID", opcao.QuestaoID);
-            return View(opcao);
+            ViewData["OpcaoID"] = new SelectList(_context.Opcoes, "OpcaoID", "OpcaoID", questao.OpcaoID);
+            return View(questao);
         }
 
-        // POST: Opcoes/Edit/5
+        // POST: Questoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OpcaoID,QuestaoID")] Opcao opcao)
+        public async Task<IActionResult> Edit(int id, [Bind("QuestaoID,NomeQuestao,Desactivada,Descricao,OpcaoID")] Questao questao)
         {
-            if (id != opcao.OpcaoID)
+            if (id != questao.QuestaoID)
             {
                 return NotFound();
             }
@@ -101,12 +101,12 @@ namespace Trails4Health.Controllers
             {
                 try
                 {
-                    _context.Update(opcao);
+                    _context.Update(questao);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!OpcaoExists(opcao.OpcaoID))
+                    if (!QuestaoExists(questao.QuestaoID))
                     {
                         return NotFound();
                     }
@@ -117,11 +117,11 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID", opcao.QuestaoID);
-            return View(opcao);
+            ViewData["OpcaoID"] = new SelectList(_context.Opcoes, "OpcaoID", "OpcaoID", questao.OpcaoID);
+            return View(questao);
         }
 
-        // GET: Opcoes/Delete/5
+        // GET: Questoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,31 +129,31 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
 
-            var opcao = await _context.Opcoes
-                .Include(o => o.Questao)
-                .SingleOrDefaultAsync(m => m.OpcaoID == id);
-            if (opcao == null)
+            var questao = await _context.Questoes
+                .Include(q => q.Opcao)
+                .SingleOrDefaultAsync(m => m.QuestaoID == id);
+            if (questao == null)
             {
                 return NotFound();
             }
 
-            return View(opcao);
+            return View(questao);
         }
 
-        // POST: Opcoes/Delete/5
+        // POST: Questoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var opcao = await _context.Opcoes.SingleOrDefaultAsync(m => m.OpcaoID == id);
-            _context.Opcoes.Remove(opcao);
+            var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.QuestaoID == id);
+            _context.Questoes.Remove(questao);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool OpcaoExists(int id)
+        private bool QuestaoExists(int id)
         {
-            return _context.Opcoes.Any(e => e.OpcaoID == id);
+            return _context.Questoes.Any(e => e.QuestaoID == id);
         }
     }
 }

@@ -13,6 +13,11 @@ Removidas classes (e respectivos controladores e vistas):
 	Models/QuestionarioQuestao.cs
 	Models/TipoQuestao.cs
 	Models/RespostaQuestionario.cs
+	Models/Resposta.cs
+Adicionadas classes:
+	Models/RespostaAvaliacao.cs
+	Models/ReservaGuia.cs
+Definidas relações entre as classes com a API Entity Framework;
 	
 
 Tempo utilizado: 1 H

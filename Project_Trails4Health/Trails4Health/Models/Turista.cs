@@ -18,7 +18,7 @@ namespace Trails4Health.Models
         [Range(100000000, 999999999)]
         public int Nif { get; set; }
 
-        public ICollection<Resposta> Respostas { get; set; }
-        //public ICollection<RespostaQuestionario> RespostaQuestionarios { get; set; }
+        public ICollection<RespostaAvaliacao> RespostasAvaliacao { get; set; }
+        public ICollection<ReservaGuia> ReservasGuia { get; set; }
     }
 }

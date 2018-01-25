@@ -12,7 +12,10 @@ namespace Trails4Health.Models
         public string Telefone { get; set; }
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
+        //public float Preco { get; set; }
+        public float Avaliacao { get; set; }
 
-        public ICollection<AvaliacaoGuia> AvaliacaoGuias { get; set; }
+        public ICollection<ReservaGuia> ReservasGuia { get; set; }
+        public ICollection<RespostaAvaliacao> RespostasAvaliacao { get; set; }
     }
 }

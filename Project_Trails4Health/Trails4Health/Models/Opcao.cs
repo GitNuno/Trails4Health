@@ -8,10 +8,8 @@ namespace Trails4Health.Models
     public class Opcao
     {
         public int OpcaoID { get; set; }
-        
-        public Questao Questao { get; set; }
-        public int QuestaoID { get; set; }
-
-        public ICollection<Resposta> Respostas { get; set; } 
+        public int NumeroOpcoes { get; set; }
+                
+        public ICollection<Questao> Questoes { get; set; }
     }
 }

@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 
 namespace Trails4Health.Models
 {
-    public class AvaliacaoGuia
+    public class ReservaGuia
     {
-        public int AvaliacaoGuiaID { get; set; }
+        public int ReservaGuiaID { get; set; }
+        public DateTime ReservaParaDia { get; set; }
 
         public Guia Guia { get; set; }
         public int GuiaID { get; set; }
 
-        public double Avaliacao { get; set; }
-        public int NumeroAvaliacoes { get; set; }
+        public Turista Turista { get; set; }
+        public int TuristaID { get; set; }
     }
 }

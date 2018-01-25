@@ -30,10 +30,9 @@ namespace Trails4Health.Models
         public DbSet<Questao> Questoes { get; set; }
         public DbSet<Turista> Turistas { get; set; }
         public DbSet<Guia> Guias { get; set; }
-        public DbSet<Resposta> Respostas { get; set; }
-        public DbSet<AvaliacaoGuia> AvaliacaoGuias { get; set; }
-        public DbSet<AvaliacaoTrilho> AvaliacaoTrilhos { get; set; }
         public DbSet<Opcao> Opcoes { get; set; }
+        public DbSet<RespostaAvaliacao> RespostasAvaliacao { get; set; }
+        public DbSet<ReservaGuia> ReservasGuia { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -70,34 +69,40 @@ namespace Trails4Health.Models
 
             //------------------------------------------------------
             modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID);
-            //modelBuilder.Entity<Questao>()
-            //    .HasOne(q => q.TipoQuestao)
-            //    .WithMany(tq => tq.Questoes)
-            //    .HasForeignKey(q => q.TipoQuestaoID);
+            modelBuilder.Entity<Questao>()
+                .HasOne(q => q.Opcao)
+                .WithMany(o => o.Questoes)
+                .HasForeignKey(q => q.OpcaoID);
+
+            modelBuilder.Entity<Opcao>().HasKey(o => o.OpcaoID);
+
+            modelBuilder.Entity<RespostaAvaliacao>().HasKey(ra => ra.RespostaID);
+            modelBuilder.Entity<RespostaAvaliacao>()
+                .HasOne(ra => ra.Questao)
+                .WithMany(q => q.RespostasAvaliacao)
+                .HasForeignKey(ra => ra.QuestaoID);
+            modelBuilder.Entity<RespostaAvaliacao>()
+                .HasOne(ra => ra.Turista)
+                .WithMany(t => t.RespostasAvaliacao)
+                .HasForeignKey(ra => ra.TuristaID);
+            modelBuilder.Entity<RespostaAvaliacao>()
+                .HasOne(ra => ra.Guia)
+                .WithMany(g => g.RespostasAvaliacao)
+                .HasForeignKey(ra => ra.GuiaID);
 
             modelBuilder.Entity<Turista>().HasKey(t => t.TuristaID);
 
             modelBuilder.Entity<Guia>().HasKey(g => g.GuiaID);
-            
-            modelBuilder.Entity<AvaliacaoGuia>().HasKey(ag => ag.AvaliacaoGuiaID);
 
-            modelBuilder.Entity<AvaliacaoTrilho>().HasKey(at => at.AvaliacaoTrilhoID);
-           
-            modelBuilder.Entity<Resposta>().HasKey(r => new { r.OpcaoID, r.TuristaID });
-            modelBuilder.Entity<Resposta>()
-                .HasOne(r => r.Opcao)
-                .WithMany(o => o.Respostas);
-            //.OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Resposta>()
-                .HasOne(r => r.Turista)
-                .WithMany(t => t.Respostas);
-            //.OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Opcao>().HasKey(o => o.OpcaoID);
-            modelBuilder.Entity<Opcao>()
-                .HasOne(o => o.Questao)
-                .WithMany(q => q.Opcoes)
-                .HasForeignKey(o => o.QuestaoID);
+            modelBuilder.Entity<ReservaGuia>().HasKey(rg => rg.ReservaGuiaID);
+            modelBuilder.Entity<ReservaGuia>()
+                .HasOne(rg => rg.Turista)
+                .WithMany(t => t.ReservasGuia)
+                .HasForeignKey(rg => rg.TuristaID);
+            modelBuilder.Entity<ReservaGuia>()
+                .HasOne(rg => rg.Guia)
+                .WithMany(g => g.ReservasGuia)
+                .HasForeignKey(rg => rg.GuiaID);
         }
     }
 }
