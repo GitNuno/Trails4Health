@@ -15,8 +15,8 @@ namespace Trails4Health.Models
         //public int ValorMaximo { get; set; }
         //public int ValorMinimo { get; set; }
 
-        public Opcao Opcao { get; set; }
         public int OpcaoID { get; set; }
+        public Opcao Opcao { get; set; }
 
         public ICollection<RespostaAvaliacao> RespostasAvaliacao { get; set; }
     }
