@@ -1,7 +1,17 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 30.25 H
+Tempo Total: 31.50 H
+
+---
+
+26/01/2018
+
+Criados dados fictícios para popular tabelas Guia e Turista;
+Criados constroladores Controllers/GuiasController.cs e Controllers/TuristasController.cs e respectivas Views (scaffolding);
+	
+
+Tempo utilizado: 0.25 H
 
 ---
 
