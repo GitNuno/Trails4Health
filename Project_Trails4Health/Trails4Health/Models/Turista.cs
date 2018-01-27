@@ -13,6 +13,7 @@ namespace Trails4Health.Models
         public string Telefone { get; set; }
         public string Morada { get; set; }
         public string Email { get; set; }
+        [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
 
         [Range(100000000, 999999999)]

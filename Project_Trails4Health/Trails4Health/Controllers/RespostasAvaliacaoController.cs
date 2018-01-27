@@ -50,7 +50,7 @@ namespace Trails4Health.Controllers
         public IActionResult Create()
         {
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID");
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID");
+            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "NomeQuestao");
             ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID");
             return View();
         }

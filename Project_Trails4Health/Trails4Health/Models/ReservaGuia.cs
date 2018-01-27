@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace Trails4Health.Models
     public class ReservaGuia
     {
         public int ReservaGuiaID { get; set; }
+        [DataType(DataType.Date)]
         public DateTime ReservaParaDia { get; set; }
 
         public Guia Guia { get; set; }

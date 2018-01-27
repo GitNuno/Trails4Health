@@ -1,7 +1,16 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 31.50 H
+Tempo Total: 31.75 H
+
+---
+
+27/01/2018
+
+Adicionadas anotações a classes com atributos do tipo DateTime, para que seja possível seleccionar uma data de forma mais conveniente.
+	
+
+Tempo utilizado: 0.25 H
 
 ---
 

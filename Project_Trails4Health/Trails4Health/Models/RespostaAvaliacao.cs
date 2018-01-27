@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,8 @@ namespace Trails4Health.Models
     {
         public int RespostaID { get; set; }
         public int Resposta { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 
         public Questao Questao { get; set; }
