@@ -5,6 +5,15 @@ Tempo Total: 31.75 H
 
 ---
 
+28/01/2018
+
+Completei repositório Models/ITrails4HealthRepository.cs (alterações necessárias também em Data/EFTrails4HealthRepository.cs);
+	
+
+Tempo utilizado:  H
+
+---
+
 27/01/2018
 
 Adicionadas anotações a classes com atributos do tipo DateTime, para que seja possível seleccionar uma data de forma mais conveniente.

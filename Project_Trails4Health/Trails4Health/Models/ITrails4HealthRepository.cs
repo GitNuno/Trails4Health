@@ -15,5 +15,12 @@ namespace Trails4Health.Models
         IEnumerable<Dificuldade> Dificuldades { get; }
         IEnumerable<EstadoTrilho> EstadoTrilhos { get; }
         IEnumerable<Estado> Estados { get; }
+
+        IEnumerable<Opcao> Opcoes { get; }
+        IEnumerable<Questao> Questoes { get; }
+        IEnumerable<RespostaAvaliacao> RespostasAvaliacao { get; }
+        IEnumerable<Guia> Guias { get; }
+        IEnumerable<Turista> Turistas { get; }
+        IEnumerable<ReservaGuia> ReservasGuia { get; }
     }
 }

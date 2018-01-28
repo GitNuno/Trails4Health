@@ -24,5 +24,12 @@ namespace Trails4Health.Models
         public IEnumerable<Dificuldade> Dificuldades => dbContext.Dificuldades;
         public IEnumerable<EstadoTrilho> EstadoTrilhos => dbContext.EstadoTrilhos;
         public IEnumerable<Estado> Estados => dbContext.Estados;
+
+        public IEnumerable<Opcao> Opcoes => dbContext.Opcoes;
+        public IEnumerable<Questao> Questoes => dbContext.Questoes;
+        public IEnumerable<RespostaAvaliacao> RespostasAvaliacao => dbContext.RespostasAvaliacao;
+        public IEnumerable<Guia> Guias => dbContext.Guias;
+        public IEnumerable<Turista> Turistas => dbContext.Turistas;
+        public IEnumerable<ReservaGuia> ReservasGuia => dbContext.ReservasGuia;
     }
 }
