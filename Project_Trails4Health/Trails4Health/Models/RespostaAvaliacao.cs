@@ -9,7 +9,7 @@ namespace Trails4Health.Models
     public class RespostaAvaliacao
     {
         public int RespostaID { get; set; }
-        public int Resposta { get; set; }
+        //public int Resposta { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Data { get; set; }

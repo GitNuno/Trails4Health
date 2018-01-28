@@ -35,16 +35,6 @@ namespace Trails4Health.Data
                 context.SaveChanges();
             }
 
-            if (!context.Opcoes.Any())
-            {
-                context.Opcoes.AddRange(
-                new Opcao { NumeroOpcoes = 2 },
-                new Opcao { NumeroOpcoes = 3 },
-                new Opcao { NumeroOpcoes = 5 }
-                 );
-                context.SaveChanges();
-            }
-
             if (!context.Guias.Any())
             {
                 context.Guias.AddRange(
