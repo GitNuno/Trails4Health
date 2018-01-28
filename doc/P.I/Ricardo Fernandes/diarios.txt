@@ -1,7 +1,7 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 31.75 H
+Tempo Total: 33.75 H
 
 ---
 
@@ -12,9 +12,10 @@ Remodelação do modelo de classes:
 - Questao perdeu os atributos ValorMinimo e ValorMaximo;
 - Questao deixou de estar relacionada com Opcao;	
 - Uma Opcao passa a ter N RespostasAvaliacao;
+Criado ViewModel "Models/ViewModels/ViewModelQuestionario.cs";
 
 
-Tempo utilizado:  H
+Tempo utilizado: 2 H
 
 ---
 
