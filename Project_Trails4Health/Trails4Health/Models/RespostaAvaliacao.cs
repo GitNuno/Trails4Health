@@ -22,5 +22,8 @@ namespace Trails4Health.Models
 
         public Guia Guia { get; set; }
         public int GuiaID { get; set; }
+
+        public Opcao Opcao { get; set; }
+        public int OpcaoID { get; set; }
     }
 }

@@ -8,7 +8,11 @@ Tempo Total: 31.75 H
 28/01/2018
 
 Completei repositório Models/ITrails4HealthRepository.cs (alterações necessárias também em Data/EFTrails4HealthRepository.cs);
-	
+Remodelação do modelo de classes:
+- Questao perdeu os atributos ValorMinimo e ValorMaximo;
+- Questao deixou de estar relacionada com Opcao;	
+- Uma Opcao passa a ter N RespostasAvaliacao;
+
 
 Tempo utilizado:  H
 

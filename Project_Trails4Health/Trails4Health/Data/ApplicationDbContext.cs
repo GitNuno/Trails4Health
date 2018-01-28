@@ -69,11 +69,7 @@ namespace Trails4Health.Models
 
             //------------------------------------------------------
             modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID);
-            modelBuilder.Entity<Questao>()
-                .HasOne(q => q.Opcao)
-                .WithMany(o => o.Questoes)
-                .HasForeignKey(q => q.OpcaoID);
-
+            
             modelBuilder.Entity<Opcao>().HasKey(o => o.OpcaoID);
 
             modelBuilder.Entity<RespostaAvaliacao>().HasKey(ra => ra.RespostaID);
@@ -89,6 +85,10 @@ namespace Trails4Health.Models
                 .HasOne(ra => ra.Guia)
                 .WithMany(g => g.RespostasAvaliacao)
                 .HasForeignKey(ra => ra.GuiaID);
+            modelBuilder.Entity<RespostaAvaliacao>()
+                .HasOne(ra => ra.Opcao)
+                .WithMany(o => o.RespostasAvaliacao)
+                .HasForeignKey(ra => ra.OpcaoID);
 
             modelBuilder.Entity<Turista>().HasKey(t => t.TuristaID);
 

@@ -12,11 +12,6 @@ namespace Trails4Health.Models
         public string NomeQuestao { get; set; }
         public bool Desactivada { get; set; }
         public string Descricao { get; set; }
-        //public int ValorMaximo { get; set; }
-        //public int ValorMinimo { get; set; }
-
-        public int OpcaoID { get; set; }
-        public Opcao Opcao { get; set; }
 
         public ICollection<RespostaAvaliacao> RespostasAvaliacao { get; set; }
     }
