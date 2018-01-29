@@ -115,7 +115,7 @@ namespace Trails4Health
 
             // ERRO: decimal Distancia 00.00 ou 00,00
             // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization
-            const string enUSCulture = "en-US";
+            const string enUSCulture = "en-GB"; // alterei do original "en-US", por causa do formato da data. Pretende-se que a data esteja no formato dd/mm/yyyy
 
             var supportedCultures = new[] {
                 new CultureInfo(enUSCulture)

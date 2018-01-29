@@ -1,7 +1,16 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 33.75 H
+Tempo Total: 34.00 H
+
+---
+
+28/01/2018
+
+Alteradas definições de "localization" para "en-GB", para apresentar data em algumas "Views" para o formato dd/mm/yyyy;
+
+
+Tempo utilizado: 0.25 H
 
 ---
 
