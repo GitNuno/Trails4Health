@@ -12,7 +12,7 @@ namespace Trails4Health.Models
         //public int Resposta { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime Data { get; set; }
+        public DateTime Data { get; set; } = DateTime.Now;
 
         public Questao Questao { get; set; }
         public int QuestaoID { get; set; }
