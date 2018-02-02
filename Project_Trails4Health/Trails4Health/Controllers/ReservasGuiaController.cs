@@ -9,23 +9,23 @@ using Trails4Health.Models;
 
 namespace Trails4Health.Controllers
 {
-    public class ReservaGuiasController : Controller
+    public class ReservasGuiaController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ReservaGuiasController(ApplicationDbContext context)
+        public ReservasGuiaController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: ReservaGuias
+        // GET: ReservasGuia
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.ReservasGuia.Include(r => r.Guia).Include(r => r.Trilho).Include(r => r.Turista);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: ReservaGuias/Details/5
+        // GET: ReservasGuia/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,16 +46,16 @@ namespace Trails4Health.Controllers
             return View(reservaGuia);
         }
 
-        // GET: ReservaGuias/Create
+        // GET: ReservasGuia/Create
         public IActionResult Create()
         {
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID");
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Detalhes");
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID");
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome");
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Nome");
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome");
             return View();
         }
 
-        // POST: ReservaGuias/Create
+        // POST: ReservasGuia/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -69,12 +69,12 @@ namespace Trails4Health.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Detalhes", reservaGuia.TrilhoID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Nome", reservaGuia.TrilhoID);
             ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
 
-        // GET: ReservaGuias/Edit/5
+        // GET: ReservasGuia/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -93,7 +93,7 @@ namespace Trails4Health.Controllers
             return View(reservaGuia);
         }
 
-        // POST: ReservaGuias/Edit/5
+        // POST: ReservasGuia/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -131,7 +131,7 @@ namespace Trails4Health.Controllers
             return View(reservaGuia);
         }
 
-        // GET: ReservaGuias/Delete/5
+        // GET: ReservasGuia/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -152,7 +152,7 @@ namespace Trails4Health.Controllers
             return View(reservaGuia);
         }
 
-        // POST: ReservaGuias/Delete/5
+        // POST: ReservasGuia/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
