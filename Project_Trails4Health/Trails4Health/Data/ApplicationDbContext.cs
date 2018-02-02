@@ -69,7 +69,7 @@ namespace Trails4Health.Models
 
             //------------------------------------------------------
             modelBuilder.Entity<Questao>().HasKey(q => q.QuestaoID);
-            
+
             modelBuilder.Entity<Opcao>().HasKey(o => o.OpcaoID);
 
             modelBuilder.Entity<RespostaAvaliacao>().HasKey(ra => ra.RespostaID);
@@ -94,7 +94,7 @@ namespace Trails4Health.Models
 
             modelBuilder.Entity<Guia>().HasKey(g => g.GuiaID);
 
-            modelBuilder.Entity<ReservaGuia>().HasKey(rg => rg.ReservaGuiaID);
+            modelBuilder.Entity<ReservaGuia>().HasKey(rg => rg.ReservaID);
             modelBuilder.Entity<ReservaGuia>()
                 .HasOne(rg => rg.Turista)
                 .WithMany(t => t.ReservasGuia)
@@ -103,6 +103,10 @@ namespace Trails4Health.Models
                 .HasOne(rg => rg.Guia)
                 .WithMany(g => g.ReservasGuia)
                 .HasForeignKey(rg => rg.GuiaID);
+            modelBuilder.Entity<ReservaGuia>()
+                .HasOne(rg => rg.Trilho)
+                .WithMany(t => t.ReservasGuia)
+                .HasForeignKey(rg => rg.TrilhoID);
         }
     }
 }

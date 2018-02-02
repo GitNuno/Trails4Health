@@ -118,18 +118,22 @@ namespace Trails4Health.Migrations
 
             modelBuilder.Entity("Trails4Health.Models.ReservaGuia", b =>
                 {
-                    b.Property<int>("ReservaGuiaID")
+                    b.Property<int>("ReservaID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("GuiaID");
 
                     b.Property<DateTime>("ReservaParaDia");
 
+                    b.Property<int>("TrilhoID");
+
                     b.Property<int>("TuristaID");
 
-                    b.HasKey("ReservaGuiaID");
+                    b.HasKey("ReservaID");
 
                     b.HasIndex("GuiaID");
+
+                    b.HasIndex("TrilhoID");
 
                     b.HasIndex("TuristaID");
 
@@ -244,6 +248,11 @@ namespace Trails4Health.Migrations
                     b.HasOne("Trails4Health.Models.Guia", "Guia")
                         .WithMany("ReservasGuia")
                         .HasForeignKey("GuiaID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Trails4Health.Models.Trilho", "Trilho")
+                        .WithMany("ReservasGuia")
+                        .HasForeignKey("TrilhoID")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Trails4Health.Models.Turista", "Turista")

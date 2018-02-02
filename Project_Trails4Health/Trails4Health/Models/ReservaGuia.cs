@@ -8,7 +8,7 @@ namespace Trails4Health.Models
 {
     public class ReservaGuia
     {
-        public int ReservaGuiaID { get; set; }
+        public int ReservaID { get; set; }
         [DataType(DataType.Date)]
         public DateTime ReservaParaDia { get; set; }
 
@@ -17,5 +17,8 @@ namespace Trails4Health.Models
 
         public Turista Turista { get; set; }
         public int TuristaID { get; set; }
+
+        public Trilho Trilho { get; set; }
+        public int TrilhoID { get; set; }
     }
 }

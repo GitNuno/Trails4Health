@@ -49,5 +49,7 @@ namespace Trails4Health.Models
 
         // Trilho tem varios EstadoTrilhos (classe intermedia)
         public ICollection<EstadoTrilho> EstadoTrilhos { get; set; }
+
+        public ICollection<ReservaGuia> ReservasGuia { get; set; }
     }
 }

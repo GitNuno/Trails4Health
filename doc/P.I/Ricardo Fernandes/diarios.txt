@@ -1,7 +1,18 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 34.50 H
+Tempo Total: 35.50 H
+
+---
+
+02/02/2018
+
+Remodelação do modelo de classes relacionada com classe ReservaGuia (respectivo modelo, controlador e vistas);
+Alterações efectuadas também na classe Data/ApplicationDbContext.cs;
+Alterações necessárias também na classe Models/Trilho.cs;
+
+
+Tempo utilizado: 1 H
 
 ---
 
