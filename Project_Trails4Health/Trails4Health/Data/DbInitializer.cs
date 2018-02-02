@@ -29,7 +29,7 @@ namespace Trails4Health.Data
             {
                 context.Questoes.AddRange(
                 new Questao { NomeQuestao = "O guia demonstrou conhecimento do trilho?", Desactivada = false, Descricao = "1 - Discordo Em Absoluto | 5 - Concordo Plenamente" },
-                new Questao { NomeQuestao = "O guia percorreu o trilho com um ritmo adequado à dificuldade do trilho?", Desactivada = false, Descricao = "1 - Discordo Em Absoluto | 5 - Concordo Plenamente"},
+                new Questao { NomeQuestao = "O guia percorreu o trilho com um ritmo adequado à dificuldade do trilho?", Desactivada = false, Descricao = "1 - Discordo Em Absoluto | 5 - Concordo Plenamente" },
                 new Questao { NomeQuestao = "O guia fez pausas nos locais assinalados como sendo de interesse?", Desactivada = false, Descricao = "1 - Discordo Em Absoluto | 5 - Concordo Plenamente" }
                 );
                 context.SaveChanges();
@@ -51,6 +51,16 @@ namespace Trails4Health.Data
                 new Turista { Nome = "Maurício Abraão", Telefone = "271200100", Email = "mauricio@gmail.com", Nif = 275092879 },
                 new Turista { Nome = "Jaime Coelho", Telefone = "271200200", Email = "jcoelho@gmail.com", Nif = 274261154 },
                 new Turista { Nome = "Pedro Gama", Telefone = "271200300", Email = "mauricio@gmail.com", Nif = 281910430 }
+                 );
+                context.SaveChanges();
+            }
+
+            if (!context.ReservasGuia.Any())
+            {
+                context.ReservasGuia.AddRange(
+                new ReservaGuia { GuiaID = 1, TuristaID = 1, TrilhoID = 1 },
+                new ReservaGuia { GuiaID = 2, TuristaID = 2, TrilhoID = 2 },
+                new ReservaGuia { GuiaID = 3, TuristaID = 3, TrilhoID = 1 }
                  );
                 context.SaveChanges();
             }
