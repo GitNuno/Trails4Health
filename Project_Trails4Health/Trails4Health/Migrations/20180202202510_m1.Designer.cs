@@ -11,7 +11,7 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180202214818_m1")]
+    [Migration("20180202202510_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -124,7 +124,7 @@ namespace Trails4Health.Migrations
 
                     b.Property<int>("GuiaID");
 
-                    b.Property<DateTime?>("ReservaParaDia");
+                    b.Property<DateTime>("ReservaParaDia");
 
                     b.Property<int>("TrilhoID");
 

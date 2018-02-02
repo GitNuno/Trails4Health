@@ -202,7 +202,7 @@ namespace Trails4Health.Migrations
                     ReservaID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GuiaID = table.Column<int>(nullable: false),
-                    ReservaParaDia = table.Column<DateTime>(nullable: true),
+                    ReservaParaDia = table.Column<DateTime>(nullable: false),
                     TrilhoID = table.Column<int>(nullable: false),
                     TuristaID = table.Column<int>(nullable: false)
                 },

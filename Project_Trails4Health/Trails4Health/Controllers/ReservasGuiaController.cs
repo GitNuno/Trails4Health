@@ -69,7 +69,7 @@ namespace Trails4Health.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Nome", reservaGuia.TrilhoID);
             ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
@@ -87,9 +87,9 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Nome", reservaGuia.TrilhoID);
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome", reservaGuia.TuristaID);
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Detalhes", reservaGuia.TrilhoID);
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
 

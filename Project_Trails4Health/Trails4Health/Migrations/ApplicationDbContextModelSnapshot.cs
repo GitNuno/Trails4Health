@@ -123,7 +123,7 @@ namespace Trails4Health.Migrations
 
                     b.Property<int>("GuiaID");
 
-                    b.Property<DateTime?>("ReservaParaDia");
+                    b.Property<DateTime>("ReservaParaDia");
 
                     b.Property<int>("TrilhoID");
 
