@@ -20,8 +20,28 @@ namespace Trails4Health.Models.AccountViewModels
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Repetir password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
+
+        [Display(Name = "Morada")]
+        public string Morada { get; set; }
+
+        [RegularExpression(@"(2\d{8})|(9[1236]\d{7})", ErrorMessage = "Número de telefone inválido")]
+        [Display(Name = "Número de Telefone")]
+        public string Telefone { get; set; }
+
+        [Required(ErrorMessage = "Introduza a data de nascimento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Data de Nascimento")]
+        public string DataNascimento { get; set; }
+
+        [Required(ErrorMessage = "Introduza o NIF")]
+        [Display(Name = "NIF")]
+        public string Nif { get; set; }
     }
 }

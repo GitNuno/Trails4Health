@@ -1,13 +1,17 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 36.50 H
+Tempo Total: 38.50 H
 
 ---
+
 03/02/2018
 
 Populada tabela ReservasGuia (classe Data/DbInitializer.cs) -> conseguida;
 Tentativa de resolução de problemas com a perda dos dados da tabela ReservaGuia quando o servidor IIS pára -> conseguida. Solução: foi criada a classe Models/Trilho2.cs, que tem o mesmo objectivo da classe Models/Trilho.cs;
+
+Alterdado modelo relacionado com o registo de utilizadores (Models/AccountViewModels/RegisterViewModel.cs). Quando um utilizador se regista passa a poder definir logo todos os seus dados pessoais. Antes era feito com o controlador Controllers/TuristasController.cs;
+Nota: falta adicionar a validação para o NIF.
 
 
 Tempo utilizado: 2 H
