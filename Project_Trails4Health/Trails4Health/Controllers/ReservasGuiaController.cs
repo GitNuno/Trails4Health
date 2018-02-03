@@ -21,7 +21,7 @@ namespace Trails4Health.Controllers
         // GET: ReservasGuia
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.ReservasGuia.Include(r => r.Guia).Include(r => r.Trilho).Include(r => r.Turista);
+            var applicationDbContext = _context.ReservasGuia.Include(r => r.Guia).Include(r => r.Trilho2).Include(r => r.Turista);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace Trails4Health.Controllers
 
             var reservaGuia = await _context.ReservasGuia
                 .Include(r => r.Guia)
-                .Include(r => r.Trilho)
+                .Include(r => r.Trilho2)
                 .Include(r => r.Turista)
                 .SingleOrDefaultAsync(m => m.ReservaID == id);
             if (reservaGuia == null)
@@ -49,9 +49,9 @@ namespace Trails4Health.Controllers
         // GET: ReservasGuia/Create
         public IActionResult Create()
         {
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome");
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Nome");
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome");
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID");
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID");
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace Trails4Health.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Nome", reservaGuia.TrilhoID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
             ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
@@ -88,7 +88,7 @@ namespace Trails4Health.Controllers
                 return NotFound();
             }
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Detalhes", reservaGuia.TrilhoID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
             ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
@@ -126,7 +126,7 @@ namespace Trails4Health.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos, "TrilhoID", "Detalhes", reservaGuia.TrilhoID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
             ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
@@ -141,7 +141,7 @@ namespace Trails4Health.Controllers
 
             var reservaGuia = await _context.ReservasGuia
                 .Include(r => r.Guia)
-                .Include(r => r.Trilho)
+                .Include(r => r.Trilho2)
                 .Include(r => r.Turista)
                 .SingleOrDefaultAsync(m => m.ReservaID == id);
             if (reservaGuia == null)

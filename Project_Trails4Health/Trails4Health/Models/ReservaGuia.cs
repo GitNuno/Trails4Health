@@ -18,7 +18,7 @@ namespace Trails4Health.Models
         public Turista Turista { get; set; }
         public int TuristaID { get; set; }
 
-        public Trilho Trilho { get; set; }
+        public Trilho2 Trilho2 { get; set; }
         public int TrilhoID { get; set; }
     }
 }

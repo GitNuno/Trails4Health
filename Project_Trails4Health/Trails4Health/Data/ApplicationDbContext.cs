@@ -33,6 +33,7 @@ namespace Trails4Health.Models
         public DbSet<Opcao> Opcoes { get; set; }
         public DbSet<RespostaAvaliacao> RespostasAvaliacao { get; set; }
         public DbSet<ReservaGuia> ReservasGuia { get; set; }
+        public DbSet<Trilho2> Trilhos2 { get; set; }
 
         //uso fluent API para enunciar explicitamente a relação
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -104,9 +105,11 @@ namespace Trails4Health.Models
                 .WithMany(g => g.ReservasGuia)
                 .HasForeignKey(rg => rg.GuiaID);
             modelBuilder.Entity<ReservaGuia>()
-                .HasOne(rg => rg.Trilho)
-                .WithMany(t => t.ReservasGuia)
+                .HasOne(rg => rg.Trilho2)
+                .WithMany(t2 => t2.ReservasGuia)
                 .HasForeignKey(rg => rg.TrilhoID);
+
+            modelBuilder.Entity<Trilho2>().HasKey(t2 => t2.TrilhoID);
         }
     }
 }

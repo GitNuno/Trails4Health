@@ -11,7 +11,7 @@ using Trails4Health.Models;
 namespace Trails4Health.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180202202510_m1")]
+    [Migration("20180203115607_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -209,6 +209,20 @@ namespace Trails4Health.Migrations
                     b.ToTable("Trilhos");
                 });
 
+            modelBuilder.Entity("Trails4Health.Models.Trilho2", b =>
+                {
+                    b.Property<int>("TrilhoID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Distancia");
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("TrilhoID");
+
+                    b.ToTable("Trilhos2");
+                });
+
             modelBuilder.Entity("Trails4Health.Models.Turista", b =>
                 {
                     b.Property<int>("TuristaID")
@@ -251,7 +265,7 @@ namespace Trails4Health.Migrations
                         .HasForeignKey("GuiaID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Trails4Health.Models.Trilho", "Trilho")
+                    b.HasOne("Trails4Health.Models.Trilho2", "Trilho2")
                         .WithMany("ReservasGuia")
                         .HasForeignKey("TrilhoID")
                         .OnDelete(DeleteBehavior.Cascade);

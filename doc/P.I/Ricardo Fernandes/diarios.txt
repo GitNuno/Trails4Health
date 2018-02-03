@@ -1,7 +1,16 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 35.50 H
+Tempo Total: 36.50 H
+
+---
+03/02/2018
+
+Populada tabela ReservasGuia (classe Data/DbInitializer.cs) -> conseguida;
+Tentativa de resolução de problemas com a perda dos dados da tabela ReservaGuia quando o servidor IIS pára -> conseguida. Solução: foi criada a classe Models/Trilho2.cs, que tem o mesmo objectivo da classe Models/Trilho.cs;
+
+
+Tempo utilizado: 2 H
 
 ---
 
@@ -11,8 +20,11 @@ Remodelação do modelo de classes relacionada com classe ReservaGuia (respectiv
 Alterações efectuadas também na classe Data/ApplicationDbContext.cs;
 Alterações necessárias também na classe Models/Trilho.cs;
 
+Populada tabela ReservasGuia (classe Data/DbInitializer.cs) -> falhou;
+Tentativa de resolução de problemas com a perda dos dados da tabela ReservaGuia quando o servidor IIS pára -> falhou;
 
-Tempo utilizado: 1 H
+
+Tempo utilizado: 2 H
 
 ---
 

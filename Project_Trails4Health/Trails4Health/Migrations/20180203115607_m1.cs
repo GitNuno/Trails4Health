@@ -82,6 +82,20 @@ namespace Trails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Trilhos2",
+                columns: table => new
+                {
+                    TrilhoID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Distancia = table.Column<double>(nullable: false),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Trilhos2", x => x.TrilhoID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Turistas",
                 columns: table => new
                 {
@@ -123,6 +137,40 @@ namespace Trails4Health.Migrations
                         column: x => x.DificuldadeID,
                         principalTable: "Dificuldades",
                         principalColumn: "DificuldadeID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ReservasGuia",
+                columns: table => new
+                {
+                    ReservaID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    GuiaID = table.Column<int>(nullable: false),
+                    ReservaParaDia = table.Column<DateTime>(nullable: false),
+                    TrilhoID = table.Column<int>(nullable: false),
+                    TuristaID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReservasGuia", x => x.ReservaID);
+                    table.ForeignKey(
+                        name: "FK_ReservasGuia_Guias_GuiaID",
+                        column: x => x.GuiaID,
+                        principalTable: "Guias",
+                        principalColumn: "GuiaID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ReservasGuia_Trilhos2_TrilhoID",
+                        column: x => x.TrilhoID,
+                        principalTable: "Trilhos2",
+                        principalColumn: "TrilhoID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ReservasGuia_Turistas_TuristaID",
+                        column: x => x.TuristaID,
+                        principalTable: "Turistas",
+                        principalColumn: "TuristaID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -195,40 +243,6 @@ namespace Trails4Health.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ReservasGuia",
-                columns: table => new
-                {
-                    ReservaID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    GuiaID = table.Column<int>(nullable: false),
-                    ReservaParaDia = table.Column<DateTime>(nullable: false),
-                    TrilhoID = table.Column<int>(nullable: false),
-                    TuristaID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ReservasGuia", x => x.ReservaID);
-                    table.ForeignKey(
-                        name: "FK_ReservasGuia_Guias_GuiaID",
-                        column: x => x.GuiaID,
-                        principalTable: "Guias",
-                        principalColumn: "GuiaID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ReservasGuia_Trilhos_TrilhoID",
-                        column: x => x.TrilhoID,
-                        principalTable: "Trilhos",
-                        principalColumn: "TrilhoID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ReservasGuia_Turistas_TuristaID",
-                        column: x => x.TuristaID,
-                        principalTable: "Turistas",
-                        principalColumn: "TuristaID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_EstadoTrilhos_EstadoID",
                 table: "EstadoTrilhos",
@@ -296,6 +310,9 @@ namespace Trails4Health.Migrations
 
             migrationBuilder.DropTable(
                 name: "Trilhos");
+
+            migrationBuilder.DropTable(
+                name: "Trilhos2");
 
             migrationBuilder.DropTable(
                 name: "Guias");
