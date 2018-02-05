@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Trails4Health.Models;
+using Trails4Health.Models.ViewModels;
 
 namespace Trails4Health.Controllers
 {
@@ -173,6 +175,39 @@ namespace Trails4Health.Controllers
         private bool RespostaAvaliacaoExists(int id)
         {
             return _context.RespostasAvaliacao.Any(e => e.RespostaID == id);
+        }
+
+        public async Task<ActionResult> About()
+        {
+            List<ViewModelAgruparPorGuia> groups = new List<ViewModelAgruparPorGuia>();
+            var conn = _context.Database.GetDbConnection();
+            try
+            {
+                await conn.OpenAsync();
+                using (var command = conn.CreateCommand())
+                {
+                    string query = "SELECT GuiaID, COUNT(*) AS ContarRespostas "
+                        + "FROM RespostasAvaliacao "
+                        + "GROUP BY GuiaID";
+                    command.CommandText = query;
+                    DbDataReader reader = await command.ExecuteReaderAsync();
+
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var row = new ViewModelAgruparPorGuia { GuiaID = reader.GetInt32(0), ContarRespostas = reader.GetInt32(1) };
+                            groups.Add(row);
+                        }
+                    }
+                    reader.Dispose();
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return View(groups);
         }
     }
 }

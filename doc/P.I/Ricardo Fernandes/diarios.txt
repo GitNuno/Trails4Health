@@ -5,6 +5,15 @@ Tempo Total: 38.50 H
 
 ---
 
+05/02/2018
+
+Implementada função para contar respostas de avalição por guia (no controlador RespostasAvaliacao);
+
+
+Tempo utilizado:  H
+
+---
+
 03/02/2018
 
 Populada tabela ReservasGuia (classe Data/DbInitializer.cs) -> conseguida;
