@@ -177,7 +177,7 @@ namespace Trails4Health.Controllers
             return _context.RespostasAvaliacao.Any(e => e.RespostaID == id);
         }
 
-        public async Task<ActionResult> About()
+        public async Task<ActionResult> Estatisticas()
         {
             List<ViewModelAgruparPorGuia> groups = new List<ViewModelAgruparPorGuia>();
             var conn = _context.Database.GetDbConnection();
@@ -186,9 +186,10 @@ namespace Trails4Health.Controllers
                 await conn.OpenAsync();
                 using (var command = conn.CreateCommand())
                 {
-                    string query = "SELECT GuiaID, COUNT(*) AS ContarRespostas "
-                        + "FROM RespostasAvaliacao "
-                        + "GROUP BY GuiaID";
+                    string query = "SELECT GuiaID, COUNT(GuiaID) AS ContarRespostas, SUM(OpcaoID) AS SomaAvaliacao "
+                                 + "FROM RespostasAvaliacao "
+                                 + "GROUP BY GuiaID";
+
                     command.CommandText = query;
                     DbDataReader reader = await command.ExecuteReaderAsync();
 
@@ -196,7 +197,39 @@ namespace Trails4Health.Controllers
                     {
                         while (await reader.ReadAsync())
                         {
-                            var row = new ViewModelAgruparPorGuia { GuiaID = reader.GetInt32(0), ContarRespostas = reader.GetInt32(1) };
+                            var row = new ViewModelAgruparPorGuia { GuiaID = reader.GetInt32(0), ContarRespostas = reader.GetInt32(1), SomaAvaliacao = reader.GetInt32(2), Avaliacao = Math.Round(((double)reader.GetInt32(2) / (double)reader.GetInt32(1)), 1) };
+                            groups.Add(row);
+                        }
+                    }
+                    reader.Dispose();
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return View(groups);
+        }
+
+        public async Task<ActionResult> ListaGuias()
+        {
+            List<ViewModelListaGuias> groups = new List<ViewModelListaGuias>();
+            var conn = _context.Database.GetDbConnection();
+            try
+            {
+                await conn.OpenAsync();
+                using (var command = conn.CreateCommand())
+                {
+                    string query = "SELECT DISTINCT Nome AS NomeGuia FROM Guias";
+
+                    command.CommandText = query;
+                    DbDataReader reader = await command.ExecuteReaderAsync();
+
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var row = new ViewModelListaGuias { NomeGuia = reader.GetString(0) };
                             groups.Add(row);
                         }
                     }

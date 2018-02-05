@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Trails4Health.Models.ViewModels.ViewModelAgruparPorGuia>
+
+@{
+    ViewData["Title"] = "Estatísticas";
+    Layout = "_LayoutBackoffice";
+}
+
+<h2>Estatísticas de repostas por guia</h2>
+
+<table>
+    <tr>
+        <th>
+            Nome Guia
+        </th>
+        <th>
+            Número de respostas
+        </th>
+        <th>
+            Soma da avaliação
+        </th>
+        <th>
+            Nota de avaliação
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @if (item.GuiaID == 1)
+                {
+                    @:José Esteves
+                }
+                else if (item.GuiaID == 2)
+                {
+                    @:Túlio Gonzaga
+                }
+                else
+                {
+                    @:António Malaquias
+                }
+            </td>
+            <td>
+                @item.ContarRespostas
+            </td>
+            <td>
+                @item.SomaAvaliacao
+            </td>
+            <td>
+                @item.Avaliacao
+            </td>
+        </tr>
+    }
+</table>

@@ -1,16 +1,22 @@
 Diários de Programação para a Internet: Ricardo Fernandes - 1011936
 
 
-Tempo Total: 38.50 H
+Tempo Total: 42.50 H
 
 ---
 
 05/02/2018
 
-Implementada função para contar respostas de avalição por guia (no controlador RespostasAvaliacao);
+Implementada função para contar respostas de avalição por guia (no controlador RespostasAvaliacao),
+adicionado viewModel Models/ViewModel/ViewModelAgruparPorGuia.cs e view Views/RespostaAvaliacao/Estatisticas.cshtml, com o objectivo de gerar estatísticas sobre as repostas de turistas e nota de avaliação do guia;
+Adicionado viewModel para a lista de guias;
+
+A nota de avaliação de um guia é claculada;
+
+Alteradas permissões para os respectivos roles: Turista pode reservar guias e avaliá-los, Administrador e Professor não; Administrador e Professor podem inserir questões de avaliação, Turista não;
 
 
-Tempo utilizado:  H
+Tempo utilizado: 4 H
 
 ---
 
