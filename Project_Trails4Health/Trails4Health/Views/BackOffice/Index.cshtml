@@ -24,16 +24,16 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoTrilho">
-                <img src="~/images/slide-2.jpg" alt="...">
-            </a>
-            <div class="caption">
-                <h5 style="text-align:center">PERGUNTAS <strong>AVALIAÇÃO TRILHO</strong></h5>
+    @*<div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoTrilho">
+                    <img src="~/images/slide-2.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h5 style="text-align:center">PERGUNTAS <strong>AVALIAÇÃO TRILHO</strong></h5>
+                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <a asp-controller="Avaliacao" asp-action="QuestoesAvaliacaoGuia">
@@ -45,33 +45,43 @@
         </div>
     </div>
 
-    <div class="col-sm-6 col-md-4" style="margin-top:2em">
-        <div class="thumbnail">
-            <a asp-controller="Avaliacao" asp-action="AvaliacaoGuia">
-                <img src="~/images/slide-4.jpg" alt="...">
-            </a>
-            <div class="caption">
-                <h5 style="text-align:center">AVALIAR <strong>GUIA</strong></h5>
+    @*<div class="col-sm-6 col-md-4" style="margin-top:2em">
+            <div class="thumbnail">
+                <a asp-controller="Avaliacao" asp-action="AvaliacaoGuia">
+                    <img src="~/images/slide-4.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h5 style="text-align:center">AVALIAR <strong>GUIA</strong></h5>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-6 col-md-4" style="margin-top:2em">
-        <div class="thumbnail">
-            <a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">
-                <img src="~/images/torre.jpg" alt="...">
-            </a>
-            <div class="caption">
-                <h5 style="text-align:center">AVALIAR <strong>TRILHO</strong></h5>
+        <div class="col-sm-6 col-md-4" style="margin-top:2em">
+            <div class="thumbnail">
+                <a asp-controller="Avaliacao" asp-action="AvaliacaoTrilho">
+                    <img src="~/images/torre.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h5 style="text-align:center">AVALIAR <strong>TRILHO</strong></h5>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4" style="margin-top:2em">
+        </div>*@
+    <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <a asp-controller="TrilhoCRUD" asp-action="ListaTrilhos">
                 <img src="~/images/lagoa.jpg" alt="...">
             </a>
             <div class="caption">
                 <h5 style="text-align:center">LISTA <strong>TRILHOS</strong></h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a asp-controller="RespostasAvaliacao" asp-action="Estatisticas">
+                <img src="~/images/lagoa.jpg" alt="...">
+            </a>
+            <div class="caption">
+                <h5 style="text-align:center">ESTATÍSTICAS <strong>GUIAS</strong></h5>
             </div>
         </div>
     </div>

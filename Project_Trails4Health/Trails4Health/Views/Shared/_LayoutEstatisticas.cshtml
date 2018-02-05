@@ -31,9 +31,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="TrilhoCRUD" asp-action="Index">TRILHO <strong>CRUD</strong></a></li>
-                    <li><a asp-controller="TrilhoCRUD" asp-action="ListaTrilhos">LISTA <strong>TRILHOS</strong></a></li>
-                    <li><a asp-controller="Questoes" asp-action="Index">QUESTÕES AVALIAÇÃO</a></li>
+                    <li><a asp-controller="ReservasGuia" asp-action="Index">RESERVAR <strong>GUIAS</strong></a></li>
+                    <li><a asp-controller="RespostasAvaliacao" asp-action="Index">AVALIAR <strong>GUIAS</strong></a></li>
+                    <li><a asp-controller="RespostasAvaliacao" asp-action="Estatisticas">ESTATISTICAS <strong>GUIAS</strong></a></li>
                 </ul>
                 <!-- MSG: HELLO USER -->
                 @await Html.PartialAsync("_LoginPartial")

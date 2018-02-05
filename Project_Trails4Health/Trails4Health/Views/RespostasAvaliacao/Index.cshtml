@@ -2,31 +2,31 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "_LayoutBackoffice";
+    Layout = "_LayoutEstatisticas";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Avaliar Guia</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Data)
+                    Data da Resposta
                 </th>
             <th>
                 @Html.DisplayNameFor(model => model.Guia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Opcao)
+                Avaliação
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Questao)
+                Questão
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Turista)
+                Turista
             </th>
             <th></th>
         </tr>
@@ -38,16 +38,16 @@
                 @Html.DisplayFor(modelItem => item.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Guia.GuiaID)
+                @Html.DisplayFor(modelItem => item.Guia.Nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Opcao.OpcaoID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Questao.QuestaoID)
+                @Html.DisplayFor(modelItem => item.Questao.NomeQuestao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Turista.TuristaID)
+                @Html.DisplayFor(modelItem => item.Turista.Nome)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.RespostaID">Edit</a> |

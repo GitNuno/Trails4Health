@@ -11,9 +11,11 @@ Implementada função para contar respostas de avalição por guia (no controlad
 adicionado viewModel Models/ViewModel/ViewModelAgruparPorGuia.cs e view Views/RespostaAvaliacao/Estatisticas.cshtml, com o objectivo de gerar estatísticas sobre as repostas de turistas e nota de avaliação do guia;
 Adicionado viewModel para a lista de guias;
 
-A nota de avaliação de um guia é claculada;
+A nota de avaliação de um guia é agora calculada;
 
 Alteradas permissões para os respectivos roles: Turista pode reservar guias e avaliá-los, Administrador e Professor não; Administrador e Professor podem inserir questões de avaliação, Turista não;
+
+Nota: falta adiconar validações em alguns modelos;
 
 
 Tempo utilizado: 4 H

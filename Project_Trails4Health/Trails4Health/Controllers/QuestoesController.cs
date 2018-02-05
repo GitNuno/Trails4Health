@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,12 +20,14 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Questoes
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Questoes.ToListAsync());
         }
 
         // GET: Questoes/Details/5
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,6 +46,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Questoes/Create
+        [Authorize(Roles = "Administrador, Professor")]
         public IActionResult Create()
         {
             return View();
@@ -53,6 +57,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Create([Bind("QuestaoID,NomeQuestao,Desactivada,Descricao")] Questao questao)
         {
             if (ModelState.IsValid)
@@ -65,6 +70,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Questoes/Edit/5
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,6 +91,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Edit(int id, [Bind("QuestaoID,NomeQuestao,Desactivada,Descricao")] Questao questao)
         {
             if (id != questao.QuestaoID)
@@ -116,6 +123,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Questoes/Delete/5
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,6 +144,7 @@ namespace Trails4Health.Controllers
         // POST: Questoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var questao = await _context.Questoes.SingleOrDefaultAsync(m => m.QuestaoID == id);
