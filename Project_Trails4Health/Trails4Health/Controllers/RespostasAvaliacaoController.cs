@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -50,6 +51,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: RespostasAvaliacao/Create
+        [Authorize(Roles = "Turista")]
         public IActionResult Create()
         {
             ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome");
@@ -65,6 +67,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Turista")]
         public async Task<IActionResult> Create([Bind("RespostaID,Data,QuestaoID,TuristaID,GuiaID,OpcaoID")] RespostaAvaliacao respostaAvaliacao)
         {
             if (ModelState.IsValid)
@@ -81,6 +84,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: RespostasAvaliacao/Edit/5
+        [Authorize(Roles = "Turista")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -105,6 +109,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Turista")]
         public async Task<IActionResult> Edit(int id, [Bind("RespostaID,Data,QuestaoID,TuristaID,GuiaID,OpcaoID")] RespostaAvaliacao respostaAvaliacao)
         {
             if (id != respostaAvaliacao.RespostaID)
