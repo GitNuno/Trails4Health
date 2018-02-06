@@ -12,8 +12,10 @@ Adição de classes css;
 Actualizações de views;
 Adição de validações nos modelos;
 
+Actualizado gráfico dos tempos utilizados;
 
-Tempo utilizado:  H
+
+Tempo utilizado: 3 H
 
 ---
 

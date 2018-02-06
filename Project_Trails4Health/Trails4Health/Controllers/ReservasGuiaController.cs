@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -47,11 +48,12 @@ namespace Trails4Health.Controllers
         }
 
         // GET: ReservasGuia/Create
+        [Authorize(Roles = "Turista")]
         public IActionResult Create()
         {
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID");
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID");
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID");
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome");
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "Nome");
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome");
             return View();
         }
 
@@ -60,6 +62,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Turista")]
         public async Task<IActionResult> Create([Bind("ReservaID,ReservaParaDia,GuiaID,TuristaID,TrilhoID")] ReservaGuia reservaGuia)
         {
             if (ModelState.IsValid)
@@ -68,13 +71,14 @@ namespace Trails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome", reservaGuia.GuiaID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "Nome", reservaGuia.TrilhoID);
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
 
         // GET: ReservasGuia/Edit/5
+        [Authorize(Roles = "Turista")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,9 +91,9 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome", reservaGuia.GuiaID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "Nome", reservaGuia.TrilhoID);
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
 
@@ -98,6 +102,7 @@ namespace Trails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Turista")]
         public async Task<IActionResult> Edit(int id, [Bind("ReservaID,ReservaParaDia,GuiaID,TuristaID,TrilhoID")] ReservaGuia reservaGuia)
         {
             if (id != reservaGuia.ReservaID)
@@ -125,9 +130,9 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", reservaGuia.GuiaID);
-            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "TrilhoID", reservaGuia.TrilhoID);
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", reservaGuia.TuristaID);
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome", reservaGuia.GuiaID);
+            ViewData["TrilhoID"] = new SelectList(_context.Trilhos2, "TrilhoID", "Nome", reservaGuia.TrilhoID);
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome", reservaGuia.TuristaID);
             return View(reservaGuia);
         }
 
