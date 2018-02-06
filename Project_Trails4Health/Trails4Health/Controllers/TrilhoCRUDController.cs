@@ -10,6 +10,7 @@ using Trails4Health.Models.ViewModels;
 using System.IO;
 using System.Net.Http.Headers;
 using System.Threading;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Trails4Health.Controllers
 {
@@ -31,6 +32,7 @@ namespace Trails4Health.Controllers
             this.repository = repository; 
         }
 
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Index()
         {
             // OrderBy(t => t.Desativado); Coloca desativados em baixo
@@ -107,6 +109,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Create
+        [Authorize(Roles = "Administrador, Professor")]
         public IActionResult Criar()
         {
             // viewBag recebe valores do tipo ViewData["DificuldadeID"] em runTime
@@ -119,6 +122,7 @@ namespace Trails4Health.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Criar([Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes,TrilhoSumario," +
             "TrilhoDistancia,TrilhoFoto, TrilhoDesativado,DificuldadeID,EstadoID,ImageFile")] ViewModelTrilho trilhoVM)
         {
@@ -190,6 +194,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Editar
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Editar(int? id)
         {
             if (id == null)
@@ -241,6 +246,7 @@ namespace Trails4Health.Controllers
         // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Editar(int id, [Bind("TrilhoID,TrilhoNome,TrilhoInicio,TrilhoFim,TrilhoDetalhes," +
             "TrilhoSumario,TrilhoDistancia,TrilhoFoto,TrilhoDesativado,DificuldadeID,EstadoID,TrilhoImagem,ImageFile")] ViewModelTrilho VMTrilho)
         {
@@ -334,6 +340,7 @@ namespace Trails4Health.Controllers
         }
 
         // GET: Desativar
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> Desativar(int? id)
         {
             if (id == null)
@@ -355,6 +362,7 @@ namespace Trails4Health.Controllers
         // POST: Desativar
         [HttpPost, ActionName("Desativar")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador, Professor")]
         public async Task<IActionResult> DesativacaoConfirmada(int id)
         {
             var trilho = await _context.Trilhos.SingleOrDefaultAsync(m => m.TrilhoID == id);

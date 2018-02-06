@@ -5,6 +5,18 @@ Tempo Total: 42.50 H
 
 ---
 
+06/02/2018
+
+Actualizações de layouts;
+Adição de classes css;
+Actualizações de views;
+Adição de validações nos modelos;
+
+
+Tempo utilizado:  H
+
+---
+
 05/02/2018
 
 Implementada função para contar respostas de avalição por guia (no controlador RespostasAvaliacao),

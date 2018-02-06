@@ -40,7 +40,7 @@ namespace Trails4Health.Models.AccountViewModels
         [Display(Name = "Data de Nascimento")]
         public string DataNascimento { get; set; }
 
-        [Required(ErrorMessage = "Introduza o NIF")]
+        [Required(ErrorMessage = "Introduza um NIF válido")]
         [Display(Name = "NIF")]
         public string Nif { get; set; }
     }
