@@ -97,10 +97,10 @@ namespace Trails4Health.Controllers
             {
                 return NotFound();
             }
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", respostaAvaliacao.GuiaID);
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome", respostaAvaliacao.GuiaID);
             ViewData["OpcaoID"] = new SelectList(_context.Opcoes, "OpcaoID", "OpcaoID", respostaAvaliacao.OpcaoID);
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID", respostaAvaliacao.QuestaoID);
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", respostaAvaliacao.TuristaID);
+            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "NomeQuestao", respostaAvaliacao.QuestaoID);
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome", respostaAvaliacao.TuristaID);
             return View(respostaAvaliacao);
         }
 
@@ -137,10 +137,10 @@ namespace Trails4Health.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "GuiaID", respostaAvaliacao.GuiaID);
+            ViewData["GuiaID"] = new SelectList(_context.Guias, "GuiaID", "Nome", respostaAvaliacao.GuiaID);
             ViewData["OpcaoID"] = new SelectList(_context.Opcoes, "OpcaoID", "OpcaoID", respostaAvaliacao.OpcaoID);
-            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "QuestaoID", respostaAvaliacao.QuestaoID);
-            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "TuristaID", respostaAvaliacao.TuristaID);
+            ViewData["QuestaoID"] = new SelectList(_context.Questoes, "QuestaoID", "NomeQuestao", respostaAvaliacao.QuestaoID);
+            ViewData["TuristaID"] = new SelectList(_context.Turistas, "TuristaID", "Nome", respostaAvaliacao.TuristaID);
             return View(respostaAvaliacao);
         }
 
